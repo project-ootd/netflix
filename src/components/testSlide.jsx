@@ -1,7 +1,7 @@
 import React from "react";
 
-const testSlide = () => {
+const TestSlide = () => {
   return <div></div>;
 };
 
-export default testSlide;
+export default TestSlide;
