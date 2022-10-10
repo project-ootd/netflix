@@ -4,7 +4,7 @@ import TestVideo from "./components/TestVideo";
 function App() {
   return (
     <div className="App">
-      <Main />
+      <TestVideo />
     </div>
   );
 }
