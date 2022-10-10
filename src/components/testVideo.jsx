@@ -62,7 +62,7 @@ const TestVideo = () => {
                     {" "}
                     <div
                       className="information-icon"
-                      style={{ fontSize: "1.5rem" }}
+                      style={{ fontSize: "1.4rem" }}
                     >
                       <AiOutlineInfoCircle />
                     </div>
