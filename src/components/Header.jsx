@@ -58,7 +58,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="extra-service">
-            <ul style={{}}>
+            <ul style={{ display: "flex" }}>
               <li>
                 <a href="/">검색 아이콘</a>
               </li>
