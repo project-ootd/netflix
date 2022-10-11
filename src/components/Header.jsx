@@ -1,40 +1,64 @@
 import React from "react";
+import logo from "../img/logo.png";
 
 const Header = () => {
   return (
-    <div>
+    <div style={{ display: "inline-block", width: "100%", marginTop: "10px" }}>
       {" "}
-      <div className="header-top">
-        <div className="nav-box">
-          <div className="main-logo">
+      <div
+        className="header-top"
+        style={{
+          display: "inline-block",
+          width: "100%",
+        }}
+      >
+        <div
+          className="nav-box"
+          style={{
+            display: "flex",
+          }}
+        >
+          <div className="main-logo" style={{ width: "10%" }}>
             <ul>
-              <li>로고 사진</li>
+              <li>
+                <div
+                  className="img-box"
+                  style={{ border: "3px solid gold", width: "100%" }}
+                >
+                  <img src={logo} alt="" style={{ width: "100%" }} />
+                </div>
+              </li>
             </ul>
           </div>
-          <div className="nav-main">
-            <ul>
-              <li>
-                <a href="/">홈</a>{" "}
+          <div className="nav-main" style={{}}>
+            <ul
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <li style={{ margin: "0 20px" }}>
+                <a href="/">홈</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">시리즈</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">영화</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">NEW! 요즘 대세 컨텐츠</a>
               </li>
-              <li>
-                <a href="/">내가 침한 콘텐츠</a>
+              <li style={{ marginRight: "20px" }}>
+                <a href="/">내가 찜한 콘텐츠</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">언어 별로 찾아보기</a>
               </li>
             </ul>
           </div>
-          <div>
-            <ul>
+          <div className="extra-service">
+            <ul style={{ display: "flex" }}>
               <li>
                 <a href="/">검색 아이콘</a>
               </li>
