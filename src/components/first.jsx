@@ -1,9 +1,46 @@
 import React from "react";
+import logo from "../img/logo.png";
 import "../styles/First.css";
 
 const First = () => {
   return (
     <div>
+      <div className="first_wrap">
+        <div className="top_wrap flex flex_jc_sb">
+          <a href="/" className="logo">
+            <img src={logo} alt="LOGO" />
+          </a>
+
+          <div className="icon">
+            <a href="/" className="login">
+              로그인
+            </a>
+          </div>
+        </div>
+        <div className="style_box1"></div>
+        <div className="style_box2"></div>
+
+        <div className="center_box flex felx_jc_c flex_ai_c">
+          <h1 className="center_h1">
+            영화와 시리즈를 <br></br>무제한으로.
+          </h1>
+          <p className="center_p1">
+            다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.
+          </p>
+          <p className="center_p2">
+            시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일
+            주소를 입력하세요.
+          </p>
+          <div className="tour_box flex flex_jc_c">
+            <div className="email">
+              <input type="text" size="50" placeholder="이메일 주소" />
+            </div>
+            <a href="/" className="btn flex flex_jc-c flex_ai_c">
+              시작하기 &gt;{" "}
+            </a>
+          </div>
+        </div>
+      </div>
       <hr />
       <div className="con1_wrap flex flex_jc_sa flex_jc_c">
         <div className="text_box">
@@ -54,7 +91,11 @@ const First = () => {
               <h5>기묘한 이야기</h5>
               <h6>저장 중 ...</h6>
             </div>
-            <div className="icon"></div>
+            <img
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
+              alt=""
+              className="icon"
+            />
           </div>
         </div>
 
@@ -113,18 +154,76 @@ const First = () => {
           </div>
         </div>
       </div>
+      <hr />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div className="footer_wrap">
+        <div className="footer_box flex flex_jc_c">
+          <div className="footer_text">
+            <h4>질문이 있으신가요? 문의 전화: 010-1234-1234</h4>
+            <ul className="item_box flex">
+              <li className="footer_item">
+                <a href="/">자주 묻는 질문</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">고객 센터</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">계정</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">미디어 센터</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">투자 정보(IR)</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">입사 정보</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">넷플릭스 지원 디바이스</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">이용 약관</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">개인정보</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">쿠키 설정</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">회사 정보</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">문의하기</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">속도 테스트</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">법적 고지</a>
+              </li>
+              <li className="footer_item">
+                <a href="/">오직 넷플릭스에서</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="copy_right_box">
+          <h5>넷플릭스 대한민국</h5>
+          <div className="text">
+            넷플릭스서비시스코리아 유한회사 통신판매업신고번호:
+            제2018-서울종로-0426호 전화번호: 080-001-9587
+            <br />
+            대표: 레지널드 숀 톰프슨 <br />
+            이메일 주소: korea@netflix.com 주소: 대한민국 서울특별시 종로구
+            우정국로 26, 센트로폴리스 A동 20층 우편번호 03161 <br />
+            사업자등록번호: 165-87-00119 <br />
+            클라우드 호스팅: Amazon Web Services Inc. <br />
+            공정거래위원회 웹사이트
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
