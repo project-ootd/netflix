@@ -13,12 +13,14 @@ const TestVideo = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/4OSFPrOL1LQ?autoplay=1&mute=1&version=3&loop=1&playlist=4OSFPrOL1LQ&rel=0&controls=0"
-                title="mido's frenid video player"
+                src="https://www.youtube.com/embed/m29lUyODfzk?autoplay=1&mute=1&version=3&loop=1&playlist=4OSFPrOL1LQ&rel=0&controls=0"
+                title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
                 style={{ position: "relative" }}
+                allowfullscreen
               />
+
               <div
                 className="title-text"
                 style={{
@@ -45,6 +47,10 @@ const TestVideo = () => {
                       width: "100%",
                       fontSize: "1.5rem",
                       borderRadius: "10px",
+                      fontWeight: "bold",
+                      padding: "0.7rem 0 ",
+                      paddingRight: "2.4rem",
+                      paddingLeft: "2rem",
                     }}
                   >
                     <a href="/">
@@ -57,20 +63,31 @@ const TestVideo = () => {
                       borderRadius: "10px",
                       display: "flex",
                       justifyContent: "space-around",
+                      fontWeight: "bold",
+                      padding: "0.7rem 0 ",
+                      paddingRight: "2.4rem",
+                      paddingLeft: "2rem",
                     }}
                   >
                     {" "}
                     <div
                       className="information-icon"
-                      style={{ fontSize: "1.4rem" }}
+                      style={{
+                        fontSize: "1.4rem",
+                        borderRadius: "10px",
+                        marginTop: "4px",
+                      }}
                     >
-                      <AiOutlineInfoCircle />
+                      <AiOutlineInfoCircle /> 상세정보
                     </div>
                     <div
                       className="information-text"
-                      style={{ fontSize: "1.2rem" }}
+                      style={{
+                        fontSize: "1.2rem",
+                        marginTop: "2px",
+                      }}
                     >
-                      상세 정보
+                      {/* 상세 정보 */}
                     </div>
                   </button>
                 </div>
