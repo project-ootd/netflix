@@ -1,5 +1,5 @@
 import "./App.css";
-// import TestSlide from "./components/TestSlide";
+import TestSlide from "./components/TestSlide";
 import TestVideo from "./components/TestVideo";
 import First from "./components/First";
 
@@ -12,7 +12,9 @@ function App() {
       <Header />
       {/* <First /> */}
       {/* <Login /> */}
-      <TestVideo />
+
+      {/* <TestVideo /> */}
+      <TestSlide />
 
       {/* <Main /> */}
     </div>
