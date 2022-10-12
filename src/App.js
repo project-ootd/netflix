@@ -8,8 +8,10 @@ import RankingSlide from "./components/RankingSlide";
 function App() {
   return (
     <div className="App">
-      <First />
+      <Header />
+      {/* <First /> */}
       {/* <Login /> */}
+
       {/* <TestVideo /> */}
       {/* <RankingSlide /> */}
       {/* <Main /> */}
