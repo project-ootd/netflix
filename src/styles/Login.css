@@ -1,0 +1,118 @@
+.bc_img {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  background-image: url("../img/first_banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bc_opacity {
+  position: absolute;
+  width: 100%;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.login_box {
+  position: absolute;
+  top: calc(50% - 40vh);
+  left: calc(50% - 25vh);
+  width: 16vw;
+  height: 60vh;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 35px 60px;
+  z-index: 3;
+}
+
+.login_box > h1 {
+  color: white;
+  text-align: start;
+}
+
+/* .login_box > .login_form {
+    width: 100%;
+    background-color: red;
+  } */
+
+.login_box > .login_form {
+  width: 100%;
+  box-sizing: border-box;
+}
+.login_box > .login_form > form {
+  width: 100%;
+}
+
+.login_box > .login_form > form > .userid {
+  background: #333;
+  border: none;
+  padding: 15px 20px;
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.login_box > .login_form > form > .userpw {
+  background: #333;
+  border: none;
+  padding: 15px 20px;
+  width: calc(100% - 40px);
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.login_box > .login_form > form {
+  margin-bottom: 40px;
+}
+
+.login_box > .login_form > .login_btn {
+  width: 100%;
+  padding: 13px 0;
+  background-color: #e50914;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+}
+
+.login_box > .login_form > .help_box {
+  margin-top: 10px;
+}
+
+.login_box > .login_form > .help_box a {
+  color: #b3b3b3;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login_box > .login_form > .help_box > .login_info_save > .login_save_box {
+  position: relative;
+}
+
+input[id="LoginSave"] {
+  display: none;
+}
+input[id="LoginSave"] + label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0px 5px 0 0;
+
+  background-color: #737373;
+}
+input[id="LoginSave"]:checked + label::after {
+  content: "✔";
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

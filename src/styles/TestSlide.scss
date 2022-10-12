@@ -1,0 +1,48 @@
+/* 오늘 대한민국의 TOp 10 시리즈 text */
+.top-10-text {
+  text-align: left;
+}
+
+/* 좌/우측 화살표 */
+.slide-body {
+  color: white;
+  background-color: black;
+}
+
+.slick-prev {
+  // 좌측 화살표의 위치값을 넣어줍니다.
+  margin-left: 5vh;
+  z-index: 990;
+}
+
+.slick-prev::before {
+  font-size: 5rem !important;
+}
+
+.slick-next {
+  // 우측화살표의 위치값을 넣어줍니다.
+  margin-right: 10vh;
+  z-index: 990;
+}
+
+.slick-next::before {
+  font-size: 5rem !important;
+}
+/* 좌/우측 화살표 끝 */
+
+/* 랭킹 넘버 */
+.ranking-img {
+  position: relative !important;
+}
+
+.ranking-num {
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  font-size: 30rem;
+  text-align: left;
+  // margin-right:-150px;
+  // margin-top:-100px;
+  transform: translate(0.2%, -25%);
+  // border : 5px solid red;
+}
