@@ -45,12 +45,13 @@ const TestVideo = () => {
                     className="play-btn"
                     style={{
                       width: "100%",
-                      fontSize: "1.5rem",
+                      fontSize: "1.1rem",
                       borderRadius: "10px",
                       fontWeight: "bold",
                       padding: "0.7rem 0 ",
                       paddingRight: "2.4rem",
                       paddingLeft: "2rem",
+                      marginRight: "50px",
                     }}
                   >
                     <a href="/">
@@ -78,16 +79,16 @@ const TestVideo = () => {
                         marginTop: "4px",
                       }}
                     >
-                      <AiOutlineInfoCircle /> 상세정보
+                      <AiOutlineInfoCircle />
                     </div>
                     <div
                       className="information-text"
                       style={{
-                        fontSize: "1.2rem",
+                        fontSize: "0.5rem",
                         marginTop: "2px",
                       }}
                     >
-                      {/* 상세 정보 */}
+                      상세 정보
                     </div>
                   </button>
                 </div>
