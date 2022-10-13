@@ -49,6 +49,10 @@
   width: 100%;
   background-color: red;
 } */
+/* =======
+    width: 100%;
+    background-color: red;
+  } */
 
 .login_box > .login_form {
   width: 100%;
@@ -115,6 +119,12 @@
 
 .login_box > .login_form > .help_box > .login_info_save > .login_save_box > a {
   margin-top: -1px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login_box > .login_form > .help_box > .login_info_save > .login_save_box {
+  position: relative;
 }
 
 input[id="LoginSave"] {
@@ -237,6 +247,11 @@ input[id="LoginSave"]:checked + label::after {
 }
 
 .footer_wrap > .copy_right_box > .text {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
 }

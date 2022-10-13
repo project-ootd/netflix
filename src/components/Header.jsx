@@ -1,9 +1,20 @@
 import React from "react";
 import logo from "../img/logo.png";
 
+import "../styles/Header.scss";
+
 const Header = () => {
   return (
-    <div style={{ display: "inline-block", width: "100%", marginTop: "10px" }}>
+    <div
+      classnames="Header"
+      style={{
+        display: "inline-block",
+        width: "100%",
+        marginTop: "10px",
+        backgroundColor: "black",
+        color: "white",
+      }}
+    >
       {" "}
       <div
         className="header-top"
@@ -16,6 +27,7 @@ const Header = () => {
           className="nav-box"
           style={{
             display: "flex",
+            justifyContent: "space-between",
           }}
         >
           <div className="main-logo" style={{ width: "10%" }}>
@@ -30,11 +42,12 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="nav-main" style={{}}>
+          <div className="nav-main" style={{ width: "60%" }}>
             <ul
               style={{
                 display: "flex",
                 justifyContent: "space-around",
+                width: "100%",
               }}
             >
               <li style={{ margin: "0 20px" }}>
@@ -57,18 +70,26 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="extra-service">
-            <ul style={{ display: "flex" }}>
-              <li>
+          <div className="extra-service" style={{ width: "30%" }}>
+            <ul
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-end",
+                width: "100%",
+              }}
+            >
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">검색 아이콘</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">키즈</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">알림 아이콘</a>
               </li>
-              <li>
+              <li style={{ marginRight: "20px" }}>
                 <a href="/">로그인 프로필</a>
               </li>
             </ul>

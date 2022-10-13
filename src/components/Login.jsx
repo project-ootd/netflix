@@ -31,12 +31,10 @@ const Join = () => {
               placeholder="비밀번호"
             />
           </form>
-
           <button className="login_btn">로그인</button>
-
           <div className="help_box">
             <div className="login_info_save flex flex_jc_sb">
-              <div className="login_save_box flex">
+              <div className="login_save_box">
                 <input
                   type="checkbox"
                   name="LoginSave"
