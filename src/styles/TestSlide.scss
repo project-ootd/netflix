@@ -35,7 +35,6 @@
 // }
 
 .slide-body {
-  height: 500px;
   color: white;
   background-color: black;
 }
@@ -63,22 +62,17 @@
 
 /* 랭킹 넘버 */
 .ranking-img {
-  margin-left: -100%;
+  position: relative !important;
 }
 
-.ranking-img {
-  // position: absolute;
-  // display: flex;
-  // z-index: 999;
-  // font-size: 30rem;
-  // text-align: left;
-  // margin-right: -150px;
-  // margin-top: -100px;
-  // transform: translate(0.2%, -25%);
-  // border: 5px solid red;
-}
-
-.slick-active {
-  // border: 5px solid gold;
-  // width: 250px !important;
+.ranking-num {
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  font-size: 30rem;
+  text-align: left;
+  // margin-right:-150px;
+  // margin-top:-100px;
+  transform: translate(0.2%, -25%);
+  // border : 5px solid red;
 }

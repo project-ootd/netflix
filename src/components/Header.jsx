@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../img/logo.png";
+
 import "../styles/Header.scss";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
