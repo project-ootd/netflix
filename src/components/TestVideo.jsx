@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "../styles/TestVideo.scss";
 const TestVideo = () => {
+  const [time, setTime] = useState(false);
   return (
     <div className="billboard-row" style={{}}>
       <div className="billboard-motion">
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/m29lUyODfzk?autoplay=1&mute=1&version=3&loop=1&playlist=4OSFPrOL1LQ&rel=0&controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                style={{ position: "relative" }}
-                allowfullscreen
-              />
+              {time ? (
+                <img
+                  src="https://img.youtube.com/vi/m29lUyODfzk/mqdefault.jpg"
+                  alt=""
+                  style={{ width: "100%", height: "920px" }}
+                />
+              ) : (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/m29lUyODfzk?autoplay=1&mute=1&version=3&loop=1&playlist=4OSFPrOL1LQ&rel=0&controls=0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  style={{ position: "relative" }}
+                  allowfullscreen
+                />
+              )}
 
               <div
                 className="title-text"
@@ -34,51 +43,72 @@ const TestVideo = () => {
                   src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABUq6SWe3nmuxzdO9Gd3VFi303ou0BWefzxdJs-CmirWGUNQrk1agqq1ZkeuqErcYU7btG-xYQBh1hLe0tf_jRDzLajEKxQqa8Q-PPIGK7bM.webp?r=803"
                   alt="슬기로운 의사 생활"
                   className="title-img"
-                  style={{ width: "100%" }}
+                  style={{
+                    width: "100%",
+                    marginLeft: "50px",
+                    marginBottom: "20px",
+                  }}
                 />
-                <div
-                  className="play-btn-box"
-                  style={{ width: "400px", display: "flex" }}
-                >
+                <div className="play-btn-box" style={{ display: "flex" }}>
                   <button
                     className="play-btn"
                     style={{
-                      // width: "100%",
+                      width: "150px",
                       fontSize: "1.1rem",
                       borderRadius: "10px",
                       fontWeight: "bold",
-                      padding: "0.7rem 0 ",
-                      paddingRight: "2.4rem",
-                      paddingLeft: "2rem",
-                      marginRight: "50px",
+                      marginLeft: "50px",
+                      marginRight: "20px",
                     }}
                   >
-                    <a href="/" style={{ display: "flex", width: "100%" }}>
+                    <a
+                      href="/"
+                      style={{
+                        display: "flex",
+                        width: "100%",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
                       <div className="play-icon">
-                        <BsFillPlayFill />
+                        <BsFillPlayFill
+                          style={{
+                            fontSize: "20px",
+                            width: "3.5rem",
+                            height: "3.5rem",
+                          }}
+                        />
                       </div>
-                      <div className="play-text">재생</div>
+                      <div className="play-text" style={{ fontSize: "23px" }}>
+                        재생
+                      </div>
                     </a>
                   </button>
                   <button
+                    className="info-box"
                     style={{
-                      width: "100%",
+                      width: "230px",
                       borderRadius: "10px",
                       display: "flex",
-                      justifyContent: "space-around",
+                      justifyContent: "center",
+                      alignItems: "center",
                       fontWeight: "bold",
-                      padding: "0.7rem 0 ",
-                      paddingRight: "2.4rem",
-                      paddingLeft: "2rem",
+                      border: "none",
+                      backgroundColor: "rgba(109, 109, 110, 0.5)",
+
+                      // padding: "0.5rem 0px ",
                     }}
                   >
                     {" "}
                     <div
                       className="information-icon"
                       style={{
-                        fontSize: "1.8rem",
+                        fontSize: "3rem",
                         borderRadius: "10px",
-                        marginTop: "4px",
+                        marginRight: "4px",
+                        display: "flex",
+                        alignItems: "center",
+                        color: "white",
                       }}
                     >
                       <AiOutlineInfoCircle />
@@ -86,9 +116,11 @@ const TestVideo = () => {
                     <div
                       className="information-text"
                       style={{
-                        fontSize: "1.2rem",
-                        marginTop: "2px",
+                        fontSize: "23px",
+                        margin: "2px 0 0 5px",
                         display: "flex",
+                        alignItems: "center",
+                        color: "white",
                       }}
                     >
                       상세정보
