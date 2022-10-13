@@ -8,12 +8,12 @@ import RankingSlide from "./components/RankingSlide";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       {/* <First /> */}
       {/* <Login /> */}
 
       {/* <TestVideo /> */}
-      {/* <RankingSlide /> */}
+      <RankingSlide />
       {/* <Main /> */}
     </div>
   );
