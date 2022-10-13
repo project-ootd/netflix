@@ -4,9 +4,8 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import "../styles/TestVideo.scss";
 const TestVideo = () => {
   return (
-    <div className="billboard-row">
+    <div className="billboard-row" style={{}}>
       <div className="billboard-motion">
-        <div className="nfp"></div>
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
@@ -39,12 +38,12 @@ const TestVideo = () => {
                 />
                 <div
                   className="play-btn-box"
-                  style={{ width: "300px", display: "flex" }}
+                  style={{ width: "400px", display: "flex" }}
                 >
                   <button
                     className="play-btn"
                     style={{
-                      width: "100%",
+                      // width: "100%",
                       fontSize: "1.1rem",
                       borderRadius: "10px",
                       fontWeight: "bold",
@@ -54,8 +53,11 @@ const TestVideo = () => {
                       marginRight: "50px",
                     }}
                   >
-                    <a href="/">
-                      <BsFillPlayFill /> 재생
+                    <a href="/" style={{ display: "flex", width: "100%" }}>
+                      <div className="play-icon">
+                        <BsFillPlayFill />
+                      </div>
+                      <div className="play-text">재생</div>
                     </a>
                   </button>
                   <button
@@ -74,7 +76,7 @@ const TestVideo = () => {
                     <div
                       className="information-icon"
                       style={{
-                        fontSize: "1.4rem",
+                        fontSize: "1.8rem",
                         borderRadius: "10px",
                         marginTop: "4px",
                       }}
@@ -84,11 +86,12 @@ const TestVideo = () => {
                     <div
                       className="information-text"
                       style={{
-                        fontSize: "0.5rem",
+                        fontSize: "1.2rem",
                         marginTop: "2px",
+                        display: "flex",
                       }}
                     >
-                      상세 정보
+                      상세정보
                     </div>
                   </button>
                 </div>

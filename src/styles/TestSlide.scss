@@ -27,12 +27,12 @@
   transform: scale(1);
 }
 
-svg {
-  width: 300px !important;
-  height: 390px;
-  margin-left: -75%;
-  border: 5px solid red;
-}
+// svg { 흥진이형 이부분 아이콘 가져오면 가져온 아이콘 마다 다 적용이 되서 이 부분 className으로 수정해서 넣어 주세요
+//   width: 300px !important;
+//   height: 390px;
+//   margin-left: -75%;
+//   border: 5px solid red;
+// }
 
 .slide-body {
   height: 500px;
