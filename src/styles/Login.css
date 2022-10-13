@@ -123,13 +123,10 @@
   text-decoration: none;
 }
 
-.login_box > .login_form > .help_box > .login_info_save > .login_save_box {
-  position: relative;
-}
-
 input[id="LoginSave"] {
   display: none;
 }
+
 input[id="LoginSave"] + label {
   display: inline-block;
   width: 17px;
@@ -154,7 +151,7 @@ input[id="LoginSave"]:checked + label::after {
 }
 
 .login_box > .login_form > .help_box .help > a {
-  margin-top: -2px;
+  margin-top: -1px;
 }
 
 .login_box > .login_form > .help_box .help > a:hover {

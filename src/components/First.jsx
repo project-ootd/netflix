@@ -1,26 +1,38 @@
 import React from "react";
 import logo from "../img/logo.png";
 import "../styles/First.css";
+// import { IoEarthOutline } from "react-icons/io";
+import { IoEarthOutline } from "react-icons/io5";
 
 const First = () => {
   return (
     <div>
       <div className="first_wrap">
         <div className="top_wrap flex flex_jc_sb">
-          <a href="/" className="logo">
+          <a href="/first" className="logo">
             <img src={logo} alt="LOGO" />
           </a>
 
-          <div className="icon">
-            <a href="/" className="login">
-              로그인
-            </a>
+          <div className="left_box flex ">
+            <div className="language">
+              <IoEarthOutline style={{ color: "red" }} />
+              <select name="language" id="language">
+                <option value="한국어">한국어</option>
+                <option value="English">English</option>
+              </select>
+            </div>
+
+            <div className="icon">
+              <a href="/login" className="login">
+                로그인
+              </a>
+            </div>
           </div>
         </div>
         <div className="style_box1"></div>
         <div className="style_box2"></div>
 
-        <div className="center_box flex felx_jc_c flex_ai_c">
+        <div className="center_box flex flex_jc_c flex_ai_c">
           <h1 className="center_h1">
             영화와 시리즈를 <br></br>무제한으로.
           </h1>
