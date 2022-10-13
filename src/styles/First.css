@@ -93,7 +93,25 @@ hr {
   height: 100%;
 }
 
-.first_wrap > .top_wrap > .icon {
+/* .first_wrap > .top_wrap > .left_box > .language::before {
+  content: "\e896";
+  color: white;
+} */
+.first_wrap > .top_wrap > .left_box > .language > select {
+  margin: 10px 30px 0 0;
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1px;
+}
+
+.first_wrap > .top_wrap .icon {
   margin: 10px 0 0;
   width: 80px;
   height: 35px;
@@ -105,7 +123,7 @@ hr {
   color: white;
 }
 
-.first_wrap > .top_wrap > .icon > a {
+.first_wrap > .top_wrap .icon > a {
   color: white;
   text-decoration: none;
 }

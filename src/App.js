@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="App">
       {/* <Header /> */}
-      {/* <First /> */}
+      <First />
       {/* <Login /> */}
 
       {/* <TestSlide /> */}
       {/* <TestVideo /> */}
-      <RankingSlide />
+      {/* <RankingSlide /> */}
 
       {/* <Main /> */}
     </div>
