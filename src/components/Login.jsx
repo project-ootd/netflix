@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Login.css";
 import logo from "../img/logo.png";
 
-const Join = () => {
+const Login = () => {
   return (
     <div>
       <div className="bc_opacity"></div>
@@ -65,7 +65,8 @@ const Join = () => {
           </div>
         </div>
       </div>
-      <div className="footer_wrap">
+
+      <div className="login_footer_wrap">
         <div className="footer_box flex flex_jc_c">
           <div className="footer_text">
             <h4>질문이 있으신가요? 문의 전화: 010-1234-1234</h4>
@@ -110,4 +111,4 @@ const Join = () => {
   );
 };
 
-export default Join;
+export default Login;
