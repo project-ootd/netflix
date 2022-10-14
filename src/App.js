@@ -14,7 +14,7 @@ function App() {
       {/* <Login /> */}
       {/* <Slides /> */}
       {/* <TestVideo /> */}
-      {/* <RankingSlide /> */}
+      <RankingSlide />
       {/* <Main /> */}
     </div>
   );

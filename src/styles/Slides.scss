@@ -1,0 +1,58 @@
+.korean-drama-text {
+  text-align: left;
+}
+
+.kDramaThumbnail {
+  //   margin-left: 1000px;
+  border-radius: 5%;
+}
+
+/* 화살표 커스터마이징 */
+
+/* 화살표 이미지 */
+.slick-prev:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
+  margin-left: 10px;
+}
+
+.slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
+  margin-left: 10px;
+}
+
+/* 화살표 모션 */
+.slick-arrow {
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  width: 50px;
+}
+
+.slick-arrow:hover {
+  opacity: 0.5;
+  background-color: #141414;
+  height: 200px;
+  width: 50px;
+}
+
+.slick-prev {
+  // 좌측 화살표의 위치값을 넣어줍니다.
+  margin-left: 2vh;
+  z-index: 990;
+}
+
+.slick-prev::before {
+  font-size: 8rem !important;
+}
+
+.slick-next {
+  // 우측화살표의 위치값을 넣어줍니다.
+  margin-right: 2vh;
+  z-index: 990;
+}
+
+.slick-next::before {
+  font-size: 8rem !important;
+}
+/* 좌/우측 화살표 끝 */

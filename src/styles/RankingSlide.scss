@@ -1,100 +1,94 @@
-
 // body {
 //   background-color: blue;
 // }
 
-
 .slide-body {
-    color: black;
-    background-color:transparent;
-  }
-  
-  /* 오늘 대한민국의 TOp 10 시리즈 text */
-  .top-10-text {
-    text-align: left;
-  }
-  
-    /* 화살표 커스터마이징 */
-  
-    /* 화살표 이미지 */
-  .slick-prev:before {
-    content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
-  }
-  
-  .slick-next:before {
-    content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
-  }
-  
-  /* 화살표 모션 */
-  .slick-arrow{
-    opacity: 0;
-    transition: all .25s ease-in-out;
-    -moz-transition: all .25s ease-in-out;
-    -webkit-transition: all .25s ease-in-out;
-    width: 50px;
-  }
-    
-    .slick-arrow:hover{
-    opacity: 0.5;
-    background-color: #141414;
-    height:200px;
-    width: 50px;
-    margin-left: 0.1;
-    }
-  
-    .slick-prev {
-      // 좌측 화살표의 위치값을 넣어줍니다.
-      margin-left: 2vh;
-      z-index: 990;
-    }
-    
-    .slick-prev::before {
-      font-size: 7rem !important;
-    }
-    
-    .slick-next {
-      // 우측화살표의 위치값을 넣어줍니다.
-      margin-right: 2vh;
-      z-index: 990;
-    }
-    
-    .slick-next::before {
-      font-size: 7rem !important;
-    }
-    /* 좌/우측 화살표 끝 */
-  
-  
-  
-  /* rank number */
-  .boxart-size-7x10 .top-10-rank {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: auto;
-    top: 0;
-    width: 50%;
-  }
-  
-  .t_17d527 .svg-icon {
-    border: 1px solid transparent;
-    margin: 0 -1px;
-    overflow: visible;
-    transform: scale(1);
-  }
-  
-  .top-10-rank {
-    width: 123px;
-    height: 175px;
-  }
-  /* 화살표 커스터마이징 끝 */
-  
-  /* 랭킹 넘버 */
-  .ranking-img {
-    margin-left: -10%;
-  }
-  
-  .ranking-img > img {
-    width: 123px;
-    height: 175px;
-  }
-  
+  color: black;
+  background-color: transparent;
+}
+
+/* 오늘 대한민국의 TOp 10 시리즈 text */
+.top-10-text {
+  text-align: left;
+}
+
+/* 화살표 커스터마이징 */
+
+/* 화살표 이미지 */
+.slick-prev:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
+}
+
+.slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
+}
+
+/* 화살표 모션 */
+.slick-arrow {
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  width: 50px;
+}
+
+.slick-arrow:hover {
+  opacity: 0.5;
+  background-color: #141414;
+  height: 200px;
+  width: 50px;
+}
+
+.slick-prev {
+  // 좌측 화살표의 위치값을 넣어줍니다.
+  margin-left: 2vh;
+  z-index: 990;
+}
+
+.slick-prev::before {
+  font-size: 8rem !important;
+}
+
+.slick-next {
+  // 우측화살표의 위치값을 넣어줍니다.
+  margin-right: 2vh;
+  z-index: 990;
+}
+
+.slick-next::before {
+  font-size: 8rem !important;
+}
+/* 좌/우측 화살표 끝 */
+
+/* rank number */
+.boxart-size-7x10 .top-10-rank {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: auto;
+  top: 0;
+  width: 50%;
+}
+
+.t_17d527 .svg-icon {
+  border: 1px solid transparent;
+  margin: 0 -1px;
+  overflow: visible;
+  transform: scale(1);
+}
+
+.top-10-rank {
+  width: 123px;
+  height: 175px;
+}
+/* 화살표 커스터마이징 끝 */
+
+/* 랭킹 넘버 */
+.ranking-img {
+  margin-left: -10%;
+}
+
+.ranking-img > img {
+  width: 123px;
+  height: 175px;
+}
