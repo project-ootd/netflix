@@ -1,0 +1,31 @@
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.logout-btn,
+.another-profile,
+.view-more-item {
+  display: none;
+  position: relative;
+  left: 2 00px;
+}
+.view-more-controller:hover .logout-btn,
+.view-more-controller:hover .another-profile,
+.view-more-controller:hover .view-more-item,
+.view-more-controller:hover .view-more-arrow > li > a {
+  display: block;
+}
+.view-more-controller .view-more-arrow-icon {
+  display: none;
+}
+.view-more-controller:hover .view-more-arrow-icon {
+  display: block;
+  position: relative;
+}
+.view-more-button {
+  cursor: pointer;
+}

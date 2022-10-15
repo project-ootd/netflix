@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../img/logo.png";
-
-import "../styles/Header.scss";
+import "../styles/Header.css";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
+import { FaPen } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -102,8 +102,33 @@ const Header = () => {
                   <BsBellFill />
                 </a>
               </li>
-              <li style={{ marginRight: "20px" }}>
-                로그인 프로필 <GoTriangleDown />
+              <li
+                className="view-more-controller"
+                style={{ marginRight: "20px" }}
+              >
+                로그인 프로필 <GoTriangleDown className="view-more-button" />
+                <GoTriangleUp className="view-more-arrow-icon" />
+                <ul className="another-profile ">
+                  <li>
+                    <a href="/">다른 계정</a>
+                  </li>
+                </ul>
+                <ul className="view-more-item ">
+                  <li>
+                    <a href="/">프로필 관리</a>{" "}
+                  </li>
+                  <li>
+                    <a href="/">계정</a>{" "}
+                  </li>
+                  <li>
+                    <a href="/">고객 센터</a>
+                  </li>
+                </ul>
+                <ul className="logout-btn ">
+                  <li>
+                    <a href="/">넷플릭스 로그 아웃</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
