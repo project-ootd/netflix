@@ -12,9 +12,17 @@ function App() {
       {/* <Header /> */}
       {/* <First /> */}
       {/* <Login /> */}
+<<<<<<< HEAD
       {/* <Slides /> */}
       {/* <TestVideo /> */}
+=======
+
+      {/* <TestSlide /> */}
+      <TestVideo />
+
+>>>>>>> master
       {/* <RankingSlide /> */}
+
       {/* <Main /> */}
     </div>
   );
