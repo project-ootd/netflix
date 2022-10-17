@@ -3,21 +3,26 @@ import logo from "../img/logo.png";
 import "../styles/First.css";
 // import { IoEarthOutline } from "react-icons/io";
 import { IoEarthOutline } from "react-icons/io5";
+import earth from "../img/earth.png";
 
 const First = () => {
   return (
     <div>
       <div className="first_wrap">
         <div className="top_wrap flex flex_jc_sb">
-          <a href="/first" className="logo">
+          <a href="/" className="logo">
             <img src={logo} alt="LOGO" />
           </a>
 
           <div className="left_box flex ">
             <div className="language">
-              <IoEarthOutline style={{ color: "red" }} />
-              <select name="language" id="language">
-                <option value="한국어">한국어</option>
+              {/* <div className="test_icon"></div> */}
+              <select name="language" id="language" className="test_icon">
+                <option value="Korea">
+                  {/* <img src={earth} style={{ width: "10px", height: "10px" }} /> */}
+                  {/* <IoEarthOutline style={{ color: "red" }} /> */}
+                  한국어
+                </option>
                 <option value="English">English</option>
               </select>
             </div>
@@ -47,7 +52,7 @@ const First = () => {
             <div className="email">
               <input type="text" size="50" placeholder="이메일 주소" />
             </div>
-            <a href="/" className="btn flex flex_jc-c flex_ai_c">
+            <a href="/regform" className="btn flex flex_jc-c flex_ai_c">
               시작하기 &gt;{" "}
             </a>
           </div>
