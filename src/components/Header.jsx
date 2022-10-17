@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../img/logo.png";
-import "../styles/Header.css";
+import "../styles/Test.css";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
@@ -17,6 +17,7 @@ const Header = () => {
         color: "white",
         backgroundColor: "black",
         zIndex: "99999",
+        position: "relative",
       }}
     >
       {" "}
@@ -85,7 +86,7 @@ const Header = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "flex-end",
-                width: "100%",
+                width: "90%",
                 height: "100%",
               }}
             >
@@ -106,14 +107,20 @@ const Header = () => {
                 className="view-more-controller"
                 style={{ marginRight: "20px" }}
               >
-                로그인 프로필 <GoTriangleDown className="view-more-button" />
-                <GoTriangleUp className="view-more-arrow-icon" />
-                <ul className="another-profile ">
+                <div style={{ displya: "flex" }}>
+                  <img
+                    src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229"
+                    alt=""
+                  />
+                  <GoTriangleDown className="view-more-button" />
+                </div>
+                <div className="view-item-arrow">
+                  <GoTriangleUp className="" />
+                </div>
+                <ul className="sub-menu-list ">
                   <li>
                     <a href="/">다른 계정</a>
                   </li>
-                </ul>
-                <ul className="view-more-item ">
                   <li>
                     <a href="/">프로필 관리</a>{" "}
                   </li>
@@ -123,10 +130,8 @@ const Header = () => {
                   <li>
                     <a href="/">고객 센터</a>
                   </li>
-                </ul>
-                <ul className="logout-btn ">
                   <li>
-                    <a href="/">넷플릭스 로그 아웃</a>
+                    <a href="/">넷플릭스 로그아웃</a>
                   </li>
                 </ul>
               </li>
