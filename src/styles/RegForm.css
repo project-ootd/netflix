@@ -1,0 +1,234 @@
+.regForm_top_wrap {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+.regForm_top_wrap > .logo {
+  margin: 20px 40px 10px;
+  width: 180px;
+}
+
+.regForm_top_wrap > .login {
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 40px;
+}
+
+.regForm_top_wrap > .login:hover {
+  text-decoration: underline;
+}
+
+.contain_wrap {
+  width: 100%;
+}
+
+.contain_wrap > .contain_box {
+  max-width: 440px;
+  margin: 40px auto 150px;
+  text-align: start;
+}
+
+.contain_wrap > .contain_box > p {
+  font-size: 13px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.contain_wrap > .contain_box > h1 {
+  margin: 0;
+}
+
+.contain_wrap > .contain_box > .contain_text {
+  font-size: 18px;
+  line-height: 37px;
+  margin: 8px 0;
+}
+
+.contain_wrap > .contain_box > .login_form {
+  width: 100%;
+}
+
+.contain_wrap > .contain_box > .login_form > input {
+  width: calc(100% - 40px);
+  padding: 20px 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[id="checkBox1"],
+input[id="checkBox2"] {
+  display: none;
+}
+
+input[id="checkBox1"] + label {
+  display: inline-block;
+  width: 35px;
+  height: 25px;
+  border-radius: 2px;
+  border: 1px solid #3e3e3e;
+
+  position: relative;
+}
+
+input[id="checkBox2"] + label {
+  display: inline-block;
+  width: 29px;
+  height: 25px;
+  border-radius: 2px;
+  border: 1px solid #3e3e3e;
+  position: relative;
+}
+
+input[id="checkBox1"]:checked + label::after,
+input[id="checkBox2"]:checked + label::after {
+  content: "✔";
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  top: -2px;
+  left: 3px;
+}
+
+.contain_wrap
+  > .contain_box
+  > .login_form
+  > .check_box_wrap
+  > .check_box1
+  > .check_text1,
+.contain_wrap
+  > .contain_box
+  > .login_form
+  > .check_box_wrap
+  > .check_box2
+  > .check_text2 {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.contain_wrap > .contain_box > .login_form > .check_box_wrap > .check_box1 {
+  margin-bottom: 15px;
+}
+
+.contain_wrap
+  > .contain_box
+  > .login_form
+  > .check_box_wrap
+  > .check_box1
+  > .check_text1
+  > a {
+  color: #0071eb;
+}
+
+.contain_wrap
+  > .contain_box
+  > .login_form
+  > .check_box_wrap
+  > .check_box1
+  > .check_text1
+  > a:hover {
+  text-decoration: underline;
+}
+
+.contain_wrap > .contain_box > .login_form > .submit_btn {
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 25px;
+  font-size: 25px;
+  color: white;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+}
+
+.regForm_footer_wrap {
+  width: 100%;
+  background: #f3f3f3;
+  color: gray;
+  padding: 10px 0px 40px;
+}
+
+.regForm_footer_wrap > .footer_box {
+  width: calc(100% - 200px);
+  margin: 0 100px;
+}
+
+.regForm_footer_wrap > .footer_box > .footer_text {
+  width: 60%;
+  text-align: start;
+}
+
+.regForm_footer_wrap > .footer_box > .footer_text > h4 {
+  font-weight: 100;
+}
+
+.regForm_footer_wrap > .footer_box > .footer_text > .item_box {
+  width: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.regForm_footer_wrap > .footer_box > .footer_text > .item_box > .footer_item {
+  width: 25%;
+  margin: 10px 0;
+  text-align: start;
+}
+
+.regForm_footer_wrap
+  > .footer_box
+  > .footer_text
+  > .item_box
+  > .footer_item
+  > a:hover {
+  text-decoration: underline;
+}
+
+.regForm_footer_wrap
+  > .footer_box
+  > .footer_text
+  > .item_box
+  > .footer_item
+  > a {
+  text-decoration: none;
+  color: gray;
+}
+
+.regForm_footer_wrap > .copy_right_box {
+  width: 50%;
+  margin: 0 100px;
+  text-align: start;
+}
+
+.regForm_footer_wrap > .copy_right_box > h5 {
+  font-weight: 100;
+}
+
+.regForm_footer_wrap > .copy_right_box > .text {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.regForm_footer_wrap > .copy_right_box > .language {
+  margin: 10px 0;
+}
+
+.regForm_footer_wrap > .copy_right_box > .language > .test_icon {
+  width: 120px;
+  height: 40px;
+  background: none;
+  border: 1px solid #a6a6a6;
+  color: #333;
+  background: white;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+.regForm_footer_wrap > .copy_right_box > .language > .test_icon > option {
+  color: #333;
+}
