@@ -5,27 +5,48 @@ li {
   padding: 0;
   text-decoration: none;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.logout-btn,
-.another-profile,
-.view-more-item {
-  display: none;
+.view-more-controller {
+  display: inline-block;
+
+  text-align: center;
+  display: inline-block;
   position: relative;
-  left: 2 00px;
-}
-.view-more-controller:hover .logout-btn,
-.view-more-controller:hover .another-profile,
-.view-more-controller:hover .view-more-item,
-.view-more-controller:hover .view-more-arrow > li > a {
-  display: block;
-}
-.view-more-controller .view-more-arrow-icon {
-  display: none;
-}
-.view-more-controller:hover .view-more-arrow-icon {
-  display: block;
-  position: relative;
-}
-.view-more-button {
   cursor: pointer;
+}
+
+.sub-menu-list {
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.view-more-controller > .sub-menu-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.view-more-controller:hover > .sub-menu-list {
+  display: inline-block;
+  transition-duration: 150ms;
+}
+
+.view-more-controller > .sub-menu-list > li {
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.view-more-controller > .sub-menu-list {
+  top: 52px;
+  position: absolute;
+  color: white;
 }

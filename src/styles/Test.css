@@ -1,0 +1,50 @@
+/* 노멀라이즈 */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 메뉴 박스 */
+.view-more-controller {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+}
+.view-more-controller ul {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* 1차 메뉴 */
+.view-more-controller > .sub-menu-list {
+  position: absolute;
+  display: none;
+  /* padding: 0 20px; */
+  width: 180px;
+  margin: 20px 0 0 -100px;
+  padding: 20px 0;
+  line-height: 40px;
+}
+
+.view-more-controller > .view-item-arrow {
+  position: absolute;
+  display: none;
+  /* padding: 0 20px; */
+  margin-left: -15px;
+  z-index: 9999;
+}
+.view-more-controller:hover > .sub-menu-list,
+.view-more-controller:hover > .view-item-arrow {
+  display: inline-block;
+}
+.sub-menu-item {
+  display: flex;
+  justify-content: space-around;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
