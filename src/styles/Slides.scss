@@ -3,22 +3,28 @@
   padding: 4%;
 }
 
+.korean-drama-title {
+  display: flex;
+}
+
 /* 타이틀 커스터마이징 */
 
 .korean-drama-text {
+  position: relative;
+  width: 15vw;
+  text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
-  text-align: left;
   margin-bottom: 10px;
 }
 
 .korean-drama-text2 {
+  position: absolute;
   display: inline-block;
-  color: #54b9c5;
 
-  margin-left: 10px;
+  color: #54b9c5;
   font-size: 0.9vw;
-  opacity: 0;
+  opacity: 1;
   vertical-align: bottom;
   white-space: nowrap;
   max-width: 200px;
@@ -26,12 +32,14 @@
 }
 
 .korean-drama-arrow {
+  position: absolute;
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   vertical-align: bottom;
   white-space: nowrap;
-  margin-left: -30%;
+  // margin-left: -30%;
   color: #54b9c5;
+  border: 5px solid red;
 }
 
 .korean-drama-text:hover > a > div {

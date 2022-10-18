@@ -17,7 +17,7 @@ function App() {
 
       {/* <Login /> */}
       {/* <Slides /> */}
-      {/* <KoreanDrama /> */}
+      <KoreanDrama />
       {/* <TestVideo /> */}
       {/* <RankingSlide /> */}
 
