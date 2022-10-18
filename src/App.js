@@ -15,10 +15,9 @@ function App() {
       {/* <RegForm /> */}
 
       {/* <Login /> */}
-
-      {/* <TestSlide /> */}
+      <Slides />
       {/* <TestVideo /> */}
-      <RankingSlide />
+      {/* <RankingSlide /> */}
 
       {/* <Main /> */}
     </div>

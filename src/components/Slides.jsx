@@ -28,7 +28,7 @@ const Slides = () => {
   };
 
   const settings = {
-    dots: true, //carousel 밑에 지정 콘텐츠로 바로 이동할 수 있는 버튼을 뜻한다. flase 할시 사라진다.
+    dots: false, //carousel 밑에 지정 콘텐츠로 바로 이동할 수 있는 버튼을 뜻한다. flase 할시 사라진다.
     arrows: true,
     infinite: true, // 콘텐츠 끝까지 갔을 때 다음 콘텐츠를 처음 콘텐츠로 가져와 반복한다.
     slidesToShow: 5, //한 화면에 보이는 콘텐츠 개수를 말한다.
