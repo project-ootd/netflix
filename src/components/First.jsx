@@ -58,7 +58,7 @@ const First = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="first_hr" />
       <div className="con1_wrap flex flex_jc_sa flex_jc_c">
         <div className="text_box">
           <h1>TV로 즐기세요.</h1>
@@ -87,7 +87,7 @@ const First = () => {
         </div>
       </div>
 
-      <hr />
+      <hr className="first_hr" />
 
       <div className="con2_wrap flex flex_jc_sa flex_jc_c">
         <div className="video_box">
@@ -122,7 +122,7 @@ const First = () => {
         </div>
       </div>
 
-      <hr />
+      <hr className="first_hr" />
       <div className="con3_wrap flex flex_jc_sa flex_jc_c">
         <div className="text_box">
           <h1>다양한 디바이스에서 시청하세요.</h1>
@@ -151,7 +151,7 @@ const First = () => {
         </div>
       </div>
 
-      <hr />
+      <hr className="first_hr" />
 
       <div className="con4_wrap flex flex_jc_sa flex_jc_c">
         <div className="img_wrap">
@@ -171,7 +171,7 @@ const First = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="first_hr" />
 
       <div className="first_footer_wrap">
         <div className="footer_box flex flex_jc_c">
