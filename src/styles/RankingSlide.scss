@@ -77,18 +77,62 @@
   transform: scale(1);
 }
 
+.slider_items {
+  position: absolute;
+  // margin: 30px;
+  // height: 175px;
+  top: 20%;
+}
+
 .top-10-rank {
-  width: 123px;
+  width: 100px;
   height: 175px;
+  position: absolute;
+  left: -110px;
+}
+
+.top-10-rank-10 {
+  top: -1px;
+  width: 158px;
+  left: -168px;
 }
 /* 화살표 커스터마이징 끝 */
 
 /* 랭킹 넘버 */
 .ranking-img {
-  margin-left: -10%;
+  margin-left: -10px;
+  position: absolute;
 }
 
 .ranking-img > img {
   width: 123px;
   height: 175px;
+}
+
+.slick-track {
+  height: 250px;
+}
+
+.slick-track > .slick-slide {
+  width: 200px;
+}
+
+.slider_items:hover .ranking-img {
+  visibility: hidden;
+  transition: all 0.4s;
+}
+.slider_items > .video_box {
+  position: absolute;
+  visibility: hidden;
+  // transform: translate(-50%, -50%);
+  transition: all 0.1s;
+  top: 40px;
+  left: -80px;
+  z-index: 10;
+}
+
+.slider_items:hover > .video_box {
+  transform: scale(1.8);
+  visibility: visible;
+  transition: all 0.4s;
 }
