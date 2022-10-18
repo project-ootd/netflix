@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Slides = () => {
+const KoreanDrama = () => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -39,17 +39,16 @@ const Slides = () => {
   };
   return (
     <div className="korean-drama-slide">
-      <div className="korean-drama-text flex flex_jc_start">
-        <a href="#">
-          한국 드라마
-          <div className="korean-drama-text2">모두 보기</div>
-          <img
-            className="korean-drama-arrow"
-            src="https://img.icons8.com/metro/16/54b9c5/forward.png"
-          />
-        </a>
+      <div className="korean-drama-title">
+        <div className="korean-drama-text flex flex_jc_start">
+          <a href="#">한국 드라마</a>
+        </div>
+        <div className="korean-drama-text2">모두 보기</div>
+        <img
+          className="korean-drama-arrow"
+          src="https://img.icons8.com/metro/16/54b9c5/forward.png"
+        />
       </div>
-
       <Slider {...settings}>
         {/* 1번째 */}
         <div className="korean-drama kd-1">
@@ -163,4 +162,4 @@ const Slides = () => {
   );
 };
 
-export default Slides;
+export default KoreanDrama;

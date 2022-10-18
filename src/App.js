@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import RankingSlide from "./components/RankingSlide";
 import Slides from "./components/Slides";
 import RegForm from "./components/RegForm";
+import KoreanDrama from "./slides/KoreanDrama";
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
       {/* <RegForm /> */}
 
       {/* <Login /> */}
-
-      {/* <TestSlide /> */}
+      {/* <Slides /> */}
+      <KoreanDrama />
       {/* <TestVideo /> */}
-      <RankingSlide />
+      {/* <RankingSlide /> */}
 
       {/* <Main /> */}
     </div>
