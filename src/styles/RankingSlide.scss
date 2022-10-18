@@ -109,6 +109,9 @@
   height: 175px;
 }
 
+.slide-body {
+  overflow-x: hidden;
+}
 .slick-track {
   height: 250px;
 }
@@ -126,13 +129,15 @@
   visibility: hidden;
   // transform: translate(-50%, -50%);
   transition: all 0.1s;
-  top: 40px;
+  top: 0px;
   left: -80px;
   z-index: 10;
 }
 
 .slider_items:hover > .video_box {
-  transform: scale(1.8);
+  transform: scale(2.3);
+  border-radius: 25px;
   visibility: visible;
+  display: block;
   transition: all 0.4s;
 }
