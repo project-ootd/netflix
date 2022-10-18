@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Slides = () => {
+const KoreanDrama = () => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -163,4 +163,4 @@ const Slides = () => {
   );
 };
 
-export default Slides;
+export default KoreanDrama;
