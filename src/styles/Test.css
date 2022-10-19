@@ -23,7 +23,7 @@ a {
 /* 1차 메뉴 */
 .view-more-controller > .sub-menu-list {
   position: absolute;
-  display: none;
+  display: inline-block;
   /* padding: 0 20px; */
   width: 180px;
   margin: 20px 0 0 -100px;
@@ -33,7 +33,7 @@ a {
 
 .view-more-controller > .view-item-arrow {
   position: absolute;
-  display: none;
+  display: inline-block;
   /* padding: 0 20px; */
   margin-left: -15px;
   z-index: 9999;
@@ -44,7 +44,7 @@ a {
 }
 .sub-menu-item {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
