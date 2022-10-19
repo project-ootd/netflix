@@ -10,7 +10,7 @@ const KoreanDrama = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "flex", background: "" }}
+        style={{ ...style, display: "flex", backgroundColor: "" }}
         onClick={onClick}
       />
     );
@@ -39,17 +39,21 @@ const KoreanDrama = () => {
   };
   return (
     <div className="korean-drama-slide">
-      <div className="korean-drama-title">
-        <div className="korean-drama-text flex flex_jc_start">
-          <a href="#">한국 드라마</a>
-        </div>
-        <div className="korean-drama-text2">모두 보기</div>
-        <img
-          className="korean-drama-arrow"
-          src="https://img.icons8.com/metro/16/54b9c5/forward.png"
-        />
+      <div className="korean-drama-text flex flex_jc_start">
+        <a href="#">
+          <div className="korean-drama-text1">
+            한국 드라마
+            <div className="korean-drama-hover">
+              <div className="korean-drama-text2">모두 보기</div>
+              <img
+                className="korean-drama-arrow"
+                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+              />
+            </div>
+          </div>
+        </a>
       </div>
-      <Slider {...settings}>
+      <Slider className="korean-drama-arrows" {...settings}>
         {/* 1번째 */}
         <div className="korean-drama kd-1">
           <img
