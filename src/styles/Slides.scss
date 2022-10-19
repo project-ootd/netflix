@@ -1,6 +1,18 @@
-/* 슬라이드 패딩 */
-.korean-drama-slide {
-  padding: 4%;
+/* 슬라이드 */
+// .korean-drama-slide {
+//   box-sizing: border-box;
+//   margin: 3vw 0;
+//   padding: 0 4%;
+//   border: 5px solid gold;
+// }
+
+.slick-track {
+  border: 3px solid blue;
+  height: max-content;
+}
+
+.slick-slide {
+  height: max-content;
 }
 
 .korean-drama-title {
@@ -10,39 +22,55 @@
 /* 타이틀 커스터마이징 */
 
 .korean-drama-text {
+}
+
+.korean-drama-text1 {
   position: relative;
-  width: 15vw;
+  display: inline-block;
+  vertical-align: bottom;
+  // position: relative;
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
   margin-bottom: 10px;
 }
 
-.korean-drama-text2 {
-  position: absolute;
+.korean-drama-hover {
   display: inline-block;
+  position: relative;
+}
 
+.korean-drama-text2 {
+  // position: absolute;
+  display: inline-block;
   color: #54b9c5;
-  font-size: 0.9vw;
-  opacity: 1;
+  // margin-top: 10px;
+  font-size: 0.8vw;
+  opacity: 0;
   vertical-align: bottom;
   white-space: nowrap;
   max-width: 200px;
-  transition: max-width 1s, opacity 1s, transform 0.75s;
+  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
 }
 
 .korean-drama-arrow {
   position: absolute;
   display: inline-block;
-  opacity: 1;
+  margin-top: 17px;
+  margin-left: -100%;
+  opacity: 0;
   vertical-align: bottom;
   white-space: nowrap;
-  // margin-left: -30%;
   color: #54b9c5;
-  border: 5px solid red;
 }
 
-.korean-drama-text:hover > a > div {
+.korean-drama-hover {
+  position: absolute;
+}
+
+/* 타이틀 호버 */
+
+.korean-drama-text1:hover .korean-drama-text2 {
   display: inline-block;
   opacity: 1;
   max-width: 200px;
@@ -50,13 +78,12 @@
   transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
 }
 
-.korean-drama-text:hover > a > img {
+.korean-drama-text1:hover .korean-drama-arrow {
   display: inline-block;
-  margin-left: 0;
-  max-width: 300px;
   opacity: 1;
-  transform: translate(1vw);
-  transition: max-width 0.5s, opacity 0.5s, transform 0.2s;
+  max-width: 200px;
+  transform: translate(4.5vw);
+  transition: max-width 1s, opacity 0.5s, transform 0.5s;
 }
 
 /* 타이틀 커스터마이징 끝 */
@@ -77,49 +104,54 @@
 /* 화살표 커스터마이징 */
 
 /* 화살표 이미지 */
-.slick-prev:before {
+.slick-prev:before,
+.slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
-  margin-left: 10px;
+  // margin-left: 10px;
+  border: 3px solid green;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
-  margin-left: 10px;
 }
 
 /* 화살표 모션 */
 .slick-arrow {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
-  width: 50px;
+  height: max-content;
+  width: max-content;
+  border: 3px solid red;
 }
 
 .slick-arrow:hover {
   opacity: 0.5;
   background-color: #141414;
-  height: 200px;
-  width: 50px;
+  height: 17vh;
 }
 
-.slick-prev {
+.slick-prev,
+.slick-next {
   // 좌측 화살표의 위치값을 넣어줍니다.
   margin-left: 2vh;
-  z-index: 990;
+  z-index: 3;
 }
 
-.slick-prev::before {
-  font-size: 8rem !important;
-}
-
-.slick-next {
-  // 우측화살표의 위치값을 넣어줍니다.
-  margin-right: 2vh;
-  z-index: 990;
-}
-
+.slick-prev::before,
 .slick-next::before {
-  font-size: 8rem !important;
+  font-size: 20px !important;
 }
+
+// .slick-next {
+//   // 우측화살표의 위치값을 넣어줍니다.
+
+// }
+
+// .slick-next::before {
+// }
 /* 좌/우측 화살표 끝 */

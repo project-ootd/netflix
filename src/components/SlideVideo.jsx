@@ -17,11 +17,16 @@ const SlideVideo = () => {
       >
         <video
           src="videos/video_4.mp4"
-          width="200px"
-          height="150px"
+          width="140px"
+          height="80px"
           loop
           //   controls
           ref={videoRef}
+          style={{
+            borderRadius: "5%",
+            // border: "1px solid red",
+            marginTop: "15px",
+          }}
         ></video>
       </div>
     </div>
