@@ -87,6 +87,12 @@ const SlideVideo = () => {
             <div className="episode"> 에피소드 12개</div>
             <div className="HD">HD</div>
           </div>
+
+          <ul className="video_genre flex">
+            <li>범죄</li>
+            <li>한국 드라마</li>
+            <li>긴장감 넘치는</li>
+          </ul>
         </div>
       </div>
     </div>
