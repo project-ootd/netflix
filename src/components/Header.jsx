@@ -126,11 +126,12 @@ const Header = () => {
                   <GoTriangleUp className="" />
                 </div>
                 <ul className="sub-menu-list ">
-                  <li className="sub-menu-itme">
+                  <li className="sub-menu-item">
                     <a
                       href="/"
                       style={{
                         display: "flex",
+                        justifyContent: "start",
                         alignItems: "center",
                         marginLeft: "20px",
                       }}
@@ -143,7 +144,7 @@ const Header = () => {
                     </a>
                   </li>
                   <hr />
-                  <li>
+                  <li className="sub-menu-item">
                     <a href="/">
                       <svg
                         width="24"
@@ -165,7 +166,7 @@ const Header = () => {
                   </li>
                   <li className="sub-menu-item">
                     <a href="/">
-                      <BiUser /> 계정
+                      <BiUser style={{ fontSize: "28px" }} /> 계정
                     </a>{" "}
                   </li>
                   <li className="sub-menu-item">
