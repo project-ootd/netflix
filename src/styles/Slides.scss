@@ -8,7 +8,7 @@
 
 .slick-track {
   border: 3px solid blue;
-  height: max-content;
+  // height: max-content;
 }
 
 .slick-slide {
@@ -108,9 +108,7 @@
 .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
   // margin-left: 10px;
-  border: 3px solid green;
-  margin: 0 auto;
-  display: flex;
+  // display: flex;
   align-items: center;
 }
 
@@ -121,30 +119,32 @@
 /* 화살표 모션 */
 .slick-arrow {
   opacity: 1;
-  transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  height: max-content;
-  width: max-content;
+  // transition: all 0.25s ease-in-out;
+  // -moz-transition: all 0.25s ease-in-out;
+  // -webkit-transition: all 0.25s ease-in-out;
+  // height: max-content;
+  // width: max-content;
   border: 3px solid red;
+  margin-top: 0px;
 }
 
 .slick-arrow:hover {
-  opacity: 0.5;
+  opacity: 0.7;
   background-color: #141414;
-  height: 17vh;
+  border: 5px solid green;
 }
 
 .slick-prev,
 .slick-next {
   // 좌측 화살표의 위치값을 넣어줍니다.
-  margin-left: 2vh;
-  z-index: 3;
+  // margin-left: 2vh;
+  // z-index: 3;
 }
 
 .slick-prev::before,
 .slick-next::before {
-  font-size: 20px !important;
+  // font-size: 20px !important;
+  // margin-top: 0px;
 }
 
 // .slick-next {

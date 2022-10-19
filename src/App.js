@@ -19,8 +19,9 @@ function App() {
       {/* <Slides /> */}
       {/* <KoreanDrama /> */}
       {/* <TestVideo /> */}
-      <RankingSlide />
+
       <KoreanDrama />
+      <RankingSlide />
       {/* <SlideVideo /> */}
 
       {/* <Main /> */}

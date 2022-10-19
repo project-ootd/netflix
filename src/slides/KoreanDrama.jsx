@@ -10,7 +10,7 @@ const KoreanDrama = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "flex", background: "" }}
+        style={{ ...style, display: "flex", backgroundColor: "" }}
         onClick={onClick}
       />
     );
