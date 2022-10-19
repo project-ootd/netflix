@@ -5,30 +5,31 @@ import "../styles/TestVideo.scss";
 const TestVideo = () => {
   const [time, setTime] = useState(false);
   return (
-    <div className="billboard-row" style={{}}>
+    <div className="billboard-row">
       <div className="billboard-motion">
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
               {time ? (
                 <img
-                  src="https://img.youtube.com/vi/m29lUyODfzk/mqdefault.jpg"
+                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfEcipOm0J9H6qTiMsqtD40JF93dhiAJOCf-bS0YRKP9is4NEImpeX8rt-6SWFzIAZKI3cvRhhNILxSAHKycebQ4lNvh_1tY3i1mTpB7Wr79GBy6CW8gsWtFgJJ5BKfszzWVCmi41g0onCcSCvIVI2RnZJts3n1_KFkJ-K0JPf0s4TEuMxFdCx6E__Hq_5Qdn_0c3Ugvrlo0BjMQalq7IsfVzCgIwknDwuduipkO3Bw_KKwbn4jerFQcGAMTP9qoPiktO7V1ltzqa_ipHityQ2MlejsTx9RjLzDfiZob7gUoG3zvk_SmcxUfhfc7euAlMBeMn617w0gkZ2P2xirsg33wUbPxflAz_tWpwCL2uLsveQePpfENvb2E0-_MsR1_klrJjuUPMidlUwqUZ8yQmTPL5jmXXpCm53bL4CwDhMxZVHA61voURhaGw93OBJNJn7qMgcI2.webp?r=6db"
                   alt=""
                   style={{ width: "100%", height: "920px" }}
                 />
               ) : (
-                <iframe
+                <video
+                  className="player"
+                  src="/videos/main_video.mp4"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/m29lUyODfzk?autoplay=1&mute=1&version=3&loop=1&playlist=4OSFPrOL1LQ&rel=0&controls=0"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  style={{ position: "relative" }}
-                  allowfullscreen
-                />
+                  style={{
+                    position: "relative",
+                  }}
+                  autoPlay
+                  loop
+                  muted
+                ></video>
               )}
-
               <div
                 className="title-text"
                 style={{
@@ -40,8 +41,8 @@ const TestVideo = () => {
                 }}
               >
                 <img
-                  src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABUq6SWe3nmuxzdO9Gd3VFi303ou0BWefzxdJs-CmirWGUNQrk1agqq1ZkeuqErcYU7btG-xYQBh1hLe0tf_jRDzLajEKxQqa8Q-PPIGK7bM.webp?r=803"
-                  alt="슬기로운 의사 생활"
+                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABVpD2HLqSeIPYBbj82FQUt1gQmvRXsb1wYcbeSEJh2b06C2Th8QVSM9qx4odBsCWdEBhnhvnMEncjN--2_EOTUgQmCSq3GlNAFO8fVTtlrc.webp?r=e4c"
+                  alt="체인소 맨"
                   className="title-img"
                   style={{
                     width: "100%",
