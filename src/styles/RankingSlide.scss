@@ -7,23 +7,24 @@
 }
 
 /* 오늘 대한민국의 TOp 10 시리즈 text */
-.top-10-text {
+.slide-body .top-10-text {
   text-align: left;
+  margin-bottom: 0;
 }
 
 /* 화살표 커스터마이징 */
 
 /* 화살표 이미지 */
-.slick-prev:before {
+.slide-body .slick-prev:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
 }
 
-.slick-next:before {
+.slide-body .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
 }
 
 /* 화살표 모션 */
-.slick-arrow {
+.slide-body .slick-arrow {
   opacity: 0;
   transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -31,36 +32,37 @@
   width: 50px;
 }
 
-.slick-arrow:hover {
+.slide-body .slick-arrow:hover {
   opacity: 0.5;
   background-color: #141414;
   height: 200px;
   width: 50px;
 }
 
-.slick-prev {
+.slide-body .slick-prev {
   // 좌측 화살표의 위치값을 넣어줍니다.
   margin-left: 2vh;
+  left: -18px;
   z-index: 990;
 }
 
-.slick-prev::before {
+.slide-body .slick-prev::before {
   font-size: 8rem !important;
 }
 
-.slick-next {
+.slide-body .slick-next {
   // 우측화살표의 위치값을 넣어줍니다.
   margin-right: 2vh;
   z-index: 990;
 }
 
-.slick-next::before {
+.slide-body .slick-next::before {
   font-size: 8rem !important;
 }
 /* 좌/우측 화살표 끝 */
 
 /* rank number */
-.boxart-size-7x10 .top-10-rank {
+.slide-body .boxart-size-7x10 .top-10-rank {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -69,28 +71,29 @@
   width: 50%;
 }
 
-.t_17d527 .svg-icon {
+.slide-body .t_17d527 .svg-icon {
   border: 1px solid transparent;
   margin: 0 -1px;
   overflow: visible;
   transform: scale(1);
 }
 
-.slider_items {
+.slide-body .slider_items {
   position: absolute;
   // margin: 30px;
   // height: 175px;
   top: 20%;
+  margin-top: -1vh;
 }
 
-.top-10-rank {
+.slide-body .top-10-rank {
   width: 150px;
   height: 213px;
   position: absolute;
   left: -160px;
 }
 
-.top-10-rank-10 {
+.slide-body .top-10-rank-10 {
   top: -1px;
   width: 188px;
   left: -198px;
@@ -98,12 +101,12 @@
 /* 화살표 커스터마이징 끝 */
 
 /* 랭킹 넘버 */
-.ranking-img {
+.slide-body .ranking-img {
   margin-left: -10px;
   position: absolute;
 }
 
-.ranking-img > img {
+.slide-body .ranking-img > img {
   width: 150px;
   height: 213px;
   border-radius: 0 2% 2% 0;
@@ -112,11 +115,11 @@
 .slide-body {
   overflow-x: hidden;
 }
-.slick-track {
-  height: 35vh;
+.slide-body .slick-track {
+  height: 32vh;
 }
 
-.slick-track > .slick-slide {
+.slide-body .slick-track > .slick-slide {
   width: 180px;
 }
 
@@ -129,7 +132,9 @@
   position: absolute;
   visibility: hidden;
   // transform: translate(-50%, -50%);
-  transition: all 0.1s;
+  // transition: all 0.1s;
+  opacity: 0;
+  transition: all 0.4s linear;
   top: -55px;
   left: -155px;
   z-index: 10;
@@ -139,8 +144,10 @@
   // transform: scale(2.5);
   // border-radius: 25px;
   visibility: visible;
+  opacity: 1;
   // display: block;
-  transition: all 0.4s;
+  // transition: all 0.4s;
+  transition: all 0.4s linear;
 }
 
 .video_mini_detail {
