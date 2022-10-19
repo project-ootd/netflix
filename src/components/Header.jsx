@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../img/logo.png";
 import "../styles/Test.css";
 import { FaSearch } from "react-icons/fa";
@@ -12,6 +12,15 @@ import { BiUser } from "react-icons/bi";
 />;
 
 const Header = () => {
+  const [hide, SetHide] = useState(false);
+
+  const onClick = () => {
+    if (hide === true) {
+      SetHide(false);
+    } else {
+      SetHide(true);
+    }
+  };
   return (
     <div
       classnames="Header"
@@ -20,7 +29,7 @@ const Header = () => {
         width: "100%",
         padding: "10px 0",
         color: "white",
-        backgroundColor: "black",
+        backgroundColor: "rgb(20,20,20)",
         zIndex: "99999",
         position: "relative",
       }}
@@ -48,7 +57,7 @@ const Header = () => {
                   <img
                     src={logo}
                     alt=""
-                    style={{ width: "70%", marginTop: "10px" }}
+                    style={{ width: "70%", marginTop: "1vh" }}
                   />
                 </div>
               </li>
@@ -64,28 +73,28 @@ const Header = () => {
                 alignItems: "center",
               }}
             >
-              <li style={{ margin: "0 20px", fontWeight: "bold" }}>
+              <li style={{ margin: "0 2vw", fontWeight: "bold" }}>
                 <a href="/">홈</a>
               </li>
-              <li style={{ marginRight: "20px" }}>
+              <li style={{ marginRight: "2vw" }}>
                 <a href="/">시리즈</a>
               </li>
-              <li style={{ marginRight: "20px" }}>
+              <li style={{ marginRight: "2vw" }}>
                 <a href="/">영화</a>
               </li>
-              <li style={{ marginRight: "20px" }}>
+              <li style={{ marginRight: "2vw" }}>
                 <a href="/">NEW! 요즘 대세 컨텐츠</a>
               </li>
-              <li style={{ marginRight: "20px" }}>
+              <li style={{ marginRight: "2vw" }}>
                 <a href="/">내가 찜한 콘텐츠</a>
               </li>
-              <li style={{ marginRight: "20px" }}>
+              <li style={{ marginRight: "2vw" }}>
                 <a href="/">언어 별로 찾아보기</a>
               </li>
             </ul>
           </div>
           <div className="extra-service" style={{ width: "30%" }}>
-            <ul
+            <div
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -95,20 +104,45 @@ const Header = () => {
                 height: "100%",
               }}
             >
-              <li style={{ marginRight: "20px", fontSize: "30px" }}>
-                <a href="/">
+              <div
+                style={{ marginRight: "2vw", fontSize: "1.2vw" }}
+                onClick={onClick}
+              >
+                {hide ? (
+                  <div style={{ position: "relative" }}>
+                    {" "}
+                    <input
+                      type="text"
+                      style={{
+                        height: "3vh",
+                        border: "solid white 1px",
+                        background: "rgba(0,0,0,0.1)",
+                        zIndex: "2",
+                        width: "10vw",
+                        marginTop: "-30px",
+                      }}
+                      placeholder={"          제목,사람,장르"}
+                    />
+                    <FaSearch
+                      style={{
+                        position: "absolute",
+                        zIndex: "23",
+                        top: "1vh",
+                        left: "0.4vw",
+                      }}
+                    />{" "}
+                  </div>
+                ) : (
                   <FaSearch />
-                </a>
-              </li>
-              <li style={{ marginRight: "20px" }}>
+                )}
+              </div>
+              <div style={{ marginRight: "20px" }}>
                 <a href="/">키즈</a>
-              </li>
-              <li style={{ marginRight: "20px", fontSize: "30px" }}>
-                <a href="/">
-                  <BsBellFill />
-                </a>
-              </li>
-              <li
+              </div>
+              <div style={{ marginRight: "20px", fontSize: "30px" }}>
+                <BsBellFill />
+              </div>
+              <div
                 className="view-more-controller"
                 style={{ marginRight: "20px" }}
               >
@@ -161,18 +195,19 @@ const Header = () => {
                           fill="currentColor"
                         ></path>
                       </svg>{" "}
-                      프로필 관리
+                      <span style={{ marginLeft: "10px" }}>프로필 관리</span>
                     </a>{" "}
                   </li>
                   <li className="sub-menu-item">
                     <a href="/">
-                      <BiUser style={{ fontSize: "28px" }} /> 계정
+                      <BiUser style={{ fontSize: "28px" }} />{" "}
+                      <span style={{ marginLeft: "5px" }}>계정</span>
                     </a>{" "}
                   </li>
                   <li className="sub-menu-item">
                     <a href="/">
                       <span className="material-symbols-outlined">help</span>
-                      고객 센터
+                      <span style={{ marginLeft: "12px" }}>고객 센터</span>
                     </a>
                   </li>
                   <hr />
@@ -180,8 +215,8 @@ const Header = () => {
                     <a href="/">넷플릭스 로그아웃</a>
                   </li>
                 </ul>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
