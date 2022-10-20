@@ -20,7 +20,7 @@ function App() {
       {/* <KoreanDrama /> */}
       {/* <TestVideo /> */}
 
-      <KoreanDrama />
+      {/* <KoreanDrama /> */}
       <RankingSlide />
       {/* <SlideVideo /> */}
 
