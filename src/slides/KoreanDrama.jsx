@@ -71,9 +71,9 @@ const KoreanDrama = () => {
             aria-label="경이로운 소문"
             tabindex="0"
             aria-hidden="false"
-            class="slider-refocus"
+            className="slider-refocus"
           >
-            <div class="boxart-size-16x9 boxart-container boxart-rounded">
+            <div className="boxart-size-16x9 boxart-container boxart-rounded">
               <img
                 className="kDramaThumbnail"
                 src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABUema4uXkX3HEkAEZxpiRJrY1veD0F342M34gjyrXepLZ5tb2wdsPpXnyOWODl8wr9nOq_5HkarzVP2h-RWiN9tdSNDZW0oiGKA.webp?r=d96"
@@ -146,7 +146,7 @@ const KoreanDrama = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="svg-icon svg-icon-chevron-down"
+            className="svg-icon svg-icon-chevron-down"
           >
             <path
               fill-rule="evenodd"

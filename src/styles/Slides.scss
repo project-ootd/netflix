@@ -1,18 +1,17 @@
-/* 슬라이드 */
-// .korean-drama-slide {
-//   box-sizing: border-box;
-//   margin: 3vw 0;
-//   padding: 0 4%;
-//   border: 5px solid gold;
-// }
-
-.korean-drama-slide .slick-track {
-  border: 3px solid blue;
-  // height: max-content;
+/* 슬라이드 틀 */
+.korean-drama-slide {
+  box-sizing: border-box;
+  padding: 0 4%;
+  margin-bottom: 5vh;
 }
 
-.korean-drama-slide .slick-slide {
+.korean-drama-slide .slick-track {
+  // margin-bottom: 4vh;
   height: max-content;
+}
+
+.korean-drama-slide .slick-list {
+  // border : 3px solid red;
 }
 
 .korean-drama-title {
@@ -21,14 +20,10 @@
 
 /* 타이틀 커스터마이징 */
 
-.korean-drama-text {
-}
-
 .korean-drama-text1 {
   position: relative;
   display: inline-block;
   vertical-align: bottom;
-  // position: relative;
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
@@ -41,10 +36,10 @@
 }
 
 .korean-drama-text2 {
-  // position: absolute;
+  position: absolute;
   display: inline-block;
   color: #54b9c5;
-  // margin-top: 10px;
+  margin-top: 10px;
   font-size: 0.8vw;
   opacity: 0;
   vertical-align: bottom;
@@ -91,6 +86,7 @@
 /* 섬네일 이미지 커스터마이징 */
 
 .korean-drama {
+  position:relative;
   margin-right: 5px;
 }
 
@@ -107,8 +103,7 @@
 .korean-drama-slide .slick-prev:before,
 .korean-drama-slide .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
-  // margin-left: 10px;
-  // display: flex;
+  display: flex;
   align-items: center;
 }
 
@@ -118,20 +113,21 @@
 
 /* 화살표 모션 */
 .korean-drama-slide .slick-arrow {
-  opacity: 1;
-  // transition: all 0.25s ease-in-out;
-  // -moz-transition: all 0.25s ease-in-out;
-  // -webkit-transition: all 0.25s ease-in-out;
-  // height: max-content;
-  // width: max-content;
-  border: 3px solid red;
-  margin-top: 0px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.25s ease-in-out !important;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out !important;
+  align-self: center;
+  height: 17vh;
+  width: 2vw;
 }
 
 .korean-drama-slide .slick-arrow:hover {
+  
   opacity: 0.7;
   background-color: #141414;
-  border: 5px solid green;
+  
 }
 
 .korean-drama-slide .slick-prev {
@@ -147,20 +143,18 @@
 .korean-drama-slide .slick-next {
   // 좌측 화살표의 위치값을 넣어줍니다.
   // margin-left: 2vh;
-  // z-index: 3;
 }
 
 .korean-drama-slide .slick-prev::before,
 .korean-drama-slide .slick-next::before {
   // font-size: 20px !important;
-  // margin-top: 0px;
 }
 
-// .slick-next {
+.slick-next {
 //   // 우측화살표의 위치값을 넣어줍니다.
 
-// }
+}
 
-// .slick-next::before {
-// }
+.slick-next::before {
+}
 /* 좌/우측 화살표 끝 */

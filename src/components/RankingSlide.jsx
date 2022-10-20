@@ -42,7 +42,7 @@ const RankingSlide = () => {
   };
 
   return (
-    <div className="slide-body">
+    <div className="ranking-slide-body">
       <h2 className="top-10-text"> 오늘 대한민국의 TOP 10 시리즈 </h2>
       <Slider {...settings}>
         {/* rank 1 */}
