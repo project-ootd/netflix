@@ -20,16 +20,16 @@
 /* 화살표 커스터마이징 */
 
 /* 화살표 이미지 */
-.slick-prev:before {
+.ranking-slide-body .slick-prev:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
 }
 
-.slick-next:before {
+.ranking-slide-body .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
 }
 
 /* 화살표 모션 */
-.slick-arrow {
+.ranking-slide-body .slick-arrow {
   opacity: 0;
   transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -37,30 +37,30 @@
   width: 50px;
 }
 
-.slick-arrow:hover {
+.ranking-slide-body .slick-arrow:hover {
   opacity: 0.5;
   background-color: #141414;
   height: 200px;
   width: 50px;
 }
 
-.slick-prev {
+.ranking-slide-body .slick-prev {
   // 좌측 화살표의 위치값을 넣어줍니다.
   margin-left: 2vh;
   z-index: 990;
 }
 
-.slick-prev::before {
+.ranking-slide-body .slick-prev::before {
   font-size: 8rem !important;
 }
 
-.slick-next {
+.ranking-slide-body .slick-next {
   // 우측화살표의 위치값을 넣어줍니다.
   margin-right: 2vh;
   z-index: 990;
 }
 
-.slick-next::before {
+.ranking-slide-body .slick-next::before {
   font-size: 8rem !important;
 }
 /* 좌/우측 화살표 끝 */

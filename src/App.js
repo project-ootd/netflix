@@ -17,7 +17,7 @@ function App() {
       {/* <RegForm /> */}
       {/* <Login /> */}
       {/* <Slides /> */}
-      {/* <KoreanDrama /> */}
+      <KoreanDrama />
       {/* <TestVideo /> */}
 
       {/* <KoreanDrama /> */}
