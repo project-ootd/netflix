@@ -5,6 +5,8 @@ import {
   BsPlayFill,
   BsHandThumbsUp,
   BsChevronDown,
+  BsHandThumbsDown,
+  BsZoomIn,
 } from "react-icons/bs";
 
 const SlideVideo = () => {
@@ -67,6 +69,39 @@ const SlideVideo = () => {
                   position: "absolute",
                 }}
               />
+              <div className="evaluation_hover">
+                <div className="evaluation_icon1 evaluation_icons">
+                  <BsHandThumbsDown
+                    style={{
+                      fontSize: "20px",
+                    }}
+                  />
+                </div>
+                <div className="evaluation_icon2 evaluation_icons">
+                  <BsHandThumbsUp
+                    style={{
+                      fontSize: "20px",
+                    }}
+                  />
+                </div>
+                <div className="evaluation_icon3 evaluation_icons">
+                  <BsHandThumbsUp
+                    style={{
+                      fontSize: "20px",
+                    }}
+                  />
+                  <BsHandThumbsUp
+                    style={{
+                      fontSize: "20px",
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-20%, -55%)",
+                      zIndex: "10",
+                    }}
+                  />
+                </div>
+              </div>
             </a>
             <a className="ditail" href="/">
               <BsChevronDown

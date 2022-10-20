@@ -100,3 +100,46 @@
   width: 0;
   height: 0;
 }
+
+.evaluation:hover > .evaluation_hover {
+  transition: all 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+}
+
+.evaluation_hover {
+  top: -38%;
+  left: -50%;
+  transform: translate(-25%, 13%);
+  visibility: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  width: 100px;
+  padding: 8px 20px;
+  height: 35px;
+  border-radius: 50px;
+  background: #232323;
+  transition: all 0.4s linear;
+}
+
+.evaluation_icons {
+  padding: 8px;
+}
+
+.evaluation_icons:hover {
+  width: max-content;
+  height: max-content;
+  background: #80808033;
+  border-radius: 50%;
+}
+
+.evaluation_icon1 {
+  transform: scaleX(-1);
+}
+
+.evaluation_icon3 {
+  position: relative;
+}
