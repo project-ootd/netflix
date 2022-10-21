@@ -6,7 +6,7 @@ import "../styles/RankingSlide.scss";
 import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 
-const RankingSlide = () => {
+const RankingSlide = ({ openModal }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -90,7 +90,7 @@ const RankingSlide = () => {
             <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABSzEfY_25mkZ4wV3phQ584OGJHQ2c4sR3eff2JtoOkS5qRXHgACd9AL4Js0UJ1sWWD77DfLDbS7biAxl6HYpvUWs2_TptKV71mIh6R0sI-lSB5M4aC8x3uHwcKZsZObMzM2Nmw.jpg?r=ec8" />
           </div>
           <div className="video_box">
-            <SlideVideo />
+            <SlideVideo openModal={openModal} />
           </div>
         </div>
 
