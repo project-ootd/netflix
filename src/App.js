@@ -8,6 +8,7 @@ import Slides from "./components/Slides";
 import RegForm from "./components/RegForm";
 import KoreanDrama from "./slides/KoreanDrama";
 import SlideVideo from "./components/SlideVideo";
+import Test from "./slides/Test";
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
       {/* <RegForm /> */}
       {/* <Login /> */}
       {/* <Slides /> */}
-      <KoreanDrama />
+      {/* <KoreanDrama /> */}
       {/* <TestVideo /> */}
-
+      {/* <Test /> */}
       {/* <KoreanDrama /> */}
       <RankingSlide />
       {/* <SlideVideo /> */}
