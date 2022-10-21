@@ -2,39 +2,42 @@ import React, { useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "../styles/TestVideo.scss";
+import $ from "jquery";
 const TestVideo = () => {
-  const [time, setTime] = useState(false);
+  const [time, setTime] = useState(true);
+  const [check, SetCheck] = useState(1);
+
   return (
-    <div className="billboard-row">
+    <div className="billboard-row" style={{ position: "relative" }}>
       <div className="billboard-motion">
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
               {time ? (
                 <img
-                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfEcipOm0J9H6qTiMsqtD40JF93dhiAJOCf-bS0YRKP9is4NEImpeX8rt-6SWFzIAZKI3cvRhhNILxSAHKycebQ4lNvh_1tY3i1mTpB7Wr79GBy6CW8gsWtFgJJ5BKfszzWVCmi41g0onCcSCvIVI2RnZJts3n1_KFkJ-K0JPf0s4TEuMxFdCx6E__Hq_5Qdn_0c3Ugvrlo0BjMQalq7IsfVzCgIwknDwuduipkO3Bw_KKwbn4jerFQcGAMTP9qoPiktO7V1ltzqa_ipHityQ2MlejsTx9RjLzDfiZob7gUoG3zvk_SmcxUfhfc7euAlMBeMn617w0gkZ2P2xirsg33wUbPxflAz_tWpwCL2uLsveQePpfENvb2E0-_MsR1_klrJjuUPMidlUwqUZ8yQmTPL5jmXXpCm53bL4CwDhMxZVHA61voURhaGw93OBJNJn7qMgcI2.webp?r=6db"
+                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVz7Jt44hr7JRKCx1uRU1f7TM_JnzI8tN_PWK3EKnraE8GMhu1eSwP589ZkL2phbkp0n197H041fQVQQ_95zZk_qhTDDWuY3c3gH.webp?r=21f"
                   alt=""
                   style={{ width: "100%", height: "920px" }}
                 />
               ) : (
                 <video
                   className="player"
-                  src="/videos/main_video.mp4"
                   width="100%"
                   height="100%"
                   style={{
                     position: "relative",
                   }}
                   autoPlay
-                  loop
                   muted
-                ></video>
+                >
+                  <source src="/videos/main_video.mp4" type="video/mp4" />
+                </video>
               )}
               <div
                 className="title-text"
                 style={{
                   position: "absolute",
-                  ZIndex: "9999",
+                  ZIndex: "3",
                   top: "50%",
                   left: "20px",
                   width: "500px",

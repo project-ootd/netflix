@@ -29,9 +29,12 @@ const Header = () => {
         width: "100%",
         padding: "10px 0",
         color: "white",
-        backgroundColor: "rgb(20,20,20)",
-        zIndex: "99999",
-        position: "relative",
+        backgroundColor: "rgba(20,20,20,0)",
+        zIndex: "9",
+        position: "fixed",
+        top: "0",
+        left: "0",
+        right: "0",
       }}
     >
       {" "}
@@ -160,19 +163,19 @@ const Header = () => {
                   <GoTriangleUp className="" />
                 </div>
                 <ul className="sub-menu-list ">
-                  <li className="sub-menu-item">
+                  <li className="sub-menu-item" style={{ paddingTop: "10px" }}>
                     <a
                       href="/"
                       style={{
                         display: "flex",
                         justifyContent: "start",
                         alignItems: "center",
-                        marginLeft: "20px",
                       }}
                     >
                       <img
                         src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdYJV5wt63AcxNaDoqDXUhqZb55oN5Dxt1m-Zdn_z5rn_hIq9m8dA8JB2xdcPmrY3yXnlVWYKPXnOrbv2QN4aEVU28dESJg.png?r=1d4"
                         alt=""
+                        style={{}}
                       />
                       <div style={{ marginLeft: "10px" }}>anoter porfile</div>
                     </a>
@@ -211,7 +214,7 @@ const Header = () => {
                     </a>
                   </li>
                   <hr />
-                  <li>
+                  <li style={{ paddingBottom: "10px" }}>
                     <a href="/">넷플릭스 로그아웃</a>
                   </li>
                 </ul>
