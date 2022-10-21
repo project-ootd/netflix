@@ -10,7 +10,7 @@ const KoreanDrama = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "flex", background: "" }}
+        style={{ ...style, display: "flex", backgroundColor: "" }}
         onClick={onClick}
       />
     );
@@ -39,17 +39,21 @@ const KoreanDrama = () => {
   };
   return (
     <div className="korean-drama-slide">
-      <div className="korean-drama-title">
-        <div className="korean-drama-text flex flex_jc_start">
-          <a href="#">한국 드라마</a>
-        </div>
-        <div className="korean-drama-text2">모두 보기</div>
-        <img
-          className="korean-drama-arrow"
-          src="https://img.icons8.com/metro/16/54b9c5/forward.png"
-        />
+      <div className="korean-drama-text flex flex_jc_start">
+        <a href="#">
+          <div className="korean-drama-text1">
+            한국 드라마
+            <div className="korean-drama-hover">
+              <div className="korean-drama-text2">모두 보기</div>
+              <img
+                className="korean-drama-arrow"
+                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+              />
+            </div>
+          </div>
+        </a>
       </div>
-      <Slider {...settings}>
+      <Slider className="korean-drama-arrows" {...settings}>
         {/* 1번째 */}
         <div className="korean-drama kd-1">
           <img
@@ -67,9 +71,9 @@ const KoreanDrama = () => {
             aria-label="경이로운 소문"
             tabindex="0"
             aria-hidden="false"
-            class="slider-refocus"
+            className="slider-refocus"
           >
-            <div class="boxart-size-16x9 boxart-container boxart-rounded">
+            <div className="boxart-size-16x9 boxart-container boxart-rounded">
               <img
                 className="kDramaThumbnail"
                 src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABUema4uXkX3HEkAEZxpiRJrY1veD0F342M34gjyrXepLZ5tb2wdsPpXnyOWODl8wr9nOq_5HkarzVP2h-RWiN9tdSNDZW0oiGKA.webp?r=d96"
@@ -142,7 +146,7 @@ const KoreanDrama = () => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="svg-icon svg-icon-chevron-down"
+            className="svg-icon svg-icon-chevron-down"
           >
             <path
               fill-rule="evenodd"

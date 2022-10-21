@@ -1,0 +1,145 @@
+.hover_box {
+  width: 100%;
+  position: relative;
+  color: white;
+  box-sizing: border-box;
+}
+
+.hover_box > .video_text {
+  width: calc(100% - 40px);
+  height: 90px;
+  background: #141414;
+  position: absolute;
+  margin-top: -25px;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+}
+
+.hover_box > .video_text > .video_icon_box > .ditail {
+  margin-left: 130px;
+}
+
+.hover_box > .video_text > .video_icon_box > .play {
+  border: 2px solid white;
+  background: white;
+}
+
+.hover_box > .video_text > .video_icon_box > .play:hover {
+  border: 2px solid #e6e6e6;
+  background: #e6e6e6;
+}
+
+.hover_box > .video_text > .video_icon_box > * {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #909090;
+  background: #232323;
+}
+
+.hover_box > .video_text > .video_icon_box > *:hover {
+  border: 2px solid white;
+}
+
+.video_mini_detail {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.video_mini_detail > .text1 {
+  color: #46d369;
+  font-weight: 700;
+}
+
+.video_mini_detail > .view_age {
+  border: 1px solid #909090;
+  padding: 2px 8px;
+  line-height: 12px;
+}
+
+.video_mini_detail > .HD {
+  border: 1px solid #909090;
+  padding: 3px 5px;
+  border-radius: 10%;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.video_mini_detail > div {
+  margin-right: 10px;
+}
+
+.video_genre {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.video_genre > li:first-child {
+  margin: 0;
+  padding: 0;
+}
+
+.video_genre > li {
+  margin-left: 13px;
+  position: relative;
+}
+
+.video_genre > li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #909090;
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  transform: translateY(-50%);
+}
+
+.video_genre > li:first-child:before {
+  width: 0;
+  height: 0;
+}
+
+.evaluation:hover > .evaluation_hover {
+  transition: all 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+}
+
+.evaluation_hover {
+  top: -38%;
+  left: -50%;
+  transform: translate(-25%, 13%);
+  visibility: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  width: 100px;
+  padding: 8px 20px;
+  height: 35px;
+  border-radius: 50px;
+  background: #232323;
+  transition: all 0.4s linear;
+}
+
+.evaluation_icons {
+  padding: 8px;
+}
+
+.evaluation_icons:hover {
+  width: max-content;
+  height: max-content;
+  background: #80808033;
+  border-radius: 50%;
+}
+
+.evaluation_icon1 {
+  transform: scaleX(-1);
+}
+
+.evaluation_icon3 {
+  position: relative;
+}

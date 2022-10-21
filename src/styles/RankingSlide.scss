@@ -3,27 +3,33 @@
 // }
 
 .slide-body {
+  color: white;
   background-color: transparent;
+  position: relative;
+  z-index: 20;
 }
 
 /* 오늘 대한민국의 TOp 10 시리즈 text */
 .top-10-text {
   text-align: left;
+  margin: 0px 3% -40px;
+  font-size: 25px;
+  font-weight: 100;
 }
 
 /* 화살표 커스터마이징 */
 
 /* 화살표 이미지 */
-.slick-prev:before {
+.ranking-slide-body .slick-prev:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
 }
 
-.slick-next:before {
+.ranking-slide-body .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
 }
 
 /* 화살표 모션 */
-.slick-arrow {
+.ranking-slide-body .slick-arrow {
   opacity: 0;
   transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -31,30 +37,30 @@
   width: 50px;
 }
 
-.slick-arrow:hover {
+.ranking-slide-body .slick-arrow:hover {
   opacity: 0.5;
   background-color: #141414;
   height: 200px;
   width: 50px;
 }
 
-.slick-prev {
+.ranking-slide-body .slick-prev {
   // 좌측 화살표의 위치값을 넣어줍니다.
   margin-left: 2vh;
   z-index: 990;
 }
 
-.slick-prev::before {
+.ranking-slide-body .slick-prev::before {
   font-size: 8rem !important;
 }
 
-.slick-next {
+.ranking-slide-body .slick-next {
   // 우측화살표의 위치값을 넣어줍니다.
   margin-right: 2vh;
   z-index: 990;
 }
 
-.slick-next::before {
+.ranking-slide-body .slick-next::before {
   font-size: 8rem !important;
 }
 /* 좌/우측 화살표 끝 */
@@ -84,16 +90,16 @@
 }
 
 .top-10-rank {
-  width: 100px;
-  height: 175px;
+  width: 150px;
+  height: 213px;
   position: absolute;
-  left: -110px;
+  left: -160px;
 }
 
 .top-10-rank-10 {
   top: -1px;
-  width: 158px;
-  left: -168px;
+  width: 188px;
+  left: -198px;
 }
 /* 화살표 커스터마이징 끝 */
 
@@ -104,39 +110,43 @@
 }
 
 .ranking-img > img {
-  width: 123px;
-  height: 175px;
+  width: 150px;
+  height: 213px;
+  border-radius: 0 2% 2% 0;
 }
 
 .slide-body {
   overflow-x: hidden;
 }
 .slick-track {
-  height: 250px;
+  height: 35vh;
 }
 
 .slick-track > .slick-slide {
-  width: 200px;
+  width: 180px;
 }
 
 .slider_items:hover .ranking-img {
   visibility: hidden;
   transition: all 0.4s;
 }
+
 .slider_items > .video_box {
   position: absolute;
   visibility: hidden;
+  opacity: 0;
   // transform: translate(-50%, -50%);
-  transition: all 0.1s;
-  top: 0px;
-  left: -80px;
+  transition: all 0.4s linear;
+  top: -55px;
+  left: -155px;
   z-index: 10;
 }
 
 .slider_items:hover > .video_box {
-  transform: scale(2.3);
-  border-radius: 25px;
+  // transform: scale(2.5);
+  // border-radius: 25px;
   visibility: visible;
-  display: block;
-  transition: all 0.4s;
+  opacity: 1;
+  // display: block;
+  transition: all 0.4s linear;
 }
