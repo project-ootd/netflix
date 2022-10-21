@@ -24,11 +24,11 @@ a {
 .view-more-controller > .sub-menu-list {
   position: absolute;
   display: none;
-  /* padding: 0 20px; */
-  width: 180px;
+  width: 220px;
   margin: 20px 0 0 -100px;
-  padding: 20px 0;
+
   line-height: 40px;
+  right: 0;
 }
 
 .view-more-controller > .view-item-arrow {

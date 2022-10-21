@@ -42,7 +42,14 @@ const RankingSlide = () => {
   };
 
   return (
+<<<<<<< HEAD
+    <div
+      className="slide-body"
+      style={{ marginTop: "-18vh", zIndex: "3", position: "relative" }}
+    >
+=======
     <div className="ranking-slide-body">
+>>>>>>> 92e38c9b645f26090adcd3a66e42fe490e6f5adb
       <h2 className="top-10-text"> 오늘 대한민국의 TOP 10 시리즈 </h2>
       <Slider {...settings}>
         {/* rank 1 */}
