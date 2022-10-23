@@ -12,16 +12,16 @@ import SlideVideo from "./components/SlideVideo";
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
       {/* <Slides /> */}
-      <KoreanDrama />
-      {/* <TestVideo /> */}
-
       {/* <KoreanDrama /> */}
+      <TestVideo />
+
       <RankingSlide />
+      <KoreanDrama />
       {/* <SlideVideo /> */}
 
       {/* <Main /> */}
