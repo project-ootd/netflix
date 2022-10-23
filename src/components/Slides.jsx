@@ -39,15 +39,22 @@ const Slides = () => {
   };
   return (
     <div className="korean-drama-slide">
-      <div className="korean-drama-text flex flex_jc_start">
-        <a href="#">
-          한국 드라마
-          <div className="korean-drama-text2">모두 보기</div>
-          <img
-            className="korean-drama-arrow"
-            src="https://img.icons8.com/metro/16/54b9c5/forward.png"
-          />
-        </a>
+      <div
+        class="lolomoRow lolomoRow_title_card ltr-0"
+        data-list-context="trendingNow"
+      >
+        <h2 class="rowHeader ltr-0">
+          <a historystate="[object Object]" class="rowTitle ltr-0">
+            <div class="row-header-title">한국 드라마</div>
+            <div class="aro-row-header more-visible">
+              <div class="see-all-link">모두 보기</div>
+              <img
+                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                class="aro-row-chevron icon-akiraCaretRight"
+              />
+            </div>
+          </a>
+        </h2>
       </div>
 
       <Slider {...settings}>

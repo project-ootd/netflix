@@ -165,6 +165,60 @@ const KoreanDrama = () => {
             alt=""
           />
         </div>
+        <div class="sliderMask showPeek">
+          <div
+            class="sliderContent row-with-x-columns"
+            style="-webkit-transform: ;-ms-transform: ;transform: "
+          >
+            <div class="slider-item slider-item-0">
+              <div class="title-card-container ltr-0">
+                <div id="title-card-3-0" class="title-card">
+                  <div class="ptrack-content">
+                    <a
+                      href="/watch/81224926?tctx=3%2C0%2C%2C%2C%2C%2C%2C%2C"
+                      role="link"
+                      aria-label="연애의 참견"
+                      tabindex="0"
+                      aria-hidden="false"
+                      class="slider-refocus"
+                    >
+                      <div class="boxart-size-16x9 boxart-container boxart-rounded">
+                        <img
+                          class="boxart-image boxart-image-in-padded-container"
+                          src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABcuQivqjV80EJO5KSXFfoOnKlXnNwmEN_tiNiDKvv4fYFdd8LlEYnkJAelboPe4tbGrSyDyJDFw5NE3KOs1ccC-HDiJ5YKizauWcqbyW7_PtuOwYuaZkVsVcWSgsw6n7HTvmGeXesrKe2zle1s7vMySWfaeRzYzcWzo8XNP25I9uMzSXEdeYZekALvLciBgT2lsmze4ErjeVbbGYuw3MwZVtnAMxCxA6AcV_x4OncGi6K7Tx--op5MXH5sbHZFO-PiGxgVN7LeFY_D-S2gsZqwcgLBS29bLfBIXOpHQMDJZ94LUGs45qYLneuf42dKeev_5cQ6kOvryseMcvJ1dymO1q-TaSCK9_mPlTpU-8JpJ3T-SSu8sr2YLjBa6XODOsAkXhLmowRJfaY-IklOlx8hTG5GYicoswMB_XXDjV4_LWcelD4or1ILz4fYn_9DUa6gF-qG7B.webp?r=b3e"
+                          alt=""
+                        />
+                        <div class="fallback-text-container" aria-hidden="true">
+                          <p class="fallback-text">연애의 참견</p>
+                        </div>
+                      </div>
+                      <div class="click-to-change-JAW-indicator">
+                        <div class="bob-jawbone-chevron">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="svg-icon svg-icon-chevron-down"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="bob-container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Slider>
     </div>
   );
