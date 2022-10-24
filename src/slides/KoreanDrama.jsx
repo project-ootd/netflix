@@ -16,6 +16,7 @@ const KoreanDrama = () => {
     );
   };
 
+
   const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -62,6 +63,7 @@ const KoreanDrama = () => {
             alt=""
           />
         </div>
+
 
         {/* 2번째 */}
         <div className="korean-drama kd-2">
