@@ -11,6 +11,7 @@ import SlideVideo from "./components/SlideVideo";
 import Test from "./slides/Test";
 import Modal from "./components/Modal";
 import { useState } from "react";
+import ChoiceProfile from "./components/ChoiceProfile";
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -27,18 +28,15 @@ function App() {
       <Modal open={modalOpen} close={closeModal} header="Modal heading">
       </Modal> */}
 
-      {/* <Header /> */}
+      <Header />
+      {/* <ChoiceProfile /> */}
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
       {/* <Slides /> */}
-      {/* <KoreanDrama /> */}
-      {/* <TestVideo /> */}
-      {/* <Test /> */}
-      {/* <KoreanDrama /> */}
-      <RankingSlide openModal={openModal} />
+      <KoreanDrama />
 
-      <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
+      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal> */}
       {/* <SlideVideo /> */}
       {/* <Main /> */}
     </div>
