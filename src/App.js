@@ -27,13 +27,13 @@ function App() {
       <Modal open={modalOpen} close={closeModal} header="Modal heading">
       </Modal> */}
 
-      {/* <Header /> */}
+      <Header />
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
       {/* <Slides /> */}
       {/* <KoreanDrama /> */}
-      {/* <TestVideo /> */}
+      <TestVideo />
       {/* <Test /> */}
       {/* <KoreanDrama /> */}
       <RankingSlide openModal={openModal} />
