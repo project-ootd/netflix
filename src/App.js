@@ -32,6 +32,7 @@ function App() {
       {/* <Header /> */}
       {/* <ChoiceProfile /> */}
 
+
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
@@ -40,10 +41,13 @@ function App() {
 
       {/* <TestVideo /> */}
       {/* <Test /> */}
-      {/* <KoreanDrama /> */}
-      <RankingSlide openModal={openModal} />
 
-      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
+      <KoreanDrama />
+      {/* <RankingSlide /> */}
+      {/* <SlideVideo /> */}
+
+
+     
       <SlideVideo /> */}
       {/* <Main /> */}
     </div>
