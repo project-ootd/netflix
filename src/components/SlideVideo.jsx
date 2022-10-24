@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "../styles/SlideVideo.css";
 import {
   BsPlusLg,
@@ -6,11 +6,12 @@ import {
   BsHandThumbsUp,
   BsChevronDown,
   BsHandThumbsDown,
-  BsZoomIn,
 } from "react-icons/bs";
+import Modal from "../components/Modal";
 
-const SlideVideo = () => {
+const SlideVideo = ({ openModal }) => {
   const videoRef = useRef();
+
   return (
     <div>
       <div
@@ -96,14 +97,14 @@ const SlideVideo = () => {
                       position: "absolute",
                       top: "50%",
                       left: "50%",
-                      transform: "translate(-20%, -55%)",
+                      transform: "translate(-20%, -63%)",
                       zIndex: "10",
                     }}
                   />
                 </div>
               </div>
             </a>
-            <a className="ditail" href="/">
+            <a className="ditail" onClick={openModal}>
               <BsChevronDown
                 style={{
                   fontSize: "20px",

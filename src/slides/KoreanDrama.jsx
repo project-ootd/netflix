@@ -16,6 +16,7 @@
 //     );
 //   };
 
+
 //   const SamplePrevArrow = (props) => {
 //     const { className, style, onClick } = props;
 //     return (
@@ -26,6 +27,7 @@
 //       />
 //     );
 //   };
+
 
 //   const settings = {
 //     dots: false, //carousel 밑에 지정 콘텐츠로 바로 이동할 수 있는 버튼을 뜻한다. flase 할시 사라진다.

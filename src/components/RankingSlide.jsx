@@ -6,7 +6,7 @@ import "../styles/RankingSlide.scss";
 import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 
-const RankingSlide = () => {
+const RankingSlide = ({ openModal }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -44,7 +44,7 @@ const RankingSlide = () => {
   return (
     <div
       className="slide-body"
-      style={{ marginTop: "-18vh", zIndex: "3", position: "relative" }}
+      style={{ marginTop: "-15vh", zIndex: "3", position: "relative" }}
     >
       <h2 className="top-10-text"> 오늘 대한민국의 TOP 10 시리즈 </h2>
       <Slider {...settings}>
@@ -65,32 +65,41 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABcMimjL8Vnd6v48cqSYdiXU9qztOF7BtSuV08ZRJPyyct0pUsd_QxbSWOBrlbk38GtrDjhsucz5eUxFuCEVQlimHEX7W_YxdU1ChpzPUes2Yf2HesQs3ow26d5fdzrFLHDQAqyYYrcWF3IBBTP5KwPBwakGuNo7_gI-w-AUSE_OlOY9peUs1xdcjnaZqX9kz4GQ2mnrEkiLM-ainpyhFLX2oIpIgbBPtaGXoFdcS_2jKwPtWau3yIe9IVgfRf2IgNXsS5GxnxdypjxdTHjjHiQoG0LHfIKn4hsmCtT_dnRobBs7XDZOpUR4Yd-NBqIOAWIxi1mh9s_nDFo7Ut1bWxeJbDU0NFX48JmUXvNuXbQSStaAwO_lpG4gs_kd27dSVJ7aVvHkqfJMPq7GkxO3ebzZH7i-O_pmqt4HOqBLezUZbRE4.webp?r=0c3" />
+            <img
+              src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABcMimjL8Vnd6v48cqSYdiXU9qztOF7BtSuV08ZRJPyyct0pUsd_QxbSWOBrlbk38GtrDjhsucz5eUxFuCEVQlimHEX7W_YxdU1ChpzPUes2Yf2HesQs3ow26d5fdzrFLHDQAqyYYrcWF3IBBTP5KwPBwakGuNo7_gI-w-AUSE_OlOY9peUs1xdcjnaZqX9kz4GQ2mnrEkiLM-ainpyhFLX2oIpIgbBPtaGXoFdcS_2jKwPtWau3yIe9IVgfRf2IgNXsS5GxnxdypjxdTHjjHiQoG0LHfIKn4hsmCtT_dnRobBs7XDZOpUR4Yd-NBqIOAWIxi1mh9s_nDFo7Ut1bWxeJbDU0NFX48JmUXvNuXbQSStaAwO_lpG4gs_kd27dSVJ7aVvHkqfJMPq7GkxO3ebzZH7i-O_pmqt4HOqBLezUZbRE4.webp?r=0c3"
+              alt=""
+            />
           </div>
-          <div className="video_box"></div>
-        </div>
 
-        {/* rank 2 */}
-        <div className="slider_item_2 slider_items">
-          <svg
-            id="rank-2"
-            width="10%"
-            height="10%"
-            viewBox="-20 0 70 154"
-            className="svg-icon svg-icon-rank-2 top-10-rank"
-          >
-            <path
-              stroke="#595959"
-              strokeLinejoin="square"
-              strokeWidth="4"
-              d="M3.72 152H113v-30.174H50.484l4.355-3.55 29.453-24.012c5.088-4.124 9.748-8.459 13.983-13.004 4.16-4.464 7.481-9.339 9.972-14.629 2.449-5.203 3.678-11.113 3.678-17.749 0-9.428-2.294-17.627-6.875-24.645-4.597-7.042-10.941-12.494-19.07-16.376C77.803 3.957 68.496 2 58.036 2 47.591 2 38.37 4.023 30.347 8.06c-8.015 4.032-14.457 9.578-19.352 16.654-4.492 6.493-7.389 13.803-8.693 21.952h34.055c1.236-3.52 3.398-6.52 6.459-8.97 3.54-2.834 8.277-4.224 14.147-4.224 5.93 0 10.552 1.537 13.76 4.681 3.181 3.12 4.791 7.024 4.791 11.594 0 4.151-1.16 7.934-3.468 11.298-2.192 3.194-5.987 7.124-11.405 11.84L3.72 122.465V152z"
-            ></path>
-          </svg>
-          <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABSzEfY_25mkZ4wV3phQ584OGJHQ2c4sR3eff2JtoOkS5qRXHgACd9AL4Js0UJ1sWWD77DfLDbS7biAxl6HYpvUWs2_TptKV71mIh6R0sI-lSB5M4aC8x3uHwcKZsZObMzM2Nmw.jpg?r=ec8" />
+          {/* rank 2 */}
+          <div className="slider_item_2 slider_items">
+            <svg
+              id="rank-2"
+              width="10%"
+              height="10%"
+              viewBox="-20 0 70 154"
+              className="svg-icon svg-icon-rank-2 top-10-rank"
+            >
+              <path
+                stroke="#595959"
+                strokeLinejoin="square"
+                strokeWidth="4"
+                d="M3.72 152H113v-30.174H50.484l4.355-3.55 29.453-24.012c5.088-4.124 9.748-8.459 13.983-13.004 4.16-4.464 7.481-9.339 9.972-14.629 2.449-5.203 3.678-11.113 3.678-17.749 0-9.428-2.294-17.627-6.875-24.645-4.597-7.042-10.941-12.494-19.07-16.376C77.803 3.957 68.496 2 58.036 2 47.591 2 38.37 4.023 30.347 8.06c-8.015 4.032-14.457 9.578-19.352 16.654-4.492 6.493-7.389 13.803-8.693 21.952h34.055c1.236-3.52 3.398-6.52 6.459-8.97 3.54-2.834 8.277-4.224 14.147-4.224 5.93 0 10.552 1.537 13.76 4.681 3.181 3.12 4.791 7.024 4.791 11.594 0 4.151-1.16 7.934-3.468 11.298-2.192 3.194-5.987 7.124-11.405 11.84L3.72 122.465V152z"
+              ></path>
+            </svg>
+            <div className="ranking-img">
+              <img
+                src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABSzEfY_25mkZ4wV3phQ584OGJHQ2c4sR3eff2JtoOkS5qRXHgACd9AL4Js0UJ1sWWD77DfLDbS7biAxl6HYpvUWs2_TptKV71mIh6R0sI-lSB5M4aC8x3uHwcKZsZObMzM2Nmw.jpg?r=ec8"
+                alt=""
+              />
+            </div>
+            <div className="video_box">
+              <SlideVideo />
+            </div>
           </div>
+
           <div className="video_box">
-            <SlideVideo />
+            <SlideVideo openModal={openModal} />
           </div>
         </div>
 
@@ -111,7 +120,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTHUvkCa5OiNeTmrAaCVJtt1TGs6g1dpGg6AlPgrrmFBF1WgrkDUw-oZunfJkI4BSyzYOyP9iUkZvKc_6LXwH9bdNx7F8BSJY7Zy.webp?r=c75" />
+            <img
+              src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTHUvkCa5OiNeTmrAaCVJtt1TGs6g1dpGg6AlPgrrmFBF1WgrkDUw-oZunfJkI4BSyzYOyP9iUkZvKc_6LXwH9bdNx7F8BSJY7Zy.webp?r=c75"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -132,7 +144,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTcaOBtkncGVx7d4TroAsRHaVz1IWp0GWepl6x_7vnq0h-hFQzhk8_dAC6MbmqfjXVUsNc5Zbw1bMIgkuMuvQLQlsF6LLig14GmPldvzaFT_oVtDswI9As3JNA0CjwUNpIS_9j2DVTHPXGxZKu4lOReE6vi0Qr8RkMQdLLb1JtBBjhdLr6rc28HsYyIlWn-XeKX7wev7oLcTzAiScE9kCFlJ8fCN0vY14khixE1dIVQN8o2s4QMC67aU8q2Y6fcC-k6C5g.webp?r=10d" />
+            <img
+              src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTcaOBtkncGVx7d4TroAsRHaVz1IWp0GWepl6x_7vnq0h-hFQzhk8_dAC6MbmqfjXVUsNc5Zbw1bMIgkuMuvQLQlsF6LLig14GmPldvzaFT_oVtDswI9As3JNA0CjwUNpIS_9j2DVTHPXGxZKu4lOReE6vi0Qr8RkMQdLLb1JtBBjhdLr6rc28HsYyIlWn-XeKX7wev7oLcTzAiScE9kCFlJ8fCN0vY14khixE1dIVQN8o2s4QMC67aU8q2Y6fcC-k6C5g.webp?r=10d"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -154,7 +169,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABVXE5JseRhmv8jHeMUBxHTKkmVCjGHe3BLsK1FlmlbQ4a1oX1D-lhYv8PNVYNszE9ja8pm_I9ofZgZZs8yiSdq_n0dvZeqiJMFEZnmHyqvEeKlfUBk5Apz2QpV_vn-eSKpafpyfHmTZUHxbKQIoTLEZ7uFPA7jyplLOMjgt_2EqeN9KizGUYoPE4Ve65iCr4S24Jwhh2mCQzHAJxLD7S7JvSpru3kJ3d__P_WJMXom1IjNICqAolEkyqyCO0rMio2fit7zhaxwBpraeMqxMz69rYFlEb_q2WOSN_IyZbLpq6lYaYuI9VQKpt0V4QV-LAErQCGvdUqt_CumELaV0vEYaKWg6klRlq5HOtJHM9wZSgoo7Vf-mqgqm29B7BqvdOsxYGwY0uXGUuGUS42lslSIm1_3a7D4A5_FCtO8i1zUDEZP4.webp?r=a5d" />
+            <img
+              src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABVXE5JseRhmv8jHeMUBxHTKkmVCjGHe3BLsK1FlmlbQ4a1oX1D-lhYv8PNVYNszE9ja8pm_I9ofZgZZs8yiSdq_n0dvZeqiJMFEZnmHyqvEeKlfUBk5Apz2QpV_vn-eSKpafpyfHmTZUHxbKQIoTLEZ7uFPA7jyplLOMjgt_2EqeN9KizGUYoPE4Ve65iCr4S24Jwhh2mCQzHAJxLD7S7JvSpru3kJ3d__P_WJMXom1IjNICqAolEkyqyCO0rMio2fit7zhaxwBpraeMqxMz69rYFlEb_q2WOSN_IyZbLpq6lYaYuI9VQKpt0V4QV-LAErQCGvdUqt_CumELaV0vEYaKWg6klRlq5HOtJHM9wZSgoo7Vf-mqgqm29B7BqvdOsxYGwY0uXGUuGUS42lslSIm1_3a7D4A5_FCtO8i1zUDEZP4.webp?r=a5d"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -176,7 +194,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABXkmYiLKioaxPLCL-Haocpo7_Ybi7SZ6XaCGFBUfX1ahik1uD5u2U_bX-VXk8xvCAyTQP5JFnzYJ3PPYc0jueQdtq6wCrDiAJ3GXRbbf6aLeEiwc8joBs69gqOECuDVKQsvzNw.jpg?r=a0e" />
+            <img
+              src="https://occ-0-4342-993.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABXkmYiLKioaxPLCL-Haocpo7_Ybi7SZ6XaCGFBUfX1ahik1uD5u2U_bX-VXk8xvCAyTQP5JFnzYJ3PPYc0jueQdtq6wCrDiAJ3GXRbbf6aLeEiwc8joBs69gqOECuDVKQsvzNw.jpg?r=a0e"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -198,7 +219,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABWFf2A1ud7UPVupsRKidH0T_dkK3AfkxkbCEkw5113L28u-UiCF7E3TJsnrZVzn6esxaw5zBXZaxzAopzocLIhlTlKgSO5RsXHQl.webp?r=e48" />
+            <img
+              src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABWFf2A1ud7UPVupsRKidH0T_dkK3AfkxkbCEkw5113L28u-UiCF7E3TJsnrZVzn6esxaw5zBXZaxzAopzocLIhlTlKgSO5RsXHQl.webp?r=e48"
+              alt=""
+            />
           </div>
           <div className="video_box">
             <video
@@ -229,7 +253,10 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABQV_xpMmbIAdBFSuC-HZ9TASK685qaorR-xXvF4KOorfmqu8GvUYZxtUfGeqkS4wvJyhIxGjJABPKHWfUN1AS-YmEx_JwiCeo1ShOE8609fIPDSjLy4lTZv5ywOIsfk8cNehX0RN3z4z6IPQ6h4nC-A3ycQ-FKDJoyqqeCZnTYSGK9FOymenEq1ThQPgpAK-oMYpiZKZUhyNrtQr9anxYY1s96qG2BYZd3MYrRZOAM4JnrwZcQVGNoAXdYw91XUYCNJPDFasyNmbVwmYI86jtvtgd96T_tLcz0nZW_GF2c32fyKizzSZxbKrDtndCSwACD4dRHA8Ltql9FXWtttM5hZVcLW1Pd-0uUVggyXWpLFpBL0DVD1PtoXq3PucI2V3lIXPrhSvMD5x9VvE3vKnGX3TxXDuiAxaOWiF5FW29xfY3HE.webp?r=a95" />
+            <img
+              src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABQV_xpMmbIAdBFSuC-HZ9TASK685qaorR-xXvF4KOorfmqu8GvUYZxtUfGeqkS4wvJyhIxGjJABPKHWfUN1AS-YmEx_JwiCeo1ShOE8609fIPDSjLy4lTZv5ywOIsfk8cNehX0RN3z4z6IPQ6h4nC-A3ycQ-FKDJoyqqeCZnTYSGK9FOymenEq1ThQPgpAK-oMYpiZKZUhyNrtQr9anxYY1s96qG2BYZd3MYrRZOAM4JnrwZcQVGNoAXdYw91XUYCNJPDFasyNmbVwmYI86jtvtgd96T_tLcz0nZW_GF2c32fyKizzSZxbKrDtndCSwACD4dRHA8Ltql9FXWtttM5hZVcLW1Pd-0uUVggyXWpLFpBL0DVD1PtoXq3PucI2V3lIXPrhSvMD5x9VvE3vKnGX3TxXDuiAxaOWiF5FW29xfY3HE.webp?r=a95"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -252,7 +279,10 @@ const RankingSlide = () => {
           </svg>
 
           <div className="ranking-img">
-            <img src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABa3dx-PLRXnGS7JfarLQo3-HGKDO1XZsDdIH8iJ-dnYL7TB01TCUxenaMyDRLk9vQrS68VPmVTCliwbaqXeOJ-MlBt6bT1pzWKn5.webp?r=d88" />
+            <img
+              src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABa3dx-PLRXnGS7JfarLQo3-HGKDO1XZsDdIH8iJ-dnYL7TB01TCUxenaMyDRLk9vQrS68VPmVTCliwbaqXeOJ-MlBt6bT1pzWKn5.webp?r=d88"
+              alt=""
+            />
           </div>
           <div className="video_box"></div>
         </div>
@@ -274,9 +304,12 @@ const RankingSlide = () => {
             ></path>
           </svg>
           <div className="ranking-img">
-            <img src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTJ2haaoJog4zt1eiLj1pCbSJ60K1Zlm5SzdnYma6VcnyC-YJcCLL1euQwFuJbAsRwJJd0_5ZDOW0T9Sio8EVzr6TTRO6qu5gwe2p_afgp_ah_SVYh47kYx9KTrvmlqnMn8P-K0VWUImOohE5mWpqd3fkjLLggV2MJR58tSTblmRO68OhZijz_PNAJKGGgEE95FtEi-6rZxGX0_MoSbpDUYLp5ODJRWR82YUSpr7jRlD8pUQeIWxdtGzTv8BfQYtajuRkIgXO8x8M89JcFSNOgUnJq-BWUnwb77gjb8jwbogBf0-47SRasiirib7HP9_JdOkkSFpaljhPi6fxhUt_D01Hz8Q66lkbp68DoNmS74VVTcwB2VXxxr4zozVEJqxV0ZXXQqNKm_JTFVwK4Xe_b4KetOt0jR0fXKXV8i0BXjG-00.webp?r=60e" />
+            <img
+              src="https://occ-0-4796-988.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABTJ2haaoJog4zt1eiLj1pCbSJ60K1Zlm5SzdnYma6VcnyC-YJcCLL1euQwFuJbAsRwJJd0_5ZDOW0T9Sio8EVzr6TTRO6qu5gwe2p_afgp_ah_SVYh47kYx9KTrvmlqnMn8P-K0VWUImOohE5mWpqd3fkjLLggV2MJR58tSTblmRO68OhZijz_PNAJKGGgEE95FtEi-6rZxGX0_MoSbpDUYLp5ODJRWR82YUSpr7jRlD8pUQeIWxdtGzTv8BfQYtajuRkIgXO8x8M89JcFSNOgUnJq-BWUnwb77gjb8jwbogBf0-47SRasiirib7HP9_JdOkkSFpaljhPi6fxhUt_D01Hz8Q66lkbp68DoNmS74VVTcwB2VXxxr4zozVEJqxV0ZXXQqNKm_JTFVwK4Xe_b4KetOt0jR0fXKXV8i0BXjG-00.webp?r=60e"
+              alt=""
+            />
           </div>
-          <div className="video_box"></div>
+          <div className="video_box">asdasd</div>
         </div>
       </Slider>
     </div>
