@@ -35,13 +35,11 @@ function App() {
       {/* <Login /> */}
       {/* <Slides /> */}
       {/* <KoreanDrama /> */}
-<<<<<<< Updated upstream
-=======
+
       {/* <TestVideo /> */}
       {/* <Test /> */}
       {/* <KoreanDrama /> */}
       <RankingSlide openModal={openModal} />
->>>>>>> Stashed changes
 
       {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
       <SlideVideo /> */}
