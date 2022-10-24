@@ -33,11 +33,18 @@ function App() {
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
-      <Slides />
+      {/* <Slides /> */}
       {/* <KoreanDrama /> */}
+<<<<<<< Updated upstream
+=======
+      {/* <TestVideo /> */}
+      {/* <Test /> */}
+      {/* <KoreanDrama /> */}
+      <RankingSlide openModal={openModal} />
+>>>>>>> Stashed changes
 
-      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal> */}
-      {/* <SlideVideo /> */}
+      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
+      <SlideVideo /> */}
       {/* <Main /> */}
     </div>
   );
