@@ -1,0 +1,9 @@
+.profile-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.first-profile {
+  background-image: url(https://occ-0-2218-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229);
+}
