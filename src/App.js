@@ -13,7 +13,7 @@ import Test from "./slides/Test";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
@@ -21,8 +21,8 @@ function App() {
       {/* <KoreanDrama /> */}
       {/* <TestVideo /> */}
       {/* <Test /> */}
-      {/* <KoreanDrama /> */}
-      <RankingSlide />
+      <KoreanDrama />
+      {/* <RankingSlide /> */}
       {/* <SlideVideo /> */}
 
       {/* <Main /> */}

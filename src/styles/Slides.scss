@@ -1,283 +1,287 @@
-// /* 슬라이드 틀 */
-// .korean-drama-slide {
-//   box-sizing: border-box;
-//   padding: 0 4%;
-//   margin-bottom: 5vh;
-// }
+/* 슬라이드 틀 */
+.korean-drama-slide {
+  box-sizing: border-box;
+  padding: 0 4%;
+  margin-bottom: 5vh;
+}
 
-// .korean-drama-slide .slick-track {
-//   // margin-bottom: 4vh;
-//   height: max-content;
-// }
+.korean-drama-slide .slick-track {
+  // margin-bottom: 4vh;
+  height: max-content;
+}
 
-// .korean-drama-slide .slick-list {
-//   // border : 3px solid red;
-// }
+.korean-drama-slide .slick-list {
+  // border : 3px solid red;
+}
 
-// .korean-drama-title {
-//   display: flex;
-// }
+.korean-drama-title {
+  display: flex;
+}
 
-// /* 타이틀 커스터마이징 */
+/* 타이틀 커스터마이징 */
 
-// .korean-drama-text1 {
-//   position: relative;
-//   display: inline-block;
-//   vertical-align: bottom;
-//   text-align: left;
-//   font-weight: bold;
-//   font-size: 1.4rem;
-//   margin-bottom: 10px;
-// }
+.korean-drama-text1 {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
 
-// .korean-drama-hover {
-//   display: inline-block;
-//   position: relative;
-// }
+.korean-drama-hover {
+  display: inline-block;
+  position: relative;
+}
 
-// .korean-drama-text2 {
-//   position: absolute;
-//   display: inline-block;
-//   color: #54b9c5;
-//   margin-top: 10px;
-//   font-size: 0.8vw;
-//   opacity: 0;
-//   vertical-align: bottom;
-//   white-space: nowrap;
-//   max-width: 200px;
-//   transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
-// }
+.korean-drama-text2 {
+  position: absolute;
+  display: inline-block;
+  color: #54b9c5;
+  margin-top: 10px;
+  font-size: 0.8vw;
+  opacity: 0;
+  vertical-align: bottom;
+  white-space: nowrap;
+  max-width: 200px;
+  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
+}
 
-// .korean-drama-arrow {
-//   position: absolute;
-//   display: inline-block;
-//   margin-top: 17px;
-//   margin-left: -100%;
-//   opacity: 0;
-//   vertical-align: bottom;
-//   white-space: nowrap;
-//   color: #54b9c5;
-// }
+.korean-drama-arrow {
+  position: absolute;
+  display: inline-block;
+  margin-top: 17px;
+  margin-left: -100%;
+  opacity: 0;
+  vertical-align: bottom;
+  white-space: nowrap;
+  color: #54b9c5;
+}
 
-// .korean-drama-hover {
-//   position: absolute;
-// }
+.korean-drama-hover {
+  position: absolute;
+}
 
-// /* 타이틀 호버 */
+/* 타이틀 호버 */
 
-// .korean-drama-text1:hover .korean-drama-text2 {
-//   display: inline-block;
-//   opacity: 1;
-//   max-width: 200px;
-//   transform: translate(1vw);
-//   transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
-// }
+.korean-drama-text1:hover .korean-drama-text2 {
+  display: inline-block;
+  opacity: 1;
+  max-width: 200px;
+  transform: translate(1vw);
+  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
+}
 
-// .korean-drama-text1:hover .korean-drama-arrow {
-//   display: inline-block;
-//   opacity: 1;
-//   max-width: 200px;
-//   transform: translate(4.5vw);
-//   transition: max-width 1s, opacity 0.5s, transform 0.5s;
-// }
+.korean-drama-text1:hover .korean-drama-arrow {
+  display: inline-block;
+  opacity: 1;
+  max-width: 200px;
+  transform: translate(4.5vw);
+  transition: max-width 1s, opacity 0.5s, transform 0.5s;
+}
 
-// /* 타이틀 커스터마이징 끝 */
+/* 타이틀 커스터마이징 끝 */
 
-// /* 섬네일 이미지 커스터마이징 */
+/* 섬네일 이미지 커스터마이징 */
 
-// .korean-drama {
-//   position: relative;
-//   margin-right: 5px;
-// }
+.korean-drama {
+  position: relative;
+  margin-right: 5px;
+}
 
-// .kDramaThumbnail {
-//   border-radius: 5px;
-//   width: 14.3vw;
-// }
+.kDramaThumbnail {
+  border-radius: 5px;
+  width: 95%;
+  height: 100%;
+}
 
-// /* 섬네일 이미지 커스터마이징 끝*/
+/* 섬네일 이미지 커스터마이징 끝*/
 
-// /* 화살표 커스터마이징 */
+/* 화살표 커스터마이징 */
 
-// /* 화살표 이미지 */
-// .korean-drama-slide .slick-prev:before,
-// .korean-drama-slide .slick-next:before {
-//   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
-//   display: flex;
-//   align-items: center;
-// }
+/* 화살표 이미지 */
+.korean-drama-slide .slick-prev:before,
+.korean-drama-slide .slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 
-// .korean-drama-slide .slick-next:before {
-//   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
-// }
+.korean-drama-slide .slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
+}
 
-// /* 화살표 모션 */
-// .korean-drama-slide .slick-arrow {
-//   position: absolute;
-//   opacity: 0;
-//   transition: all 0.25s ease-in-out !important;
-//   -moz-transition: all 0.25s ease-in-out;
-//   -webkit-transition: all 0.25s ease-in-out !important;
-//   align-self: center;
-//   height: 17vh;
-//   width: 2vw;
-// }
+/* 화살표 모션 */
+.korean-drama-slide .slick-arrow {
+  display: flex;
+  position: absolute;
+  opacity: 1;
+  transition: all 0.25s ease-in-out !important;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out !important;
+  align-self: center;
+  height: 100%;
+  width: 2vw;
+}
 
-// .korean-drama-slide .slick-arrow:hover {
-//   opacity: 0.7;
-//   background-color: #141414;
-// }
+.korean-drama-slide .slick-arrow:hover {
+  opacity: 0.7;
+  background-color: #141414;
+}
 
-// .korean-drama-slide .slick-prev {
-//   left: 0;
-//   z-index: 10;
-// }
+.korean-drama-slide .slick-prev {
+  left: 0;
+  z-index: 10;
+}
 
-// .korean-drama-slide .slick-next {
-//   right: 0;
-// }
+.korean-drama-slide .slick-next {
+  right: 0;
+}
 
-// .korean-drama-slide .slick-prev,
-// .korean-drama-slide .slick-next {
-//   // 좌측 화살표의 위치값을 넣어줍니다.
-//   // margin-left: 2vh;
-// }
+.korean-drama-slide .slick-prev,
+.korean-drama-slide .slick-next {
+  // 좌측 화살표의 위치값을 넣어줍니다.
+  // margin-left: 2vh;
+}
 
-// .korean-drama-slide .slick-prev::before,
-// .korean-drama-slide .slick-next::before {
-//   // font-size: 20px !important;
-// }
+.korean-drama-slide .slick-prev::before,
+.korean-drama-slide .slick-next::before {
+  // font-size: 20px !important;
+}
 
-// .slick-next {
-//   //   // 우측화살표의 위치값을 넣어줍니다.
-// }
+.slick-next {
+  //   // 우측화살표의 위치값을 넣어줍니다.
+}
 
-// .slick-next::before {
-// }
-// /* 좌/우측 화살표 끝 */
+.slick-next::before {
+}
+/* 좌/우측 화살표 끝 */
 
-// /*리스트 최상위(h2)*/
-// .rowHeader {
-//   line-height: 1.3;
-//   margin: 0;
-//   width: 100%;
-//   height: 100%;
-//   margin: 0 0 0 0.5em;
-//   align-items: center;
-//   display: flex;
-//   justify-content: space-between;
-//   padding-bottom: 10px;
-//   padding-right: 4%;
-//   margin-bottom: 0;
-//   margin-right: 4.2%;
-// }
+/*리스트 최상위(h2)*/
+.rowHeader {
+  line-height: 1.3;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0.5em;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-right: 4%;
+  margin-bottom: 0;
+  margin-right: 4.2%;
+}
 
-// // @media screen and (min-width: 1500px) {
-// //   .categoryRowCollapsible .rowHeader {
-// //     padding-right: 60px;
-// //   }
-// // }
-
-// /*리스트 타이틀(지금뜨는컨텐츠)*/
-// .lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
-//   display: table-cell;
-//   font-size: 1.4vw;
-//   line-height: 1.25vw;
-//   vertical-align: bottom;
-// }
-
-// // @media screen and (max-width: 800px) {
-// //   .lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
-// //     font-size: 12px;
-// //   }
-// // }
-
-// /*모두보기+화살표 상위클래스(div)*/
-
-// .lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header {
-//   display: table-cell;
-//   vertical-align: bottom;
-// }
-
-// /*모두보기(.see-all-link)*/
-
-// .lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header .see-all-link {
-//   cursor: pointer;
-//   display: inline-block;
-//   font-size: 0.9vw;
-//   line-height: 0.8vw;
-//   margin-right: 4px;
-//   max-width: 0;
-//   opacity: 0;
-//   transition: max-width 1s, opacity 1s, transform 0.75s;
-//   vertical-align: bottom;
-//   white-space: nowrap;
-// }
-
-// .lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-header .see-all-link,
-// .lolomoRow.lolomoRow_title_card:hover
-//   a.rowTitle:hover
-//   .aro-row-header
-//   .see-all-link {
-//   max-width: 200px;
-//   opacity: 1;
-//   transform: translate(1vw);
-// }
-
-// /* 모두보기 화살표(aro-row-chevron) */
-
-// .lolomoRow.lolomoRow_title_card .rowTitle .aro-row-chevron {
-//   display: none;
-//   font-size: 0.9vw;
-//   transition: transform 0.75s;
-//   vertical-align: bottom;
-// }
-
-// .lolomoRow.lolomoRow_title_card
-//   .rowTitle
-//   .aro-row-header.more-visible
-//   .aro-row-chevron,
-// .lolomoRow.lolomoRow_title_card
-//   .rowTitle
-//   .aro-row-header.more-visible
-//   .see-all-link {
-//   color: #54b9c5;
-// }
-
-// .lolomoRow.lolomoRow_title_card
-//   a.rowTitle:focus
-//   .aro-row-header
-//   .aro-row-chevron,
-// .lolomoRow.lolomoRow_title_card:hover
-//   a.rowTitle:hover
-//   .aro-row-header
-//   .aro-row-chevron {
-//   font-size: 0.65vw;
-//   line-height: 0.8vw;
-//   transform: translate(1vw);
-// }
-
-// @media screen and (max-width: 800px) {
-//   .lolomoRow.lolomoRow_title_card
-//     a.rowTitle:focus
-//     .aro-row-header
-//     .aro-row-chevron,
-//   .lolomoRow.lolomoRow_title_card:hover
-//     a.rowTitle:hover
-//     .aro-row-header
-//     .aro-row-chevron {
-//     font-size: 6px;
+// @media screen and (min-width: 1500px) {
+//   .categoryRowCollapsible .rowHeader {
+//     padding-right: 60px;
 //   }
 // }
 
-// .lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-chevron,
-// .lolomoRow.lolomoRow_title_card:hover a.rowTitle .aro-row-chevron {
-//   display: inline-block;
-//   font-size: 0.9vw;
-//   vertical-align: bottom;
+/*리스트 타이틀(지금뜨는컨텐츠)*/
+.lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
+  display: table-cell;
+  font-size: 1.4vw;
+  line-height: 1.25vw;
+  vertical-align: bottom;
+}
+
+// @media screen and (max-width: 800px) {
+//   .lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
+//     font-size: 12px;
+//   }
 // }
 
-// /* 모두보기 화살표(.icon-akiraCaretRight) */
-// .icon-akiraCaretRight:before {
-//   content: "https://img.icons8.com/metro/10/54b9c5/forward.png";
-// }
+/*모두보기+화살표 상위클래스(div)*/
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+/*모두보기(.see-all-link)*/
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header .see-all-link {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9vw;
+  line-height: 0.8vw;
+  margin-right: 4px;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 1s, opacity 1s, transform 0.75s;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-header .see-all-link,
+.lolomoRow.lolomoRow_title_card:hover
+  a.rowTitle:hover
+  .aro-row-header
+  .see-all-link {
+  max-width: 200px;
+  opacity: 1;
+  transform: translate(1vw);
+}
+
+/* 모두보기 화살표(aro-row-chevron) */
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-chevron {
+  display: none;
+  font-size: 0.9vw;
+  transition: transform 0.75s;
+  vertical-align: bottom;
+}
+
+.lolomoRow.lolomoRow_title_card
+  .rowTitle
+  .aro-row-header.more-visible
+  .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card
+  .rowTitle
+  .aro-row-header.more-visible
+  .see-all-link {
+  color: #54b9c5;
+}
+
+.lolomoRow.lolomoRow_title_card
+  a.rowTitle:focus
+  .aro-row-header
+  .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card:hover
+  a.rowTitle:hover
+  .aro-row-header
+  .aro-row-chevron {
+  font-size: 0.65vw;
+  line-height: 0.8vw;
+  transform: translate(1vw);
+}
+
+@media screen and (max-width: 800px) {
+  .lolomoRow.lolomoRow_title_card
+    a.rowTitle:focus
+    .aro-row-header
+    .aro-row-chevron,
+  .lolomoRow.lolomoRow_title_card:hover
+    a.rowTitle:hover
+    .aro-row-header
+    .aro-row-chevron {
+    font-size: 6px;
+  }
+}
+
+.lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card:hover a.rowTitle .aro-row-chevron {
+  display: inline-block;
+  font-size: 0.9vw;
+  vertical-align: bottom;
+}
+
+/* 모두보기 화살표(.icon-akiraCaretRight) */
+.icon-akiraCaretRight:before {
+  content: "https://img.icons8.com/metro/10/54b9c5/forward.png";
+}
