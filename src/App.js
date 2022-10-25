@@ -29,7 +29,12 @@ function App() {
       </Modal> */}
 
       {/* <Header /> */}
+<<<<<<< Updated upstream
       {/* <ChoiceProfile /> */}
+=======
+      <ChoiceProfile />
+
+>>>>>>> Stashed changes
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
@@ -39,7 +44,7 @@ function App() {
       {/* <TestVideo /> */}
       {/* <Test /> */}
       {/* <KoreanDrama /> */}
-      <RankingSlide openModal={openModal} />
+      {/* <RankingSlide openModal={openModal} /> */}
 
       {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
       <SlideVideo /> */}
