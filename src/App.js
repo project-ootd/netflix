@@ -24,45 +24,7 @@ function App() {
 
   return (
     <div className="App">
-
-      {/* <button onClick={openModal}>모달팝업</button>
-      <Modal open={modalOpen} close={closeModal} header="Modal heading">
-      </Modal> */}
-
-      {/* <Header /> */}
-<<<<<<< Updated upstream
-      {/* <ChoiceProfile /> */}
-<<<<<<< HEAD
-=======
-      <ChoiceProfile />
-
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> master
-      {/* <First /> */}
-      {/* <RegForm /> */}
-      {/* <Login /> */}
-      {/* <Slides /> */}
-      {/* <KoreanDrama /> */}
-
-      {/* <TestVideo /> */}
-      {/* <Test /> */}
-<<<<<<< HEAD
-      {/* <KoreanDrama /> */}
-      {/* <RankingSlide openModal={openModal} /> */}
-=======
->>>>>>> master
-
-      <KoreanDrama />
-      {/* <RankingSlide /> */}
-      {/* <SlideVideo /> */}
-
-
-     
-      <SlideVideo /> */}
-      {/* <Main /> */}
+      <First />
     </div>
   );
 }
