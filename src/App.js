@@ -24,6 +24,10 @@ function App() {
 
   return (
     <div className="App">
+      {/* <button onClick={openModal}>모달팝업</button>
+      <Modal open={modalOpen} close={closeModal} header="Modal heading">
+      </Modal> */}
+
       {/* <Header /> */}
       {/* <ChoiceProfile /> */}
       {/* <First /> */}
@@ -37,8 +41,8 @@ function App() {
       {/* <KoreanDrama /> */}
       <RankingSlide openModal={openModal} />
 
-      <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
-      {/* <SlideVideo /> */}
+      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
+      <SlideVideo /> */}
       {/* <Main /> */}
     </div>
   );
