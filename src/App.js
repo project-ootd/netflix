@@ -30,9 +30,17 @@ function App() {
       </Modal> */}
 
       {/* <Header /> */}
+<<<<<<< Updated upstream
       {/* <ChoiceProfile /> */}
+<<<<<<< HEAD
+=======
+      <ChoiceProfile />
+
+>>>>>>> Stashed changes
+=======
 
 
+>>>>>>> master
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
@@ -41,6 +49,11 @@ function App() {
 
       {/* <TestVideo /> */}
       {/* <Test /> */}
+<<<<<<< HEAD
+      {/* <KoreanDrama /> */}
+      {/* <RankingSlide openModal={openModal} /> */}
+=======
+>>>>>>> master
 
       <KoreanDrama />
       {/* <RankingSlide /> */}
