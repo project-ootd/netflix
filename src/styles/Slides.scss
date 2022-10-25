@@ -92,7 +92,8 @@
 
 .kDramaThumbnail {
   border-radius: 5px;
-  width: 14.3vw;
+  width: 95%;
+  height: 100%;
 }
 
 /* 섬네일 이미지 커스터마이징 끝*/
@@ -105,6 +106,8 @@
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
   display: flex;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .korean-drama-slide .slick-next:before {
@@ -113,13 +116,14 @@
 
 /* 화살표 모션 */
 .korean-drama-slide .slick-arrow {
+  display: flex;
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.25s ease-in-out !important;
   -moz-transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out !important;
   align-self: center;
-  height: 17vh;
+  height: 100%;
   width: 2vw;
 }
 

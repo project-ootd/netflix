@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+
       {/* <button onClick={openModal}>모달팝업</button>
       <Modal open={modalOpen} close={closeModal} header="Modal heading">
       </Modal> */}
@@ -31,10 +32,15 @@ function App() {
       {/* <Header /> */}
 <<<<<<< Updated upstream
       {/* <ChoiceProfile /> */}
+<<<<<<< HEAD
 =======
       <ChoiceProfile />
 
 >>>>>>> Stashed changes
+=======
+
+
+>>>>>>> master
       {/* <First /> */}
       {/* <RegForm /> */}
       {/* <Login /> */}
@@ -43,10 +49,18 @@ function App() {
 
       {/* <TestVideo /> */}
       {/* <Test /> */}
+<<<<<<< HEAD
       {/* <KoreanDrama /> */}
       {/* <RankingSlide openModal={openModal} /> */}
+=======
+>>>>>>> master
 
-      {/* <Modal open={modalOpen} close={closeModal} header="Modal heading"></Modal>
+      <KoreanDrama />
+      {/* <RankingSlide /> */}
+      {/* <SlideVideo /> */}
+
+
+     
       <SlideVideo /> */}
       {/* <Main /> */}
     </div>
