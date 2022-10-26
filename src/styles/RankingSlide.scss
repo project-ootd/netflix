@@ -56,8 +56,9 @@
 
 .slide-body .ranking-slide-body .slick-next {
   // 우측화살표의 위치값을 넣어줍니다.
-  margin-right: 2vh;
+  // margin-right: 2vh;
   z-index: 990;
+  right: -10px;
 }
 
 .slide-body .ranking-slide-body .slick-next::before {

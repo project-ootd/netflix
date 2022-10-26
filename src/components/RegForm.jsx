@@ -4,7 +4,7 @@ import "../styles/RegForm.css";
 
 const RegForm = () => {
   return (
-    <div>
+    <div style={{ background: "#f3f3f3" }}>
       <div className="regForm_top_wrap flex flex_jc_sb">
         <a href="/" className="logo img_box">
           <img src={logo} alt="LOGO" />
@@ -23,7 +23,11 @@ const RegForm = () => {
             몇 단계만 더 거치면 넷플릭스 가입 완료 ! <br />
             복잡한 단계는 모두 없앴습니다.
           </div>
-          <form action="post" className="login_form">
+          <form
+            method="post"
+            className="login_form"
+            action="http://localhost:8084/login_form"
+          >
             <input
               type="text"
               placeholder="이메일 주소"

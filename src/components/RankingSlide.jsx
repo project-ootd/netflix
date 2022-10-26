@@ -44,7 +44,12 @@ const RankingSlide = ({ openModal }) => {
   return (
     <div
       className="slide-body"
-      style={{ marginTop: "-18vh", zIndex: "3", position: "relative" }}
+      style={{
+        marginTop: "-13vh",
+        zIndex: "3",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
       <div className="ranking-slide-body">
         <h2 className="top-10-text"> 오늘 대한민국의 TOP 10 시리즈 </h2>
