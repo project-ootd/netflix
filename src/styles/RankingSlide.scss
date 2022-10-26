@@ -10,7 +10,7 @@
 }
 
 /* 오늘 대한민국의 TOp 10 시리즈 text */
-.top-10-text {
+.slide-body .top-10-text {
   text-align: left;
   margin: 0px 3% -40px;
   font-size: 25px;
@@ -20,16 +20,16 @@
 /* 화살표 커스터마이징 */
 
 /* 화살표 이미지 */
-.ranking-slide-body .slick-prev:before {
+.slide-body .ranking-slide-body .slick-prev:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
 }
 
-.ranking-slide-body .slick-next:before {
+.slide-body .ranking-slide-body .slick-next:before {
   content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
 }
 
 /* 화살표 모션 */
-.ranking-slide-body .slick-arrow {
+.slide-body .ranking-slide-body .slick-arrow {
   opacity: 0;
   transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -37,36 +37,36 @@
   width: 50px;
 }
 
-.ranking-slide-body .slick-arrow:hover {
+.slide-body .ranking-slide-body .slick-arrow:hover {
   opacity: 0.5;
   background-color: #141414;
   height: 200px;
   width: 50px;
 }
 
-.ranking-slide-body .slick-prev {
+.slide-body .ranking-slide-body .slick-prev {
   // 좌측 화살표의 위치값을 넣어줍니다.
   margin-left: 2vh;
   z-index: 990;
 }
 
-.ranking-slide-body .slick-prev::before {
+.slide-body .ranking-slide-body .slick-prev::before {
   font-size: 8rem !important;
 }
 
-.ranking-slide-body .slick-next {
+.slide-body .ranking-slide-body .slick-next {
   // 우측화살표의 위치값을 넣어줍니다.
   margin-right: 2vh;
   z-index: 990;
 }
 
-.ranking-slide-body .slick-next::before {
+.slide-body .ranking-slide-body .slick-next::before {
   font-size: 8rem !important;
 }
 /* 좌/우측 화살표 끝 */
 
 /* rank number */
-.boxart-size-7x10 .top-10-rank {
+.slide-body .boxart-size-7x10 .top-10-rank {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -75,28 +75,28 @@
   width: 50%;
 }
 
-.t_17d527 .svg-icon {
+.slide-body .t_17d527 .svg-icon {
   border: 1px solid transparent;
   margin: 0 -1px;
   overflow: visible;
   transform: scale(1);
 }
 
-.slider_items {
+.slide-body .slider_items {
   position: absolute;
   // margin: 30px;
   // height: 175px;
   top: 20%;
 }
 
-.top-10-rank {
+.slide-body .top-10-rank {
   width: 150px;
   height: 213px;
   position: absolute;
   left: -160px;
 }
 
-.top-10-rank-10 {
+.slide-body .top-10-rank-10 {
   top: -1px;
   width: 188px;
   left: -198px;
@@ -104,34 +104,34 @@
 /* 화살표 커스터마이징 끝 */
 
 /* 랭킹 넘버 */
-.ranking-img {
+.slide-body .ranking-img {
   margin-left: -10px;
   position: absolute;
 }
 
-.ranking-img > img {
+.slide-body .ranking-img > img {
   width: 150px;
   height: 213px;
   border-radius: 0 2% 2% 0;
 }
 
-.slide-body {
+.slide-body .slide-body {
   overflow-x: hidden;
 }
-.slick-track {
+.slide-body .slick-track {
   height: 35vh;
 }
 
-.slick-track > .slick-slide {
+.slide-body .slick-track > .slick-slide {
   width: 180px;
 }
 
-.slider_items:hover .ranking-img {
+.slide-body .slider_items:hover .ranking-img {
   visibility: hidden;
   transition: all 0.4s;
 }
 
-.slider_items > .video_box {
+.slide-body .slider_items > .video_box {
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -142,7 +142,7 @@
   z-index: 10;
 }
 
-.slider_items:hover > .video_box {
+.slide-body .slider_items:hover > .video_box {
   // transform: scale(2.5);
   // border-radius: 25px;
   visibility: visible;
