@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../img/logo.png";
 import "../styles/RegForm.css";
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
 
 const RegForm = () => {
+  // const { username, setUsername } = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div style={{ background: "#f3f3f3" }}>
       <div className="regForm_top_wrap flex flex_jc_sb">
@@ -24,9 +29,21 @@ const RegForm = () => {
             복잡한 단계는 모두 없앴습니다.
           </div>
           <form
-            method="post"
             className="login_form"
-            action="http://localhost:8084/login_form"
+            // action="http://localhost:8084/login_form"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const data = await axios({
+                url: `${BACKEND_URL}/login_form`,
+                method: "POST",
+                data: {
+                  email,
+                  password,
+                },
+              });
+              console.log({ email, password });
+              console.log(data);
+            }}
           >
             <input
               type="text"
@@ -34,6 +51,10 @@ const RegForm = () => {
               className="email"
               name="email"
               id="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <input
               type="text"
@@ -41,6 +62,10 @@ const RegForm = () => {
               className="pw"
               name="pw"
               id="pw"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <div className="check_box_wrap">
               <div className="check_box1 flex flex_jc_c">
@@ -50,7 +75,7 @@ const RegForm = () => {
                   id="checkBox1"
                   name="checkBox1"
                 />
-                <label for="checkBox1"></label>
+                <label htmlFor="checkBox1"></label>
                 <div className="check_text1">
                   예, 저는 <a href="#">개인정보 처리방침</a>에 따른 개인정보
                   수집 및 활용에 동의합니다.
@@ -63,7 +88,7 @@ const RegForm = () => {
                   id="checkBox2"
                   name="checkBox2"
                 />
-                <label for="checkBox2"></label>
+                <label htmlFor="checkBox2"></label>
                 <div className="check_text2">
                   예, 넷플릭스 특별 할인 알림 이메일을 보내주세요. (선택 사항)
                 </div>
