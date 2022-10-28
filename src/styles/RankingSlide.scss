@@ -7,6 +7,7 @@
   background-color: transparent;
   position: relative;
   z-index: 20;
+  overflow-x: hidden;
 }
 
 /* 오늘 대한민국의 TOp 10 시리즈 text */
@@ -116,9 +117,6 @@
   border-radius: 0 2% 2% 0;
 }
 
-.slide-body .slide-body {
-  overflow-x: hidden;
-}
 .slide-body .slick-track {
   height: 35vh;
 }

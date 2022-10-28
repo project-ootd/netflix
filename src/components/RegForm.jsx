@@ -3,11 +3,18 @@ import logo from "../img/logo.png";
 import "../styles/RegForm.css";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import AllContents from "./AllContents";
+import { useNavigate } from "react-router-dom";
 
 const RegForm = () => {
   // const { username, setUsername } = useState("");
-  const [email, setEmail] = useState("");
+  const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const onNav = () => {
+    navigate(`/login`);
+  };
+
   return (
     <div style={{ background: "#f3f3f3" }}>
       <div className="regForm_top_wrap flex flex_jc_sb">
@@ -33,31 +40,38 @@ const RegForm = () => {
             // action="http://localhost:8084/login_form"
             onSubmit={async (e) => {
               e.preventDefault();
-              const data = await axios({
-                url: `${BACKEND_URL}/login_form`,
-                method: "POST",
-                data: {
-                  email,
-                  password,
-                },
-              });
-              console.log({ email, password });
-              console.log(data);
+              try {
+                const data = await axios({
+                  url: `${BACKEND_URL}/user/join`,
+                  method: "POST",
+                  data: {
+                    useremail,
+                    password,
+                  },
+                });
+                setUseremail("");
+                setPassword("");
+                console.log(data);
+                alert("회원가입 성공");
+                onNav();
+              } catch (e) {
+                alert("회원가입 실패");
+              }
             }}
           >
             <input
-              type="text"
+              type="email"
               placeholder="이메일 주소"
               className="email"
               name="email"
               id="email"
-              value={email}
+              value={useremail}
               onChange={(e) => {
-                setEmail(e.target.value);
+                setUseremail(e.target.value);
               }}
             />
             <input
-              type="text"
+              type="password"
               placeholder="비밀번호를 추가하세요"
               className="pw"
               name="pw"
@@ -77,7 +91,7 @@ const RegForm = () => {
                 />
                 <label htmlFor="checkBox1"></label>
                 <div className="check_text1">
-                  예, 저는 <a href="#">개인정보 처리방침</a>에 따른 개인정보
+                  예, 저는 <a href="/">개인정보 처리방침</a>에 따른 개인정보
                   수집 및 활용에 동의합니다.
                 </div>
               </div>
