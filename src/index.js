@@ -7,19 +7,22 @@ import ChoiceProfile from "./components/ChoiceProfile";
 import First from "./components/First";
 import Login from "./components/Login";
 import RegForm from "./components/RegForm";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-  <BrowserRouter>
-    {/* <Header /> */}
-    <Routes>
-      <Route path="/" element={<App />}></Route>
-      <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>
-      <Route path="/allcontents" element={<AllContents />}></Route>
-      <Route path="/login" element={<Login />}></Route>
-      <Route path="/regform" element={<RegForm />}></Route>
-    </Routes>
-  </BrowserRouter>
+  <RecoilRoot>
+    <BrowserRouter>
+      {/* <Header /> */}
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>
+        <Route path="/allcontents" element={<AllContents />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/regform" element={<RegForm />}></Route>
+      </Routes>
+    </BrowserRouter>
+  </RecoilRoot>
   // </React.StrictMode>
 );

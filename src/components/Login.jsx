@@ -3,10 +3,15 @@ import "../styles/Login.css";
 import logo from "../img/logo.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const onNav = () => {
+    navigate(`/allcontents`);
+  };
 
   return (
     <div>
@@ -33,9 +38,8 @@ const Login = () => {
                     password,
                   },
                 });
-                console.log("email", useremail);
-                console.log("password", password);
                 alert("로그인 성공");
+                onNav();
               } catch (e) {
                 alert("로그인 실패");
               }
