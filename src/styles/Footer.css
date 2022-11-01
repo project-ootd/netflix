@@ -1,0 +1,61 @@
+.first_footer_wrap {
+  width: 100%;
+  background: black;
+  color: gray;
+  padding: 70px 0px;
+}
+
+.first_footer_wrap > .footer_box {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.first_footer_wrap > .footer_box > .footer_text {
+  text-align: start;
+  margin: 0 auto;
+}
+
+.first_footer_wrap > .footer_box > .footer_text > h4 {
+  font-weight: 100;
+}
+
+.first_footer_wrap > .footer_box > .footer_text > .item_box {
+  padding: 0;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.first_footer_wrap > .footer_box > .footer_text > .item_box > .footer_item {
+  width: 25%;
+  margin: 10px 0;
+  text-align: start;
+}
+
+.first_footer_wrap > .footer_box > .footer_text > .item_box > .footer_item > a {
+  text-decoration: none;
+  color: gray;
+}
+
+.first_footer_wrap
+  > .footer_box
+  > .footer_text
+  > .item_box
+  > .footer_item
+  > a:hover {
+  text-decoration: underline;
+}
+
+.first_footer_wrap > .copy_right_box {
+  width: 50%;
+  margin: 0 auto;
+  text-align: start;
+}
+
+.first_footer_wrap > .copy_right_box > h5 {
+  font-weight: 100;
+}
+
+.first_footer_wrap > .copy_right_box > .text {
+  font-size: 12px;
+  line-height: 18px;
+}

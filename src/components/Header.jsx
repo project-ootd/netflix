@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../img/logo.png";
 import "../styles/Test.css";
+// import "../styles/Header.css";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
@@ -33,7 +34,7 @@ const Header = () => {
         zIndex: "9",
         position: "fixed",
         top: "0",
-        left: "0",
+        left: "35px",
         right: "0",
       }}
     >
@@ -98,6 +99,7 @@ const Header = () => {
           </div>
           <div className="extra-service" style={{ width: "30%" }}>
             <div
+              className="service_box"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -108,35 +110,52 @@ const Header = () => {
               }}
             >
               <div
-                style={{ marginRight: "2vw", fontSize: "1.2vw" }}
-                onClick={onClick}
+                style={{
+                  marginRight: "1vw",
+                  fontSize: "1.2vw",
+                }}
               >
                 {hide ? (
-                  <div style={{ position: "relative" }}>
-                    {" "}
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "250px",
+                      height: "40px",
+
+                      background: "rgba(0,0,0,0.1)",
+                      border: "1px solid white",
+                    }}
+                  >
+                    <FaSearch
+                      onClick={onClick}
+                      style={{
+                        position: "absolute",
+                        zIndex: "23",
+                        top: "1.1vh",
+                        left: "0.5vw",
+                      }}
+                    />{" "}
                     <input
                       type="text"
                       style={{
                         height: "3vh",
-                        border: "solid white 1px",
-                        background: "rgba(0,0,0,0.1)",
                         zIndex: "2",
+                        background: "none",
                         width: "10vw",
                         marginTop: "-30px",
+                        position: "absolute",
+                        top: "3.1vh",
+                        right: "0vw",
+                        border: "none",
+                        outline: "none",
+                        padding: "5px 10px ",
+                        color: "white",
                       }}
                       placeholder={"          제목,사람,장르"}
-                    />
-                    <FaSearch
-                      style={{
-                        position: "absolute",
-                        zIndex: "23",
-                        top: "1vh",
-                        left: "0.4vw",
-                      }}
                     />{" "}
                   </div>
                 ) : (
-                  <FaSearch />
+                  <FaSearch onClick={onClick} />
                 )}
               </div>
               <div style={{ marginRight: "20px" }}>
@@ -189,11 +208,11 @@ const Header = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        class="Hawkins-Icon Hawkins-Icon-Standard"
+                        className="Hawkins-Icon Hawkins-Icon-Standard"
                       >
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M22.2071 7.79285L15.2071 0.792847L13.7929 2.20706L20.7929 9.20706L22.2071 7.79285ZM13.2071 3.79285C12.8166 3.40232 12.1834 3.40232 11.7929 3.79285L2.29289 13.2928C2.10536 13.4804 2 13.7347 2 14V20C2 20.5522 2.44772 21 3 21H9C9.26522 21 9.51957 20.8946 9.70711 20.7071L19.2071 11.2071C19.5976 10.8165 19.5976 10.1834 19.2071 9.79285L13.2071 3.79285ZM17.0858 10.5L8.58579 19H4V14.4142L12.5 5.91417L17.0858 10.5Z"
                           fill="currentColor"
                         ></path>

@@ -1,0 +1,101 @@
+.kakao_wrap {
+  width: 50%;
+
+  margin: 100px auto;
+}
+
+.kakao_wrap > .kakao_box {
+  text-align: center;
+  color: black;
+}
+
+.kakao_wrap > .kakao_box > p {
+  margin: 10px;
+}
+
+.kakao_wrap > .kakao_box > h1 {
+  margin: 10px 0 20px 0;
+}
+
+.kakao_wrap > .kakao_box > .payment_text > .pay_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+  font-size: 18px;
+}
+
+.kakao_wrap > .kakao_box > .payment_text > .pay_list > svg {
+  color: #e50914;
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.kakao_wrap > .pay_info_box {
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.kakao_wrap > .pay_info_box > .pay_tier {
+  background: #e50914;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  width: 10%;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info {
+  display: flex;
+  width: 65%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info > .first_box {
+  width: 60%;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info > .second_box {
+  width: 40%;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info > ul > .info_list {
+  margin-top: 25px;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info > ul > li:first-child {
+  margin-top: 0;
+}
+
+.kakao_wrap > .pay_info_box > .pay_info > ul > .second_list {
+  color: #e50914;
+  font-weight: 600;
+}
+
+.kakao_wrap > .kakaoForm {
+  border: 2px solid #e50914;
+  width: 50%;
+  margin: 50px auto 0;
+
+  color: #e50914;
+}
+
+.kakao_wrap > .kakaoForm > .pay_btn {
+  width: 100%;
+  font-size: 20px;
+
+  padding: 10px 0;
+  text-align: center;
+  transition: all 0.2s;
+  font-weight: 600;
+  border: none;
+}
+
+.kakao_wrap > .kakaoForm > .pay_btn:hover {
+  background: #e50914;
+  color: white;
+}
