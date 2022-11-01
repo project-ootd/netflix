@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../img/logo.png";
 import "../styles/Test.css";
+// import "../styles/Header.css";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
@@ -33,7 +34,7 @@ const Header = () => {
         zIndex: "9",
         position: "fixed",
         top: "0",
-        left: "0",
+        left: "35px",
         right: "0",
       }}
     >
@@ -98,6 +99,7 @@ const Header = () => {
           </div>
           <div className="extra-service" style={{ width: "30%" }}>
             <div
+              className="service_box"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -108,35 +110,52 @@ const Header = () => {
               }}
             >
               <div
-                style={{ marginRight: "2vw", fontSize: "1.2vw" }}
-                onClick={onClick}
+                style={{
+                  marginRight: "1vw",
+                  fontSize: "1.2vw",
+                }}
               >
                 {hide ? (
-                  <div style={{ position: "relative" }}>
-                    {" "}
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "250px",
+                      height: "40px",
+
+                      background: "rgba(0,0,0,0.1)",
+                      border: "1px solid white",
+                    }}
+                  >
+                    <FaSearch
+                      onClick={onClick}
+                      style={{
+                        position: "absolute",
+                        zIndex: "23",
+                        top: "1.1vh",
+                        left: "0.5vw",
+                      }}
+                    />{" "}
                     <input
                       type="text"
                       style={{
                         height: "3vh",
-                        border: "solid white 1px",
-                        background: "rgba(0,0,0,0.1)",
                         zIndex: "2",
+                        background: "none",
                         width: "10vw",
                         marginTop: "-30px",
+                        position: "absolute",
+                        top: "3.1vh",
+                        right: "0vw",
+                        border: "none",
+                        outline: "none",
+                        padding: "5px 10px ",
+                        color: "white",
                       }}
                       placeholder={"          제목,사람,장르"}
-                    />
-                    <FaSearch
-                      style={{
-                        position: "absolute",
-                        zIndex: "23",
-                        top: "1vh",
-                        left: "0.4vw",
-                      }}
                     />{" "}
                   </div>
                 ) : (
-                  <FaSearch />
+                  <FaSearch onClick={onClick} />
                 )}
               </div>
               <div style={{ marginRight: "20px" }}>

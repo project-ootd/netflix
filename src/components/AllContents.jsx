@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import KoreanDrama from "../slides/KoreanDrama";
+import Footer from "./Footer";
 import Header from "./Header";
 import Modal from "./Modal";
 import RankingSlide from "./RankingSlide";
@@ -22,6 +23,7 @@ const AllContents = () => {
       <RankingSlide openModal={openModal} />
       <KoreanDrama />
       <Modal open={modalOpen} close={closeModal} header="Modal heading" />
+      <Footer />
     </div>
   );
 };
