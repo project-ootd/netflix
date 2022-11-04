@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/Modal.css";
 import { BsPlusLg, BsPlayFill, BsHandThumbsUp } from "react-icons/bs";
 
@@ -6,6 +6,12 @@ const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, header } = props;
   const videoRef = useRef();
+
+  useEffect(() => {
+    open
+      ? (document.body.style = `overflow: hidden`)
+      : (document.body.style = `overflow: scroll`);
+  }, [open]);
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.

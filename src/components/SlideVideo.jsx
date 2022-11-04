@@ -32,6 +32,7 @@ const SlideVideo = ({ openModal }) => {
           height="200vh"
           style={{ borderRadius: "5% 5% 0 0" }}
           loop
+          muted
           //   controls
           ref={videoRef}
         ></video>

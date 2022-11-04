@@ -4,6 +4,8 @@ import logo from "../img/logo.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
@@ -12,6 +14,8 @@ const Login = () => {
   const onNav = () => {
     navigate(`/allcontents`);
   };
+
+  const [user, setUser] = useRecoilState(userState);
 
   return (
     <div>
@@ -29,19 +33,27 @@ const Login = () => {
             autoComplete="off"
             onSubmit={async (e) => {
               e.preventDefault();
-              try {
-                const data = await axios({
-                  url: `${BACKEND_URL}/user/login`,
-                  method: "POST",
-                  data: {
-                    useremail,
-                    password,
-                  },
-                });
-                alert("로그인 성공");
-                onNav();
-              } catch (e) {
-                alert("로그인 실패");
+              if (!useremail || !password) {
+                alert("입력값이 없습니다.");
+              } else {
+                try {
+                  const data = await axios({
+                    url: `${BACKEND_URL}/user/login`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                      password,
+                    },
+                  });
+                  setUseremail("");
+                  setPassword("");
+                  setUser(data.data);
+                  alert("로그인 성공");
+                  onNav();
+                  // console.log(data);
+                } catch (e) {
+                  alert("로그인 실패");
+                }
               }
             }}
           >

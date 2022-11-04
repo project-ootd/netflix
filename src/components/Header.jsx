@@ -7,6 +7,11 @@ import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import { FaPen } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
+
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
+import { useNavigate } from "react-router-dom";
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -22,6 +27,14 @@ const Header = () => {
       SetHide(true);
     }
   };
+
+  const navigate = useNavigate();
+  const onNav = () => {
+    navigate(`/`);
+  };
+
+  const [user, setUser] = useRecoilState(userState);
+
   return (
     <div
       classnames="Header"
@@ -196,7 +209,9 @@ const Header = () => {
                         alt=""
                         style={{}}
                       />
-                      <div style={{ marginLeft: "10px" }}>anoter porfile</div>
+                      <div style={{ marginLeft: "10px" }}>
+                        {user && user.useremail}
+                      </div>
                     </a>
                   </li>
                   <hr />
@@ -233,8 +248,14 @@ const Header = () => {
                     </a>
                   </li>
                   <hr />
-                  <li style={{ paddingBottom: "10px" }}>
-                    <a href="/">넷플릭스 로그아웃</a>
+                  <li
+                    style={{ paddingBottom: "10px", cursor: "pointer" }}
+                    onClick={() => {
+                      setUser(null);
+                      onNav();
+                    }}
+                  >
+                    <a>넷플릭스 로그아웃</a>
                   </li>
                 </ul>
               </div>

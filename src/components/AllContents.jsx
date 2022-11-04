@@ -5,6 +5,8 @@ import Header from "./Header";
 import Modal from "./Modal";
 import RankingSlide from "./RankingSlide";
 import TestVideo from "./TestVideo";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,8 +18,10 @@ const AllContents = () => {
     setModalOpen(false);
   };
 
+  const [user, setUser] = useRecoilState(userState);
+
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <Header />
       <TestVideo />
       <RankingSlide openModal={openModal} />

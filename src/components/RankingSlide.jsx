@@ -45,7 +45,7 @@ const RankingSlide = ({ openModal }) => {
     <div
       className="slide-body"
       style={{
-        marginTop: "-13vh",
+        margin: "-13vh auto 0",
         zIndex: "3",
         position: "relative",
         overflow: "hidden",
@@ -234,7 +234,7 @@ const RankingSlide = ({ openModal }) => {
             <div className="video_box">
               <video
                 className="player"
-                src="https://www.youtube.com/watch?v=_stX5qaJl_4"
+                src=""
                 width="200px"
                 height="112.5px"
               ></video>

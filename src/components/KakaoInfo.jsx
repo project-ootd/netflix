@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineCheck } from "react-icons/ai";
 
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
+
 import IntroHeader from "./IntroHeader";
 import IntroFooter from "./IntroFooter";
 import "../styles/KakaoInfo.css";
@@ -73,8 +76,22 @@ const KakaoInfo = () => {
             </div>
           </div>
 
-          <form method="post" action="/kakaoPay" className="kakaoForm">
-            <button className="pay_btn">결제하기</button>
+          <form
+            className="kakaoForm"
+            onSubmit={async (e) => {
+              try {
+                const data = await axios({
+                  url: `http://localhost:8084/kakaoPay`,
+                  method: "POST",
+                });
+              } catch (e) {
+                alert("결제 실패");
+              }
+            }}
+          >
+            <button className="pay_btn" id="pay_btn">
+              결제하기
+            </button>
           </form>
         </div>
 
