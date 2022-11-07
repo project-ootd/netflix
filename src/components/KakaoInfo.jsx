@@ -81,7 +81,7 @@ const KakaoInfo = () => {
             onSubmit={async (e) => {
               try {
                 const data = await axios({
-                  url: `http://localhost:8084/kakaoPay`,
+                  url: `http://localhost:8084/kakaoPay.do`,
                   method: "POST",
                 });
               } catch (e) {
