@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../img/logo.png";
 import "../styles/RegForm.css";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,11 @@ import IntroFooter from "./IntroFooter";
 import "../styles/KakaoInfo.css";
 import kakaoIcon from "../img/payment_icon.png";
 
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
+import Moment from "moment";
+import "moment/locale/ko"; // Locale Setting
+
 const KakaoInfo = () => {
   // const { username, setUsername } = useState("");
   const [useremail, setUseremail] = useState("");
@@ -21,6 +26,11 @@ const KakaoInfo = () => {
   const onNav = () => {
     navigate(`/login`);
   };
+
+  const [user, setUser] = useRecoilState(userState);
+
+  const day = Moment().format("YYYY-MM-DD");
+  console.log(day);
 
   return (
     <>
@@ -78,17 +88,21 @@ const KakaoInfo = () => {
 
           <form
             className="kakaoForm"
-            onSubmit={async (e) => {
-              try {
-                const data = await axios({
-                  url: `http://localhost:8084/kakaoPay.do`,
-                  method: "POST",
-                });
-              } catch (e) {
-                alert("결제 실패");
-              }
-            }}
+            action="http://localhost:8084/kakaoPay"
+            method="POST"
+            // onSubmit={async (e) => {
+            //   try {
+            //     const data = await axios({
+            //       url: `http://localhost:8084/kakaoPay`,
+            //       method: "POST",
+            //     });
+            //   } catch (e) {
+            //     alert("결제 실패");
+            //   }
+            // }}
           >
+            <input type="hidden" name="nowdate" value={day} />
+            <input type="hidden" name="useremail" value={user.useremail} />
             <button className="pay_btn" id="pay_btn">
               결제하기
             </button>

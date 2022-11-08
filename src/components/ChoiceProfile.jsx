@@ -1,7 +1,47 @@
 import React from "react";
 import "../styles/ChoiceProfile.css";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
+import { useEffect } from "react";
+import axios from "axios";
+import Moment from "moment";
+import "moment/locale/ko"; // Locale Setting
 
 const ChoiceProfile = () => {
+  const [user, setUser] = useRecoilState(userState);
+
+  const day = Moment().format("YYYY-MM-DD");
+  // console.log(day);
+
+  useEffect(() => {
+    const getOrder = async () => {
+      const data = await axios({
+        url: "http://localhost:8084/getorder",
+        method: "POST",
+        data: {
+          useremail: user.useremail,
+        },
+      });
+      console.log(data.data);
+    };
+
+    getOrder();
+
+    // getOrder();
+    const setOrder = async () => {
+      const data = await axios({
+        url: "http://localhost:8084/order",
+        method: "POST",
+        data: {
+          useremail: user.useremail,
+          orderDate: day,
+        },
+      });
+    };
+
+    setOrder();
+  }, []);
+
   return (
     <div className="choice-head">
       <div className="pinning-head">
