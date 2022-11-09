@@ -10,19 +10,24 @@ import "moment/locale/ko"; // Locale Setting
 const ChoiceProfile = () => {
   const [user, setUser] = useRecoilState(userState);
 
-  const day = Moment().format("YYYY-MM-DD");
-  // console.log(day);
+  const day = Moment().format("YYYY-MM-DD HH:mm:ss");
+  console.log(day);
 
   useEffect(() => {
     const getOrder = async () => {
-      const data = await axios({
-        url: "http://localhost:8084/getorder",
-        method: "POST",
-        data: {
-          useremail: user.useremail,
-        },
-      });
-      console.log(data.data);
+      try {
+        const data = await axios({
+          url: "http://localhost:8084/getorder",
+          method: "POST",
+          data: {
+            useremail: user.useremail,
+          },
+        });
+        console.log("data : ", data.data);
+      } catch (e) {
+        console.log(e);
+        console.log("실행 안됨!!!");
+      }
     };
 
     getOrder();
