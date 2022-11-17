@@ -6,13 +6,18 @@ import { BACKEND_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../recoil";
+import { useEffect } from "react";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const onNav = () => {
-    navigate(`/allcontents`);
+  const choiceprofile = () => {
+    navigate(`/choiceprofile`);
+  };
+
+  const payinfo = () => {
+    navigate(`/payinfo`);
   };
 
   const [user, setUser] = useRecoilState(userState);
@@ -49,8 +54,23 @@ const Login = () => {
                   setPassword("");
                   setUser(data.data);
                   alert("로그인 성공");
-                  onNav();
-                  // console.log(data);
+
+                  const payChk = await axios({
+                    url: `${BACKEND_URL}/user/getLastPayDate`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                    },
+                  });
+
+                  console.log("payChk" + payChk.data.lastPaymentDate);
+                  if (payChk.data.lastPaymentDate) {
+                    choiceprofile();
+                  } else {
+                    payinfo();
+                  }
+                  // onNav();
+                  console.log("data : " + data.data);
                 } catch (e) {
                   alert("로그인 실패");
                 }

@@ -14,7 +14,7 @@ const RegForm = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const onNav = () => {
-    navigate(`/payinfo`);
+    navigate(`/login`);
   };
 
   return (
