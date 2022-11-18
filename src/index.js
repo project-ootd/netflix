@@ -9,6 +9,9 @@ import Login from "./components/Login";
 import RegForm from "./components/RegForm";
 import { RecoilRoot } from "recoil";
 import KakaoInfo from "./components/KakaoInfo";
+import Search from "./components/Search";
+import SlideItems from "./components/SlideItems";
+// import Kakaopay from "./components/Kakaopay";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +26,10 @@ root.render(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/regform" element={<RegForm />}></Route>
         <Route path="/payinfo" element={<KakaoInfo />}></Route>
+        <Route path="/search/:search" element={<Search />}></Route>
+        <Route path="/search" element={<Search />}></Route>
+        <Route path="/slideitems" element={<SlideItems />}></Route>
+        {/* <Route path="/kakaopay" element={<Kakaopay />}></Route> */}
       </Routes>
     </BrowserRouter>
   </RecoilRoot>

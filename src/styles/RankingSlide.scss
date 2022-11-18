@@ -86,7 +86,7 @@
 
 .slide-body .slider_items {
   position: absolute;
-  // margin: 30px;
+  // margin: 0 0 0 150px;
   // height: 175px;
   top: 20%;
 }
@@ -139,6 +139,16 @@
   top: -55px;
   left: -155px;
   z-index: 10;
+}
+
+.slide-body .slider_item_1 > .video_box,
+.slide-body .slider_item_6 > .video_box {
+  left: -120px;
+}
+
+.slide-body .slider_item_5 > .video_box,
+.slide-body .slider_item_10 > .video_box {
+  left: -180px;
 }
 
 .slide-body .slider_items:hover > .video_box {

@@ -4,14 +4,23 @@ import logo from "../img/logo.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
+import { useEffect } from "react";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const onNav = () => {
-    navigate(`/allcontents`);
+  const choiceprofile = () => {
+    navigate(`/choiceprofile`);
   };
+
+  const payinfo = () => {
+    navigate(`/payinfo`);
+  };
+
+  const [user, setUser] = useRecoilState(userState);
 
   return (
     <div>
@@ -29,19 +38,42 @@ const Login = () => {
             autoComplete="off"
             onSubmit={async (e) => {
               e.preventDefault();
-              try {
-                const data = await axios({
-                  url: `${BACKEND_URL}/user/login`,
-                  method: "POST",
-                  data: {
-                    useremail,
-                    password,
-                  },
-                });
-                alert("로그인 성공");
-                onNav();
-              } catch (e) {
-                alert("로그인 실패");
+              if (!useremail || !password) {
+                alert("입력값이 없습니다.");
+              } else {
+                try {
+                  const data = await axios({
+                    url: `${BACKEND_URL}/api/v1/user/login`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                      password,
+                    },
+                  });
+                  setUseremail("");
+                  setPassword("");
+                  setUser(data.data);
+                  alert("로그인 성공");
+
+                  const payChk = await axios({
+                    url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                    },
+                  });
+
+                  console.log("payChk" + payChk.data.lastPaymentDate);
+                  if (payChk.data.lastPaymentDate) {
+                    choiceprofile();
+                  } else {
+                    payinfo();
+                  }
+                  // onNav();
+                  console.log("data : " + data.data);
+                } catch (e) {
+                  alert("로그인 실패");
+                }
               }
             }}
           >
