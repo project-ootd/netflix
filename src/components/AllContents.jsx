@@ -14,9 +14,12 @@ import { BACKEND_URL } from "../utils";
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useState([]);
+  const [currentContent, setCurrentContent] = useState({});
+  const [allContents, setAllContents] = useState([]);
 
-  const openModal = () => {
+  const openModal = (content) => {
     setModalOpen(true);
+    setCurrentContent(content);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -30,16 +33,25 @@ const AllContents = () => {
         url: `${BACKEND_URL}/rank`,
         method: "GET",
       });
-      console.log(data.data);
       setRanking(data.data);
     };
     getRank();
+
+    const getContent = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/allcontent`,
+        method: "GET",
+      });
+      // console.log(data.data);
+      setAllContents(data.data);
+    };
+    getContent();
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <TestVideo />
+      <TestVideo openModal={openModal} allContents={allContents[0]} />
       <RankingSlide openModal={openModal} ranking={ranking} />
       {/* <KoreanDrama /> */}
       <SlideItems />
@@ -48,6 +60,7 @@ const AllContents = () => {
         close={closeModal}
         ranking={ranking}
         header="Modal heading"
+        currentContent={currentContent}
       />
       <Footer />
     </div>
