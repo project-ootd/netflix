@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import logo from "../img/logo.png";
-import "../styles/Test.css";
-// import "../styles/Header.css";
+import "../styles/Header.css";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import { FaPen } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
 
-import { useRecoilState } from "recoil";
-import { userState } from "../recoil";
 import { useNavigate } from "react-router-dom";
+
+import axios from "axios";
+import { getDefaultNormalizer } from "@testing-library/react";
 
 <link
   rel="stylesheet"
@@ -18,7 +18,23 @@ import { useNavigate } from "react-router-dom";
 />;
 
 const Header = () => {
+  const navigator = useNavigate();
   const [hide, SetHide] = useState(false);
+  const [search, setSearch] = useState(sessionStorage.getItem("search") || "");
+  const [keyword, setKeyword] = useState([]);
+
+  const onSearch = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+
+    onMove(e.target.value);
+    console.log("search : " + search);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onMove();
+  };
 
   const onClick = () => {
     if (hide === true) {
@@ -27,14 +43,12 @@ const Header = () => {
       SetHide(true);
     }
   };
-
-  const navigate = useNavigate();
-  const onNav = () => {
-    navigate(`/`);
+  const onMove = (keyword) => {
+    navigator(`/search/${keyword}`);
   };
-
-  const [user, setUser] = useRecoilState(userState);
-
+  const onMovehome = () => {
+    navigator("/allcontents");
+  };
   return (
     <div
       classnames="Header"
@@ -71,11 +85,13 @@ const Header = () => {
             <ul>
               <li>
                 <div className="img-box" style={{ width: "100%" }}>
-                  <img
-                    src={logo}
-                    alt=""
-                    style={{ width: "70%", marginTop: "1vh" }}
-                  />
+                  <a href="/allcontents">
+                    <img
+                      src={logo}
+                      alt=""
+                      style={{ width: "70%", marginTop: "1vh" }}
+                    />
+                  </a>
                 </div>
               </li>
             </ul>
@@ -91,7 +107,7 @@ const Header = () => {
               }}
             >
               <li style={{ margin: "0 2vw", fontWeight: "bold" }}>
-                <a href="/">홈</a>
+                <a href="/allcontents">홈</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
                 <a href="/">시리즈</a>
@@ -134,7 +150,6 @@ const Header = () => {
                       position: "relative",
                       width: "250px",
                       height: "40px",
-
                       background: "rgba(0,0,0,0.1)",
                       border: "1px solid white",
                     }}
@@ -144,28 +159,39 @@ const Header = () => {
                       style={{
                         position: "absolute",
                         zIndex: "23",
-                        top: "1.1vh",
-                        left: "0.5vw",
+                        fontSize: "1.2vw",
+                        top: "1vh",
+                        marginLeft: "0.5vw",
                       }}
-                    />{" "}
+                    />
+
                     <input
-                      type="text"
+                      onKeyPress={(e) => {
+                        if (e.key == "Enter") {
+                          onMove();
+                        }
+                      }}
+                      onChange={onSearch}
+                      value={search}
+                      className="search-input"
+                      type="search"
                       style={{
-                        height: "3vh",
+                        height: "4vh",
                         zIndex: "2",
                         background: "none",
-                        width: "10vw",
+                        width: "11vw",
                         marginTop: "-30px",
                         position: "absolute",
-                        top: "3.1vh",
+                        top: "3.3vh",
                         right: "0vw",
                         border: "none",
                         outline: "none",
                         padding: "5px 10px ",
                         color: "white",
+                        fontSize: "0.75vw",
                       }}
-                      placeholder={"          제목,사람,장르"}
-                    />{" "}
+                      placeholder={"제목, 사람, 장르"}
+                    />
                   </div>
                 ) : (
                   <FaSearch onClick={onClick} />
@@ -209,9 +235,7 @@ const Header = () => {
                         alt=""
                         style={{}}
                       />
-                      <div style={{ marginLeft: "10px" }}>
-                        {user && user.useremail}
-                      </div>
+                      <div style={{ marginLeft: "10px" }}>anoter porfile</div>
                     </a>
                   </li>
                   <hr />
@@ -248,14 +272,8 @@ const Header = () => {
                     </a>
                   </li>
                   <hr />
-                  <li
-                    style={{ paddingBottom: "10px", cursor: "pointer" }}
-                    onClick={() => {
-                      setUser(null);
-                      onNav();
-                    }}
-                  >
-                    <a>넷플릭스 로그아웃</a>
+                  <li style={{ paddingBottom: "10px" }}>
+                    <a href="/">넷플릭스 로그아웃</a>
                   </li>
                 </ul>
               </div>

@@ -43,7 +43,7 @@ const Login = () => {
               } else {
                 try {
                   const data = await axios({
-                    url: `${BACKEND_URL}/user/login`,
+                    url: `${BACKEND_URL}/api/v1/user/login`,
                     method: "POST",
                     data: {
                       useremail,
@@ -56,7 +56,7 @@ const Login = () => {
                   alert("로그인 성공");
 
                   const payChk = await axios({
-                    url: `${BACKEND_URL}/user/getLastPayDate`,
+                    url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
                     method: "POST",
                     data: {
                       useremail,

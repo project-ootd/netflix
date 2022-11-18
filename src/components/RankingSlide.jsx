@@ -6,7 +6,7 @@ import "../styles/RankingSlide.scss";
 import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 
-const RankingSlide = ({ openModal }) => {
+const RankingSlide = ({ openModal, ranking }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -78,10 +78,9 @@ const RankingSlide = ({ openModal }) => {
             </div>
 
             <div className="video_box">
-              <SlideVideo openModal={openModal} />
+              <SlideVideo openModal={openModal} ranking={ranking} />
             </div>
           </div>
-
           {/* rank 2 */}
           <div className="slider_item_2 slider_items">
             <svg
@@ -108,7 +107,6 @@ const RankingSlide = ({ openModal }) => {
               <SlideVideo openModal={openModal} />
             </div>
           </div>
-
           {/* rank 3 */}
           <div className="slider_item_3 slider_items">
             <svg
@@ -133,7 +131,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 4 */}
           <div className="slider_item_4 slider_items">
             <svg
@@ -158,7 +155,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 5 */}
           <div className="slider_item_5 slider_items">
             <svg
@@ -183,7 +179,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 6 */}
           <div className="slider_item_6 slider_items">
             <svg
@@ -208,7 +203,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 7 */}
           <div className="slider_item_7 slider_items">
             <svg
@@ -242,7 +236,6 @@ const RankingSlide = ({ openModal }) => {
               {/*  */}
             </div>
           </div>
-
           {/* rank 8 */}
           <div className="slider_item_8 slider_items">
             <svg
@@ -267,7 +260,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 9 */}
           <div className="slider_item_9 slider_items">
             <svg
@@ -293,7 +285,6 @@ const RankingSlide = ({ openModal }) => {
             </div>
             <div className="video_box"></div>
           </div>
-
           {/* rank 10 */}
           <div className="slider_item_10 slider_items">
             <svg

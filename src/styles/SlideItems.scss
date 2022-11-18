@@ -1,0 +1,291 @@
+/* 슬라이드 틀 */
+.slideItems-all-container {
+  box-sizing: border-box;
+  padding: 0 4%;
+  margin-bottom: 5vh;
+}
+
+.slide-container {
+  margin-top: 5vh;
+}
+
+.slideItems-all-container .slick-track {
+  // margin-bottom: 4vh;
+  height: max-content;
+}
+
+.slideItems-all-container .slick-list {
+  // border : 3px solid red;
+}
+
+.thumbnail-container-title {
+  display: flex;
+}
+
+/* 타이틀 커스터마이징 */
+
+.slide-title-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.slide-detail-hover {
+  display: inline-block;
+  position: relative;
+}
+
+.slide-detail-text {
+  position: absolute;
+  display: inline-block;
+  color: #54b9c5;
+  margin-top: 10px;
+  font-size: 0.8vw;
+  opacity: 0;
+  vertical-align: bottom;
+  white-space: nowrap;
+  max-width: 200px;
+  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
+}
+
+.slide-arrow-img {
+  position: absolute;
+  display: inline-block;
+  margin-top: 17px;
+  margin-left: -100%;
+  opacity: 0;
+  vertical-align: bottom;
+  white-space: nowrap;
+  color: #54b9c5;
+}
+
+.slide-detail-hover {
+  position: absolute;
+}
+
+/* 타이틀 호버 */
+
+.slide-title-text:hover .slide-detail-text {
+  display: inline-block;
+  opacity: 1;
+  max-width: 200px;
+  transform: translate(1vw);
+  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
+}
+
+.slide-title-text:hover .slide-arrow-img {
+  display: inline-block;
+  opacity: 1;
+  max-width: 200px;
+  transform: translate(4.5vw);
+  transition: max-width 1s, opacity 0.5s, transform 0.5s;
+}
+
+/* 타이틀 커스터마이징 끝 */
+
+/* 섬네일 이미지 커스터마이징 */
+
+.thumbnail-container {
+  position: relative;
+  margin-right: 5px;
+}
+
+.thumbnail-img {
+  border-radius: 5px;
+  width: 95%;
+  height: 100%;
+}
+
+/* 섬네일 이미지 커스터마이징 끝*/
+
+/* 화살표 커스터마이징 */
+
+/* 화살표 이미지 */
+.slideItems-all-container .slick-prev:before,
+.slideItems-all-container .slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/back.png");
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slideItems-all-container .slick-next:before {
+  content: url("https://img.icons8.com/windows/32/FFFFFF/forward.png");
+}
+
+/* 화살표 모션 */
+.slideItems-all-container .slick-arrow {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.25s ease-in-out !important;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out !important;
+  align-self: center;
+  height: 100%;
+  width: 2vw;
+}
+
+.slideItems-all-container .slick-arrow:hover {
+  opacity: 0.7;
+  background-color: #141414;
+}
+
+.slideItems-all-container .slick-prev {
+  left: 0;
+  z-index: 10;
+}
+
+.slideItems-all-container .slick-next {
+  right: 0;
+}
+
+.slideItems-all-container .slick-prev,
+.slideItems-all-container .slick-next {
+  // 좌측 화살표의 위치값을 넣어줍니다.
+  // margin-left: 2vh;
+}
+
+.slideItems-all-container .slick-prev::before,
+.slideItems-all-container .slick-next::before {
+  // font-size: 20px !important;
+}
+
+.slick-next {
+  //   // 우측화살표의 위치값을 넣어줍니다.
+}
+
+.slick-next::before {
+}
+/* 좌/우측 화살표 끝 */
+
+/*리스트 최상위(h2)*/
+.rowHeader {
+  line-height: 1.3;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0.5em;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-right: 4%;
+  margin-bottom: 0;
+  margin-right: 4.2%;
+}
+
+// @media screen and (min-width: 1500px) {
+//   .categoryRowCollapsible .rowHeader {
+//     padding-right: 60px;
+//   }
+// }
+
+/*리스트 타이틀(지금뜨는컨텐츠)*/
+.lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
+  display: table-cell;
+  font-size: 1.4vw;
+  line-height: 1.25vw;
+  vertical-align: bottom;
+}
+
+// @media screen and (max-width: 800px) {
+//   .lolomoRow.lolomoRow_title_card .rowTitle .row-header-title {
+//     font-size: 12px;
+//   }
+// }
+
+/*모두보기+화살표 상위클래스(div)*/
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+/*모두보기(.see-all-link)*/
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-header .see-all-link {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9vw;
+  line-height: 0.8vw;
+  margin-right: 4px;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 1s, opacity 1s, transform 0.75s;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-header .see-all-link,
+.lolomoRow.lolomoRow_title_card:hover
+  a.rowTitle:hover
+  .aro-row-header
+  .see-all-link {
+  max-width: 200px;
+  opacity: 1;
+  transform: translate(1vw);
+}
+
+/* 모두보기 화살표(aro-row-chevron) */
+
+.lolomoRow.lolomoRow_title_card .rowTitle .aro-row-chevron {
+  display: none;
+  font-size: 0.9vw;
+  transition: transform 0.75s;
+  vertical-align: bottom;
+}
+
+.lolomoRow.lolomoRow_title_card
+  .rowTitle
+  .aro-row-header.more-visible
+  .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card
+  .rowTitle
+  .aro-row-header.more-visible
+  .see-all-link {
+  color: #54b9c5;
+}
+
+.lolomoRow.lolomoRow_title_card
+  a.rowTitle:focus
+  .aro-row-header
+  .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card:hover
+  a.rowTitle:hover
+  .aro-row-header
+  .aro-row-chevron {
+  font-size: 0.65vw;
+  line-height: 0.8vw;
+  transform: translate(1vw);
+}
+
+@media screen and (max-width: 800px) {
+  .lolomoRow.lolomoRow_title_card
+    a.rowTitle:focus
+    .aro-row-header
+    .aro-row-chevron,
+  .lolomoRow.lolomoRow_title_card:hover
+    a.rowTitle:hover
+    .aro-row-header
+    .aro-row-chevron {
+    font-size: 6px;
+  }
+}
+
+.lolomoRow.lolomoRow_title_card a.rowTitle:focus .aro-row-chevron,
+.lolomoRow.lolomoRow_title_card:hover a.rowTitle .aro-row-chevron {
+  display: inline-block;
+  font-size: 0.9vw;
+  vertical-align: bottom;
+}
+
+/* 모두보기 화살표(.icon-akiraCaretRight) */
+.icon-akiraCaretRight:before {
+  content: "https://img.icons8.com/metro/10/54b9c5/forward.png";
+}

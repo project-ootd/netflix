@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../styles/Modal.css";
 import { BsPlusLg, BsPlayFill, BsHandThumbsUp } from "react-icons/bs";
 
-const Modal = (props) => {
+const Modal = (props, ranking) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, header } = props;
   const videoRef = useRef();
