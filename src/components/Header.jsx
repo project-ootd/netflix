@@ -51,7 +51,7 @@ const Header = () => {
   };
   return (
     <div
-      classnames="Header"
+      classnames="Header App"
       style={{
         display: "inline-block",
         width: "100%",
