@@ -3,8 +3,8 @@ import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "../styles/TestVideo.scss";
 import $ from "jquery";
-const TestVideo = () => {
-  const [time, setTime] = useState(true);
+const TestVideo = ({ openModal, allContents }) => {
+  const [time, setTime] = useState(false);
   const [check, SetCheck] = useState(1);
 
   return (
@@ -15,7 +15,10 @@ const TestVideo = () => {
             <div style={{ width: "100%", height: "920px" }}>
               {time ? (
                 <img
-                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVz7Jt44hr7JRKCx1uRU1f7TM_JnzI8tN_PWK3EKnraE8GMhu1eSwP589ZkL2phbkp0n197H041fQVQQ_95zZk_qhTDDWuY3c3gH.webp?r=21f"
+                  src={
+                    // "https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVz7Jt44hr7JRKCx1uRU1f7TM_JnzI8tN_PWK3EKnraE8GMhu1eSwP589ZkL2phbkp0n197H041fQVQQ_95zZk_qhTDDWuY3c3gH.webp?r=21f"
+                    allContents?.contentImg
+                  }
                   alt=""
                   style={{ width: "100%", height: "920px" }}
                 />
@@ -26,11 +29,12 @@ const TestVideo = () => {
                   height="100%"
                   style={{
                     position: "relative",
+                    marginTop: "-20px",
                   }}
                   autoPlay
                   muted
                 >
-                  <source src="/videos/main_video.mp4" type="video/mp4" />
+                  <source src={allContents?.contentVideo} type="video/mp4" />
                 </video>
               )}
               <div
@@ -44,7 +48,10 @@ const TestVideo = () => {
                 }}
               >
                 <img
-                  src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABVpD2HLqSeIPYBbj82FQUt1gQmvRXsb1wYcbeSEJh2b06C2Th8QVSM9qx4odBsCWdEBhnhvnMEncjN--2_EOTUgQmCSq3GlNAFO8fVTtlrc.webp?r=e4c"
+                  src={
+                    // "https://occ-0-988-395.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABVpD2HLqSeIPYBbj82FQUt1gQmvRXsb1wYcbeSEJh2b06C2Th8QVSM9qx4odBsCWdEBhnhvnMEncjN--2_EOTUgQmCSq3GlNAFO8fVTtlrc.webp?r=e4c"
+                    allContents?.detailTextImg
+                  }
                   alt="체인소 맨"
                   className="title-img"
                   style={{
@@ -125,6 +132,9 @@ const TestVideo = () => {
                         display: "flex",
                         alignItems: "center",
                         color: "white",
+                      }}
+                      onClick={() => {
+                        openModal(allContents);
                       }}
                     >
                       상세정보
