@@ -34,24 +34,25 @@ const AllContents = () => {
         method: "GET",
       });
       setRanking(data.data);
+      console.log("data", data.data);
     };
     getRank();
 
-    const getContent = async () => {
-      const data = await axios({
-        url: `${BACKEND_URL}/allcontent`,
-        method: "GET",
-      });
-      // console.log(data.data);
-      setAllContents(data.data);
-    };
-    getContent();
+    // const getContent = async () => {
+    //   const data = await axios({
+    //     url: `${BACKEND_URL}/allcontent`,
+    //     method: "GET",
+    //   });
+    //   // console.log(data.data);
+    //   setAllContents(data.data);
+    // };
+    // getContent();
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <TestVideo openModal={openModal} allContents={allContents[0]} />
+      <TestVideo openModal={openModal} allContents={ranking[0]} />
       <RankingSlide openModal={openModal} ranking={ranking} />
       {/* <KoreanDrama /> */}
       <SlideItems />

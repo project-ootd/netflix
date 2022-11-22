@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/Modal.css";
 import { BsPlusLg, BsPlayFill, BsHandThumbsUp } from "react-icons/bs";
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
 
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, currentContent } = props;
-  console.log(currentContent);
+  // console.log(currentContent);
 
   const videoRef = useRef();
 
@@ -14,6 +16,23 @@ const Modal = (props) => {
       ? (document.body.style = `overflow: hidden`)
       : (document.body.style = `overflow: scroll`);
   }, [open]);
+  // console.log(currentContent.contentId);
+
+  // useEffect(() => {
+  //   console.log(currentContent.contentId);
+  //   const getsubContet = async () => {
+  //     const data = await axios({
+  //       url: `${BACKEND_URL}/subcontent`,
+  //       method: "POST",
+  //       data: {
+  //         contentNum: currentContent.contentId,
+  //       },
+  //     });
+
+  //     console.log(data.data);
+  //   };
+  //   getsubContet();
+  // }, [currentContent]);
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
@@ -130,34 +149,32 @@ const Modal = (props) => {
 
           <div className="episode_video_wrap">
             <div className="episode_video_text flex flex_jc_sb">
-              <h2>회차(아직 안함)</h2>
+              <h2>회차</h2>
               <h2>{currentContent?.contentName}</h2>
             </div>
+            {currentContent.detailDtos.map((detail, index) => {
+              return (
+                <div className="video_item flex" key={index}>
+                  <h2 className="video_number flex flex_ai_c flex_jc_c">
+                    {index + 1}
+                  </h2>
 
-            <div className="video_item flex">
-              <h2 className="video_number flex flex_ai_c flex_jc_c">1</h2>
+                  <div className="video_img flex flex_ai_c flex_jc_c">
+                    <div className="img_box">
+                      <img src={detail.subImg} alt="" />
+                    </div>
+                  </div>
 
-              <div className="video_img flex flex_ai_c flex_jc_c">
-                <div className="img_box">
-                  <img
-                    src="https://newsimg.sedaily.com/2022/09/18/26B4FEG52E_4.jpg"
-                    alt=""
-                  />
+                  <div className="modal_video_text_wrap">
+                    <div className="text1 flex flex_jc_sb">
+                      <h4 className="video_title">{detail.detailEpisode}화</h4>
+                      <h4 className="video_time">{detail.playtime}분</h4>
+                    </div>
+                    <div className="text2">{detail.subStory}</div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="modal_video_text_wrap">
-                <div className="text1 flex flex_jc_sb">
-                  <h4 className="video_title">1화(아직 안함)</h4>
-                  <h4 className="video_time">62분(아직 안함)</h4>
-                </div>
-                <div className="text2">
-                  새로운 사업을 알아보던 강인구가 공장을 향하는데 세력싸움에
-                  휘말리고 어쩌고 저쩌고 이러쿵 저러쿵 이랬다 저랬다 뭐가 잘
-                  안되고 누구 죽고 그럼 (아직 안함)
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       ) : null}

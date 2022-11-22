@@ -15,8 +15,8 @@
 
 .openModal > .modal_wrap {
   width: 55%;
-  height: 150%;
-  margin: 40% 0 0;
+  height: max-content;
+  margin: 110% 0 0;
   position: relative;
   display: inline-block;
   justify-content: center;
@@ -203,9 +203,10 @@
 }
 
 .episode_video_wrap > .video_item {
-  padding: 20px;
+  padding: 20px 10px;
   background: #333;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .episode_video_wrap > .video_item > .video_number {
@@ -215,12 +216,12 @@
 
 .episode_video_wrap > .video_item > .video_img {
   width: 20%;
-  margin-right: 3%;
+  margin-right: 5%;
 }
 
 .episode_video_wrap > .video_item > .modal_video_text_wrap {
   width: 65%;
-  margin-right: 5%;
+  /* margin-right: 5%; */
 }
 
 .episode_video_wrap > .video_item > .modal_video_text_wrap > .text1 > h4 {
