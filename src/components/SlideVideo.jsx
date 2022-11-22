@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import Modal from "../components/Modal";
 
-const SlideVideo = ({ openModal }) => {
+const SlideVideo = ({ openModal, ranking }) => {
   const videoRef = useRef();
 
   return (
@@ -25,16 +25,21 @@ const SlideVideo = ({ openModal }) => {
           //   videoRef.current.currentTime = 0;
         }}
       >
+        {/* {ranking.map((rank, index) => {
+          return;
+        })} */}
         <video
           className="video"
-          src="videos/video_4.mp4"
+          src={ranking?.contentVideo}
           width="350vw"
           height="200vh"
           style={{ borderRadius: "5% 5% 0 0" }}
           loop
+          muted
           //   controls
           ref={videoRef}
         ></video>
+
         <div className="video_text">
           <div className="video_icon_box flex flex_jc_sb">
             <a className="play" href="/">
@@ -104,7 +109,12 @@ const SlideVideo = ({ openModal }) => {
                 </div>
               </div>
             </a>
-            <a className="ditail" onClick={openModal}>
+            <a
+              className="ditail"
+              onClick={() => {
+                openModal(ranking);
+              }}
+            >
               <BsChevronDown
                 style={{
                   fontSize: "20px",
@@ -119,8 +129,8 @@ const SlideVideo = ({ openModal }) => {
 
           <div className="video_mini_detail flex">
             <div className="text1">99% 일치</div>
-            <div className="view_age">15+</div>
-            <div className="episode"> 에피소드 12개</div>
+            <div className="view_age">{ranking?.age}+</div>
+            <div className="episode"> 에피소드 {ranking?.episodes}개</div>
             <div className="HD">HD</div>
           </div>
 

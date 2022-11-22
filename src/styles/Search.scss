@@ -1,0 +1,91 @@
+// 다음과 관련된 콘텐츠
+.search-title-header {
+  min-height: 65px;
+  margin-top: 4vw;
+}
+
+.rail {
+  font-size: 1.125vw;
+  display: inline-block;
+  margin: 1em 0 0;
+  min-height: 10px;
+  width: 100%;
+}
+
+.dvds,
+.people,
+.suggestions {
+  margin: 10px 0 20px 60px;
+  display: flex;
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+.suggestionRailContainer {
+  display: flex;
+}
+
+.suggestions .suggestionsLabel {
+  color: grey;
+  flex: 0 auto;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.suggestions ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions ul li {
+  border-right: 1px solid grey;
+  flex: 0 auto;
+  list-style: none;
+  padding: 0 0.5em;
+}
+
+// search 결과값 화면
+
+.search-container {
+  display: inline-block;
+  margin: 0 0 4vw;
+  position: relative;
+  box-sizing: border-box;
+
+  // touch-action: pan-y;
+}
+
+.search-result {
+  margin-top: 5vh;
+  margin-left: 2vh;
+  // border : 5px solid red;
+  padding: 0 2%;
+}
+
+.search-thumbnail {
+  display: inline-block;
+}
+
+.search-thumbnail-img {
+  display: inline-block;
+  border-radius: 10px;
+  padding-left: 0;
+  // width:20%;
+  box-sizing: border-box;
+
+  padding: 0 0.2vw;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  z-index: 1;
+}
+
+// .search-thumbnail-img:nth-child(2) {
+//     margin-left : 15px;
+// }
+
+// .search-thumbnail-img:last-child {
+//     margin-right : 15px;
+// }

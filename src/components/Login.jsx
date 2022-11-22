@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Login.css";
 import logo from "../img/logo.png";
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { userState } from "../recoil";
+import { useEffect } from "react";
 
 const Login = () => {
+  const [useremail, setUseremail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const choiceprofile = () => {
+    navigate(`/choiceprofile`);
+  };
+
+  const payinfo = () => {
+    navigate(`/payinfo`);
+  };
+
+  const [user, setUser] = useRecoilState(userState);
+
   return (
     <div>
       <div className="bc_opacity"></div>
@@ -15,23 +34,73 @@ const Login = () => {
       <div className="login_box">
         <h1>로그인</h1>
         <div className="login_form">
-          <form action="post" autocomplete="off">
+          <form
+            autoComplete="off"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              if (!useremail || !password) {
+                alert("입력값이 없습니다.");
+              } else {
+                try {
+                  const data = await axios({
+                    url: `${BACKEND_URL}/api/v1/user/login`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                      password,
+                    },
+                  });
+                  setUseremail("");
+                  setPassword("");
+                  setUser(data.data);
+                  alert("로그인 성공");
+
+                  const payChk = await axios({
+                    url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+                    method: "POST",
+                    data: {
+                      useremail,
+                    },
+                  });
+
+                  console.log("payChk" + payChk.data.lastPaymentDate);
+                  if (payChk.data.lastPaymentDate) {
+                    choiceprofile();
+                  } else {
+                    payinfo();
+                  }
+                  // onNav();
+                  console.log("data : " + data.data);
+                } catch (e) {
+                  alert("로그인 실패");
+                }
+              }
+            }}
+          >
             <input
-              type="text"
+              type="email"
               name="userid"
               id="userid"
               className="userid"
               placeholder="이메일 주소 또는 전화번호"
+              value={useremail}
+              onChange={(e) => {
+                setUseremail(e.target.value);
+              }}
             />
             <input
-              type="text"
+              type="password"
               name="userpw"
               id="userpw"
               className="userpw"
               placeholder="비밀번호"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
+            <button className="login_btn">로그인</button>
           </form>
-          <button className="login_btn">로그인</button>
           <div className="help_box">
             <div className="login_info_save flex flex_jc_sb">
               <div className="login_save_box flex">
@@ -41,7 +110,7 @@ const Login = () => {
                   id="LoginSave"
                   className="LoginSave"
                 />
-                <label for="LoginSave"></label>
+                <label htmlFor="LoginSave"></label>
                 <a>로그인 정보 저장</a>
               </div>
 

@@ -86,10 +86,11 @@
 }
 
 .login_box > .login_form > form {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
-.login_box > .login_form > .login_btn {
+.login_box > .login_form .login_btn {
+  margin-top: 40px;
   width: 100%;
   padding: 13px 0;
   background-color: #e50914;
