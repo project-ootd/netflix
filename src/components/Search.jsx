@@ -36,7 +36,7 @@ const Search = () => {
                   <ul>
                     <li className="">
                       <div className="ptrack-content">
-                        <a href="#">일본 TV 드라마</a>
+                        <a href="#">일본 TV 드라마1</a>
                       </div>
                     </li>
                   </ul>
