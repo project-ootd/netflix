@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 import { useEffect } from "react";
 
-const RankingSlide = ({ openModal, ranking }) => {
+const RankingSlide = ({ openModal, ranking, allcontent }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -41,7 +41,9 @@ const RankingSlide = ({ openModal, ranking }) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-  useEffect(() => {}, [ranking]);
+  useEffect(() => {}, [ranking, allcontent]);
+
+  console.log(allcontent);
 
   return (
     <div
@@ -55,6 +57,9 @@ const RankingSlide = ({ openModal, ranking }) => {
     >
       <div className="ranking-slide-body">
         <h2 className="top-10-text"> 오늘 대한민국의 TOP 10 시리즈 </h2>
+        {/* {allcontent.map((content, index) => {
+          return <div key={index}>{content}</div>;
+        })} */}
         <Slider {...settings}>
           {/* rank 1 */}
           <div className="slider_item_1 slider_items">

@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "../styles/TestVideo.scss";
 import $ from "jquery";
+import { useEffect } from "react";
 const TestVideo = ({ openModal, allContents }) => {
   const [time, setTime] = useState(false);
   const [check, SetCheck] = useState(1);
+  const testvideoRef = useRef(null);
+
+  useEffect(() => {
+    testvideoRef.current.play();
+  }, [testvideoRef]);
 
   return (
     <div className="billboard-row" style={{ position: "relative" }}>
@@ -13,7 +19,7 @@ const TestVideo = ({ openModal, allContents }) => {
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
-              {time ? (
+              {/* {time ? (
                 <img
                   src={
                     // "https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVz7Jt44hr7JRKCx1uRU1f7TM_JnzI8tN_PWK3EKnraE8GMhu1eSwP589ZkL2phbkp0n197H041fQVQQ_95zZk_qhTDDWuY3c3gH.webp?r=21f"
@@ -22,21 +28,24 @@ const TestVideo = ({ openModal, allContents }) => {
                   alt=""
                   style={{ width: "100%", height: "920px" }}
                 />
-              ) : (
-                <video
-                  className="player"
-                  width="100%"
-                  height="100%"
-                  style={{
-                    position: "relative",
-                    marginTop: "-20px",
-                  }}
-                  autoPlay
-                  muted
-                >
-                  <source src={allContents?.contentVideo} type="video/mp4" />
-                </video>
-              )}
+              ) : ( */}
+              <video
+                className="player"
+                width="100%"
+                height="100%"
+                style={{
+                  position: "relative",
+                  marginTop: "-20px",
+                }}
+                muted
+                loop
+                ref={testvideoRef}
+                src={allContents?.contentVideo}
+              >
+                {/* <source src={allContents?.contentVideo} type="video/mp4" /> */}
+              </video>
+              {/* )} */}
+
               <div
                 className="title-text"
                 style={{

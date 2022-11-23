@@ -33,6 +33,7 @@ const AllContents = () => {
         method: "GET",
       });
       setRanking(data.data);
+      console.log("data", data.data);
     };
     getRank();
 
@@ -41,7 +42,7 @@ const AllContents = () => {
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
       });
-      // console.log(data.data);
+      console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();
@@ -50,8 +51,12 @@ const AllContents = () => {
   return (
     <div className="App">
       <Header />
-      <TestVideo openModal={openModal} allContents={allContents[0]} />
-      <RankingSlide openModal={openModal} ranking={ranking} />
+      <TestVideo openModal={openModal} allContents={ranking[0]} />
+      <RankingSlide
+        openModal={openModal}
+        ranking={ranking}
+        allContents={allContents}
+      />
       {/* <KoreanDrama /> */}
       <SlideItems />
       <Modal
