@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import KoreanDrama from "../slides/KoreanDrama";
 import Footer from "./Footer";
 import Header from "./Header";
 import Modal from "./Modal";
