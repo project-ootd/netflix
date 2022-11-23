@@ -13,10 +13,15 @@
   overflow: auto;
 }
 
-.openModal > .modal_wrap {
+.modal_wrap_box {
   width: 55%;
+  height: 100%;
+}
+
+.modal_wrap {
+  width: 100%;
   height: max-content;
-  margin: 110% 0 0;
+  margin: 30px 0;
   position: relative;
   display: inline-block;
   justify-content: center;
@@ -203,10 +208,11 @@
 }
 
 .episode_video_wrap > .video_item {
-  padding: 20px 10px;
-  background: #333;
+  padding: 30px 10px;
+  /* background: #333; */
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #333;
 }
 
 .episode_video_wrap > .video_item > .video_number {
