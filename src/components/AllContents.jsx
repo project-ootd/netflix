@@ -50,7 +50,7 @@ const AllContents = () => {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <TestVideo openModal={openModal} allContents={ranking[0]} />
       <RankingSlide
         openModal={openModal}
