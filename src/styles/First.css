@@ -162,10 +162,11 @@ ol {
 .first_wrap > .center_box {
   color: white;
   width: 70%;
-  display: inline-block;
-  margin-top: 120px;
+  flex-direction: column;
+  margin: 110px auto 0;
   position: relative;
   z-index: 20;
+  text-align: center;
 }
 
 .first_wrap > .center_box > .center_h1 {
@@ -176,9 +177,11 @@ ol {
 
 .first_wrap > .center_box > .center_p1 {
   font-size: 1.7rem;
+  margin: 10px;
 }
 .first_wrap > .center_box > .center_p2 {
   font-size: 1.2rem;
+  margin: 0px 0 30px;
 }
 
 .first_wrap > .center_box > .tour_box > .email > input {

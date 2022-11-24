@@ -46,8 +46,12 @@ const AllContents = () => {
   return (
     <div className="App">
       <Header />
-      <TestVideo openModal={openModal} allContents={allContents[0]} />
-      <RankingSlide openModal={openModal} ranking={ranking} />
+      <TestVideo openModal={openModal} allContents={ranking[0]} />
+      <RankingSlide
+        openModal={openModal}
+        ranking={ranking}
+        allContents={allContents}
+      />
       {/* <KoreanDrama /> */}
       <SlideItems />
       <Modal
