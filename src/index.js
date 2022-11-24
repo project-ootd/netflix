@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import AllContents from "./components/AllContents";
 import ChoiceProfile from "./components/ChoiceProfile";
-import First from "./components/First";
 import Login from "./components/Login";
 import RegForm from "./components/RegForm";
 import { RecoilRoot } from "recoil";
@@ -24,7 +22,7 @@ root.render(
   // <React.StrictMode>
   <RecoilRoot>
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>

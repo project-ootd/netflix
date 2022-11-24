@@ -5,8 +5,9 @@ import Slider from "react-slick";
 import "../styles/SlideItems.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SlideVideo from "./SlideVideo";
 
-const SlideItems = () => {
+const SlideItems = (openModal, kDramas) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -95,6 +96,9 @@ const SlideItems = () => {
               <a href="#" className="slider-refocus">
                 <img className="thumbnail-img" src={ele?.contentImg} alt="" />
               </a>
+              <div className="slide_video_box">
+                <SlideVideo openModal={openModal} ranking={dramas[0]} />
+              </div>
             </div>
           );
         })}
