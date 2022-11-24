@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0 4%;
   margin-bottom: 5vh;
+  position: relative;
 }
 
 .slide-container {
@@ -101,6 +102,45 @@
 }
 
 /* 섬네일 이미지 커스터마이징 끝*/
+
+/* 섬네일 hover */
+
+.slick-track {
+  position: relative;
+}
+
+.thumbnail-container:hover .ranking-img {
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.slide_video_box {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  // transform: translate(-50%, -50%);
+  transition: all 0.4s linear;
+  // top: 55px;
+  // left: 0px;
+  z-index: 50;
+}
+
+.thumbnail-container:hover > .slide_video_box {
+  // transform: scale(2.5);
+  // border-radius: 25px;
+  visibility: visible;
+  opacity: 1;
+  // display: block;
+  transition: all 0.4s linear;
+}
+
+/* 섬네일 hover 끝 */
+
+.thumbnail-container {
+  border: 1px solid red;
+  // height: 100vh;
+  // padding: 100px;
+}
 
 /* 화살표 커스터마이징 */
 

@@ -134,6 +134,14 @@ ol {
   background-color: white;
 } */
 
+/*임시조정...*/
+.center_box {
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  margin-left: 14vw;
+}
+
 .first_wrap > .top_wrap .icon {
   margin: 10px 0 0;
   width: 80px;

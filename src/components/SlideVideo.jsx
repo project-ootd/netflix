@@ -18,27 +18,45 @@ const SlideVideo = ({ openModal, ranking }) => {
         className="hover_box"
         style={{ borderRadius: "25px" }}
         onMouseEnter={() => {
-          videoRef.current.play();
+          ranking?.contentVideo ? videoRef.current.play() : console.log("1111");
         }}
         onMouseLeave={() => {
-          videoRef.current.pause();
+          ranking?.contentVideo
+            ? videoRef.current.pause()
+            : console.log("2222");
           //   videoRef.current.currentTime = 0;
         }}
       >
         {/* {ranking.map((rank, index) => {
           return;
         })} */}
-        <video
-          className="video"
-          src={ranking?.contentVideo}
-          width="350vw"
-          height="200vh"
-          style={{ borderRadius: "5% 5% 0 0" }}
-          loop
-          muted
-          //   controls
-          ref={videoRef}
-        ></video>
+
+        {ranking?.contentVideo ? (
+          <video
+            className="video"
+            src={ranking?.contentVideo}
+            width="350vw"
+            height="200vh"
+            style={{ borderRadius: "5% 5% 0 0" }}
+            loop
+            muted
+            //   controls
+            ref={videoRef}
+          ></video>
+        ) : (
+          <img
+            className="slide_hover_img"
+            width="300vw"
+            height="170vh"
+            style={{
+              zIndex: "99",
+              marginTop: "-200px",
+              borderRadius: "5% 5% 0 0",
+            }}
+            src={ranking?.detailImg}
+            alt=""
+          />
+        )}
 
         <div className="video_text">
           <div className="video_icon_box flex flex_jc_sb">
@@ -110,7 +128,7 @@ const SlideVideo = ({ openModal, ranking }) => {
               </div>
             </a>
             <a
-              className="ditail"
+              className="detail"
               onClick={() => {
                 openModal(ranking);
                 console.log(ranking);

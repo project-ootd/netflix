@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-import logo from "../img/logo.png";
 import "../styles/Header.css";
+import logo from "../img/logo.png";
+import React, { useState, useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
-import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
-import { FaPen } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
-
-import { useNavigate } from "react-router-dom";
-
-import axios from "axios";
-import { getDefaultNormalizer } from "@testing-library/react";
+import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
+import { serachState } from "../recoil/search";
+import { useRecoilState } from "recoil";
+import { useNavigate, useLocation } from "react-router-dom";
 
 <link
   rel="stylesheet"
@@ -18,22 +15,27 @@ import { getDefaultNormalizer } from "@testing-library/react";
 />;
 
 const Header = () => {
-  const navigator = useNavigate();
-  const [hide, SetHide] = useState(false);
-  const [search, setSearch] = useState(sessionStorage.getItem("search") || "");
-  const [keyword, setKeyword] = useState([]);
+  const location = useLocation();
+
+  const navigate = useNavigate();
+  const [hide, SetHide] = useState(
+    location?.state?.fromUrl === "/allcontents" ? true : false
+  );
+  console.log(hide);
+  const [search, setSearch] = useRecoilState(serachState);
+  const searchInput = useRef();
+
+  useEffect(() => {
+    searchInput?.current?.focus();
+  }, [searchInput]);
 
   const onSearch = (e) => {
-    e.preventDefault();
+    if (e.target.value === "") {
+      navigate(`/allcontents`);
+    } else {
+      navigate(`/search?${e.target.value}`);
+    }
     setSearch(e.target.value);
-
-    onMove(e.target.value);
-    console.log("search : " + search);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    onMove();
   };
 
   const onClick = () => {
@@ -43,12 +45,20 @@ const Header = () => {
       SetHide(true);
     }
   };
+
   const onMove = (keyword) => {
-    navigator(`/search/${keyword}`);
+    navigator(`/search/${keyword}`, { state: { fromUrl: location.pathname } });
   };
-  const onMovehome = () => {
-    navigator("/allcontents");
-  };
+
+  if (
+    !(
+      location.pathname === "/allcontents" ||
+      location.pathname.startsWith("/search")
+    )
+  ) {
+    return <></>;
+  }
+
   return (
     <div
       classnames="Header App"
@@ -167,7 +177,7 @@ const Header = () => {
 
                     <input
                       onKeyPress={(e) => {
-                        if (e.key == "Enter") {
+                        if (e.key === "Enter") {
                           onMove();
                         }
                       }}
@@ -175,6 +185,7 @@ const Header = () => {
                       value={search}
                       className="search-input"
                       type="search"
+                      ref={searchInput}
                       style={{
                         height: "4vh",
                         zIndex: "2",

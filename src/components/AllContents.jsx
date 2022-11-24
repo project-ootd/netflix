@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
 import Modal from "./Modal";
 import RankingSlide from "./RankingSlide";
 import SlideItems from "./SlideItems";
 import TestVideo from "./TestVideo";
-import { useRecoilState } from "recoil";
-import { userState } from "../recoil";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 
@@ -15,6 +12,7 @@ const AllContents = () => {
   const [ranking, setRanking] = useState([]);
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
+  const [kDramas, setKDramas] = useState([]);
 
   const openModal = (content) => {
     setModalOpen(true);
@@ -23,8 +21,6 @@ const AllContents = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
-
-  const [user, setUser] = useRecoilState(userState);
 
   useEffect(() => {
     const getRank = async () => {
@@ -42,23 +38,28 @@ const AllContents = () => {
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
       });
-      console.log("data : " + data.data);
+      // console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();
+
+    const getKDrama = async () => {
+      const data = await axios(`${BACKEND_URL}/contents?kw=DRAMA`);
+      setKDramas(kDramas.data);
+      console.log("dramas data : ", data.data);
+    };
+    getKDrama();
   }, []);
 
   return (
     <div className="App">
-      {/* <Header /> */}
       <TestVideo openModal={openModal} allContents={ranking[0]} />
       <RankingSlide
         openModal={openModal}
         ranking={ranking}
         allContents={allContents}
       />
-      {/* <KoreanDrama /> */}
-      <SlideItems />
+      <SlideItems openModal={openModal} kDramas={kDramas} />
       <Modal
         open={modalOpen}
         close={closeModal}
