@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import { useParams, useLocation } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { serachState } from "../recoil/search";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Search.scss";
 
 const Search = () => {
-  const { search } = useParams();
+  const search = useRecoilValue(serachState);
   const [contents, setContents] = useState([]);
 
   useEffect(() => {
     const getItem = async () => {
-      const keyword = await axios.get(`${BACKEND_URL}/search/${search}`);
+      const keyword = await axios.get(`${BACKEND_URL}/search?kw=${search}`);
       setContents(keyword.data);
-      console.log(keyword.data);
+      console.log("keywordData : ", keyword.data);
     };
     getItem();
   }, [search]);
 
   return (
     <>
-      <Header />
       <div className="search-title-header">
         <div className="rail">
           <div className="suggestions">
@@ -49,7 +47,7 @@ const Search = () => {
 
       {contents.map((ele, index) => {
         return (
-          <div className="search-container">
+          <div className="search-container" key={index}>
             <div className="search-result">
               <div className="search-thumbnail" key={index}>
                 <a href="#">
