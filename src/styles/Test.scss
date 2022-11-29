@@ -14,7 +14,8 @@
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
-  margin-bottom: 10px;
+  margin: -10px 0 10px 0;
+  // margin-bottom: 10px;
   z-index: 999;
 }
 
@@ -65,16 +66,19 @@
   display: inline-block;
   opacity: 1;
   max-width: 200px;
+  margin: 15px 0 0 0;
   transform: translate(4.5vw);
   transition: max-width 1s, opacity 0.5s, transform 0.5s;
 }
 
 .text-test {
-  text-align: left;
-  margin: 0px 0 -100px;
-  font-size: 25px;
-  font-weight: 100;
-  z-index: 100;
+  // text-align: left;
+  // margin: 0px 0 -100px;
+  // font-size: 25px;
+  // font-weight: 100;
+  // z-index: 100;
+  position: absolute;
+  top: 4%;
 }
 
 /* 타이틀 커스터마이징 끝 */
@@ -87,7 +91,7 @@
 }
 
 .thumbnail-container {
-  height: 300px;
+  // height: 300px;
   position: relative;
 }
 
@@ -95,6 +99,7 @@
   //   border-radius: 5px;
   width: 100%;
   height: 100%;
+  transition: all 0.1s linear;
 }
 
 .slide-body .slick-track {
@@ -109,24 +114,21 @@
 
 /* 섬네일 hover */
 
-.thumbnail-img {
-  z-index: -50;
-}
-
-.thumbnail-img:hover {
+.img_hover {
   // transform: scale(1.5);
   transform: scale(1.2) translate(0, -40%);
-  z-index: 999;
   border-radius: 5px 5px 0 0;
+  z-index: 999;
 }
 
-.real-container:hover ~ .slide_video_box {
-  visibility: visible;
-  opacity: 1;
-}
+// .real-container:hover ~ .slide_video_box {
+//   visibility: visible;
+//   opacity: 1;
+// }
 
 .slide_video_box {
   position: absolute;
+  display: none;
   visibility: hidden;
   opacity: 0;
   transform: translate(-8%, 130%);
@@ -138,19 +140,46 @@
   height: 150px;
 }
 
-.thumbnail_text:hover {
-}
-
-.slide_video_box:hover {
+.text_hover {
   visibility: visible;
   opacity: 1;
+  display: block;
 }
 
-.video_text {
-  background-color: red;
+.thumbnail_text {
+  background: #222222;
   width: 100%;
   height: 100%;
   border-radius: 0 0 5px 5px;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.thumbnail_text > .video_icon_box > .detail {
+  margin-left: 130px;
+}
+
+.thumbnail_text > .video_icon_box > .play {
+  border: 2px solid white;
+  background: white;
+}
+
+.thumbnail_text > .video_icon_box > .play:hover {
+  border: 2px solid #e6e6e6;
+  background: #e6e6e6;
+}
+
+.thumbnail_text > .video_icon_box > * {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #909090;
+  background: #232323;
+}
+
+.thumbnail_text > .video_icon_box > *:hover {
+  border: 2px solid white;
 }
 
 /* 섬네일 hover 끝 */
