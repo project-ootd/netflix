@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 import Slider from "react-slick";
@@ -6,6 +6,14 @@ import "../styles/SlideItems.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SlideVideo from "./SlideVideo";
+import "../styles/SlideVideo.css";
+import {
+  BsPlusLg,
+  BsPlayFill,
+  BsHandThumbsUp,
+  BsChevronDown,
+  BsHandThumbsDown,
+} from "react-icons/bs";
 
 const SlideItems = (openModal, kDramas) => {
   const [ranks, setRanks] = useState([]);
@@ -14,6 +22,8 @@ const SlideItems = (openModal, kDramas) => {
   const [actionAnimes, setActionAnimes] = useState([]);
   const [populars, setPopulars] = useState([]);
   const [only, setOnly] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  const imgDiv = useRef();
 
   useEffect(() => {
     const getData = async () => {
@@ -85,7 +95,10 @@ const SlideItems = (openModal, kDramas) => {
       <div className="ranking-slide-body">
         <div className="slide-container flex flex_jc_start">
           <a href="#">
-            <div className="slide-title-text text-test">
+            <div
+              className="slide-title-text text-test"
+              style={isActive ? { zIndex: "0" } : { zIndex: "1" }}
+            >
               한국 드라마
               {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
@@ -101,20 +114,133 @@ const SlideItems = (openModal, kDramas) => {
           {/* rank 1 */}
           {dramas.map((ele, index) => {
             return (
-              <div className="thumbnail-container" key={index}>
+              <div
+                className="thumbnail-container"
+                key={index}
+                onMouseLeave={() => {
+                  setIsActive(false);
+                }}
+              >
                 <div
                   className="real-container"
-                  // onMouseEnter={() => {
-                  //   console.log("호버됨");
-                  //   document.getElementById(
-                  //     "slide_video_box"
-                  //   ).style.visibility = "visible";
-                  // }}
+                  onMouseEnter={() => {
+                    setIsActive(true);
+                  }}
                 >
-                  <img className="thumbnail-img" src={ele?.contentImg} alt="" />
+                  <img
+                    className={"thumbnail-img"}
+                    src={ele?.contentImg}
+                    alt=""
+                    ref={imgDiv}
+                  />
                 </div>
-                <div className="slide_video_box" id="slide_video_box">
-                  <SlideVideo openModal={openModal} ranking={dramas[0]} />
+                <div
+                  className={"slide_video_box"}
+                  id="slide_video_box"
+                  style={{ borderRadius: "25px" }}
+                  onMouseEnter={() => {}}
+                >
+                  <div className="thumbnail_text" id="thumbnail_text">
+                    <div className="video_icon_box flex flex_jc_sb">
+                      <a className="play" href="/">
+                        <BsPlayFill
+                          style={{
+                            fontSize: "28px",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            position: "absolute",
+                            color: "#232323",
+                          }}
+                        />
+                      </a>
+                      <a className="steam" href="/">
+                        <BsPlusLg
+                          style={{
+                            fontSize: "20px",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            position: "absolute",
+                          }}
+                        />
+                      </a>
+                      <a className="evaluation" href="/">
+                        <BsHandThumbsUp
+                          style={{
+                            fontSize: "20px",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            position: "absolute",
+                          }}
+                        />
+                        <div className="evaluation_hover">
+                          <div className="evaluation_icon1 evaluation_icons">
+                            <BsHandThumbsDown
+                              style={{
+                                fontSize: "20px",
+                              }}
+                            />
+                          </div>
+                          <div className="evaluation_icon2 evaluation_icons">
+                            <BsHandThumbsUp
+                              style={{
+                                fontSize: "20px",
+                              }}
+                            />
+                          </div>
+                          <div className="evaluation_icon3 evaluation_icons">
+                            <BsHandThumbsUp
+                              style={{
+                                fontSize: "20px",
+                              }}
+                            />
+                            <BsHandThumbsUp
+                              style={{
+                                fontSize: "20px",
+                                position: "absolute",
+                                top: "50%",
+                                left: "50%",
+                                transform: "translate(-20%, -63%)",
+                                zIndex: "10",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="detail"
+                        onClick={() => {
+                          openModal(ele);
+                          console.log(ele);
+                        }}
+                      >
+                        <BsChevronDown
+                          style={{
+                            fontSize: "20px",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            position: "absolute",
+                          }}
+                        />
+                      </a>
+                    </div>
+
+                    <div className="video_mini_detail flex">
+                      <div className="text1">99% 일치</div>
+                      <div className="view_age">{ele?.age}+</div>
+                      <div className="episode"> 에피소드 {ele?.episodes}개</div>
+                      <div className="HD">HD</div>
+                    </div>
+
+                    <ul className="video_genre flex">
+                      <li>범죄</li>
+                      <li>한국 드라마</li>
+                      <li>긴장감 넘치는</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             );

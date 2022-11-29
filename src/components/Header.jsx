@@ -1,6 +1,6 @@
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Header.css";
 import logo from "../img/logo.png";
-import React, { useState, useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsBellFill } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
@@ -16,18 +16,25 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
-
   const navigate = useNavigate();
   const [hide, SetHide] = useState(
     location?.state?.fromUrl === "/allcontents" ? true : false
   );
-  console.log(hide);
   const [search, setSearch] = useRecoilState(serachState);
+  const [keyword, setKeyword] = useState([]);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const searchInput = useRef();
 
   useEffect(() => {
     searchInput?.current?.focus();
   }, [searchInput]);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, [scrollPosition]);
 
   const onSearch = (e) => {
     if (e.target.value === "") {
@@ -47,7 +54,7 @@ const Header = () => {
   };
 
   const onMove = (keyword) => {
-    navigator(`/search/${keyword}`, { state: { fromUrl: location.pathname } });
+    navigate(`/search/${keyword}`, { state: { fromUrl: location.pathname } });
   };
 
   if (
@@ -62,18 +69,33 @@ const Header = () => {
   return (
     <div
       classnames="Header App"
-      style={{
-        display: "inline-block",
-        width: "100%",
-        padding: "10px 0",
-        color: "white",
-        backgroundColor: "rgba(20,20,20,0)",
-        zIndex: "9",
-        position: "fixed",
-        top: "0",
-        left: "35px",
-        right: "0",
-      }}
+      style={
+        scrollPosition > 10
+          ? {
+              display: "inline-block",
+              width: "100%",
+              padding: "10px 0",
+              color: "white",
+              zIndex: "9",
+              position: "fixed",
+              top: "0",
+              // left: "35px",
+              left: "0",
+              backgroundColor: "black",
+            }
+          : {
+              display: "inline-block",
+              width: "100%",
+              padding: "10px 0",
+              color: "white",
+              zIndex: "9",
+              position: "fixed",
+              top: "0",
+              // left: "35px",
+              left: "0",
+              backgroundColor: "rgba(20,20,20,0)",
+            }
+      }
     >
       {" "}
       <div
