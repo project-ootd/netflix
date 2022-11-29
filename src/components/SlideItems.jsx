@@ -74,35 +74,53 @@ const SlideItems = (openModal, kDramas) => {
   // Slick 세팅 끝
 
   return (
-    <div className="slideItems-all-container">
-      <div className="slide-container flex flex_jc_start">
-        <a href="#">
-          <div className="slide-title-text">
-            한국 드라마
-            <div className="slide-detail-hover">
+    <div
+      className="slide-body"
+      style={{
+        zIndex: "3",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div className="ranking-slide-body">
+        <div className="slide-container flex flex_jc_start">
+          <a href="#">
+            <div className="slide-title-text text-test">
+              한국 드라마
+              {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
+              {/* </div> */}
             </div>
-          </div>
-        </a>
-      </div>
-      <Slider {...settings}>
-        {dramas.map((ele, index) => {
-          return (
-            <div className="thumbnail-container" key={index}>
-              <a href="#" className="slider-refocus">
-                <img className="thumbnail-img" src={ele?.contentImg} alt="" />
-              </a>
-              <div className="slide_video_box">
-                <SlideVideo openModal={openModal} ranking={dramas[0]} />
+          </a>
+        </div>
+        <Slider {...settings}>
+          {/* rank 1 */}
+          {dramas.map((ele, index) => {
+            return (
+              <div className="thumbnail-container" key={index}>
+                <div
+                  className="real-container"
+                  // onMouseEnter={() => {
+                  //   console.log("호버됨");
+                  //   document.getElementById(
+                  //     "slide_video_box"
+                  //   ).style.visibility = "visible";
+                  // }}
+                >
+                  <img className="thumbnail-img" src={ele?.contentImg} alt="" />
+                </div>
+                <div className="slide_video_box" id="slide_video_box">
+                  <SlideVideo openModal={openModal} ranking={dramas[0]} />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
+            );
+          })}
+        </Slider>
+      </div>
 
       <div className="slide-container flex flex_jc_start">
         <a href="#">
