@@ -6,6 +6,7 @@ import SlideItems from "./SlideItems";
 import TestVideo from "./TestVideo";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { useRef } from "react";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,6 +14,24 @@ const AllContents = () => {
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
+
+  // const targetRef = useRef(null);
+
+  // const handleScroll = () => {
+  //   if (window.screenY > 0) {
+  //     targetRef.current.style.background = "red";
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     window.addEventListener("scroll", handleScroll);
+  //     return () => {
+  //       clearInterval(timer);
+  //       window.removeEventListener("scroll", handleScroll);
+  //     };
+  //   });
+  // }, []);
 
   const openModal = (content) => {
     setModalOpen(true);
@@ -49,6 +68,16 @@ const AllContents = () => {
       console.log("dramas data : ", data.data);
     };
     getKDrama();
+
+    // const getContent = async () => {
+    //   const data = await axios({
+    //     url: `${BACKEND_URL}/allcontent`,
+    //     method: "GET",
+    //   });
+    //   console.log("data : " + data.data);
+    //   setAllContents(data.data);
+    // };
+    // getContent();
   }, []);
 
   return (

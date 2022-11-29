@@ -36,7 +36,15 @@ const Modal = (props) => {
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
-    <div className={open ? "openModal modal" : "modal"}>
+    <div
+      className={open ? "openModal modal" : "modal"}
+      ref={videoRef}
+      onClick={(e) => {
+        if (videoRef.current === e.target) {
+          close();
+        }
+      }}
+    >
       {open ? (
         <div className="modal_wrap_box">
           <div className="modal_wrap">

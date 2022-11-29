@@ -172,7 +172,7 @@ ol {
 .first_wrap > .center_box > .center_h1 {
   display: inline-block;
   font-size: 4rem;
-  margin: 0px;
+  margin: 10px;
 }
 
 .first_wrap > .center_box > .center_p1 {

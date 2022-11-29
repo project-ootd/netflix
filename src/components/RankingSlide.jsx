@@ -41,9 +41,9 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-  useEffect(() => {}, [ranking, allcontent]);
+  useEffect(() => {}, [ranking]);
 
-  console.log(allcontent);
+  // console.log(allcontent);
 
   return (
     <div
