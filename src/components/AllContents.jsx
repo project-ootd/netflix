@@ -36,6 +36,7 @@ const AllContents = () => {
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
+    console.log(content);
   };
   const closeModal = () => {
     setModalOpen(false);

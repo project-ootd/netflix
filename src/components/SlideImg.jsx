@@ -7,8 +7,9 @@ import {
   BsHandThumbsDown,
 } from "react-icons/bs";
 
-const SlideImg = ({ ele, index, openModal, setZindex }) => {
+const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
   const [isActive, setIsActive] = useState(false);
+  console.log("깃 올릴테다");
 
   return (
     <div
@@ -20,7 +21,6 @@ const SlideImg = ({ ele, index, openModal, setZindex }) => {
     >
       <div
         className="thumbnail-container"
-        key={index}
         onMouseLeave={() => {
           setIsActive(false);
           setZindex(false);
@@ -142,7 +142,7 @@ const SlideImg = ({ ele, index, openModal, setZindex }) => {
               <a
                 className="detail"
                 onClick={() => {
-                  openModal(ele);
+                  // openModal(ele[key]);
                   console.log(ele);
                 }}
               >

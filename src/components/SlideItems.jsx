@@ -116,10 +116,10 @@ const SlideItems = (openModal, kDramas) => {
           {dramas.map((ele, index) => {
             return (
               <SlideImg
-                ele={ele}
+                key={index}
                 index={index}
+                ele={ele}
                 openModal={openModal}
-                style={{ zIndex: "10" }}
                 setZindex={setZindex}
               />
             );
@@ -151,6 +151,7 @@ const SlideItems = (openModal, kDramas) => {
             return (
               <SlideImg
                 ele={ele}
+                key={index}
                 index={index}
                 openModal={openModal}
                 style={{ zIndex: "10" }}
@@ -185,6 +186,7 @@ const SlideItems = (openModal, kDramas) => {
             return (
               <SlideImg
                 ele={ele}
+                key={index}
                 index={index}
                 openModal={openModal}
                 style={{ zIndex: "10" }}
@@ -219,6 +221,7 @@ const SlideItems = (openModal, kDramas) => {
             return (
               <SlideImg
                 ele={ele}
+                key={index}
                 index={index}
                 openModal={openModal}
                 style={{ zIndex: "10" }}
@@ -256,6 +259,7 @@ const SlideItems = (openModal, kDramas) => {
             return (
               <SlideImg
                 ele={ele}
+                key={index}
                 index={index}
                 openModal={openModal}
                 style={{ zIndex: "10" }}
