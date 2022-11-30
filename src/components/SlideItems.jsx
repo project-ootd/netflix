@@ -92,7 +92,7 @@ const SlideItems = (openModal, kDramas) => {
         overflow: "hidden",
       }}
     >
-      <div className="ranking-slide-body">
+      <div className="slideItems-all-container">
         <div className="slide-container flex flex_jc_start">
           <a href="#">
             <div

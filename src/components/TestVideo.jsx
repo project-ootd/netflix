@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import "../styles/TestVideo.scss";
 import $ from "jquery";
 import { useEffect } from "react";
 const TestVideo = ({ openModal, allContents }) => {
