@@ -9,6 +9,7 @@ import {
 
 const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
   const [isActive, setIsActive] = useState(false);
+  console.log("깃 올릴테다");
 
   return (
     <div
