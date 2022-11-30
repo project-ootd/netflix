@@ -90,6 +90,7 @@ const SlideItems = (openModal, kDramas) => {
         zIndex: "3",
         position: "relative",
         overflow: "hidden",
+        padding: " 0 0 5vh 0",
       }}
     >
       <div className="slideItems-all-container">
@@ -126,113 +127,144 @@ const SlideItems = (openModal, kDramas) => {
         </Slider>
       </div>
 
-      <div className="slide-container flex flex_jc_start">
-        <a href="#">
-          <div className="slide-title-text">
-            지금 뜨는 콘텐츠
-            <div className="slide-detail-hover">
+      <div className="slideItems-all-container">
+        <div className="slide-container flex flex_jc_start">
+          <a href="#">
+            <div
+              className="slide-title-text text-test"
+              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+            >
+              지금 뜨는 콘텐츠
+              {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
+              {/* </div> */}
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <Slider {...settings}>
+          {/* rank 1 */}
+          {riseups.map((ele, index) => {
+            return (
+              <SlideImg
+                ele={ele}
+                index={index}
+                openModal={openModal}
+                style={{ zIndex: "10" }}
+                setZindex={setZindex}
+              />
+            );
+          })}
+        </Slider>
       </div>
 
-      <Slider {...settings}>
-        {riseups.map((ele, index) => {
-          return (
-            <div className="thumbnail-container" key={index}>
-              <a href="#" className="slider-refocus">
-                <img className="thumbnail-img" src={ele?.contentImg} alt="" />
-              </a>
-            </div>
-          );
-        })}
-      </Slider>
-
-      <div className="slide-container flex flex_jc_start">
-        <a href="#">
-          <div className="slide-title-text">
-            액션 애니
-            <div className="slide-detail-hover">
+      <div className="slideItems-all-container">
+        <div className="slide-container flex flex_jc_start">
+          <a href="#">
+            <div
+              className="slide-title-text text-test"
+              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+            >
+              액션 애니
+              {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
+              {/* </div> */}
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <Slider {...settings}>
+          {/* rank 1 */}
+          {actionAnimes.map((ele, index) => {
+            return (
+              <SlideImg
+                ele={ele}
+                index={index}
+                openModal={openModal}
+                style={{ zIndex: "10" }}
+                setZindex={setZindex}
+              />
+            );
+          })}
+        </Slider>
       </div>
 
-      <Slider {...settings}>
-        {actionAnimes.map((ele, index) => {
-          return (
-            <div className="thumbnail-container" key={index}>
-              <a href="#" className="slider-refocus">
-                <img className="thumbnail-img" src={ele?.contentImg} alt="" />
-              </a>
-            </div>
-          );
-        })}
-      </Slider>
-
-      <div className="slide-container flex flex_jc_start">
-        <a href="#">
-          <div className="slide-title-text">
-            넷플릭스 인기 콘텐츠
-            <div className="slide-detail-hover">
+      <div className="slideItems-all-container">
+        <div className="slide-container flex flex_jc_start">
+          <a href="#">
+            <div
+              className="slide-title-text text-test"
+              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+            >
+              넷플릭스 인기 컨텐츠
+              {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
+              {/* </div> */}
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <Slider {...settings}>
+          {/* rank 1 */}
+          {populars.map((ele, index) => {
+            return (
+              <SlideImg
+                ele={ele}
+                index={index}
+                openModal={openModal}
+                style={{ zIndex: "10" }}
+                setZindex={setZindex}
+              />
+            );
+          })}
+        </Slider>
       </div>
 
-      <Slider {...settings}>
-        {populars.map((ele, index) => {
-          return (
-            <div className="thumbnail-container" key={index}>
-              <a href="#" className="slider-refocus">
-                <img className="thumbnail-img" src={ele?.contentImg} alt="" />
-              </a>
-            </div>
-          );
-        })}
-      </Slider>
-
-      <div className="slide-container flex flex_jc_start">
-        <a href="#">
-          <div className="slide-title-text">
-            오직 넷플릭스에서만
-            <div className="slide-detail-hover">
+      <div
+        className="slideItems-all-container"
+        style={{ paddingBottom: "3vh" }}
+      >
+        <div className="slide-container flex flex_jc_start">
+          <a href="#">
+            <div
+              className="slide-title-text text-test"
+              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+            >
+              오직 넷플릭스에서만
+              {/* <div className="slide-detail-hover"> */}
               <div className="slide-detail-text">모두 보기</div>
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
+              {/* </div> */}
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <Slider {...settings}>
+          {/* rank 1 */}
+          {only.map((ele, index) => {
+            return (
+              <SlideImg
+                ele={ele}
+                index={index}
+                openModal={openModal}
+                style={{ zIndex: "10" }}
+                setZindex={setZindex}
+              />
+            );
+          })}
+        </Slider>
       </div>
-
-      <Slider {...settings}>
-        {only.map((ele, index) => {
-          return (
-            <div className="thumbnail-container" key={index}>
-              <a href="#" className="slider-refocus">
-                <img className="thumbnail-img" src={ele?.contentImg} alt="" />
-              </a>
-            </div>
-          );
-        })}
-      </Slider>
     </div>
   );
 };
