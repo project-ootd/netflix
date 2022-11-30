@@ -146,3 +146,80 @@
 .evaluation_icon3 {
   position: relative;
 }
+
+/* slide_img.jsx */
+
+/* 섬네일 hover */
+
+.img_hover {
+  /* // transform: scale(1.5); */
+  transform: scale(1.2) translate(0, -40%);
+  border-radius: 5px 5px 0 0;
+  z-index: 999;
+}
+
+.slide_video_box {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-8%, 130%);
+  transition: all 0.1s linear;
+  /* // top: 55px; */
+  /* // left: 0px; */
+  z-index: 999;
+  width: 120%;
+  height: 150px;
+}
+
+.text_hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.thumbnail_text {
+  background: #222222;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 5px 5px;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.thumbnail_text > .video_icon_box > .detail {
+  margin-left: 130px;
+}
+
+.thumbnail_text > .video_icon_box > .play {
+  border: 2px solid white;
+  background: white;
+}
+
+.thumbnail_text > .video_icon_box > .play:hover {
+  border: 2px solid #e6e6e6;
+  background: #e6e6e6;
+}
+
+.thumbnail_text > .video_icon_box > * {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #909090;
+  background: #232323;
+}
+
+.thumbnail_text > .video_icon_box > *:hover {
+  border: 2px solid white;
+}
+
+/* .real-container:nth-child(5n + 1) {
+  padding-left: 2%;
+}
+
+.real-container:nth-child(5n) {
+  padding-right: 2%;
+} */
+
+/* 섬네일 hover 끝 */
