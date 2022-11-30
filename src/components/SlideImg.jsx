@@ -9,6 +9,7 @@ import {
 
 const SlideImg = ({ ele, index, openModal, setZindex }) => {
   const [isActive, setIsActive] = useState(false);
+
   return (
     <div
       style={
@@ -24,6 +25,7 @@ const SlideImg = ({ ele, index, openModal, setZindex }) => {
           setIsActive(false);
           setZindex(false);
         }}
+        // style={index < index + 1 ? { zIndex: "999" } : { zIndex: "-1" }}
       >
         <div
           className="real-container"
@@ -33,7 +35,19 @@ const SlideImg = ({ ele, index, openModal, setZindex }) => {
           }}
         >
           <img
-            className={isActive ? "thumbnail-img img_hover" : "thumbnail-img"}
+            className={
+              index == 0 || index == 6
+                ? isActive
+                  ? "thumbnail-img img_hover_transform_first"
+                  : "thumbnail-img"
+                : index == 5 || index == 11
+                ? isActive
+                  ? "thumbnail-img img_hover_transform_5n"
+                  : "thumbnail-img"
+                : isActive
+                ? "thumbnail-img img_hover"
+                : "thumbnail-img"
+            }
             style={isActive ? { zIndex: "1" } : { zIndex: "0" }}
             src={ele?.contentImg}
             alt=""
@@ -41,7 +55,17 @@ const SlideImg = ({ ele, index, openModal, setZindex }) => {
         </div>
         <div
           className={
-            isActive ? "slide_video_box text_hover" : "slide_video_box"
+            index == 0 || index == 6
+              ? isActive
+                ? "slide_video_box_transform_first text_hover"
+                : "slide_video_box"
+              : index == 5 || index == 11
+              ? isActive
+                ? "slide_video_box_transform_5n text_hover"
+                : "slide_video_box"
+              : isActive
+              ? "slide_video_box text_hover"
+              : "slide_video_box"
           }
           id="slide_video_box"
           style={{ borderRadius: "25px" }}

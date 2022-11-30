@@ -2,7 +2,8 @@
 .slideItems-all-container {
   box-sizing: border-box;
   padding: 0 2%;
-  margin-bottom: 5vh;
+  margin-bottom: -10vh;
+  position: relative;
 }
 
 /* 타이틀 커스터마이징 */
@@ -14,7 +15,8 @@
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
-  margin: -10px 0 10px 0;
+  margin-top: 50px;
+  //   margin: -10px 0 10px 0;
   // margin-bottom: 10px;
   z-index: 999;
 }
@@ -114,6 +116,9 @@
 }
 
 /* 섬네일 이미지 커스터마이징 끝*/
+
+.slick-slide {
+}
 
 .example {
   border: 1px solid blue;
