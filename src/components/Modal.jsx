@@ -82,20 +82,31 @@ const Modal = (props) => {
                   &times;
                 </button>
               </div>
-
-              <video
-                className="video"
-                src={currentContent?.contentVideo}
-                width="100%"
-                height="100%"
-                style={{
-                  borderRadius: "25px 25px 0 0",
-                  boxShadow: "0px 50px 100px black inset",
-                }}
-                // loop
-                autoPlay="autoPlay"
-                muted="muted"
-              ></video>
+              {currentContent.contentVideo ? (
+                <video
+                  className="video"
+                  src={currentContent?.contentVideo}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    borderRadius: "25px 25px 0 0",
+                    boxShadow: "0px 50px 100px black inset",
+                  }}
+                  // loop
+                  autoPlay="autoPlay"
+                  muted="muted"
+                ></video>
+              ) : (
+                <img
+                  src={currentContent?.detailImg}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    borderRadius: "25px 25px 0 0",
+                    boxShadow: "0px 50px 100px black inset",
+                  }}
+                ></img>
+              )}
               <div className="play_title">
                 <div className="img_box">
                   <img src={currentContent?.detailTextImg} alt="수리남" />

@@ -16,7 +16,7 @@ import {
 } from "react-icons/bs";
 import SlideImg from "./SlideImg";
 
-const SlideItems = (openModal, kDramas) => {
+const SlideItems = ({ openModal, kDramas }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);

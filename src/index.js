@@ -11,6 +11,7 @@ import KakaoInfo from "./components/KakaoInfo";
 import Search from "./components/Search";
 import SlideItems from "./components/SlideItems";
 import Header from "./components/Header";
+import Profile from "./components/Profile";
 import Mylist from "./components/MyList";
 
 // import Kakaopay from "./components/Kakaopay";
@@ -36,6 +37,7 @@ root.render(
         <Route path="/search/:search" element={<Search />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/slideitems" element={<SlideItems />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
 
         {/* <Route path="/kakaopay" element={<Kakaopay />}></Route> */}
       </Routes>
