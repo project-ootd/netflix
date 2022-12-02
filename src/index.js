@@ -11,11 +11,8 @@ import KakaoInfo from "./components/KakaoInfo";
 import Search from "./components/Search";
 import SlideItems from "./components/SlideItems";
 import Header from "./components/Header";
-<<<<<<< HEAD
 import Profile from "./components/Profile";
-=======
 import Mylist from "./components/MyList";
->>>>>>> master
 
 // import Kakaopay from "./components/Kakaopay";
 
