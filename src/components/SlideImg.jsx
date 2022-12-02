@@ -9,7 +9,6 @@ import {
 
 const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
   const [isActive, setIsActive] = useState(false);
-  console.log("깃 올릴테다");
 
   return (
     <div
@@ -142,7 +141,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
               <a
                 className="detail"
                 onClick={() => {
-                  // openModal(ele[key]);
+                  openModal(ele);
                   console.log(ele);
                 }}
               >
