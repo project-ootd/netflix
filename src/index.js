@@ -11,6 +11,7 @@ import KakaoInfo from "./components/KakaoInfo";
 import Search from "./components/Search";
 import SlideItems from "./components/SlideItems";
 import Header from "./components/Header";
+import Mylist from "./components/MyList";
 
 // import Kakaopay from "./components/Kakaopay";
 
@@ -26,8 +27,9 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />}></Route>
+        <Route path="/browse/my-list" element={<Mylist />}></Route>
         <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>
-        <Route path="/allcontents" element={<AllContents />}></Route>
+        <Route path="/browse" element={<AllContents />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/regform" element={<RegForm />}></Route>
         <Route path="/payinfo" element={<KakaoInfo />}></Route>

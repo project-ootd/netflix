@@ -54,7 +54,7 @@ const Login = () => {
                   setPassword("");
                   setUser(data.data);
                   alert("로그인 성공");
-
+                  sessionStorage.setItem("email", useremail);
                   const payChk = await axios({
                     url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
                     method: "POST",

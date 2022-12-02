@@ -86,7 +86,7 @@ const ChoiceProfile = () => {
           <ul className="choice-profile">
             <li className="profile">
               <div>
-                <a href="/allcontents" className="profile-text">
+                <a href="/browse" className="profile-text">
                   <div className="avatar-wrapper">
                     <img
                       src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
@@ -101,7 +101,7 @@ const ChoiceProfile = () => {
             </li>
             <li className="profile">
               <div>
-                <a href="/allcontents" className="profile-text">
+                <a href="/browse" className="profile-text">
                   <div className="avatar-wrapper">
                     <img
                       src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABfNXUMVXGhnCZwPI1SghnGpmUgqS_J-owMff-jig42xPF7vozQS1ge5xTgPTzH7ttfNYQXnsYs4vrMBaadh4E6RTJMVepojWqOXx.png?r=1d4"
@@ -115,7 +115,7 @@ const ChoiceProfile = () => {
             </li>
             <li className="profile">
               <div>
-                <a href="/allcontents" className="profile-text">
+                <a href="/browse" className="profile-text">
                   <div className="avratar-wrapper">
                     <img
                       src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABTpGJ10BG0ND_0g7-9qiFb9bvXgAtmEXEfmRY7XjMqB3axaO9e4eIxTxQzIbQYOW46KHMQgaGUmhkXQdt4jDovDpVe_DBCJI1NXX.png?r=438"
@@ -129,7 +129,7 @@ const ChoiceProfile = () => {
             </li>
             <li className="profile">
               <div>
-                <a href="/allcontents" className="profile-text">
+                <a href="/browse" className="profile-text">
                   <div className="avratar-wrapper">
                     <img
                       src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABVrwTVUu0vi8TrkRGVeBGYVORH9qG1D6nXpX9cMWJp71hXVzawvt73UKs76KXcn_bEj41nibhNDQ_24hOcVfQ7swug6DZcLWuR-N.png?r=59d"
@@ -143,7 +143,7 @@ const ChoiceProfile = () => {
             </li>
             <li className="profile">
               <div>
-                <a href="/allcontents" className="profile-text">
+                <a href="/browse" className="profile-text">
                   <div className="avratar-wrapper">
                     <img
                       src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABRZ9UvLLN8tmuXW65YweIeYLuhKgR4qnSL0rVwNF6rgxxbsMoW9mCtlxPcz76Ti7bnciG7lE4WcqR8Z7YVM4xjX_-r0wd449rgnY.png?r=acf"
