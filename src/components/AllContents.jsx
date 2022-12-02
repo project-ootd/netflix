@@ -14,7 +14,9 @@ const AllContents = () => {
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
+  const [check, setCheck] = useState([]);
 
+  console.log("user : ", sessionStorage.getItem("email"));
   // const targetRef = useRef(null);
 
   // const handleScroll = () => {
@@ -81,6 +83,20 @@ const AllContents = () => {
     // getContent();
   }, []);
 
+  useEffect(() => {
+    const getData = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/browse/my-list/check`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+      });
+      setCheck(data.data);
+    };
+    getData();
+  }, []);
+
   return (
     <div className="App">
       <TestVideo openModal={openModal} allContents={ranking[0]} />
@@ -88,6 +104,7 @@ const AllContents = () => {
         openModal={openModal}
         ranking={ranking}
         allContents={allContents}
+        check={check}
       />
       <SlideItems openModal={openModal} kDramas={kDramas} />
       <Modal
@@ -96,6 +113,7 @@ const AllContents = () => {
         ranking={ranking}
         header="Modal heading"
         currentContent={currentContent}
+        check={check}
       />
       <Footer />
     </div>

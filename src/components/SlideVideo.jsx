@@ -8,10 +8,23 @@ import {
   BsHandThumbsDown,
 } from "react-icons/bs";
 import Modal from "../components/Modal";
+import { BACKEND_URL } from "../utils";
+import axios from "axios";
+import { AiOutlineCheck } from "react-icons/ai";
 
-const SlideVideo = ({ openModal, ranking }) => {
+const SlideVideo = ({ openModal, ranking, check }) => {
   const videoRef = useRef();
 
+  const like = async () => {
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list`,
+      method: "POST",
+      params: {
+        useremail: sessionStorage.getItem("email"),
+        contentId: ranking.id,
+      },
+    });
+  };
   return (
     <div>
       <div
@@ -72,17 +85,32 @@ const SlideVideo = ({ openModal, ranking }) => {
                 }}
               />
             </a>
-            <a className="steam" href="/">
-              <BsPlusLg
-                style={{
-                  fontSize: "20px",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  position: "absolute",
-                }}
-              />
-            </a>
+            <button className="steam" onClick={like}>
+              {check ? (
+                <AiOutlineCheck
+                  style={{
+                    color: "white",
+                    fontSize: "20px",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <BsPlusLg
+                  style={{
+                    fontSize: "20px",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    position: "absolute",
+                    color: "white",
+                  }}
+                />
+              )}
+            </button>
+
             <a className="evaluation" href="/">
               <BsHandThumbsUp
                 style={{

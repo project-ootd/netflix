@@ -1,0 +1,49 @@
+body,
+ul,
+li {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.my-list-box {
+  /* border: 3px solid red; */
+  position: relative;
+  bottom: -100px;
+  min-height: 10px;
+}
+.my-list-header-text > .title-text {
+  font-size: 2.5rem;
+  margin-left: 2.2vw;
+}
+
+.search-container {
+  display: inline-block;
+  margin: 0 0 4vw;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.search-result {
+  margin-top: 5vh;
+  margin-left: 2vh;
+
+  padding: 0 2%;
+}
+
+.search-thumbnail {
+  display: inline-block;
+}
+
+.search-thumbnail-img {
+  display: inline-block;
+  border-radius: 10px;
+  padding-left: 0;
+
+  box-sizing: border-box;
+
+  padding: 0 0.2vw;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  z-index: 1;
+}
