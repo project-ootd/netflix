@@ -3,11 +3,14 @@ import "../styles/Modal.css";
 import { BsPlusLg, BsPlayFill, BsHandThumbsUp } from "react-icons/bs";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { useState } from "react";
 
+import { AiOutlineCheck } from "react-icons/ai";
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, currentContent } = props;
   // console.log(currentContent);
+  const [check, setCheck] = useState([]);
 
   const videoRef = useRef();
 
@@ -34,6 +37,31 @@ const Modal = (props) => {
   //   getsubContet();
   // }, [currentContent]);
 
+  const like = async () => {
+    // 찜 추가/삭제
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list`,
+      method: "POST",
+      params: {
+        useremail: sessionStorage.getItem("email"),
+        contentId: currentContent.id,
+      },
+    });
+  };
+  // 유저가 찜한 컨텐츠 true/false 값 조회
+  useEffect(() => {
+    const getData = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/browse/my-list/check`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+      });
+      setCheck(data.data);
+    };
+    getData();
+  }, []);
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
     <div
@@ -92,14 +120,32 @@ const Modal = (props) => {
                       재생
                     </div>
                   </a>
-                  <a className="steam flex flex_jc_c flex_ai_c" href="/">
-                    <BsPlusLg
-                      style={{
-                        fontSize: "18px",
-                        position: "absolute",
-                      }}
-                    />
-                  </a>
+
+                  <button className="steam" onClick={like}>
+                    {check[currentContent.id].likeStatus ? (
+                      <AiOutlineCheck
+                        style={{
+                          color: "white",
+                          fontSize: "20px",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          position: "absolute",
+                        }}
+                      />
+                    ) : (
+                      <BsPlusLg
+                        style={{
+                          fontSize: "20px",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          position: "absolute",
+                          color: "white",
+                        }}
+                      />
+                    )}
+                  </button>
                   <a className="evaluation flex flex_jc_c flex_ai_c" href="/">
                     <BsHandThumbsUp
                       style={{

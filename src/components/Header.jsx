@@ -18,7 +18,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [hide, SetHide] = useState(
-    location?.state?.fromUrl === "/allcontents" ? true : false
+    location?.state?.fromUrl === "/browse" ? true : false
   );
   const [search, setSearch] = useRecoilState(serachState);
   const [keyword, setKeyword] = useState([]);
@@ -38,7 +38,7 @@ const Header = () => {
 
   const onSearch = (e) => {
     if (e.target.value === "") {
-      navigate(`/allcontents`);
+      navigate(`/browse`);
     } else {
       navigate(`/search?${e.target.value}`);
     }
@@ -59,8 +59,9 @@ const Header = () => {
 
   if (
     !(
-      location.pathname === "/allcontents" ||
-      location.pathname.startsWith("/search")
+      location.pathname === "/browse" ||
+      location.pathname.startsWith("/search") ||
+      location.pathname.startsWith("/browse")
     )
   ) {
     return <></>;
@@ -117,7 +118,7 @@ const Header = () => {
             <ul>
               <li>
                 <div className="img-box" style={{ width: "100%" }}>
-                  <a href="/allcontents">
+                  <a href="/browse">
                     <img
                       src={logo}
                       alt=""
@@ -139,7 +140,7 @@ const Header = () => {
               }}
             >
               <li style={{ margin: "0 2vw", fontWeight: "bold" }}>
-                <a href="/allcontents">홈</a>
+                <a href="/browse">홈</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
                 <a href="/">시리즈</a>
@@ -151,7 +152,7 @@ const Header = () => {
                 <a href="/">NEW! 요즘 대세 컨텐츠</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
-                <a href="/">내가 찜한 콘텐츠</a>
+                <a href="/browse/my-list">내가 찜한 콘텐츠</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
                 <a href="/">언어 별로 찾아보기</a>
