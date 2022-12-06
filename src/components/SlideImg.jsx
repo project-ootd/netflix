@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import {
   BsPlusLg,
   BsPlayFill,
@@ -6,10 +7,27 @@ import {
   BsChevronDown,
   BsHandThumbsDown,
 } from "react-icons/bs";
+import { BACKEND_URL } from "../utils";
+import { AiOutlineCheck } from "react-icons/ai";
+import AllContents from "./AllContents";
 
-const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
+const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
   const [isActive, setIsActive] = useState(false);
 
+  const like = async () => {
+    // 찜 추가/삭제
+    console.log("실행됨");
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list`,
+      method: "POST",
+      params: {
+        useremail: sessionStorage.getItem("email"),
+        contentId: ele.id,
+      },
+    });
+  };
+  // console.log("check data===== : ", check[ele.id - 1].likeStatus);
+  // console.log("check eleId : ", ele.id);
   return (
     <div
       style={
@@ -17,6 +35,9 @@ const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
           ? { zIndex: "999", marginRight: "10px" }
           : { zIndex: "-1", marginRight: "10px" }
       }
+      onMouseEnter={() => {
+        console.log("슬라이드 이미지 오픈 : ", ele.likeStatus);
+      }}
     >
       <div
         className="thumbnail-container"
@@ -83,17 +104,31 @@ const SlideImg = ({ ele, openModal, setZindex, key, index }) => {
                   }}
                 />
               </a>
-              <a className="steam" href="/">
-                <BsPlusLg
-                  style={{
-                    fontSize: "20px",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    position: "absolute",
-                  }}
-                />
-              </a>
+              <button className="steam" onClick={like}>
+                {check[ele.id]?.likeStatus ? (
+                  <AiOutlineCheck
+                    style={{
+                      color: "white",
+                      fontSize: "20px",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      position: "absolute",
+                    }}
+                  />
+                ) : (
+                  <BsPlusLg
+                    style={{
+                      fontSize: "20px",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      position: "absolute",
+                      color: "white",
+                    }}
+                  />
+                )}
+              </button>
               <a className="evaluation" href="/">
                 <BsHandThumbsUp
                   style={{

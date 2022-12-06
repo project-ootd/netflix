@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 import { useEffect } from "react";
 
-const RankingSlide = ({ openModal, ranking, allcontent }) => {
+const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -88,7 +88,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
             </div>
 
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[0]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[0]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 2 */}
@@ -111,7 +115,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[1]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[1]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[1]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 3 */}
@@ -134,7 +142,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[2]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[2]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[2]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 4 */}
@@ -157,7 +169,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[3]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[3]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[3]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 5 */}
@@ -180,7 +196,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[4]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[4]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[4]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 6 */}
@@ -203,7 +223,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[5]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[5]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[5]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 7 */}
@@ -226,7 +250,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[6]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[6]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[6]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 8 */}
@@ -249,7 +277,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[7]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[7]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[7]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 9 */}
@@ -273,7 +305,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[8]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[8]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[8]}
+                check={check}
+              />
             </div>
           </div>
           {/* rank 10 */}
@@ -296,7 +332,11 @@ const RankingSlide = ({ openModal, ranking, allcontent }) => {
               <img src={ranking[9]?.rankingImg} alt="" />
             </div>
             <div className="video_box">
-              <SlideVideo openModal={openModal} ranking={ranking[9]} />
+              <SlideVideo
+                openModal={openModal}
+                ranking={ranking[9]}
+                check={check}
+              />
             </div>
           </div>
         </Slider>

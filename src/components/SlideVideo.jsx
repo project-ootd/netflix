@@ -86,7 +86,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
               />
             </a>
             <button className="steam" onClick={like}>
-              {check ? (
+              {check[ranking.id - 1]?.likeStatus ? (
                 <AiOutlineCheck
                   style={{
                     color: "white",

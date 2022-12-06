@@ -96,6 +96,7 @@ const AllContents = () => {
     };
     getData();
   }, []);
+  console.log("allcontents Test : ", check[0]?.likeStatus);
 
   return (
     <div className="App">
@@ -106,7 +107,7 @@ const AllContents = () => {
         allContents={allContents}
         check={check}
       />
-      <SlideItems openModal={openModal} kDramas={kDramas} />
+      <SlideItems openModal={openModal} kDramas={kDramas} check={check} />
       <Modal
         open={modalOpen}
         close={closeModal}
