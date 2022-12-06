@@ -16,7 +16,7 @@ import {
 } from "react-icons/bs";
 import SlideImg from "./SlideImg";
 
-const SlideItems = ({ openModal, kDramas }) => {
+const SlideItems = ({ openModal, kDramas, check }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -121,6 +121,7 @@ const SlideItems = ({ openModal, kDramas }) => {
                 ele={ele}
                 openModal={openModal}
                 setZindex={setZindex}
+                check={check}
               />
             );
           })}
@@ -156,6 +157,7 @@ const SlideItems = ({ openModal, kDramas }) => {
                 openModal={openModal}
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
+                check={check}
               />
             );
           })}
@@ -191,6 +193,7 @@ const SlideItems = ({ openModal, kDramas }) => {
                 openModal={openModal}
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
+                check={check}
               />
             );
           })}
@@ -226,6 +229,7 @@ const SlideItems = ({ openModal, kDramas }) => {
                 openModal={openModal}
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
+                check={check}
               />
             );
           })}
@@ -264,6 +268,7 @@ const SlideItems = ({ openModal, kDramas }) => {
                 openModal={openModal}
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
+                check={check}
               />
             );
           })}
