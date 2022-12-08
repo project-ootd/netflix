@@ -26,8 +26,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
       },
     });
   };
-  // console.log("check data===== : ", check[ele.id - 1].likeStatus);
-  // console.log("check eleId : ", ele.id);
+
   return (
     <div
       style={
@@ -105,7 +104,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
                 />
               </a>
               <button className="steam" onClick={like}>
-                {check[ele.id]?.likeStatus ? (
+                {check[ele?.id - 1]?.likeStatus ? (
                   <AiOutlineCheck
                     style={{
                       color: "white",

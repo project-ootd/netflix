@@ -95,8 +95,7 @@ const AllContents = () => {
       setCheck(data.data);
     };
     getData();
-  }, []);
-  console.log("allcontents Test : ", check[0]?.likeStatus);
+  }, [check]);
 
   return (
     <div className="App">

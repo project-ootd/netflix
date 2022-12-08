@@ -21,7 +21,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
       method: "POST",
       params: {
         useremail: sessionStorage.getItem("email"),
-        contentId: ranking.id,
+        contentId: ranking?.id,
       },
     });
   };
@@ -86,7 +86,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
               />
             </a>
             <button className="steam" onClick={like}>
-              {check[ranking.id - 1]?.likeStatus ? (
+              {check[ranking?.id - 1]?.likeStatus ? (
                 <AiOutlineCheck
                   style={{
                     color: "white",
