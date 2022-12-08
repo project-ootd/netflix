@@ -156,7 +156,7 @@ const Header = () => {
                 <a href="/browse/my-list">내가 찜한 콘텐츠</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
-                <a href="/">언어 별로 찾아보기</a>
+                <a href="/original-audio">언어 별로 찾아보기</a>
               </li>
             </ul>
           </div>
