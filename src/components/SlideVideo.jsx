@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "../styles/SlideVideo.css";
 import {
   BsPlusLg,
@@ -13,7 +13,24 @@ import axios from "axios";
 import { AiOutlineCheck } from "react-icons/ai";
 
 const SlideVideo = ({ openModal, ranking, check }) => {
+  const [category, setCategory] = useState([]);
   const videoRef = useRef();
+
+  useEffect(() => {
+    try {
+      const getCategory = async () => {
+        const data = await axios({
+          url: `${BACKEND_URL}/category`,
+          method: "GET",
+          params: { id: ranking.id },
+        });
+        setCategory(data.data);
+      };
+      getCategory();
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   const like = async () => {
     const data = await axios({
@@ -182,9 +199,9 @@ const SlideVideo = ({ openModal, ranking, check }) => {
           </div>
 
           <ul className="video_genre flex">
-            <li>범죄</li>
-            <li>한국 드라마</li>
-            <li>긴장감 넘치는</li>
+            {category.map((data, index) => {
+              return <li key={index}>{data?.categoryType}</li>;
+            })}
           </ul>
         </div>
       </div>

@@ -10,8 +10,24 @@ const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
   const { open, close, currentContent, check } = props;
   // console.log(currentContent);
-
+  const [category, setCategory] = useState([]);
   const videoRef = useRef();
+
+  useEffect(() => {
+    try {
+      const getCategory = async () => {
+        const data = await axios({
+          url: `${BACKEND_URL}/category`,
+          method: "GET",
+          params: { id: currentContent.id },
+        });
+        setCategory(data.data);
+      };
+      getCategory();
+    } catch (e) {
+      console.log(e);
+    }
+  }, [currentContent]);
 
   useEffect(() => {
     open
@@ -179,15 +195,17 @@ const Modal = (props) => {
               </div>
               <div className="cast_box">
                 <div className="cast">
-                  <span className="appearance">출연:</span>
+                  <span className="appearance">출연 : </span>
                   {currentContent?.actor}
                 </div>
                 <div className="genre">
-                  <span className="genre_title">장르:</span> 범죄, 스릴러, 한국
-                  드라마,(아직 안함)
+                  <span className="genre_title">장르 : </span>
+                  {category.map((data, index) => {
+                    return <a key={index}>{data?.categoryType} </a>;
+                  })}
                 </div>
                 <div className="series">
-                  <span className="series_title">시리즈:</span> 긴장감
+                  <span className="series_title">시리즈 : </span> 긴장감
                   넘치는(아직 안함)
                 </div>
               </div>
