@@ -82,21 +82,24 @@ const AllContents = () => {
     // getContent();
   }, []);
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await axios({
-        url: `${BACKEND_URL}/browse/my-list/check`,
-        method: "GET",
-        params: {
-          useremail: sessionStorage.getItem("email"),
-        },
-      });
-      setCheck(data.data);
-    };
-    getData();
-
-  }, [check]);
-
+  useEffect(
+    () => {
+      const getData = async () => {
+        const data = await axios({
+          url: `${BACKEND_URL}/browse/my-list/check`,
+          method: "GET",
+          params: {
+            useremail: sessionStorage.getItem("email"),
+          },
+        });
+        setCheck(data.data);
+      };
+      getData();
+    },
+    [
+      // check
+    ]
+  );
 
   return (
     <div className="App">

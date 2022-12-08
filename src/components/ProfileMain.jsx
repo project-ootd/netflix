@@ -2,7 +2,7 @@ import React from "react";
 import { BsPencil } from "react-icons/bs";
 import { FaPlusCircle } from "react-icons/fa";
 
-const ProfileMain = ({ click, setClick }) => {
+const ProfileMain = ({ click, setClick, profileUser }) => {
   return (
     <div className="profile_inner">
       <h1>프로필 관리</h1>
@@ -23,7 +23,7 @@ const ProfileMain = ({ click, setClick }) => {
             <div className="profile_pencil">
               <BsPencil />
             </div>
-            <div className="profile_name">안녕</div>
+            <div className="profile_name">{profileUser?.gameName}</div>
           </li>
           <li
             className="profile_items"

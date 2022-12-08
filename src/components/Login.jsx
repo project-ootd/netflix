@@ -11,6 +11,7 @@ import { useEffect } from "react";
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState("");
   const navigate = useNavigate();
   const choiceprofile = () => {
     navigate(`/choiceprofile`);
@@ -53,8 +54,11 @@ const Login = () => {
                   setUseremail("");
                   setPassword("");
                   setUser(data.data);
+                  console.log(data.data);
+                  setUserId(data.data.useremail);
                   alert("로그인 성공");
                   sessionStorage.setItem("email", useremail);
+                  sessionStorage.setItem("userId", userId);
                   const payChk = await axios({
                     url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
                     method: "POST",
@@ -63,14 +67,14 @@ const Login = () => {
                     },
                   });
 
-                  console.log("payChk" + payChk.data.lastPaymentDate);
+                  // console.log("payChk" + payChk.data.lastPaymentDate);
                   if (payChk.data.lastPaymentDate) {
                     choiceprofile();
                   } else {
                     payinfo();
                   }
                   // onNav();
-                  console.log("data : " + data.data);
+                  // console.log("data : " + data.data);
                 } catch (e) {
                   alert("로그인 실패");
                 }

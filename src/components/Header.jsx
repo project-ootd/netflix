@@ -24,6 +24,7 @@ const Header = () => {
   const [keyword, setKeyword] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
   const searchInput = useRef();
+  const userEmail = sessionStorage.getItem("email");
 
   useEffect(() => {
     searchInput?.current?.focus();
@@ -270,12 +271,15 @@ const Header = () => {
                         alt=""
                         style={{}}
                       />
-                      <div style={{ marginLeft: "10px" }}>anoter porfile</div>
+                      <div style={{ marginLeft: "10px" }}>
+                        {userEmail}
+                        {/* anoter porfile */}
+                      </div>
                     </a>
                   </li>
                   <hr />
                   <li className="sub-menu-item">
-                    <a href="/">
+                    <a href="/profile">
                       <svg
                         width="24"
                         height="24"

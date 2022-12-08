@@ -1,12 +1,51 @@
-import React from "react";
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
+import React, { useEffect } from "react";
 import { BsPencil } from "react-icons/bs";
+import { useState } from "react";
 
-const ProfileSub = ({ setClick, subclick, setSubclick }) => {
+const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
+  const [userName, setUserName] = useState("");
+  const [gameName, setGameName] = useState("");
+  const userId = sessionStorage.getItem("email");
+
+  // const [profileUser, setProfileUser] = useState("");
+
+  useEffect(() => {
+    const getProfile = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/api/v1/user/getProfile?userId=${userId}}`,
+        method: "GET",
+      });
+      console.log(data.data);
+      // setProfileUser(data.data);
+    };
+    getProfile();
+  }, []);
+
   return (
     <div className="profile_click">
       <h1>프로필 변경</h1>
       <hr />
-      <form action="">
+      <form
+        action=""
+        onSubmit={async (e) => {
+          e.preventDefault();
+
+          try {
+            const data = await axios({
+              url: `${BACKEND_URL}/api/v1/user/profile?${userId}`,
+              method: "POST",
+              data: {
+                nickname: !userName ? profileUser.userName : userName,
+              },
+            });
+            alert(" 성공");
+          } catch (e) {
+            alert(" 실패");
+          }
+        }}
+      >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
             <img
@@ -34,7 +73,15 @@ const ProfileSub = ({ setClick, subclick, setSubclick }) => {
           </div>
           <div className="profile_text_box">
             <div className="name_box">
-              <input type="text" className="name" placeholder="프로필명" />
+              <input
+                type="text"
+                className="name"
+                placeholder="프로필명"
+                value={userName}
+                onChange={(e) => {
+                  setUserName(e.target.value);
+                }}
+              />
             </div>
             <div className="language_box">
               <h2>언어</h2>
@@ -57,6 +104,10 @@ const ProfileSub = ({ setClick, subclick, setSubclick }) => {
                 type="text"
                 className="gameName"
                 placeholder="게임 닉네임 등록"
+                value={gameName}
+                onChange={(e) => {
+                  setGameName(e.target.value);
+                }}
               />
             </div>
 
@@ -91,7 +142,13 @@ const ProfileSub = ({ setClick, subclick, setSubclick }) => {
         <hr />
 
         <div className="form_btn_box">
-          <button className="save" type="submit">
+          <button
+            className="save"
+            type="submit"
+            // onClick={() => {
+            //   setProfile();
+            // }}
+          >
             저장
           </button>
           <button
