@@ -94,7 +94,9 @@ const AllContents = () => {
       setCheck(data.data);
     };
     getData();
-  }, []);
+
+  }, [check]);
+
 
   return (
     <div className="App">

@@ -13,6 +13,7 @@ import SlideItems from "./components/SlideItems";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Mylist from "./components/MyList";
+import OriginalAudio from "./components/OriginalAudio";
 
 // import Kakaopay from "./components/Kakaopay";
 
@@ -27,6 +28,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/original-audio" element={<OriginalAudio />}></Route>
         <Route path="/" element={<App />}></Route>
         <Route path="/browse/my-list" element={<Mylist />}></Route>
         <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>

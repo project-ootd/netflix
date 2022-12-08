@@ -75,7 +75,9 @@ const Modal = (props) => {
           close();
         }
       }}
+
       onMouseEnter={() => {}}
+
     >
       {open ? (
         <div className="modal_wrap_box">
@@ -137,7 +139,7 @@ const Modal = (props) => {
                   </a>
 
                   <button className="steam" onClick={like}>
-                    {props.check[currentContent.id - 1]?.likeStatus ? (
+                    {props.check[currentContent?.id - 1]?.likeStatus ? (
                       <AiOutlineCheck
                         style={{
                           color: "white",

@@ -61,7 +61,8 @@ const Header = () => {
     !(
       location.pathname === "/browse" ||
       location.pathname.startsWith("/search") ||
-      location.pathname.startsWith("/browse")
+      location.pathname.startsWith("/browse") ||
+      location.pathname.startsWith("/original")
     )
   ) {
     return <></>;

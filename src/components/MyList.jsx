@@ -46,7 +46,7 @@ const Mylist = () => {
   // }, [contents]);
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="my-list-box">
         <div className="my-list-header-text">
           <div className="title-text">내가 찜한 컨텐츠</div>
