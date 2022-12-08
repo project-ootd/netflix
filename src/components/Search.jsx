@@ -13,7 +13,7 @@ const Search = () => {
 
   useEffect(() => {
     const getItem = async () => {
-      const keyword = await axios.get(`${BACKEND_URL}/search?kw=${search}`);
+      const keyword = await axios.get(`${BACKEND_URL}/search?q=${search}`);
       setContents(keyword.data);
       console.log("keywordData : ", keyword.data);
     };

@@ -28,6 +28,7 @@ const Modal = (props) => {
       console.log(e);
     }
   }, [currentContent]);
+  console.log("id : ", currentContent.id);
 
   useEffect(() => {
     open
@@ -74,9 +75,7 @@ const Modal = (props) => {
           close();
         }
       }}
-      onMouseEnter={() => {
-        console.log("모달에서", currentContent.likeStatus);
-      }}
+      onMouseEnter={() => {}}
     >
       {open ? (
         <div className="modal_wrap_box">

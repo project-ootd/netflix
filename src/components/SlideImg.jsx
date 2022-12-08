@@ -218,7 +218,11 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
 
             <ul className="video_genre flex">
               {category.map((data, index) => {
-                return <li key={index}>{data?.categoryType}</li>;
+                return (
+                  <li key={index} style={{ fontSize: "0.947em" }}>
+                    {data?.categoryType}
+                  </li>
+                );
               })}
             </ul>
           </div>
