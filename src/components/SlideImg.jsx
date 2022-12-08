@@ -122,7 +122,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
                 />
               </a>
               <button className="steam" onClick={like}>
-                {check[ele.id]?.likeStatus ? (
+                {check[ele?.id - 1]?.likeStatus ? (
                   <AiOutlineCheck
                     style={{
                       color: "white",
