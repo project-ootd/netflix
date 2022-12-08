@@ -69,7 +69,7 @@ const Mylist = () => {
           );
         })}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
