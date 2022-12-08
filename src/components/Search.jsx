@@ -6,6 +6,7 @@ import { BACKEND_URL } from "../utils";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Search.scss";
+import Footer from "./Footer";
 
 const Search = () => {
   const search = useRecoilValue(serachState);
@@ -62,6 +63,8 @@ const Search = () => {
           </div>
         );
       })}
+
+      <Footer />
     </>
   );
 };
