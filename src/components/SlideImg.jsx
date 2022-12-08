@@ -13,6 +13,7 @@ import AllContents from "./AllContents";
 
 const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
   const [isActive, setIsActive] = useState(false);
+  const [category, setCategory] = useState([]);
 
   const like = async () => {
     // 찜 추가/삭제
@@ -28,6 +29,22 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
   };
   // console.log("check data===== : ", check[ele.id - 1].likeStatus);
   // console.log("check eleId : ", ele.id);
+  useEffect(() => {
+    try {
+      const getCategory = async () => {
+        const data = await axios({
+          url: `${BACKEND_URL}/category`,
+          method: "GET",
+          params: { id: ele.id },
+        });
+        setCategory(data.data);
+      };
+      getCategory();
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   return (
     <div
       style={
@@ -200,9 +217,9 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
             </div>
 
             <ul className="video_genre flex">
-              <li>범죄</li>
-              <li>한국 드라마</li>
-              <li>긴장감 넘치는</li>
+              {category.map((data, index) => {
+                return <li key={index}>{data?.categoryType}</li>;
+              })}
             </ul>
           </div>
         </div>
