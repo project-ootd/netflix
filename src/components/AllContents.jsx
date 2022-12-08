@@ -7,10 +7,12 @@ import TestVideo from "./TestVideo";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 import { useRef } from "react";
+import { useRecoilState } from "recoil";
+import { rankingState } from "../recoil/ranking";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [ranking, setRanking] = useState([]);
+  const [ranking, setRanking] = useRecoilState(rankingState);
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
