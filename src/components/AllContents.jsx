@@ -18,7 +18,6 @@ const AllContents = () => {
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
 
-  console.log("user : ", sessionStorage.getItem("email"));
   // const targetRef = useRef(null);
 
   // const handleScroll = () => {
@@ -53,7 +52,6 @@ const AllContents = () => {
         method: "GET",
       });
       setRanking(data.data);
-      console.log("data", data.data);
     };
     getRank();
 
@@ -70,7 +68,6 @@ const AllContents = () => {
     const getKDrama = async () => {
       const data = await axios(`${BACKEND_URL}/contents?kw=DRAMA`);
       setKDramas(kDramas.data);
-      console.log("dramas data : ", data.data);
     };
     getKDrama();
 
@@ -97,7 +94,9 @@ const AllContents = () => {
       setCheck(data.data);
     };
     getData();
+
   }, [check]);
+
 
   return (
     <div className="App">

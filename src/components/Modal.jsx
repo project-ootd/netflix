@@ -28,6 +28,7 @@ const Modal = (props) => {
       console.log(e);
     }
   }, [currentContent]);
+  console.log("id : ", currentContent.id);
 
   useEffect(() => {
     open
@@ -74,6 +75,9 @@ const Modal = (props) => {
           close();
         }
       }}
+
+      onMouseEnter={() => {}}
+
     >
       {open ? (
         <div className="modal_wrap_box">
