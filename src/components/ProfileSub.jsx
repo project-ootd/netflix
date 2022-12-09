@@ -3,24 +3,89 @@ import { BACKEND_URL } from "../utils";
 import React, { useEffect } from "react";
 import { BsPencil } from "react-icons/bs";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
+const ProfileSub = ({
+  setClick,
+  subclick,
+  setSubclick,
+  profileUser,
+  profileIndex,
+}) => {
   const [userName, setUserName] = useState("");
   const [gameName, setGameName] = useState("");
   const userId = sessionStorage.getItem("email");
+  const [submitBtn, setSubmitBtn] = useState(false);
+  const [resetBtn, setResetBtn] = useState(false);
 
-  // const [profileUser, setProfileUser] = useState("");
+  const navigate = useNavigate();
+  const onNav = () => {
+    navigate(`/profile`);
+  };
+
+  // console.log(profileUser.profileNameList[0].nickname);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (submitBtn) {
+        if (profileIndex) {
+          const data = await axios({
+            url: `${BACKEND_URL}/api/v1/user/updateprofile`,
+            method: "PATCH",
+            params: {
+              useremail: sessionStorage.getItem("email"),
+            },
+            data: {
+              id: profileUser.profileNameList[profileIndex].id,
+              nickname: userName,
+            },
+          });
+          alert("변경 성공");
+          setClick(false);
+        } else {
+          const data = await axios({
+            url: `${BACKEND_URL}/api/v1/user/profile`,
+            method: "POST",
+            params: {
+              useremail: sessionStorage.getItem("email"),
+            },
+            data: {
+              nickname: userName,
+            },
+          });
+          alert("등록 성공");
+          setClick(false);
+        }
+      }
+
+      if (resetBtn) {
+        const data = await axios({
+          url: `${BACKEND_URL}/api/v1/user/deleteprofile`,
+          method: "POST",
+          data: {
+            id: profileUser.profileNameList[profileIndex].id,
+          },
+        });
+        alert("삭제 성공");
+        setClick(false);
+      }
+
+      setSubmitBtn(false);
+      setResetBtn(false);
+    } catch (e) {
+      alert("변경 실패");
+    }
+  };
 
   useEffect(() => {
-    const getProfile = async () => {
-      const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getProfile?userId=${userId}}`,
-        method: "GET",
-      });
-      console.log(data.data);
-      // setProfileUser(data.data);
-    };
-    getProfile();
+    if (profileUser) {
+      if (profileIndex) {
+        setUserName(profileUser.profileNameList[profileIndex].nickname);
+      }
+    }
+    // console.log(profileUser?.profileNameList[profileIndex].id);
   }, []);
 
   return (
@@ -29,22 +94,11 @@ const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
       <hr />
       <form
         action=""
-        onSubmit={async (e) => {
-          e.preventDefault();
-
-          try {
-            const data = await axios({
-              url: `${BACKEND_URL}/api/v1/user/profile?${userId}`,
-              method: "POST",
-              data: {
-                nickname: !userName ? profileUser.userName : userName,
-              },
-            });
-            alert(" 성공");
-          } catch (e) {
-            alert(" 실패");
-          }
-        }}
+        onSubmit={
+          // submitBtn
+          // ?
+          handleSubmit
+        }
       >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
@@ -82,6 +136,7 @@ const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
                   setUserName(e.target.value);
                 }}
               />
+              {/* {profileUser.profileNameList[profileIndex]} */}
             </div>
             <div className="language_box">
               <h2>언어</h2>
@@ -144,10 +199,10 @@ const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
         <div className="form_btn_box">
           <button
             className="save"
-            type="submit"
-            // onClick={() => {
-            //   setProfile();
-            // }}
+            // type="submit"
+            onClick={() => {
+              setSubmitBtn(true);
+            }}
           >
             저장
           </button>
@@ -159,7 +214,14 @@ const ProfileSub = ({ setClick, subclick, setSubclick, profileUser }) => {
           >
             취소
           </button>
-          <button className="delete">프로필 삭제</button>
+          <button
+            className="delete"
+            onClick={() => {
+              setResetBtn(true);
+            }}
+          >
+            프로필 삭제
+          </button>
         </div>
       </form>
       <br />

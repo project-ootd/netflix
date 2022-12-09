@@ -12,7 +12,25 @@ const Profile = () => {
   const [click, setClick] = useState(false);
   const [subclick, setSubclick] = useState(false);
 
-  const [profileUser, setProfileUser] = useState("");
+  const [profileUser, setProfileUser] = useState({});
+
+  const [profileIndex, setProfileIndex] = useState({});
+
+  // const userId = sessionStorage.getItem("email");
+
+  // const [profileUser, setProfileUser] = useState("");
+
+  // useEffect(() => {
+  //   const getProfile = async () => {
+  //     const data = await axios({
+  //       url: `${BACKEND_URL}/api/v1/user/getProfile?useremail=${userId}}`,
+  //       method: "GET",
+  //     });
+  //     console.log(data.data);
+  //     // setProfileUser(data.data);
+  //   };
+  //   getProfile();
+  // }, []);
 
   useEffect(() => {
     const getProfile = async () => {
@@ -52,6 +70,7 @@ const Profile = () => {
             setSubclick={setSubclick}
             subclick={subclick}
             profileUser={profileUser}
+            profileIndex={profileIndex}
           />
         )
       ) : (
@@ -59,6 +78,8 @@ const Profile = () => {
           setClick={setClick}
           click={click}
           profileUser={profileUser}
+          profileIndex={profileIndex}
+          setProfileIndex={setProfileIndex}
         />
       )}
     </div>
