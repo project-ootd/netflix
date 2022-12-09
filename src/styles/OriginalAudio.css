@@ -12,9 +12,12 @@ li {
 .original-box {
   position: relative;
   bottom: -100px;
-  min-height: 10px;
-  justify-content: center;
 }
+.original-con {
+  width: 100%;
+  display: flex;
+}
+
 .original-box-text > .title-text {
   font-size: 2.5rem;
   margin-left: 2.2vw;
@@ -51,6 +54,59 @@ li {
   vertical-align: top;
   white-space: normal;
   z-index: 1;
+}
+.language-con {
+  display: flex;
+  justify-content: end;
+  /* border: solid blue 3px; */
+  width: 100%;
+  position: absolute;
+  top: 1.8vh;
+  /* margin-right: 10px; */
+}
+.language-con > * {
+  margin-right: 10px;
+}
+.preference-Language {
+  font-size: 1.2rem;
+}
+.original-box-text {
+  display: inline-block;
+}
+.native-language {
+  top: 1vh;
+  width: 100%;
+  display: flex;
+
+  /* border: solid gold 3px; */
+}
+
+.native-language-box > .native-language > select {
+  width: 6vw;
+  height: 33px;
+  margin: 0;
+  padding: 5px 15px;
+  background: black;
+  color: #ccc;
+  outline: none;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  margin-top: -2px;
+  margin-right: 20px;
+}
+.native-language-box > .native-language > .choice-language {
+  width: 400px;
+}
+.native-language-box > .native-language > .language-box > select > option {
+  padding: 10px 0;
+}
+.native-language-box > .native-language > .choice-menual {
+  width: 400px;
+}
+.sort-by,
+.preference-Language {
+  font-size: 1.2rem;
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 1025px) {
