@@ -63,7 +63,8 @@ const Header = () => {
       location.pathname === "/browse" ||
       location.pathname.startsWith("/search") ||
       location.pathname.startsWith("/browse") ||
-      location.pathname.startsWith("/original")
+      location.pathname.startsWith("/original") ||
+      location.pathname.startsWith("/latest")
     )
   ) {
     return <></>;
@@ -151,7 +152,7 @@ const Header = () => {
                 <a href="/">영화</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
-                <a href="/">NEW! 요즘 대세 컨텐츠</a>
+                <a href="/latest">NEW! 요즘 대세 컨텐츠</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
                 <a href="/browse/my-list">내가 찜한 콘텐츠</a>
