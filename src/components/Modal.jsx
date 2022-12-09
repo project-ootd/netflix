@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/Modal.css";
-import { BsPlusLg, BsPlayFill, BsHandThumbsUp } from "react-icons/bs";
+import {
+  BsPlusLg,
+  BsPlayFill,
+  BsHandThumbsUp,
+  BsHandThumbsDown,
+} from "react-icons/bs";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
 import { useState } from "react";
@@ -75,9 +80,7 @@ const Modal = (props) => {
           close();
         }
       }}
-
       onMouseEnter={() => {}}
-
     >
       {open ? (
         <div className="modal_wrap_box">
@@ -163,6 +166,53 @@ const Modal = (props) => {
                       />
                     )}
                   </button>
+
+                  <a className="evaluation" href="/">
+                    <BsHandThumbsUp
+                      style={{
+                        fontSize: "20px",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        position: "relative",
+                      }}
+                    />
+                    <div className="modal_evaluation_hover">
+                      <div className="evaluation_icon1 evaluation_icons">
+                        <BsHandThumbsDown
+                          style={{
+                            fontSize: "20px",
+                          }}
+                        />
+                      </div>
+                      <div className="evaluation_icon2 evaluation_icons">
+                        <BsHandThumbsUp
+                          style={{
+                            fontSize: "20px",
+                          }}
+                        />
+                      </div>
+                      <div className="evaluation_icon3 evaluation_icons">
+                        <BsHandThumbsUp
+                          style={{
+                            fontSize: "20px",
+                          }}
+                        />
+                        <BsHandThumbsUp
+                          style={{
+                            fontSize: "20px",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-20%, -63%)",
+                            zIndex: "10",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </a>
+
+                  {/*               
                   <a className="evaluation flex flex_jc_c flex_ai_c" href="/">
                     <BsHandThumbsUp
                       style={{
@@ -173,7 +223,7 @@ const Modal = (props) => {
                         position: "absolute",
                       }}
                     />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

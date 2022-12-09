@@ -129,8 +129,7 @@
   height: 20px;
 }
 
-.modal_video_box > .play_title > .video_button_controller > .steam,
-.modal_video_box > .play_title > .video_button_controller > .evaluation {
+.modal_video_box > .play_title > .video_button_controller > .steam {
   background-color: #2a2a2a99;
   border: 2px solid hsla(0, 0%, 100%, 0.5);
   border-radius: 50%;
@@ -138,10 +137,47 @@
   margin-left: 10px;
 }
 
+.modal_video_box > .play_title > .video_button_controller > .evaluation {
+  background-color: #2a2a2a99;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  border-radius: 50%;
+  padding: 0px 10px;
+  margin-left: 10px;
+}
+
 .modal_video_box > .play_title > .video_button_controller > .steam:hover,
 .modal_video_box > .play_title > .video_button_controller > .evaluation:hover {
   background: #2a2a2a;
   border-color: white;
+}
+
+.evaluation:hover > .modal_evaluation_hover {
+  transition: all 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal_evaluation_hover {
+  top: -30%;
+  left: 51%;
+  transform: translate(15%, 15%);
+  visibility: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  width: 100px;
+  /* width: max-content; */
+  padding: 8px 20px;
+  height: 35px;
+  border-radius: 50px;
+  background: #232323;
+  transition: all 0.4s linear;
+}
+
+.modal_evaluation_hover > .evaluation_icons {
+  padding: 8px 10px;
 }
 
 .detail_modal_container {

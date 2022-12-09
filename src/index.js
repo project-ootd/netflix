@@ -14,6 +14,7 @@ import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Mylist from "./components/MyList";
 import OriginalAudio from "./components/OriginalAudio";
+import Player from "./components/Player";
 
 // import Kakaopay from "./components/Kakaopay";
 
