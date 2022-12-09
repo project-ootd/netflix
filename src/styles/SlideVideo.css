@@ -1,3 +1,9 @@
+.hover_container {
+  /* border: 1px solid red; */
+  box-shadow: 0px -3px 2px 2px black;
+  border-radius: 2% 2% 0 0;
+}
+
 .hover_box {
   width: 100%;
   position: relative;
@@ -15,6 +21,8 @@
   padding: 20px;
   z-index: 99;
   /* visibility: hidden; */
+  /* border: 1px solid blue; */
+  box-shadow: 0px 3px 2px 2px black;
 }
 
 .hover_box > .video_text > .video_icon_box > .detail {
@@ -157,20 +165,23 @@
   border-radius: 5px 5px 0 0 !important;
   z-index: 999;
   position: relative;
+  box-shadow: 0px -1px 2px 2px black;
 }
 
 .img_hover_transform_first {
   transform: scale(1.2) translate(8%, -43%);
-  border-radius: 5px 5px 0px 0px !important;
+  border-radius: 5% 5% 0px 0px !important;
   z-index: 999;
   position: relative;
+  box-shadow: 0px -1px 2px 2px black;
 }
 
 .img_hover_transform_5n {
   transform: scale(1.2) translate(-9.6%, -43%);
-  border-radius: 5px 5px 0 0 !important;
+  border-radius: 5% 5% 0 0 !important;
   z-index: 999;
   position: relative;
+  box-shadow: 0px -1px 2px 2px black;
 }
 
 .slide_video_box {
@@ -228,6 +239,7 @@
   border-radius: 0 0 5px 5px !important;
   padding: 5%;
   box-sizing: border-box;
+  box-shadow: 0px 3px 2px 2px black;
 }
 
 .thumbnail_text > .video_icon_box > .detail {

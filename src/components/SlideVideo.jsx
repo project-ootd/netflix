@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/SlideVideo.css";
 import {
   BsPlusLg,
@@ -43,7 +44,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
     });
   };
   return (
-    <div>
+    <div className="hover_container">
       <div
         className="hover_box"
         style={{ borderRadius: "25px" }}
@@ -60,19 +61,21 @@ const SlideVideo = ({ openModal, ranking, check }) => {
         {/* {ranking.map((rank, index) => {
           return;
         })} */}
-
+        {console.log("test : ", ranking?.videoLink)}
         {ranking?.contentVideo ? (
-          <video
-            className="video"
-            src={ranking?.contentVideo}
-            width="350vw"
-            height="200vh"
-            style={{ borderRadius: "5% 5% 0 0" }}
-            loop
-            muted
-            //   controls
-            ref={videoRef}
-          ></video>
+          <Link to="/player" ranking={ranking?.videoLink}>
+            <video
+              className="video"
+              src={ranking?.contentVideo}
+              width="350vw"
+              height="200vh"
+              style={{ borderRadius: "5% 5% 0 0" }}
+              loop
+              muted
+              //   controls
+              ref={videoRef}
+            ></video>
+          </Link>
         ) : (
           <img
             className="slide_hover_img"
@@ -90,7 +93,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
 
         <div className="video_text">
           <div className="video_icon_box flex flex_jc_sb">
-            <a className="play" href="/">
+            <Link to="/player" className="play">
               <BsPlayFill
                 style={{
                   fontSize: "28px",
@@ -101,7 +104,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
                   color: "#232323",
                 }}
               />
-            </a>
+            </Link>
             <button className="steam" onClick={like}>
               {check[ranking?.id - 1]?.likeStatus ? (
                 <AiOutlineCheck
