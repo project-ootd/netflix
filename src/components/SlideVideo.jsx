@@ -61,9 +61,11 @@ const SlideVideo = ({ openModal, ranking, check }) => {
         {/* {ranking.map((rank, index) => {
           return;
         })} */}
-        {console.log("test : ", ranking?.videoLink)}
+        
         {ranking?.contentVideo ? (
-          <Link to="/player" ranking={ranking?.videoLink}>
+          
+          <Link to="/player" state={ranking}>
+            {/* {console.log("test : ", ranking?.id)} */}
             <video
               className="video"
               src={ranking?.contentVideo}

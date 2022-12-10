@@ -10,8 +10,9 @@ import {
 import { BACKEND_URL } from "../utils";
 import { AiOutlineCheck } from "react-icons/ai";
 import AllContents from "./AllContents";
+import { Link } from "react-router-dom";
 
-const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
+const SlideImg = ({ ele, openModal, setZindex, key, index, check, ranking }) => {
   const [isActive, setIsActive] = useState(false);
   const [category, setCategory] = useState([]);
 
@@ -70,7 +71,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
             setIsActive(true);
             setZindex(true);
           }}
-        >
+        ><Link to="/player" state={ele}>
           <img
             className={
               index == 0 || index == 6
@@ -89,6 +90,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check }) => {
             src={ele?.contentImg}
             alt=""
           />
+          </Link>
         </div>
         <div
           className={
