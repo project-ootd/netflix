@@ -1,41 +1,21 @@
-import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
-import Modal from "./Modal";
-import RankingSlide from "./RankingSlide";
-import SlideItems from "./SlideItems";
-import TestVideo from "./TestVideo";
 import axios from "axios";
-import { BACKEND_URL } from "../utils";
-import { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import TestVideo from "./TestVideo";
+import { BACKEND_URL } from "../utils";
 import { rankingState } from "../recoil/ranking";
-
-const AllContents = () => {
+import Modal from "./Modal";
+import Footer from "./Footer";
+import MovieSub from "./MovieSub";
+import "../styles/Movie.css";
+import SeriesSub from "./SeriesSub";
+const Series = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
-
-  // const targetRef = useRef(null);
-
-  // const handleScroll = () => {
-  //   if (window.screenY > 0) {
-  //     targetRef.current.style.background = "red";
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => {
-  //       clearInterval(timer);
-  //       window.removeEventListener("scroll", handleScroll);
-  //     };
-  //   });
-  // }, []);
-
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
@@ -81,47 +61,33 @@ const AllContents = () => {
     // };
     // getContent();
   }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await axios({
-        url: `${BACKEND_URL}/browse/my-list/check`,
-        method: "GET",
-        params: {
-          useremail: sessionStorage.getItem("email"),
-        },
-      });
-      setCheck(data.data);
-    };
-    getData();
-  }, [check]);
-
   return (
-    <div className="App">
-      <TestVideo openModal={openModal} allContents={ranking[0]} />
-      <RankingSlide
-        openModal={openModal}
-        ranking={ranking}
-        allContents={allContents}
-        check={check}
-      />
-      <SlideItems
-        openModal={openModal}
-        kDramas={kDramas}
-        check={check}
-        ranking={ranking}
-      />
+    <div className="movie-head">
+      <div className="movie-head-con">
+        <div className="movie-page-text">시리즈</div>
+        <select name="genre" id="genre" className="choice-genre">
+          <option value="장르">시리즈</option>
+          <option value="한국 드라마">한국 드라마</option>
+          <option value="미국 드라마">미국 드라마</option>
+          <option value="일본 드라마">일본 드라마</option>
+          <option value="일본 애니메이션">일본 애니메이션</option>
+          <option value="코미디">코미디</option>
+          <option value="판타지">판타지</option>
+        </select>
+      </div>
+      <TestVideo openModal={openModal} allContents={ranking[4]} />
+      <SeriesSub openModal={openModal} kDramas={kDramas} check={check} />
       <Modal
         open={modalOpen}
         close={closeModal}
+        ranking={ranking}
         header="Modal heading"
         currentContent={currentContent}
         check={check}
-        ranking={ranking}
       />
       <Footer />
     </div>
   );
 };
 
-export default AllContents;
+export default Series;
