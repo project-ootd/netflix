@@ -105,14 +105,19 @@ const AllContents = () => {
         allContents={allContents}
         check={check}
       />
-      <SlideItems openModal={openModal} kDramas={kDramas} check={check} ranking={ranking} />
+      <SlideItems
+        openModal={openModal}
+        kDramas={kDramas}
+        check={check}
+        ranking={ranking}
+      />
       <Modal
         open={modalOpen}
         close={closeModal}
-        ranking={ranking}
         header="Modal heading"
         currentContent={currentContent}
         check={check}
+        ranking={ranking}
       />
       <Footer />
     </div>

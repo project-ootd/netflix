@@ -1,17 +1,16 @@
 import React from "react";
 import "../styles/Player.scss";
 import { RxArrowLeft } from "react-icons/rx";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const Player = () => {
+const Player = ({ currentContent }) => {
   const location = useLocation();
-
 
   return (
     <div style={{ width: "100%", height: "920px" }}>
       <div className="back_icon">
         <a href="javascript:history.back();">
-        <RxArrowLeft fontSize={"4rem"} />
+          <RxArrowLeft fontSize={"4rem"} />
         </a>
       </div>
 

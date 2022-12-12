@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Modal.css";
 import {
@@ -9,13 +9,12 @@ import {
 } from "react-icons/bs";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
-import { useState } from "react";
-
 import { AiOutlineCheck } from "react-icons/ai";
+import { rankingState } from "../recoil/ranking";
+
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, currentContent, check } = props;
-  // console.log(currentContent);
+  const { open, close, currentContent, check, ranking } = props;
   const [category, setCategory] = useState([]);
   const videoRef = useRef();
 
@@ -34,30 +33,12 @@ const Modal = (props) => {
       console.log(e);
     }
   }, [currentContent]);
-  console.log("id : ", currentContent.id);
 
   useEffect(() => {
     open
       ? (document.body.style = `overflow: hidden`)
       : (document.body.style = `overflow: scroll`);
   }, [open]);
-  // console.log(currentContent.contentId);
-
-  // useEffect(() => {
-  //   console.log(currentContent.contentId);
-  //   const getsubContet = async () => {
-  //     const data = await axios({
-  //       url: `${BACKEND_URL}/subcontent`,
-  //       method: "POST",
-  //       data: {
-  //         contentNum: currentContent.contentId,
-  //       },
-  //     });
-
-  //     console.log(data.data);
-  //   };
-  //   getsubContet();
-  // }, [currentContent]);
 
   const like = async () => {
     // 찜 추가/삭제
@@ -127,11 +108,13 @@ const Modal = (props) => {
                 </div>
                 <div className="video_button_controller flex flex_jc_sb">
                   {/* <div className="play_btn">재생</div> */}
-                  <a className="play flex" href="/">
-                    <Link
-                      to="/player"
-                      className="play_icon flex flex_jc_c flex_ai_c"
-                    >
+
+                  <Link
+                    to="/player"
+                    className="play flex"
+                    state={currentContent}
+                  >
+                    <div className="play_icon flex flex_jc_c flex_ai_c">
                       <BsPlayFill
                         style={{
                           fontSize: "35px",
@@ -139,11 +122,11 @@ const Modal = (props) => {
                           color: "black",
                         }}
                       />
-                    </Link>
+                    </div>
                     <div className="play_text flex flex_jc_c flex_ai_c">
                       재생
                     </div>
-                  </a>
+                  </Link>
 
                   <button className="steam" onClick={like}>
                     {props.check[currentContent?.id - 1]?.likeStatus ? (
