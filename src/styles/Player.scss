@@ -1,0 +1,21 @@
+.back_icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10vw;
+  height: 10vh;
+  margin-left: -1vw;
+  opacity: 0;
+  z-index: 99;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.back_icon:hover {
+  opacity: 1;
+}
+
+.reactPlayer {
+  display: relative;
+}

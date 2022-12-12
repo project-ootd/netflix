@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Modal.css";
 import {
   BsPlusLg,
@@ -127,7 +128,10 @@ const Modal = (props) => {
                 <div className="video_button_controller flex flex_jc_sb">
                   {/* <div className="play_btn">재생</div> */}
                   <a className="play flex" href="/">
-                    <div className="play_icon flex flex_jc_c flex_ai_c">
+                    <Link
+                      to="/player"
+                      className="play_icon flex flex_jc_c flex_ai_c"
+                    >
                       <BsPlayFill
                         style={{
                           fontSize: "35px",
@@ -135,7 +139,7 @@ const Modal = (props) => {
                           color: "black",
                         }}
                       />
-                    </div>
+                    </Link>
                     <div className="play_text flex flex_jc_c flex_ai_c">
                       재생
                     </div>
