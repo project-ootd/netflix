@@ -110,7 +110,7 @@ const AllContents = () => {
         allContents={allContents}
         check={check}
       />
-      <SlideItems openModal={openModal} kDramas={kDramas} check={check} />
+      <SlideItems openModal={openModal} kDramas={kDramas} check={check} ranking={ranking} />
       <Modal
         open={modalOpen}
         close={closeModal}
