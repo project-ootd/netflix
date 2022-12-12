@@ -180,7 +180,6 @@ const SlideVideo = ({ openModal, ranking, check }) => {
               className="detail"
               onClick={() => {
                 openModal(ranking);
-                console.log(ranking);
               }}
             >
               <BsChevronDown

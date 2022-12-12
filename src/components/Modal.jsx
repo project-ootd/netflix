@@ -14,11 +14,12 @@ import { rankingState } from "../recoil/ranking";
 
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, currentContent, check, ranking } = props;
+  const { open, close, currentContent, check } = props;
   const [category, setCategory] = useState([]);
   const videoRef = useRef();
 
   useEffect(() => {
+    if (currentContent?.id === undefined) return;
     try {
       const getCategory = async () => {
         const data = await axios({

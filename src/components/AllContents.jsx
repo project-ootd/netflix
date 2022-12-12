@@ -39,7 +39,6 @@ const AllContents = () => {
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
-    console.log(content);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -122,7 +121,6 @@ const AllContents = () => {
         header="Modal heading"
         currentContent={currentContent}
         check={check}
-        ranking={ranking}
       />
       <Footer />
     </div>
