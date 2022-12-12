@@ -12,7 +12,15 @@ import { AiOutlineCheck } from "react-icons/ai";
 import AllContents from "./AllContents";
 import { Link } from "react-router-dom";
 
-const SlideImg = ({ ele, openModal, setZindex, key, index, check, ranking }) => {
+const SlideImg = ({
+  ele,
+  openModal,
+  setZindex,
+  key,
+  index,
+  check,
+  ranking,
+}) => {
   const [isActive, setIsActive] = useState(false);
   const [category, setCategory] = useState([]);
 
@@ -71,25 +79,26 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check, ranking }) => 
             setIsActive(true);
             setZindex(true);
           }}
-        ><Link to="/player" state={ele}>
-          <img
-            className={
-              index == 0 || index == 6
-                ? isActive
-                  ? "thumbnail-img img_hover_transform_first"
+        >
+          <Link to={isActive ? "/player" : null} state={ele}>
+            <img
+              className={
+                index == 0 || index == 6
+                  ? isActive
+                    ? "thumbnail-img img_hover_transform_first"
+                    : "thumbnail-img"
+                  : index == 5 || index == 11
+                  ? isActive
+                    ? "thumbnail-img img_hover_transform_5n"
+                    : "thumbnail-img"
+                  : isActive
+                  ? "thumbnail-img img_hover"
                   : "thumbnail-img"
-                : index == 5 || index == 11
-                ? isActive
-                  ? "thumbnail-img img_hover_transform_5n"
-                  : "thumbnail-img"
-                : isActive
-                ? "thumbnail-img img_hover"
-                : "thumbnail-img"
-            }
-            style={isActive ? { zIndex: "1" } : { zIndex: "0" }}
-            src={ele?.contentImg}
-            alt=""
-          />
+              }
+              style={isActive ? { zIndex: "1" } : { zIndex: "0" }}
+              src={ele?.contentImg}
+              alt=""
+            />
           </Link>
         </div>
         <div
@@ -111,7 +120,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check, ranking }) => 
         >
           <div className="thumbnail_text" id="thumbnail_text">
             <div className="video_icon_box flex flex_jc_sb">
-              <a className="play" href="/">
+              <Link to="/player" className="play" state={ele}>
                 <BsPlayFill
                   style={{
                     fontSize: "28px",
@@ -122,7 +131,7 @@ const SlideImg = ({ ele, openModal, setZindex, key, index, check, ranking }) => 
                     color: "#232323",
                   }}
                 />
-              </a>
+              </Link>
               <button className="steam" onClick={like}>
                 {check[ele?.id - 1]?.likeStatus ? (
                   <AiOutlineCheck
