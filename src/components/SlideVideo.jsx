@@ -61,9 +61,8 @@ const SlideVideo = ({ openModal, ranking, check }) => {
         {/* {ranking.map((rank, index) => {
           return;
         })} */}
-        
+
         {ranking?.contentVideo ? (
-          
           <Link to="/player" state={ranking}>
             {/* {console.log("test : ", ranking?.id)} */}
             <video
@@ -95,7 +94,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
 
         <div className="video_text">
           <div className="video_icon_box flex flex_jc_sb">
-            <Link to="/player" className="play">
+            <Link to="/player" className="play" state={ranking}>
               <BsPlayFill
                 style={{
                   fontSize: "28px",
@@ -192,6 +191,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
                   transform: "translate(-50%, -50%)",
                   position: "absolute",
                 }}
+                ranking={ranking}
               />
             </a>
           </div>
