@@ -1,41 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
-import Modal from "./Modal";
-import RankingSlide from "./RankingSlide";
-import SlideItems from "./SlideItems";
-import TestVideo from "./TestVideo";
 import axios from "axios";
-import { BACKEND_URL } from "../utils";
-import { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import TestVideo from "./TestVideo";
+import { BACKEND_URL } from "../utils";
 import { rankingState } from "../recoil/ranking";
-
-const AllContents = () => {
+import Modal from "./Modal";
+import Footer from "./Footer";
+import MovieSub from "./MovieSub";
+const Movie = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);
   const [currentContent, setCurrentContent] = useState({});
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
-
-  // const targetRef = useRef(null);
-
-  // const handleScroll = () => {
-  //   if (window.screenY > 0) {
-  //     targetRef.current.style.background = "red";
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => {
-  //       clearInterval(timer);
-  //       window.removeEventListener("scroll", handleScroll);
-  //     };
-  //   });
-  // }, []);
-
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
@@ -81,31 +59,10 @@ const AllContents = () => {
     // };
     // getContent();
   }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await axios({
-        url: `${BACKEND_URL}/browse/my-list/check`,
-        method: "GET",
-        params: {
-          useremail: sessionStorage.getItem("email"),
-        },
-      });
-      setCheck(data.data);
-    };
-    getData();
-  }, [check]);
-
   return (
-    <div className="App">
-      <TestVideo openModal={openModal} allContents={ranking[0]} />
-      <RankingSlide
-        openModal={openModal}
-        ranking={ranking}
-        allContents={allContents}
-        check={check}
-      />
-      <SlideItems openModal={openModal} kDramas={kDramas} check={check} />
+    <div>
+      <TestVideo openModal={openModal} allContents={ranking[2]} />
+      <MovieSub />
       <Modal
         open={modalOpen}
         close={closeModal}
@@ -119,4 +76,4 @@ const AllContents = () => {
   );
 };
 
-export default AllContents;
+export default Movie;
