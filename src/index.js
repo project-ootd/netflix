@@ -17,6 +17,7 @@ import OriginalAudio from "./components/OriginalAudio";
 import Player from "./components/Player";
 import PopularContents from "./components/PopularContents";
 import Movie from "./components/Movie";
+import Series from "./components/Series";
 
 // import Kakaopay from "./components/Kakaopay";
 
@@ -32,6 +33,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />}></Route>
+        <Route path="/genre/series" element={<Series />}></Route>
         <Route path="/genre/movie" element={<Movie />}></Route>
         <Route path="/latest" element={<PopularContents />}></Route>
         <Route path="/original-audio" element={<OriginalAudio />}></Route>

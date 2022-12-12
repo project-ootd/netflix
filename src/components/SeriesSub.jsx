@@ -7,7 +7,7 @@ import { BACKEND_URL } from "../utils";
 import RankingSlide from "./RankingSlide";
 import SlideImg from "./SlideImg";
 
-const MovieSub = ({ openModal, kDaramas, check }) => {
+const SeriesSub = ({ openModal, kDaramas, check }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -214,7 +214,14 @@ const MovieSub = ({ openModal, kDaramas, check }) => {
           })}
         </Slider>
       </div>
-
+      <div className="ranking-con" style={{ marginTop: "12vh" }}>
+        <RankingSlide
+          openModal={openModal}
+          ranking={ranking}
+          allContents={allContents}
+          check={check}
+        />
+      </div>
       <div className="slideItems-all-container">
         <div className="slide-container flex flex_jc_start">
           <a href="#">
@@ -250,14 +257,7 @@ const MovieSub = ({ openModal, kDaramas, check }) => {
           })}
         </Slider>
       </div>
-      <div className="ranking-con" style={{ marginTop: "12vh" }}>
-        <RankingSlide
-          openModal={openModal}
-          ranking={ranking}
-          allContents={allContents}
-          check={check}
-        />
-      </div>
+
       <div
         className="slideItems-all-container"
         style={{ paddingBottom: "3vh" }}
@@ -300,4 +300,4 @@ const MovieSub = ({ openModal, kDaramas, check }) => {
   );
 };
 
-export default MovieSub;
+export default SeriesSub;

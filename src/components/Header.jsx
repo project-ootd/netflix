@@ -147,7 +147,7 @@ const Header = () => {
                 <a href="/browse">홈</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
-                <a href="/">시리즈</a>
+                <a href="/genre/series">시리즈</a>
               </li>
               <li style={{ marginRight: "2vw" }}>
                 <a href="/genre/movie">영화</a>
