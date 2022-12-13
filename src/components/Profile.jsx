@@ -51,7 +51,7 @@ const Profile = () => {
       // }
     };
     getProfile();
-  }, []);
+  }, [profileUser.ProflieNameList]);
 
   return (
     <div
@@ -63,7 +63,12 @@ const Profile = () => {
     >
       {click ? (
         subclick ? (
-          <ProfileIcon />
+          <ProfileIcon
+            setSubclick={setSubclick}
+            subclick={subclick}
+            profileUser={profileUser}
+            profileIndex={profileIndex}
+          />
         ) : (
           <ProfileSub
             setClick={setClick}
