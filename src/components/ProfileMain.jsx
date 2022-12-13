@@ -1,6 +1,7 @@
 import React from "react";
 import { BsPencil } from "react-icons/bs";
 import { FaPlusCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMain = ({
   click,
@@ -9,6 +10,10 @@ const ProfileMain = ({
   setProfileIndex,
   profileIndex,
 }) => {
+  const navigate = useNavigate();
+  const onNav = () => {
+    navigate(`/browse`);
+  };
   return (
     <div className="profile_inner">
       <h1>프로필 관리</h1>
@@ -26,7 +31,11 @@ const ProfileMain = ({
               >
                 <div className="profile_img_box">
                   <img
-                    src="http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+                    src={
+                      profile?.img
+                        ? profile.img
+                        : "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+                    }
                     alt=""
                   />
                 </div>
@@ -41,7 +50,7 @@ const ProfileMain = ({
           <li
             className="profile_items last_profile_items"
             onClick={() => {
-              if (profileUser.profileNameList.length >= 4) {
+              if (profileUser.profileNameList.length >= 3) {
                 alert("더이상 프로필을 만들 수 없습니다.");
               } else {
                 setClick(!click);
@@ -57,7 +66,14 @@ const ProfileMain = ({
         </ul>
 
         <div className="btn_box">
-          <div className="finish_btn">완료</div>
+          <div
+            className="finish_btn"
+            onClick={() => {
+              onNav();
+            }}
+          >
+            완료
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import { BACKEND_URL } from "../utils";
 import React, { useEffect } from "react";
 import { BsPencil } from "react-icons/bs";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const ProfileSub = ({
   setClick,
@@ -17,11 +16,6 @@ const ProfileSub = ({
   const userId = sessionStorage.getItem("email");
   const [submitBtn, setSubmitBtn] = useState(false);
   const [resetBtn, setResetBtn] = useState(false);
-
-  const navigate = useNavigate();
-  const onNav = () => {
-    navigate(`/profile`);
-  };
 
   // console.log(profileUser.profileNameList[0].nickname);
 
@@ -43,7 +37,7 @@ const ProfileSub = ({
             },
           });
           alert("변경 성공");
-          setClick(false);
+          window.location.replace("/profile");
         } else {
           const data = await axios({
             url: `${BACKEND_URL}/api/v1/user/profile`,
@@ -56,7 +50,7 @@ const ProfileSub = ({
             },
           });
           alert("등록 성공");
-          setClick(false);
+          window.location.replace("/profile");
         }
       }
 
@@ -69,7 +63,7 @@ const ProfileSub = ({
           },
         });
         alert("삭제 성공");
-        setClick(false);
+        window.location.replace("/profile");
       }
 
       setSubmitBtn(false);
@@ -103,7 +97,11 @@ const ProfileSub = ({
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
             <img
-              src="http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+              src={
+                profileIndex
+                  ? profileUser.profileNameList[profileIndex].img
+                  : "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+              }
               alt=""
             />
             <div
