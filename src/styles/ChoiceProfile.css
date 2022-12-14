@@ -32,8 +32,8 @@
   max-width: 200px;
   min-width: 84px;
   width: 10vw;
-  margin-bottom: 2vw;
-  margin-right: 2vw;
+  /* margin-bottom: 2vw; */
+  margin: 0 1vw 2vw;
 }
 .pinning-head {
   width: 100%;
@@ -63,7 +63,7 @@
   letter-spacing: 2px;
   margin: 2em 0 1em;
   padding: 0.5em 1.5em;
-  transform: translateY(120%) translateX(35%);
+  transform: translateY(120%) translateX(37.3%);
 }
 .profile-text {
   color: #fff;

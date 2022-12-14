@@ -51,7 +51,7 @@ const Profile = () => {
       // }
     };
     getProfile();
-  }, [profileUser.ProflieNameList]);
+  }, [subclick]);
 
   return (
     <div
