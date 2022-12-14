@@ -9,6 +9,9 @@ import { serachState } from "../recoil/search";
 import { useRecoilState } from "recoil";
 import { useNavigate, useLocation } from "react-router-dom";
 
+import axios from "axios";
+import { BACKEND_URL } from "../utils";
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -25,6 +28,25 @@ const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const searchInput = useRef();
   const userEmail = sessionStorage.getItem("email");
+  const [profileUser, setProfileUser] = useState({});
+  const profileIndex = sessionStorage.getItem("profile");
+
+  useEffect(() => {
+    const getProfile = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/api/v1/user/getProfile`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+      });
+      // console.log("profileUser", data.data);
+      setProfileUser(data.data);
+    };
+    getProfile();
+  }, [userEmail]);
+
+  console.log("profileUser", profileUser);
 
   useEffect(() => {
     searchInput?.current?.focus();
@@ -102,7 +124,7 @@ const Header = () => {
             }
       }
     >
-      {" "}
+      {/* {profileUser.profileNameList[0].id} */}{" "}
       <div
         className="header-top"
         style={{
@@ -246,10 +268,18 @@ const Header = () => {
                 style={{ marginRight: "20px" }}
               >
                 <div style={{ displya: "flex" }}>
-                  <img
-                    src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229"
+                  {/* <img
+                    src={
+                      profileIndex
+                        ? profileUser?.profileNameList[profileIndex].img
+                        : profileUser?.profileNameList[0].img
+                      // profileIndex
+                      //   ? profileUser?.profileNameList[profileIndex]?.img
+                      //   : profileUser?.profileNameList[0].img
+                    }
                     alt=""
-                  />
+                    style={{ width: "32px" }}
+                  /> */}
                   <GoTriangleDown
                     className="view-more-button"
                     style={{ marginLeft: "10px" }}
@@ -268,11 +298,11 @@ const Header = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img
-                        src="https://occ-0-988-395.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdYJV5wt63AcxNaDoqDXUhqZb55oN5Dxt1m-Zdn_z5rn_hIq9m8dA8JB2xdcPmrY3yXnlVWYKPXnOrbv2QN4aEVU28dESJg.png?r=1d4"
+                      {/* <img
+                        src={profileUser.profileNameList[profileIndex].img}
                         alt=""
-                        style={{}}
-                      />
+                        style={{ width: "32px" }}
+                      /> */}
                       <div style={{ marginLeft: "10px" }}>
                         {userEmail}
                         {/* anoter porfile */}

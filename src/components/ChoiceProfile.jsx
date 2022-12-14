@@ -12,11 +12,25 @@ import { useLocation } from "react-router-dom";
 const ChoiceProfile = () => {
   const [user, setUser] = useRecoilState(userState);
   const [paymentChk, setPaymentChk] = useState(false);
+  const [ChoiceProfile, setChoiceProfile] = useState({});
 
   const date = new Date();
   const day = Moment().format("yyyy-MM-DD HH:mm:ss");
 
   useEffect(() => {
+    const getProfile = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/api/v1/user/getProfile`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+      });
+      // console.log(data.data);
+      setChoiceProfile(data.data);
+    };
+    getProfile();
+
     const getOrder = async () => {
       try {
         const data = await axios({
@@ -49,6 +63,8 @@ const ChoiceProfile = () => {
       if (data.data.lastPaymentDate == null) {
         setOrder();
       }
+
+      // console.log(data.data);
     };
 
     lastDate();
@@ -84,7 +100,34 @@ const ChoiceProfile = () => {
             넷플릭스를 시청할 프로필을 선택해주세요
           </h1>
           <ul className="choice-profile">
-            <li className="profile">
+            {ChoiceProfile.profileNameList?.map((profile, index) => {
+              return (
+                <li className="profile" key={index}>
+                  <div>
+                    <a
+                      href="/browse"
+                      className="profile-text"
+                      onClick={() => {
+                        sessionStorage.setItem("profile", index);
+                      }}
+                    >
+                      <div className="avatar-wrapper">
+                        <img
+                          src={profile?.img}
+                          alt=""
+                          className="profile-icon"
+                        />
+                      </div>
+                      <span style={{ marginTop: "4vw" }}>
+                        {profile?.nickname}
+                      </span>
+                    </a>
+                    <div className="profile-children"></div>
+                  </div>
+                </li>
+              );
+            })}
+            {/* <li className="profile">
               <div>
                 <a href="/browse" className="profile-text">
                   <div className="avatar-wrapper">
@@ -154,7 +197,7 @@ const ChoiceProfile = () => {
                   <span>키즈</span>
                 </a>
               </div>
-            </li>
+            </li> */}
           </ul>
           <span className="profile-button">
             <a

@@ -7,6 +7,7 @@ import AllContents from "./AllContents";
 import { useNavigate } from "react-router-dom";
 import IntroHeader from "./IntroHeader";
 import IntroFooter from "./IntroFooter";
+import { useEffect } from "react";
 
 const RegForm = () => {
   // const { username, setUsername } = useState("");
@@ -16,6 +17,11 @@ const RegForm = () => {
   const onNav = () => {
     navigate(`/login`);
   };
+
+  // useEffect(() => {
+  //   sessionStorage.removeItem("email");
+  //   // sessionStorage.clear();
+  // }, []);
 
   return (
     <div style={{ background: "#f3f3f3" }}>

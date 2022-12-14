@@ -21,7 +21,6 @@ const ProfileSub = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       if (submitBtn) {
         if (profileIndex) {
@@ -96,14 +95,7 @@ const ProfileSub = ({
       >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
-            <img
-              src={
-                profileIndex
-                  ? profileUser.profileNameList[profileIndex].img
-                  : "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-              }
-              alt=""
-            />
+            <img src={profileUser.profileNameList[profileIndex].img} alt="" />
             <div
               className="pofile_detail_img_btn"
               onClick={() => {
