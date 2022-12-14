@@ -1,0 +1,31 @@
+.movie-head {
+  position: relative;
+}
+
+.movie-head-con {
+  display: flex;
+  /* border: 3px solid red; */
+  position: absolute;
+  top: 10vh;
+  z-index: 99;
+  width: 100%;
+  align-items: center;
+}
+.movie-page-text {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.choice-genre {
+  height: 100%;
+  border: 1px solid white;
+  background-color: inherit;
+  color: white;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+}
+.choice-genre > option {
+  background-color: black;
+}

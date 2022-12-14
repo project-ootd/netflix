@@ -123,6 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 /* 프로필 변경 클릭하면 나오는 css */

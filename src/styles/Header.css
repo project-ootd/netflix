@@ -55,8 +55,8 @@ a {
   position: absolute;
   display: none;
   width: 220px;
-  margin: 20px 0 0 -100px;
-
+  margin: 0px 0 0 -100px;
+  padding: 20px 0 0;
   line-height: 40px;
   right: 0;
 }

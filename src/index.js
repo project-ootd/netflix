@@ -16,6 +16,8 @@ import Mylist from "./components/MyList";
 import OriginalAudio from "./components/OriginalAudio";
 import Player from "./components/Player";
 import PopularContents from "./components/PopularContents";
+import Movie from "./components/Movie";
+import Series from "./components/Series";
 
 // import Kakaopay from "./components/Kakaopay";
 
@@ -30,9 +32,11 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/genre/series" element={<Series />}></Route>
+        <Route path="/genre/movie" element={<Movie />}></Route>
         <Route path="/latest" element={<PopularContents />}></Route>
         <Route path="/original-audio" element={<OriginalAudio />}></Route>
-        <Route path="/" element={<App />}></Route>
         <Route path="/browse/my-list" element={<Mylist />}></Route>
         <Route path="/choiceprofile" element={<ChoiceProfile />}></Route>
         <Route path="/browse" element={<AllContents />}></Route>
