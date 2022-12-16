@@ -3,13 +3,7 @@ import { BsPencil } from "react-icons/bs";
 import { FaPlusCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const ProfileMain = ({
-  click,
-  setClick,
-  profileUser,
-  setProfileIndex,
-  profileIndex,
-}) => {
+const ProfileMain = ({ click, setClick, profileUser, setProfileIndex }) => {
   const navigate = useNavigate();
   const onNav = () => {
     navigate(`/browse`);
@@ -50,7 +44,7 @@ const ProfileMain = ({
           <li
             className="profile_items last_profile_items"
             onClick={() => {
-              if (profileUser.profileNameList.length >= 3) {
+              if (profileUser.profileNameList.length >= 4) {
                 alert("더이상 프로필을 만들 수 없습니다.");
               } else {
                 setClick(!click);

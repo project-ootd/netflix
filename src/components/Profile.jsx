@@ -14,7 +14,7 @@ const Profile = () => {
 
   const [profileUser, setProfileUser] = useState({});
 
-  const [profileIndex, setProfileIndex] = useState({});
+  const [profileIndex, setProfileIndex] = useState(-1);
 
   // const userId = sessionStorage.getItem("email");
 
@@ -83,7 +83,6 @@ const Profile = () => {
           setClick={setClick}
           click={click}
           profileUser={profileUser}
-          profileIndex={profileIndex}
           setProfileIndex={setProfileIndex}
         />
       )}

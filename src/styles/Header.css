@@ -78,4 +78,8 @@ a {
   margin-left: 10px;
 }
 
+.sub-menu-item:hover > a > div {
+  text-decoration: underline;
+}
+
 /* @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"); */

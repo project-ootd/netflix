@@ -43,10 +43,10 @@ const Header = () => {
       // console.log("profileUser", data.data);
       setProfileUser(data.data);
     };
-    getProfile();
+    if (userEmail) {
+      getProfile();
+    }
   }, [userEmail]);
-
-  console.log("profileUser", profileUser);
 
   useEffect(() => {
     searchInput?.current?.focus();
@@ -124,6 +124,12 @@ const Header = () => {
             }
       }
     >
+      {profileUser.profileNameList?.length > 0 && profileIndex
+        ? profileUser.profileNameList[profileIndex].nickname
+        : profileUser.id}
+      {/* {profileUser && profileIndex
+        ? profileUser.profileNameList[profileIndex].id
+        : alert("아이디 없음")} */}
       {/* {profileUser.profileNameList[0].id} */}{" "}
       <div
         className="header-top"
@@ -268,18 +274,15 @@ const Header = () => {
                 style={{ marginRight: "20px" }}
               >
                 <div style={{ displya: "flex" }}>
-                  {/* <img
+                  <img
                     src={
-                      profileIndex
-                        ? profileUser?.profileNameList[profileIndex].img
-                        : profileUser?.profileNameList[0].img
-                      // profileIndex
-                      //   ? profileUser?.profileNameList[profileIndex]?.img
-                      //   : profileUser?.profileNameList[0].img
+                      profileUser.profileNameList?.length > 0 && profileIndex
+                        ? profileUser.profileNameList[profileIndex].img
+                        : profileUser.id
                     }
                     alt=""
                     style={{ width: "32px" }}
-                  /> */}
+                  />
                   <GoTriangleDown
                     className="view-more-button"
                     style={{ marginLeft: "10px" }}
@@ -289,8 +292,7 @@ const Header = () => {
                   <GoTriangleUp className="" />
                 </div>
                 <ul className="sub-menu-list ">
-                  <li className="sub-menu-item" style={{ paddingTop: "10px" }}>
-                    <a
+                  {/* <a
                       href="/"
                       style={{
                         display: "flex",
@@ -298,17 +300,70 @@ const Header = () => {
                         alignItems: "center",
                       }}
                     >
-                      {/* <img
-                        src={profileUser.profileNameList[profileIndex].img}
+                      <img
+                        src={
+                          // {profile.img}
+                          profileUser.profileNameList?.length > 0 &&
+                          profileIndex
+                            ? profileUser.profileNameList[profileIndex].img
+                            : profileUser.id
+                        }
                         alt=""
                         style={{ width: "32px" }}
-                      /> */}
+                      />
                       <div style={{ marginLeft: "10px" }}>
-                        {userEmail}
-                        {/* anoter porfile */}
+                        anoter porfile
                       </div>
-                    </a>
-                  </li>
+                    </a> */}
+
+                  {profileUser.profileNameList?.map((profile, index) => {
+                    {
+                      console.log("session : ", profileIndex);
+                    }
+                    {
+                      console.log("index : ", index);
+                    }
+                    return (
+                      <li
+                        className="sub-menu-item"
+                        style={
+                          profileIndex == index
+                            ? { position: "none", display: "none" }
+                            : { paddingTop: "10px" }
+                        }
+                        key={index}
+                      >
+                        <a
+                          style={{
+                            display: "flex",
+                            justifyContent: "start",
+                            alignItems: "center",
+                          }}
+                          onClick={() => {
+                            sessionStorage.removeItem("profile");
+                            sessionStorage.setItem("profile", index);
+                            window.location.reload();
+                          }}
+                        >
+                          <img
+                            src={
+                              profile.img
+                              // profileUser.profileNameList?.length > 0 &&
+                              // profileIndex
+                              //   ? profileUser.profileNameList[index].img
+                              //   : profileUser.id
+                            }
+                            alt=""
+                            style={{ width: "32px" }}
+                          />
+                          <div style={{ marginLeft: "10px" }}>
+                            {profile.nickname}
+                          </div>
+                        </a>
+                      </li>
+                    );
+                  })}
+
                   <hr />
                   <li className="sub-menu-item">
                     <a href="/profile">
