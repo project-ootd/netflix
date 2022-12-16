@@ -124,13 +124,7 @@ const Header = () => {
             }
       }
     >
-      {profileUser.profileNameList?.length > 0 && profileIndex
-        ? profileUser.profileNameList[profileIndex].nickname
-        : profileUser.id}
-      {/* {profileUser && profileIndex
-        ? profileUser.profileNameList[profileIndex].id
-        : alert("아이디 없음")} */}
-      {/* {profileUser.profileNameList[0].id} */}{" "}
+      {" "}
       <div
         className="header-top"
         style={{
