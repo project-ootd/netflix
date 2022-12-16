@@ -16,6 +16,7 @@ const ProfileSub = ({
   const userId = sessionStorage.getItem("email");
   const [submitBtn, setSubmitBtn] = useState(false);
   const [resetBtn, setResetBtn] = useState(false);
+  const [imgUrl, setImgUrl] = useState("");
 
   // console.log(profileUser.profileNameList[0].nickname);
 
@@ -23,7 +24,7 @@ const ProfileSub = ({
     e.preventDefault();
     try {
       if (submitBtn) {
-        if (profileIndex) {
+        if (profileIndex || profileIndex == 0) {
           const data = await axios({
             url: `${BACKEND_URL}/api/v1/user/updateprofile`,
             method: "PATCH",
@@ -74,8 +75,13 @@ const ProfileSub = ({
 
   useEffect(() => {
     if (profileUser) {
-      if (profileIndex) {
-        setUserName(profileUser.profileNameList[profileIndex].nickname);
+      if (profileIndex || profileIndex == 0) {
+        setUserName(profileUser?.profileNameList[profileIndex]?.nickname);
+        setImgUrl(profileUser?.profileNameList[profileIndex]?.img);
+      } else if (profileIndex == null) {
+        setImgUrl(
+          "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+        );
       }
     }
     // console.log(profileUser?.profileNameList[profileIndex].id);
@@ -95,7 +101,7 @@ const ProfileSub = ({
       >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
-            <img src={profileUser.profileNameList[profileIndex].img} alt="" />
+            <img src={imgUrl} alt="" />
             <div
               className="pofile_detail_img_btn"
               onClick={() => {
