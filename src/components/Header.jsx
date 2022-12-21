@@ -125,84 +125,84 @@ const Header = () => {
       }
     >
       {" "}
-      <div
-        className="header-top"
-        style={{
-          display: "inline-block",
-          width: "100%",
-        }}
-      >
-        <div
-          className="nav-box"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <div className="main-logo" style={{ width: "10%" }}>
+      <div className="header-top">
+        <div className="nav-box">
+          <div className="main-logo">
             <ul>
               <li>
-                <div className="img-box" style={{ width: "100%" }}>
+                <div className="img-box">
                   <a href="/browse">
-                    <img
-                      src={logo}
-                      alt=""
-                      style={{ width: "70%", marginTop: "1vh" }}
-                    />
+                    <img src={logo} alt="" />
                   </a>
                 </div>
               </li>
             </ul>
           </div>
-          <div className="nav-main" style={{ width: "60%" }}>
-            <ul
-              style={{
-                display: "flex",
-                // justifyContent: "space-around",
-                width: "100%",
-                height: "100%",
-                alignItems: "center",
-              }}
-            >
-              <li style={{ margin: "0 2vw", fontWeight: "bold" }}>
+          <div className="nav-main">
+            <div className="min-menu-text">
+              <div className="min-main">
+                {/* 메뉴
+                <GoTriangleDown />
+                <ul className="min-nav-box row">
+                  <li className="min-menu cell">
+                    <div className="callout-arrow">
+                      <GoTriangleUp className="hover-menu-arrow" />
+                      <div className="whiteline"></div>
+                    </div>
+                  </li>
+                  <li className="min-menu cell min-menu-home">
+                    <a href="/browse">홈</a>
+                  </li>
+
+                  <li className="min-menu cell">
+                    {" "}
+                    <a href="/genre/series">시리즈</a>
+                  </li>
+
+                  <li className="min-menu cell">
+                    <a href="/genre/movie">영화</a>
+                  </li>
+
+                  <li className="min-menu cell">
+                    {" "}
+                    <a href="/latest">NEW! 요즘 대세 컨텐츠</a>
+                  </li>
+
+                  <li className="min-menu cell">
+                    <a href="/browse/my-list">내가 찜한 콘텐츠</a>
+                  </li>
+
+                  <li className="min-menu cell">
+                    {" "}
+                    <a href="/original-audio">언어 별로 찾아보기</a>
+                  </li>
+                </ul> */}
+              </div>
+            </div>
+            <ul className="nav-box">
+              <li className="main-nav-text">
                 <a href="/browse">홈</a>
               </li>
-              <li style={{ marginRight: "2vw" }}>
+              <li className="main-nav-text">
                 <a href="/genre/series">시리즈</a>
               </li>
-              <li style={{ marginRight: "2vw" }}>
+              <li className="main-nav-text">
                 <a href="/genre/movie">영화</a>
               </li>
-              <li style={{ marginRight: "2vw" }}>
+              <li className="main-nav-text">
                 <a href="/latest">NEW! 요즘 대세 컨텐츠</a>
               </li>
-              <li style={{ marginRight: "2vw" }}>
+              <li className="main-nav-text">
                 <a href="/browse/my-list">내가 찜한 콘텐츠</a>
               </li>
-              <li style={{ marginRight: "2vw" }}>
+              <li className="main-nav-text">
                 <a href="/original-audio">언어 별로 찾아보기</a>
               </li>
             </ul>
           </div>
-          <div className="extra-service" style={{ width: "30%" }}>
-            <div
-              className="service_box"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                width: "90%",
-                height: "100%",
-              }}
-            >
-              <div
-                style={{
-                  marginRight: "1vw",
-                  fontSize: "1.2vw",
-                }}
-              >
+          <div className="extra-service">
+            <div className="service_box">
+              <div className="search-con">
                 {hide ? (
                   <div
                     style={{
@@ -214,6 +214,7 @@ const Header = () => {
                     }}
                   >
                     <FaSearch
+                      className="search-icon"
                       onClick={onClick}
                       style={{
                         position: "absolute",
@@ -254,20 +255,17 @@ const Header = () => {
                     />
                   </div>
                 ) : (
-                  <FaSearch onClick={onClick} />
+                  <FaSearch onClick={onClick} className="search-icon" />
                 )}
               </div>
-              <div style={{ marginRight: "20px" }}>
+              <div className="kids-icon">
                 <a href="/">키즈</a>
               </div>
-              <div style={{ marginRight: "20px", fontSize: "30px" }}>
+              <div className="bell-box">
                 <BsBellFill />
               </div>
-              <div
-                className="view-more-controller"
-                style={{ marginRight: "20px" }}
-              >
-                <div style={{ displya: "flex" }}>
+              <div className="view-more-controller">
+                <div className="user-icon">
                   <img
                     src={
                       profileUser.profileNameList?.length > 0 && profileIndex
@@ -279,14 +277,15 @@ const Header = () => {
                   />
                   <GoTriangleDown
                     className="view-more-button"
-                    style={{ marginLeft: "10px" }}
+                    style={{ marginLeft: "10px", marginTop: "10px" }}
                   />
                 </div>
                 <div className="view-item-arrow">
-                  <GoTriangleUp className="" />
+                  <GoTriangleUp />
                 </div>
                 <ul className="sub-menu-list ">
-                  {/* <a
+                  <li className="sub-menu-item" style={{ paddingTop: "10px" }}>
+                    <a
                       href="/"
                       style={{
                         display: "flex",
@@ -303,61 +302,14 @@ const Header = () => {
                             : profileUser.id
                         }
                         alt=""
-                        style={{ width: "32px" }}
+                        style={{}}
                       />
                       <div style={{ marginLeft: "10px" }}>
-                        anoter porfile
+                        {userEmail}
+                        {/* anoter porfile */}
                       </div>
-                    </a> */}
-
-                  {profileUser.profileNameList?.map((profile, index) => {
-                    {
-                      console.log("session : ", profileIndex);
-                    }
-                    {
-                      console.log("index : ", index);
-                    }
-                    return (
-                      <li
-                        className="sub-menu-item"
-                        style={
-                          profileIndex == index
-                            ? { position: "none", display: "none" }
-                            : { paddingTop: "10px" }
-                        }
-                        key={index}
-                      >
-                        <a
-                          style={{
-                            display: "flex",
-                            justifyContent: "start",
-                            alignItems: "center",
-                          }}
-                          onClick={() => {
-                            sessionStorage.removeItem("profile");
-                            sessionStorage.setItem("profile", index);
-                            window.location.reload();
-                          }}
-                        >
-                          <img
-                            src={
-                              profile.img
-                              // profileUser.profileNameList?.length > 0 &&
-                              // profileIndex
-                              //   ? profileUser.profileNameList[index].img
-                              //   : profileUser.id
-                            }
-                            alt=""
-                            style={{ width: "32px" }}
-                          />
-                          <div style={{ marginLeft: "10px" }}>
-                            {profile.nickname}
-                          </div>
-                        </a>
-                      </li>
-                    );
-                  })}
-
+                    </a>
+                  </li>
                   <hr />
                   <li className="sub-menu-item">
                     <a href="/profile">
@@ -376,23 +328,23 @@ const Header = () => {
                           fill="currentColor"
                         ></path>
                       </svg>{" "}
-                      <span style={{ marginLeft: "10px" }}>프로필 관리</span>
+                      <span className="setting-profile">프로필 관리</span>
                     </a>{" "}
                   </li>
                   <li className="sub-menu-item">
                     <a href="/">
                       <BiUser style={{ fontSize: "28px" }} />{" "}
-                      <span style={{ marginLeft: "5px" }}>계정</span>
+                      <span className="mail-address">계정</span>
                     </a>{" "}
                   </li>
                   <li className="sub-menu-item">
                     <a href="/">
                       <span className="material-symbols-outlined">help</span>
-                      <span style={{ marginLeft: "12px" }}>고객 센터</span>
+                      <span className="client-center">고객 센터</span>
                     </a>
                   </li>
                   <hr />
-                  <li style={{ paddingBottom: "10px" }}>
+                  <li className="logout-button">
                     <a href="/">넷플릭스 로그아웃</a>
                   </li>
                 </ul>
