@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../recoil";
 import { useEffect } from "react";
+import { Buffer } from "buffer";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
@@ -44,23 +45,31 @@ const Login = () => {
               } else {
                 try {
                   const data = await axios({
-                    url: `${BACKEND_URL}/api/v1/user/login`,
+                    url: `${BACKEND_URL}/api/v1/login`,
                     method: "POST",
                     data: {
                       useremail,
                       password,
                     },
                   });
+                  if (data.headers.authorization) {
+                    const payload = JSON.parse(
+                      Buffer.from(
+                        data.headers.authorization.split(" ")[1].split(".")[1],
+                        "base64"
+                      ).toString("ascii")
+                    );
+                    setUser(payload);
+                    setUserId(payload.useremail);
+                    sessionStorage.setItem("email", payload.username);
+                    sessionStorage.setItem("userId", payload.userId);
+                  }
+
                   setUseremail("");
                   setPassword("");
-                  setUser(data.data);
-                  console.log(data.data);
-                  setUserId(data.data.useremail);
                   alert("로그인 성공");
-                  sessionStorage.setItem("email", useremail);
-                  sessionStorage.setItem("userId", userId);
                   const payChk = await axios({
-                    url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+                    url: `${BACKEND_URL}/api/v1/getLastPayDate`,
                     method: "POST",
                     data: {
                       useremail,
