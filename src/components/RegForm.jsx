@@ -45,7 +45,7 @@ const RegForm = () => {
               } else {
                 try {
                   const data = await axios({
-                    url: `${BACKEND_URL}/api/v1/user/join`,
+                    url: `${BACKEND_URL}/api/v1/join`,
                     method: "POST",
                     data: {
                       useremail,

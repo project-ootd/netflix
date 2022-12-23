@@ -35,7 +35,7 @@ const Profile = () => {
   useEffect(() => {
     const getProfile = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getProfile`,
+        url: `${BACKEND_URL}/api/v1/getProfile`,
         method: "GET",
         params: {
           useremail: sessionStorage.getItem("email"),

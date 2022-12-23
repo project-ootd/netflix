@@ -18,6 +18,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
   const videoRef = useRef();
 
   useEffect(() => {
+    console.log("ranking : ", ranking);
     try {
       const getCategory = async () => {
         const data = await axios({
@@ -180,7 +181,6 @@ const SlideVideo = ({ openModal, ranking, check }) => {
               className="detail"
               onClick={() => {
                 openModal(ranking);
-                console.log(ranking);
               }}
             >
               <BsChevronDown
