@@ -26,7 +26,7 @@ const ProfileSub = ({
       if (submitBtn) {
         if (profileIndex) {
           const data = await axios({
-            url: `${BACKEND_URL}/api/v1/user/updateprofile`,
+            url: `${BACKEND_URL}/api/v1/updateprofile`,
             method: "PATCH",
             params: {
               useremail: sessionStorage.getItem("email"),
@@ -40,7 +40,7 @@ const ProfileSub = ({
           window.location.replace("/profile");
         } else {
           const data = await axios({
-            url: `${BACKEND_URL}/api/v1/user/profile`,
+            url: `${BACKEND_URL}/api/v1/profile`,
             method: "POST",
             params: {
               useremail: sessionStorage.getItem("email"),
@@ -56,7 +56,7 @@ const ProfileSub = ({
 
       if (resetBtn) {
         const data = await axios({
-          url: `${BACKEND_URL}/api/v1/user/deleteprofile`,
+          url: `${BACKEND_URL}/api/v1/deleteprofile`,
           method: "POST",
           data: {
             id: profileUser.profileNameList[profileIndex].id,

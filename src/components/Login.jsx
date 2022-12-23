@@ -60,7 +60,7 @@ const Login = () => {
                       ).toString("ascii")
                     );
                     setUser(payload);
-                    setUserId(payload.useremail);
+                    setUserId(payload.username);
                     sessionStorage.setItem("email", payload.username);
                     sessionStorage.setItem("userId", payload.userId);
                   }

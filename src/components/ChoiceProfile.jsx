@@ -36,7 +36,7 @@ const ChoiceProfile = () => {
 
     const lastDate = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+        url: `${BACKEND_URL}/api/v1/getLastPayDate`,
         method: "POST",
         data: {
           useremail: user.useremail,
