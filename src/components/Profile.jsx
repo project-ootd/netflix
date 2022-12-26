@@ -40,6 +40,9 @@ const Profile = () => {
         params: {
           useremail: sessionStorage.getItem("email"),
         },
+        headers: {
+          Authorization: sessionStorage.getItem("login-Token"),
+        },
       });
       console.log(data.data);
       setProfileUser(data.data);

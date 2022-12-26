@@ -81,6 +81,10 @@ const Login = () => {
                       useremail,
                     },
                   });
+                  sessionStorage.setItem(
+                    "login-Token",
+                    data.headers.authorization
+                  );
                   console.log("payChk: ", payChk);
 
                   // console.log("payChk" + payChk.data.lastPaymentDate);
