@@ -8,11 +8,14 @@ import { useRecoilState } from "recoil";
 import { userState } from "../recoil";
 import { useEffect } from "react";
 import { Buffer } from "buffer";
+import { authenticationState } from "../recoil/store";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
+  const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
+
   const navigate = useNavigate();
   const choiceprofile = () => {
     navigate(`/choiceprofile`);
@@ -71,10 +74,14 @@ const Login = () => {
                   const payChk = await axios({
                     url: `${BACKEND_URL}/api/v1/getLastPayDate`,
                     method: "POST",
+                    headers: {
+                      Authorization: data.headers.authorization,
+                    },
                     data: {
                       useremail,
                     },
                   });
+                  console.log("payChk: ", payChk);
 
                   // console.log("payChk" + payChk.data.lastPaymentDate);
                   if (payChk.data.lastPaymentDate) {

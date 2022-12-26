@@ -15,9 +15,11 @@ const ChoiceProfile = () => {
   const [ChoiceProfile, setChoiceProfile] = useState({});
 
   const date = new Date();
-  const day = Moment().format("yyyy-MM-DD HH:mm:ss");
+  const day = Moment().format("yyyy-MM-DD");
 
   useEffect(() => {
+    console.log("choiprofile > user.useremail : ", user.useremail);
+    console.log("choiprofile > orderDate : ", date);
     const getProfile = async () => {
       const data = await axios({
         url: `${BACKEND_URL}/api/v1/user/getProfile`,
@@ -60,6 +62,7 @@ const ChoiceProfile = () => {
       // user테이블에 lastDate 값이 존재하면 주문이 안 되어야함
       // user.lastDate == ture => order 실행 X
       // paymentChk == ture => ! order();
+
       if (data.data.lastPaymentDate == null) {
         setOrder();
       }

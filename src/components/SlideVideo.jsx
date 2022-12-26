@@ -18,13 +18,12 @@ const SlideVideo = ({ openModal, ranking, check }) => {
   const videoRef = useRef();
 
   useEffect(() => {
-    console.log("ranking : ", ranking);
     try {
       const getCategory = async () => {
         const data = await axios({
           url: `${BACKEND_URL}/category`,
           method: "GET",
-          params: { id: ranking.id },
+          params: { id: ranking?.id },
         });
         setCategory(data.data);
       };
