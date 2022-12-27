@@ -51,10 +51,11 @@ const Login = () => {
                       password,
                     },
                   });
+                  console.log("data : ", data.data);
                   setUseremail("");
                   setPassword("");
                   setUser(data.data);
-                  console.log(data.data);
+                  // console.log(data.data);
                   setUserId(data.data.useremail);
                   alert("로그인 성공");
                   sessionStorage.setItem("email", useremail);

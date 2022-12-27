@@ -23,7 +23,7 @@ const SlideVideo = ({ openModal, ranking, check }) => {
         const data = await axios({
           url: `${BACKEND_URL}/category`,
           method: "GET",
-          params: { id: ranking.id },
+          params: { id: ranking?.id },
         });
         setCategory(data.data);
       };

@@ -7,7 +7,7 @@ import { BACKEND_URL } from "../utils";
 import RankingSlide from "./RankingSlide";
 import SlideImg from "./SlideImg";
 
-const MovieSub = ({ openModal, kDaramas, check }) => {
+const MovieSub = ({ openModal, check }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -102,7 +102,7 @@ const MovieSub = ({ openModal, kDaramas, check }) => {
         zIndex: "3",
         position: "relative",
         overflow: "hidden",
-        padding: " 0 0 5vh 0",
+        padding: " 5vh 0 5vh 0",
       }}
     >
       <div className="slideItems-all-container">
@@ -128,7 +128,7 @@ const MovieSub = ({ openModal, kDaramas, check }) => {
         </div>
         <Slider {...settings}>
           {/* rank 1 */}
-          {dramas.map((ele, index) => {
+          {dramas?.map((ele, index) => {
             return (
               <SlideImg
                 key={index}

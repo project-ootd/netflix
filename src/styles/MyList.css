@@ -9,7 +9,7 @@ li {
   /* border: 3px solid red; */
   position: relative;
   bottom: -100px;
-  min-height: 10px;
+  min-height: 448px;
 }
 .my-list-header-text > .title-text {
   font-size: 2.5rem;

@@ -44,7 +44,7 @@ const SlideImg = ({
         const data = await axios({
           url: `${BACKEND_URL}/category`,
           method: "GET",
-          params: { id: ele.id },
+          params: { id: ele?.id },
         });
         setCategory(data.data);
       };

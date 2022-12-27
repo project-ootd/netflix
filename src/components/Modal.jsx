@@ -24,7 +24,7 @@ const Modal = (props) => {
         const data = await axios({
           url: `${BACKEND_URL}/category`,
           method: "GET",
-          params: { id: currentContent.id },
+          params: { id: currentContent?.id },
         });
         setCategory(data.data);
       };
