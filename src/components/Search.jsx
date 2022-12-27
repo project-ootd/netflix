@@ -14,7 +14,13 @@ const Search = () => {
 
   useEffect(() => {
     const getItem = async () => {
-      const keyword = await axios.get(`${BACKEND_URL}/search?q=${search}`);
+      const keyword = await axios({
+        url: `${BACKEND_URL}/search?q=${search}`,
+        method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
+      });
       setContents(keyword.data);
       console.log("keywordData : ", keyword.data);
     };

@@ -41,7 +41,7 @@ const Profile = () => {
           useremail: sessionStorage.getItem("email"),
         },
         headers: {
-          Authorization: sessionStorage.getItem("login-Token"),
+          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       console.log(data.data);

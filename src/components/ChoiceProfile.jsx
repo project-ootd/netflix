@@ -15,7 +15,6 @@ const ChoiceProfile = () => {
   const [useremail, setUseremail] = useState("");
   const [paymentChk, setPaymentChk] = useState(false);
   const [ChoiceProfile, setChoiceProfile] = useState({});
-  const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
 
   const date = new Date();
   const day = Moment().format("yyyy-MM-DD");
@@ -29,7 +28,7 @@ const ChoiceProfile = () => {
           useremail: sessionStorage.getItem("email"),
         },
         headers: {
-          Authorization: sessionStorage.getItem("login-Token"),
+          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       setChoiceProfile(data.data);
@@ -45,7 +44,7 @@ const ChoiceProfile = () => {
             useremail: sessionStorage.getItem("email"),
           },
           headers: {
-            Authorization: sessionStorage.getItem("login-Token"),
+            Authorization: sessionStorage.getItem("userToken"),
           },
         });
       } catch (e) {
@@ -60,7 +59,7 @@ const ChoiceProfile = () => {
         url: `${BACKEND_URL}/api/v1/getLastPayDate`,
         method: "POST",
         headers: {
-          Authorization: sessionStorage.getItem("login-Token"),
+          Authorization: sessionStorage.getItem("userToken"),
         },
         data: {
           useremail: sessionStorage.getItem("email"),
@@ -87,6 +86,9 @@ const ChoiceProfile = () => {
         data: {
           useremail: sessionStorage.getItem("email"),
           orderDate: date,
+        },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       console.log("setorder data : ", data);

@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import SeriesSub from "./SeriesSub";
+import Layout from "./Layout";
 const Series = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);
@@ -30,6 +31,9 @@ const Series = () => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -39,6 +43,9 @@ const Series = () => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       // console.log("data : " + data.data);
       setAllContents(data.data);
@@ -62,31 +69,33 @@ const Series = () => {
     // getContent();
   }, []);
   return (
-    <div className="movie-head">
-      <div className="movie-head-con">
-        <div className="movie-page-text">시리즈</div>
-        <select name="genre" id="genre" className="choice-genre">
-          <option value="장르">시리즈</option>
-          <option value="한국 드라마">한국 드라마</option>
-          <option value="미국 드라마">미국 드라마</option>
-          <option value="일본 드라마">일본 드라마</option>
-          <option value="일본 애니메이션">일본 애니메이션</option>
-          <option value="코미디">코미디</option>
-          <option value="판타지">판타지</option>
-        </select>
+    <Layout>
+      <div className="movie-head">
+        <div className="movie-head-con">
+          <div className="movie-page-text">시리즈</div>
+          <select name="genre" id="genre" className="choice-genre">
+            <option value="장르">시리즈</option>
+            <option value="한국 드라마">한국 드라마</option>
+            <option value="미국 드라마">미국 드라마</option>
+            <option value="일본 드라마">일본 드라마</option>
+            <option value="일본 애니메이션">일본 애니메이션</option>
+            <option value="코미디">코미디</option>
+            <option value="판타지">판타지</option>
+          </select>
+        </div>
+        <TestVideo openModal={openModal} allContents={ranking[4]} />
+        <SeriesSub openModal={openModal} kDramas={kDramas} check={check} />
+        <Modal
+          open={modalOpen}
+          close={closeModal}
+          ranking={ranking}
+          header="Modal heading"
+          currentContent={currentContent}
+          check={check}
+        />
+        <Footer />
       </div>
-      <TestVideo openModal={openModal} allContents={ranking[4]} />
-      <SeriesSub openModal={openModal} kDramas={kDramas} check={check} />
-      <Modal
-        open={modalOpen}
-        close={closeModal}
-        ranking={ranking}
-        header="Modal heading"
-        currentContent={currentContent}
-        check={check}
-      />
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

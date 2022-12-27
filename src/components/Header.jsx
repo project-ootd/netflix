@@ -41,6 +41,9 @@ const Header = () => {
         params: {
           useremail: sessionStorage.getItem("email"),
         },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setProfileUser(data.data);
     };
@@ -400,7 +403,7 @@ const Header = () => {
                         //인증 해제
                         setAuthenticated(false);
                         //로그인 토큰 삭제
-                        localStorage.removeItem("login-token");
+                        localStorage.removeItem("userToken");
                       }}
                     >
                       넷플릭스 로그아웃

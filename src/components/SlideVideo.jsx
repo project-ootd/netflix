@@ -40,6 +40,9 @@ const SlideVideo = ({ openModal, ranking, check }) => {
       params: {
         useremail: sessionStorage.getItem("email"),
         contentId: ranking?.id,
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       },
     });
   };
