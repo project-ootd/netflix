@@ -80,6 +80,9 @@ const SeriesSub = ({ openModal, kDaramas, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -89,6 +92,9 @@ const SeriesSub = ({ openModal, kDaramas, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
 
       setAllContents(data.data);
@@ -112,17 +118,18 @@ const SeriesSub = ({ openModal, kDaramas, check }) => {
         >
           <a href="#">
             <div
-              className="slide-title-text text-test"
+              className="slide-title-text"
               style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
             >
               한국 드라마
-              {/* <div className="slide-detail-hover"> */}
+            </div>
+            <div className="slide-detail-hover">
               <div className="slide-detail-text">모두 보기</div>
+
               <img
                 className="slide-arrow-img"
                 src="https://img.icons8.com/metro/10/54b9c5/forward.png"
               />
-              {/* </div> */}
             </div>
           </a>
         </div>

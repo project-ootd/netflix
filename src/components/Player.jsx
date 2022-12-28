@@ -2,8 +2,9 @@ import React from "react";
 import "../styles/Player.scss";
 import { RxArrowLeft } from "react-icons/rx";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-const Player = ({ currentContent }) => {
+const Player = () => {
   const location = useLocation();
 
   return (

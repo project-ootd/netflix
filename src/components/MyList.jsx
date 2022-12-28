@@ -6,6 +6,7 @@ import { BACKEND_URL } from "../utils";
 import Header from "./Header";
 import "../styles/MyList.css";
 import Footer from "./Footer";
+import Layout from "./Layout";
 const Mylist = () => {
   const [contents, setContents] = useState([]);
   const onContents = (data) => {
@@ -20,6 +21,9 @@ const Mylist = () => {
         method: "get",
         params: {
           useremail: email,
+        },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       onContents(data.data);
@@ -45,32 +49,34 @@ const Mylist = () => {
   //   getData();
   // }, [contents]);
   return (
-    <div>
-      {/* <Header /> */}
-      <div className="my-list-box">
-        <div className="my-list-header-text">
-          <div className="title-text">내가 찜한 컨텐츠</div>
-        </div>
-        {contents.map((contents, index) => {
-          return (
-            <div className="search-container">
-              <div className="search-result">
-                <div className="search-thumbnail" key={contents.id}>
-                  <a href="#">
-                    <img
-                      className="search-thumbnail-img"
-                      src={contents?.contentImg}
-                      alt=""
-                    />
-                  </a>
+    <Layout>
+      <div>
+        {/* <Header /> */}
+        <div className="my-list-box">
+          <div className="my-list-header-text">
+            <div className="title-text">내가 찜한 컨텐츠</div>
+          </div>
+          {contents.map((contents, index) => {
+            return (
+              <div className="search-container" key={index}>
+                <div className="search-result">
+                  <div className="search-thumbnail" key={contents.id}>
+                    <a href="#">
+                      <img
+                        className="search-thumbnail-img"
+                        src={contents?.contentImg}
+                        alt=""
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
