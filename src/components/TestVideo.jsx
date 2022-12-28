@@ -38,6 +38,7 @@ const TestVideo = ({ openModal, allContents }) => {
                 }}
                 muted
                 loop
+                autoPlay
                 ref={testvideoRef}
                 src={allContents?.contentVideo}
               >

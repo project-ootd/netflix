@@ -27,7 +27,7 @@ root.render(
   // <React.StrictMode>
   <RecoilRoot>
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/login" element={<Login />}></Route>

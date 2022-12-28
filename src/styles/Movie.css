@@ -8,7 +8,7 @@
   position: absolute;
   top: 10vh;
   z-index: 99;
-  width: 100%;
+  width: max-content;
   align-items: center;
 }
 .movie-page-text {
@@ -28,4 +28,20 @@
 }
 .choice-genre > option {
   background-color: black;
+}
+
+.movieWrap {
+  width: 100%;
+}
+.movieBox {
+  width: 80%;
+  margin: 0 auto 100px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+
+.movieItem {
+  width: 300px;
+  margin-bottom: 200px;
 }
