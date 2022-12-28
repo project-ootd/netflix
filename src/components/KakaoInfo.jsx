@@ -30,7 +30,6 @@ const KakaoInfo = () => {
   const [user, setUser] = useRecoilState(userState);
 
   const day = Moment().format("YYYY-MM-DD");
-  console.log(day);
 
   return (
     <>
@@ -85,16 +84,19 @@ const KakaoInfo = () => {
               </ul>
             </div>
           </div>
-
+          {/* 수정작업필요 */}
           <form
             className="kakaoForm"
             action="http://localhost:8084/kakaoPay"
             method="POST"
             // onSubmit={async (e) => {
+            //   e.preventDefault();
             //   try {
             //     const data = await axios({
             //       url: `http://localhost:8084/kakaoPay`,
             //       method: "POST",
+            //       data: {
+            //       },
             //     });
             //   } catch (e) {
             //     alert("결제 실패");
@@ -102,7 +104,12 @@ const KakaoInfo = () => {
             // }}
           >
             <input type="hidden" name="nowdate" value={day} />
-            <input type="hidden" name="useremail" value={user.useremail} />
+            <input
+              type="hidden"
+              name="useremail"
+              value={sessionStorage.getItem("email")}
+            />
+
             <button className="pay_btn" id="pay_btn">
               결제하기
             </button>
