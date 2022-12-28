@@ -316,12 +316,6 @@ const Header = () => {
                   </li>
 
                   {profileUser.profileNameList?.map((profile, index) => {
-                    {
-                      // console.log("session : ", profileIndex);
-                    }
-                    {
-                      // console.log("index : ", index);
-                    }
                     return (
                       <li
                         className="sub-menu-item"

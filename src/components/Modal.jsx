@@ -14,7 +14,7 @@ import { rankingState } from "../recoil/ranking";
 
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, currentContent, check } = props;
+  const { open, close, currentContent, check, setCheck } = props;
   const [category, setCategory] = useState([]);
   const videoRef = useRef();
 
@@ -43,7 +43,7 @@ const Modal = (props) => {
 
   const like = async () => {
     // 찜 추가/삭제
-    const data = await axios({
+    await axios({
       url: `${BACKEND_URL}/browse/my-list`,
       method: "POST",
       params: {
@@ -51,6 +51,15 @@ const Modal = (props) => {
         contentId: currentContent.id,
       },
     });
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list/check`,
+      method: "GET",
+      params: {
+        useremail: sessionStorage.getItem("email"),
+      },
+    });
+    setCheck(data.data);
+    console.log(data.data);
   };
 
   return (
