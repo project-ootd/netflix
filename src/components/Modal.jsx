@@ -46,14 +46,20 @@ const Modal = (props) => {
     await axios({
       url: `${BACKEND_URL}/browse/my-list`,
       method: "POST",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
       params: {
         useremail: sessionStorage.getItem("email"),
-        contentId: currentContent.id,
+        contentId: currentContent?.id,
       },
     });
     const data = await axios({
       url: `${BACKEND_URL}/browse/my-list/check`,
       method: "GET",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
       params: {
         useremail: sessionStorage.getItem("email"),
       },
