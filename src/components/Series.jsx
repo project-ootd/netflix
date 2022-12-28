@@ -10,6 +10,7 @@ import "../styles/Movie.css";
 import SeriesSub from "./SeriesSub";
 import Layout from "./Layout";
 import FindMovie from "./FindMovie";
+import MovieSub from "./MovieSub";
 
 const Series = () => {
   const [modalOpen, setModalOpen] = useState(false);

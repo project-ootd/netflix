@@ -50,6 +50,9 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -59,6 +62,9 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       // console.log("data : " + data.data);
       setAllContents(data.data);
@@ -89,6 +95,9 @@ const AllContents = () => {
         method: "GET",
         params: {
           useremail: sessionStorage.getItem("email"),
+        },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       setCheck(data.data);
