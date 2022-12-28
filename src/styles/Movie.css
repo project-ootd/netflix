@@ -32,10 +32,9 @@
 
 .movieWrap {
   width: 100%;
-  padding-top: 100px;
 }
 .movieBox {
-  width: 93%;
+  width: 80%;
   margin: 0 auto 100px;
   display: flex;
   flex-wrap: wrap;
