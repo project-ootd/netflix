@@ -8,25 +8,29 @@ import axios from "axios";
 import Moment from "moment";
 import "moment/locale/ko"; // Locale Setting
 import { useLocation } from "react-router-dom";
+import { authenticationState } from "../recoil/store";
 
 const ChoiceProfile = () => {
   const [user, setUser] = useRecoilState(userState);
+  const [useremail, setUseremail] = useState("");
   const [paymentChk, setPaymentChk] = useState(false);
   const [ChoiceProfile, setChoiceProfile] = useState({});
 
   const date = new Date();
-  const day = Moment().format("yyyy-MM-DD HH:mm:ss");
+  const day = Moment().format("yyyy-MM-DD");
 
   useEffect(() => {
     const getProfile = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getProfile`,
+        url: `${BACKEND_URL}/api/v1/getProfile`,
         method: "GET",
         params: {
           useremail: sessionStorage.getItem("email"),
         },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
-      // console.log(data.data);
       setChoiceProfile(data.data);
     };
     getProfile();
@@ -37,12 +41,14 @@ const ChoiceProfile = () => {
           url: "http://localhost:8084/getorder",
           method: "POST",
           data: {
-            useremail: user.useremail,
+            useremail: sessionStorage.getItem("email"),
+          },
+          headers: {
+            Authorization: sessionStorage.getItem("userToken"),
           },
         });
       } catch (e) {
         console.log(e);
-        console.log("실행 안됨!!!");
       }
     };
 
@@ -50,10 +56,13 @@ const ChoiceProfile = () => {
 
     const lastDate = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+        url: `${BACKEND_URL}/api/v1/getLastPayDate`,
         method: "POST",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
         data: {
-          useremail: user.useremail,
+          useremail: sessionStorage.getItem("email"),
         },
       });
 
@@ -62,6 +71,7 @@ const ChoiceProfile = () => {
       // paymentChk == ture => ! order();
       if (data.data.lastPaymentDate == null) {
         setOrder();
+        console.log("32841937419847128942104124");
       }
 
       // console.log(data.data);
@@ -74,10 +84,14 @@ const ChoiceProfile = () => {
         url: "http://localhost:8084/order",
         method: "POST",
         data: {
-          useremail: user.useremail,
+          useremail: sessionStorage.getItem("email"),
           orderDate: date,
         },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
+      console.log("setorder data : ", data);
     };
   }, []);
 

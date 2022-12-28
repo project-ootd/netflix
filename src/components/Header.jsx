@@ -11,6 +11,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { authenticationState } from "../recoil/store";
 
 <link
   rel="stylesheet"
@@ -30,17 +31,20 @@ const Header = () => {
   const userEmail = sessionStorage.getItem("email");
   const [profileUser, setProfileUser] = useState({});
   const profileIndex = sessionStorage.getItem("profile");
+  const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
 
   useEffect(() => {
     const getProfile = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getProfile`,
+        url: `${BACKEND_URL}/api/v1/getProfile`,
         method: "GET",
         params: {
           useremail: sessionStorage.getItem("email"),
         },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
-      // console.log("profileUser", data.data);
       setProfileUser(data.data);
     };
     if (userEmail) {
@@ -387,7 +391,17 @@ const Header = () => {
                   </li>
                   <hr />
                   <li style={{ paddingBottom: "10px" }}>
-                    <a href="/">넷플릭스 로그아웃</a>
+                    <a
+                      href="/"
+                      onClick={() => {
+                        //인증 해제
+                        setAuthenticated(false);
+                        //로그인 토큰 삭제
+                        localStorage.removeItem("userToken");
+                      }}
+                    >
+                      넷플릭스 로그아웃
+                    </a>
                   </li>
                 </ul>
               </div>

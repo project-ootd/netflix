@@ -13,6 +13,7 @@ import Slider from "react-slick";
 import RankingSlide from "./RankingSlide";
 import { useRecoilState } from "recoil";
 import { rankingState } from "../recoil/ranking";
+import Layout from "./Layout";
 
 const Latets = ({ openModal, kDramas, check }) => {
   const [ranks, setRanks] = useState([]);
@@ -87,6 +88,9 @@ const Latets = ({ openModal, kDramas, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -96,6 +100,9 @@ const Latets = ({ openModal, kDramas, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
 
       setAllContents(data.data);
@@ -103,207 +110,209 @@ const Latets = ({ openModal, kDramas, check }) => {
     getContent();
   }, []);
   return (
-    <div
-      className="slide-body"
-      style={{
-        zIndex: "3",
-        position: "relative",
-        overflow: "hidden",
-        padding: " 0 0 5vh 0",
-      }}
-    >
-      <div className="slideItems-all-container">
-        <div
-          className="slide-container flex flex_jc_start"
-          style={{ marginTop: "50px" }}
-        >
-          <a href="#">
-            <div
-              className="slide-title-text text-test"
-              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
-            >
-              이번 주 공개된 한국 드라마
-              {/* <div className="slide-detail-hover"> */}
-              <div className="slide-detail-text">모두 보기</div>
-              <img
-                className="slide-arrow-img"
-                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
-              />
-              {/* </div> */}
-            </div>
-          </a>
-        </div>
-        <Slider {...settings}>
-          {/* rank 1 */}
-          {dramas.map((ele, index) => {
-            return (
-              <SlideImg
-                key={index}
-                index={index}
-                ele={ele}
-                openModal={openModal}
-                setZindex={setZindex}
-                check={check}
-              />
-            );
-          })}
-        </Slider>
-      </div>
-      <div className="ranking-con" style={{ marginTop: "12vh" }}>
-        <RankingSlide
-          openModal={openModal}
-          ranking={ranking}
-          allContents={allContents}
-          check={check}
-        />
-      </div>
-      <div className="slideItems-all-container">
-        <div className="slide-container flex flex_jc_start">
-          <a href="#">
-            <div
-              className="slide-title-text text-test"
-              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
-            >
-              지금 뜨는 콘텐츠
-              {/* <div className="slide-detail-hover"> */}
-              <div className="slide-detail-text">모두 보기</div>
-              <img
-                className="slide-arrow-img"
-                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
-              />
-              {/* </div> */}
-            </div>
-          </a>
-        </div>
-        <Slider {...settings}>
-          {/* rank 1 */}
-          {riseups.map((ele, index) => {
-            return (
-              <SlideImg
-                ele={ele}
-                key={index}
-                index={index}
-                openModal={openModal}
-                style={{ zIndex: "10" }}
-                setZindex={setZindex}
-                check={check}
-              />
-            );
-          })}
-        </Slider>
-      </div>
-
-      <div className="slideItems-all-container">
-        <div className="slide-container flex flex_jc_start">
-          <a href="#">
-            <div
-              className="slide-title-text text-test"
-              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
-            >
-              이번 주 공개된 액션 애니
-              {/* <div className="slide-detail-hover"> */}
-              <div className="slide-detail-text">모두 보기</div>
-              <img
-                className="slide-arrow-img"
-                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
-              />
-              {/* </div> */}
-            </div>
-          </a>
-        </div>
-        <Slider {...settings}>
-          {/* rank 1 */}
-          {actionAnimes.map((ele, index) => {
-            return (
-              <SlideImg
-                ele={ele}
-                key={index}
-                index={index}
-                openModal={openModal}
-                style={{ zIndex: "10" }}
-                setZindex={setZindex}
-                check={check}
-              />
-            );
-          })}
-        </Slider>
-      </div>
-
-      <div className="slideItems-all-container">
-        <div className="slide-container flex flex_jc_start">
-          <a href="#">
-            <div
-              className="slide-title-text text-test"
-              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
-            >
-              이번 주 넷플릭스 인기 컨텐츠
-              {/* <div className="slide-detail-hover"> */}
-              <div className="slide-detail-text">모두 보기</div>
-              <img
-                className="slide-arrow-img"
-                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
-              />
-              {/* </div> */}
-            </div>
-          </a>
-        </div>
-        <Slider {...settings}>
-          {/* rank 1 */}
-          {populars.map((ele, index) => {
-            return (
-              <SlideImg
-                ele={ele}
-                key={index}
-                index={index}
-                openModal={openModal}
-                style={{ zIndex: "10" }}
-                setZindex={setZindex}
-                check={check}
-              />
-            );
-          })}
-        </Slider>
-      </div>
-
+    <Layout>
       <div
-        className="slideItems-all-container"
-        style={{ paddingBottom: "3vh" }}
+        className="slide-body"
+        style={{
+          zIndex: "3",
+          position: "relative",
+          overflow: "hidden",
+          padding: " 0 0 5vh 0",
+        }}
       >
-        <div className="slide-container flex flex_jc_start">
-          <a href="#">
-            <div
-              className="slide-title-text text-test"
-              style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
-            >
-              오직 넷플릭스에서만
-              {/* <div className="slide-detail-hover"> */}
-              <div className="slide-detail-text">모두 보기</div>
-              <img
-                className="slide-arrow-img"
-                src="https://img.icons8.com/metro/10/54b9c5/forward.png"
-              />
-              {/* </div> */}
-            </div>
-          </a>
+        <div className="slideItems-all-container">
+          <div
+            className="slide-container flex flex_jc_start"
+            style={{ marginTop: "50px" }}
+          >
+            <a href="#">
+              <div
+                className="slide-title-text text-test"
+                style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+              >
+                이번 주 공개된 한국 드라마
+                {/* <div className="slide-detail-hover"> */}
+                <div className="slide-detail-text">모두 보기</div>
+                <img
+                  className="slide-arrow-img"
+                  src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                />
+                {/* </div> */}
+              </div>
+            </a>
+          </div>
+          <Slider {...settings}>
+            {/* rank 1 */}
+            {dramas.map((ele, index) => {
+              return (
+                <SlideImg
+                  key={index}
+                  index={index}
+                  ele={ele}
+                  openModal={openModal}
+                  setZindex={setZindex}
+                  check={check}
+                />
+              );
+            })}
+          </Slider>
         </div>
-        <Slider {...settings}>
-          {/* rank 1 */}
-          {only.map((ele, index) => {
-            return (
-              <SlideImg
-                ele={ele}
-                key={index}
-                index={index}
-                openModal={openModal}
-                style={{ zIndex: "10" }}
-                setZindex={setZindex}
-                check={check}
-              />
-            );
-          })}
-        </Slider>
+        <div className="ranking-con" style={{ marginTop: "12vh" }}>
+          <RankingSlide
+            openModal={openModal}
+            ranking={ranking}
+            allContents={allContents}
+            check={check}
+          />
+        </div>
+        <div className="slideItems-all-container">
+          <div className="slide-container flex flex_jc_start">
+            <a href="#">
+              <div
+                className="slide-title-text text-test"
+                style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+              >
+                지금 뜨는 콘텐츠
+                {/* <div className="slide-detail-hover"> */}
+                <div className="slide-detail-text">모두 보기</div>
+                <img
+                  className="slide-arrow-img"
+                  src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                />
+                {/* </div> */}
+              </div>
+            </a>
+          </div>
+          <Slider {...settings}>
+            {/* rank 1 */}
+            {riseups.map((ele, index) => {
+              return (
+                <SlideImg
+                  ele={ele}
+                  key={index}
+                  index={index}
+                  openModal={openModal}
+                  style={{ zIndex: "10" }}
+                  setZindex={setZindex}
+                  check={check}
+                />
+              );
+            })}
+          </Slider>
+        </div>
+
+        <div className="slideItems-all-container">
+          <div className="slide-container flex flex_jc_start">
+            <a href="#">
+              <div
+                className="slide-title-text text-test"
+                style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+              >
+                이번 주 공개된 액션 애니
+                {/* <div className="slide-detail-hover"> */}
+                <div className="slide-detail-text">모두 보기</div>
+                <img
+                  className="slide-arrow-img"
+                  src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                />
+                {/* </div> */}
+              </div>
+            </a>
+          </div>
+          <Slider {...settings}>
+            {/* rank 1 */}
+            {actionAnimes.map((ele, index) => {
+              return (
+                <SlideImg
+                  ele={ele}
+                  key={index}
+                  index={index}
+                  openModal={openModal}
+                  style={{ zIndex: "10" }}
+                  setZindex={setZindex}
+                  check={check}
+                />
+              );
+            })}
+          </Slider>
+        </div>
+
+        <div className="slideItems-all-container">
+          <div className="slide-container flex flex_jc_start">
+            <a href="#">
+              <div
+                className="slide-title-text text-test"
+                style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+              >
+                이번 주 넷플릭스 인기 컨텐츠
+                {/* <div className="slide-detail-hover"> */}
+                <div className="slide-detail-text">모두 보기</div>
+                <img
+                  className="slide-arrow-img"
+                  src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                />
+                {/* </div> */}
+              </div>
+            </a>
+          </div>
+          <Slider {...settings}>
+            {/* rank 1 */}
+            {populars.map((ele, index) => {
+              return (
+                <SlideImg
+                  ele={ele}
+                  key={index}
+                  index={index}
+                  openModal={openModal}
+                  style={{ zIndex: "10" }}
+                  setZindex={setZindex}
+                  check={check}
+                />
+              );
+            })}
+          </Slider>
+        </div>
+
+        <div
+          className="slideItems-all-container"
+          style={{ paddingBottom: "3vh" }}
+        >
+          <div className="slide-container flex flex_jc_start">
+            <a href="#">
+              <div
+                className="slide-title-text text-test"
+                style={zindex ? { zIndex: "0" } : { zIndex: "1" }}
+              >
+                오직 넷플릭스에서만
+                {/* <div className="slide-detail-hover"> */}
+                <div className="slide-detail-text">모두 보기</div>
+                <img
+                  className="slide-arrow-img"
+                  src="https://img.icons8.com/metro/10/54b9c5/forward.png"
+                />
+                {/* </div> */}
+              </div>
+            </a>
+          </div>
+          <Slider {...settings}>
+            {/* rank 1 */}
+            {only.map((ele, index) => {
+              return (
+                <SlideImg
+                  ele={ele}
+                  key={index}
+                  index={index}
+                  openModal={openModal}
+                  style={{ zIndex: "10" }}
+                  setZindex={setZindex}
+                  check={check}
+                />
+              );
+            })}
+          </Slider>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

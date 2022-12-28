@@ -12,7 +12,7 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
   useEffect(() => {
     const getProfile = async () => {
       const data = await axios({
-        url: `${BACKEND_URL}/api/v1/user/getprofileImg`,
+        url: `${BACKEND_URL}/api/v1/getprofileImg`,
         method: "GET",
       });
 
@@ -73,7 +73,7 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
                   setImgNo(img.id);
                   const ImgProfile = async () => {
                     const data = await axios({
-                      url: `${BACKEND_URL}/api/v1/user/userSetProfileImg`,
+                      url: `${BACKEND_URL}/api/v1/userSetProfileImg`,
                       method: "POST",
                       params: {
                         useremail: sessionStorage.getItem("email"),

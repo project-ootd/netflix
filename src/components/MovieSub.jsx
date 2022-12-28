@@ -80,6 +80,9 @@ const MovieSub = ({ openModal, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -89,6 +92,9 @@ const MovieSub = ({ openModal, check }) => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
 
       setAllContents(data.data);

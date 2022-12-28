@@ -7,11 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../recoil";
 import { useEffect } from "react";
+import { Buffer } from "buffer";
+import { authenticationState } from "../recoil/store";
 
 const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
+  const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
+
   const navigate = useNavigate();
   const choiceprofile = () => {
     navigate(`/choiceprofile`);
@@ -44,29 +48,45 @@ const Login = () => {
               } else {
                 try {
                   const data = await axios({
-                    url: `${BACKEND_URL}/api/v1/user/login`,
+                    url: `${BACKEND_URL}/api/v1/login`,
                     method: "POST",
                     data: {
                       useremail,
                       password,
                     },
                   });
-                  console.log("data : ", data.data);
+                  if (data.headers.authorization) {
+                    const payload = JSON.parse(
+                      Buffer.from(
+                        data.headers.authorization.split(" ")[1].split(".")[1],
+                        "base64"
+                      ).toString("ascii")
+                    );
+                    setUser(payload);
+                    setUserId(payload.username);
+                    sessionStorage.setItem("email", payload.username);
+                    sessionStorage.setItem("userId", payload.userId);
+                  }
+
                   setUseremail("");
                   setPassword("");
-                  setUser(data.data);
-                  // console.log(data.data);
-                  setUserId(data.data.useremail);
                   alert("로그인 성공");
-                  sessionStorage.setItem("email", useremail);
-                  sessionStorage.setItem("userId", userId);
+                  setAuthenticated(true);
                   const payChk = await axios({
-                    url: `${BACKEND_URL}/api/v1/user/getLastPayDate`,
+                    url: `${BACKEND_URL}/api/v1/getLastPayDate`,
                     method: "POST",
+                    headers: {
+                      Authorization: data.headers.authorization,
+                    },
                     data: {
                       useremail,
                     },
                   });
+                  sessionStorage.setItem(
+                    "userToken",
+                    data.headers.authorization
+                  );
+                  console.log("payChk: ", payChk);
 
                   // console.log("payChk" + payChk.data.lastPaymentDate);
                   if (payChk.data.lastPaymentDate) {

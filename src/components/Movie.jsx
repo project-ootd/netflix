@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import FindMovie from "./FindMovie";
-
+import Layout from "./Layout";
 const Movie = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);
@@ -35,6 +35,9 @@ const Movie = () => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -44,8 +47,10 @@ const Movie = () => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
-      // console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();
@@ -106,6 +111,34 @@ const Movie = () => {
       />
       <Footer />
     </div>
+
+    // <Layout>
+    //   <div className="movie-head">
+    //     <div className="movie-head-con">
+    //       <div className="movie-page-text">영화</div>
+    //       <select name="genre" id="genre" className="choice-genre">
+    //         <option value="장르">장르</option>
+    //         <option value="한국">한국</option>
+    //         <option value="미국 영화">미국 영화</option>
+    //         <option value="일본 영화">일본 영화</option>
+    //         <option value="영국 영화">영국 영화</option>
+    //         <option value="코미디">코미디</option>
+    //         <option value="판타지">판타지</option>
+    //       </select>
+    //     </div>
+    //     <TestVideo openModal={openModal} allContents={ranking[2]} />
+    //     <MovieSub openModal={openModal} kDramas={kDramas} check={check} />
+    //     <Modal
+    //       open={modalOpen}
+    //       close={closeModal}
+    //       ranking={ranking}
+    //       header="Modal heading"
+    //       currentContent={currentContent}
+    //       check={check}
+    //     />
+    //     <Footer />
+    //   </div>
+    // </Layout>
   );
 };
 

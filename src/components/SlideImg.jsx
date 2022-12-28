@@ -62,7 +62,7 @@ const SlideImg = ({
           : { zIndex: "-1", marginRight: "10px" }
       }
       onMouseEnter={() => {
-        console.log("슬라이드 이미지 오픈 : ", ele.likeStatus);
+        // console.log("슬라이드 이미지 오픈 : ", ele.likeStatus);
       }}
     >
       <div
