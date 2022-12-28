@@ -65,7 +65,7 @@ const Movie = () => {
             <option value="판타지">판타지</option>
           </select>
         </div>
-        <TestVideo openModal={openModal} allContents={ranking[2]} />
+        <TestVideo openModal={openModal} allContents={allContents[55]} />
         <MovieSub openModal={openModal} kDramas={kDramas} check={check} />
         <Modal
           open={modalOpen}

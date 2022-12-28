@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 import SlideVideo from "./SlideVideo";
 import { useEffect } from "react";
 
-const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
+const RankingSlide = ({ openModal, ranking, allcontent, check, setCheck }) => {
   const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -92,6 +92,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[0]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -119,6 +120,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[1]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -146,6 +148,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[2]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -173,6 +176,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[3]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -200,6 +204,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[4]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -227,6 +232,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[5]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -254,6 +260,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[6]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -281,6 +288,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[7]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -309,6 +317,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[8]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
@@ -336,6 +345,7 @@ const RankingSlide = ({ openModal, ranking, allcontent, check }) => {
                 openModal={openModal}
                 ranking={ranking[9]}
                 check={check}
+                setCheck={setCheck}
               />
             </div>
           </div>
