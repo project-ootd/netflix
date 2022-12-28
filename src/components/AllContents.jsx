@@ -13,8 +13,8 @@ import Layout from "./Layout";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [ranking, setRanking] = useRecoilState(rankingState);
   const [currentContent, setCurrentContent] = useState({});
+  const [ranking, setRanking] = useRecoilState(rankingState);
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
@@ -50,6 +50,9 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setRanking(data.data);
     };
@@ -59,6 +62,9 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       // console.log("data : " + data.data);
       setAllContents(data.data);
@@ -90,6 +96,9 @@ const AllContents = () => {
         params: {
           useremail: sessionStorage.getItem("email"),
         },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
       });
       setCheck(data.data);
     };
@@ -97,8 +106,8 @@ const AllContents = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Layout>
+    <Layout>
+      <div className="App">
         <TestVideo openModal={openModal} allContents={ranking[0]} />
         <RankingSlide
           openModal={openModal}
@@ -123,8 +132,8 @@ const AllContents = () => {
           setCheck={setCheck}
         />
         <Footer />
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

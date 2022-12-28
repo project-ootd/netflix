@@ -3,9 +3,8 @@ import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import $ from "jquery";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const TestVideo = ({ openModal, allContents }) => {
-  const [time, setTime] = useState(false);
-  const [check, SetCheck] = useState(1);
   const testvideoRef = useRef(null);
 
   useEffect(() => {
@@ -18,16 +17,6 @@ const TestVideo = ({ openModal, allContents }) => {
         <div className="motion-background-components">
           <div className="hero-image-wrapper">
             <div style={{ width: "100%", height: "920px" }}>
-              {/* {time ? (
-                <img
-                  src={
-                    // "https://occ-0-988-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVz7Jt44hr7JRKCx1uRU1f7TM_JnzI8tN_PWK3EKnraE8GMhu1eSwP589ZkL2phbkp0n197H041fQVQQ_95zZk_qhTDDWuY3c3gH.webp?r=21f"
-                    allContents?.contentImg
-                  }
-                  alt=""
-                  style={{ width: "100%", height: "920px" }}
-                />
-              ) : ( */}
               <video
                 className="player"
                 width="100%"
@@ -41,10 +30,7 @@ const TestVideo = ({ openModal, allContents }) => {
                 autoPlay
                 ref={testvideoRef}
                 src={allContents?.contentVideo}
-              >
-                {/* <source src={allContents?.contentVideo} type="video/mp4" /> */}
-              </video>
-              {/* )} */}
+              ></video>
 
               <div
                 className="title-text"
@@ -57,10 +43,7 @@ const TestVideo = ({ openModal, allContents }) => {
                 }}
               >
                 <img
-                  src={
-                    // "https://occ-0-988-395.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABVpD2HLqSeIPYBbj82FQUt1gQmvRXsb1wYcbeSEJh2b06C2Th8QVSM9qx4odBsCWdEBhnhvnMEncjN--2_EOTUgQmCSq3GlNAFO8fVTtlrc.webp?r=e4c"
-                    allContents?.detailTextImg
-                  }
+                  src={allContents?.detailTextImg}
                   alt="체인소 맨"
                   className="title-img"
                   style={{
@@ -70,40 +53,42 @@ const TestVideo = ({ openModal, allContents }) => {
                   }}
                 />
                 <div className="play-btn-box" style={{ display: "flex" }}>
-                  <button
-                    className="play-btn"
-                    style={{
-                      width: "150px",
-                      fontSize: "1.1rem",
-                      borderRadius: "10px",
-                      fontWeight: "bold",
-                      marginLeft: "50px",
-                      marginRight: "20px",
-                    }}
-                  >
-                    <a
-                      href="/"
+                  <Link to="/player" state={allContents?.videoLink}>
+                    <button
+                      className="play-btn"
                       style={{
-                        display: "flex",
-                        width: "100%",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        width: "150px",
+                        fontSize: "1.1rem",
+                        borderRadius: "10px",
+                        fontWeight: "bold",
+                        marginLeft: "50px",
+                        marginRight: "20px",
+                        cursor: "pointer",
                       }}
                     >
-                      <div className="play-icon">
-                        <BsFillPlayFill
-                          style={{
-                            fontSize: "20px",
-                            width: "3.5rem",
-                            height: "3.5rem",
-                          }}
-                        />
+                      <div
+                        style={{
+                          display: "flex",
+                          width: "100%",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div className="play-icon">
+                          <BsFillPlayFill
+                            style={{
+                              fontSize: "20px",
+                              width: "3.5rem",
+                              height: "3.5rem",
+                            }}
+                          />
+                        </div>
+                        <div className="play-text" style={{ fontSize: "23px" }}>
+                          재생
+                        </div>
                       </div>
-                      <div className="play-text" style={{ fontSize: "23px" }}>
-                        재생
-                      </div>
-                    </a>
-                  </button>
+                    </button>
+                  </Link>
                   <button
                     className="info-box"
                     style={{
@@ -115,8 +100,6 @@ const TestVideo = ({ openModal, allContents }) => {
                       fontWeight: "bold",
                       border: "none",
                       backgroundColor: "rgba(109, 109, 110, 0.5)",
-
-                      // padding: "0.5rem 0px ",
                     }}
                   >
                     {" "}

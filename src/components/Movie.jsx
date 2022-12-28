@@ -10,6 +10,7 @@ import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import FindMovie from "./FindMovie";
 import Layout from "./Layout";
+
 const Movie = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);

@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Search.scss";
 import Footer from "./Footer";
+import Layout from "./Layout";
 
 const Search = () => {
   const search = useRecoilValue(serachState);
@@ -28,50 +29,52 @@ const Search = () => {
   }, [search]);
 
   return (
-    <>
-      <div className="search-title-header">
-        <div className="rail">
-          <div className="suggestions">
-            <div className="ptrack-container">
-              <div className="ptrack-content">
-                <div className="suggestionRailContainer">
-                  <span className="suggestionsLabel">
-                    다음과 관련된 콘텐츠:
-                  </span>
-                  <ul>
-                    <li className="">
-                      <div className="ptrack-content">
-                        <a href="#">일본 TV 드라마1</a>
-                      </div>
-                    </li>
-                  </ul>
+    <Layout>
+      <>
+        <div className="search-title-header">
+          <div className="rail">
+            <div className="suggestions">
+              <div className="ptrack-container">
+                <div className="ptrack-content">
+                  <div className="suggestionRailContainer">
+                    <span className="suggestionsLabel">
+                      다음과 관련된 콘텐츠:
+                    </span>
+                    <ul>
+                      <li className="">
+                        <div className="ptrack-content">
+                          <a href="#">일본 TV 드라마1</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {contents.map((ele, index) => {
-        return (
-          <div className="search-container" key={index}>
-            <div className="search-result">
-              <div className="search-thumbnail" key={index}>
-                <a href="#">
-                  <img
-                    className="search-thumbnail-img"
-                    src={ele?.contentImg}
-                    alt=""
-                  />
-                </a>
+        {contents.map((ele, index) => {
+          return (
+            <div className="search-container" key={index}>
+              <div className="search-result">
+                <div className="search-thumbnail" key={index}>
+                  <a href="#">
+                    <img
+                      className="search-thumbnail-img"
+                      src={ele?.contentImg}
+                      alt=""
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
 
-      <Footer />
-    </>
+        <Footer />
+      </>
+    </Layout>
   );
 };
 

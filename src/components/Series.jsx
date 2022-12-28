@@ -6,11 +6,11 @@ import { BACKEND_URL } from "../utils";
 import { rankingState } from "../recoil/ranking";
 import Modal from "./Modal";
 import Footer from "./Footer";
-import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import SeriesSub from "./SeriesSub";
 import Layout from "./Layout";
 import FindMovie from "./FindMovie";
+import MovieSub from "./MovieSub";
 
 const Series = () => {
   const [modalOpen, setModalOpen] = useState(false);

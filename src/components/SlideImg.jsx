@@ -50,8 +50,6 @@ const SlideImg = ({
     setCheck(data.data);
     console.log(data.data);
   };
-  // console.log("check data===== : ", check[ele.id - 1].likeStatus);
-  // console.log("check eleId : ", ele.id);
   useEffect(() => {
     try {
       const getCategory = async () => {
