@@ -7,7 +7,7 @@ import { BiUser } from "react-icons/bi";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import { serachState } from "../recoil/search";
 import { useRecoilState } from "recoil";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
@@ -21,17 +21,21 @@ import { authenticationState } from "../recoil/store";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [hide, SetHide] = useState(
+  const [hide, setHide] = useState(
     location?.state?.fromUrl === "/browse" ? true : false
+    // location?.pathname === "/browse" ? false : true
   );
+  console.log(location.state);
   const [search, setSearch] = useRecoilState(serachState);
-  const [keyword, setKeyword] = useState([]);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const searchInput = useRef();
+  const [scrollPosition, setScrollPosition] = useState(0);
   const userEmail = sessionStorage.getItem("email");
-  const [profileUser, setProfileUser] = useState({});
   const profileIndex = sessionStorage.getItem("profile");
+  const [profileUser, setProfileUser] = useState({});
+  const [keyword, setKeyword] = useState([]);
   const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
+
+  console.log("location : ", location?.pathname === "/browse");
 
   useEffect(() => {
     const getProfile = async () => {
@@ -56,29 +60,32 @@ const Header = () => {
     searchInput?.current?.focus();
   }, [searchInput]);
 
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, [scrollPosition]);
-
   const onSearch = (e) => {
+    console.log("value: ", e.target.value);
     if (e.target.value === "") {
-      navigate(`/browse`);
+      navigate(`/browse`, { state: { fromUrl: location.pathname } });
     } else {
-      navigate(`/search?${e.target.value}`);
+      navigate(`/search?${e.target.value}`, {
+        state: { fromUrl: location.pathname },
+      });
     }
     setSearch(e.target.value);
   };
 
   const onClick = () => {
     if (hide === true) {
-      SetHide(false);
+      setHide(false);
     } else {
-      SetHide(true);
+      setHide(true);
     }
   };
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, [scrollPosition]);
 
   const onMove = (keyword) => {
     navigate(`/search/${keyword}`, { state: { fromUrl: location.pathname } });
@@ -96,7 +103,6 @@ const Header = () => {
   ) {
     return <></>;
   }
-
   return (
     <div
       classnames="Header App"
@@ -397,8 +403,8 @@ const Header = () => {
                   </li>
                   <hr />
                   <li style={{ paddingBottom: "10px" }}>
-                    <a
-                      href="/"
+                    <div
+                      style={{ cursor: "pointer" }}
                       onClick={() => {
                         //인증 해제
                         setAuthenticated(false);
@@ -407,7 +413,7 @@ const Header = () => {
                       }}
                     >
                       넷플릭스 로그아웃
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>

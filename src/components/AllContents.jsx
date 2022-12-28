@@ -12,8 +12,8 @@ import Layout from "./Layout";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [ranking, setRanking] = useRecoilState(rankingState);
   const [currentContent, setCurrentContent] = useState({});
+  const [ranking, setRanking] = useRecoilState(rankingState);
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
@@ -71,8 +71,8 @@ const AllContents = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Layout>
+    <Layout>
+      <div className="App">
         <TestVideo openModal={openModal} allContents={ranking[0]} />
         <RankingSlide
           openModal={openModal}
@@ -94,8 +94,8 @@ const AllContents = () => {
           check={check}
         />
         <Footer />
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

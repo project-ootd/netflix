@@ -18,13 +18,18 @@ const Player = () => {
       <iframe
         width="100%"
         height="100%"
-        src={location.state?.videoLink}
+        // src의 location.state?.videoLink는 modal, slide에서 불러왔을 때의 위치
+        // location.state는 TestVideo에서 불러왔을 때의 위치
+        src={
+          location.state?.videoLink ? location.state?.videoLink : location.state
+        }
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         controls="0"
         allowFullScreen
       ></iframe>
+      {console.log(location)}
       {/* <ReactPlayer
         className="reactPlayer"
         url="https://www.youtube.com/watch?v=_stX5qaJl_4"

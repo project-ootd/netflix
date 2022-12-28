@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import Layout from "./Layout";
+
 const Movie = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [ranking, setRanking] = useRecoilState(rankingState);
@@ -65,7 +66,9 @@ const Movie = () => {
             <option value="판타지">판타지</option>
           </select>
         </div>
-        <TestVideo openModal={openModal} allContents={ranking[2]} />
+        <TestVideo openModal={openModal} allContents={allContents[55]} />
+        {console.log("allContents : ", allContents)}
+
         <MovieSub openModal={openModal} kDramas={kDramas} check={check} />
         <Modal
           open={modalOpen}

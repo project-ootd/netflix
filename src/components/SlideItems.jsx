@@ -5,15 +5,7 @@ import Slider from "react-slick";
 import "../styles/SlideItems.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SlideVideo from "./SlideVideo";
 import "../styles/SlideVideo.css";
-import {
-  BsPlusLg,
-  BsPlayFill,
-  BsHandThumbsUp,
-  BsChevronDown,
-  BsHandThumbsDown,
-} from "react-icons/bs";
 import SlideImg from "./SlideImg";
 
 const SlideItems = ({ openModal, kDramas, check, ranking }) => {

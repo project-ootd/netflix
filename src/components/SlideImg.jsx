@@ -36,8 +36,6 @@ const SlideImg = ({
       },
     });
   };
-  // console.log("check data===== : ", check[ele.id - 1].likeStatus);
-  // console.log("check eleId : ", ele.id);
   useEffect(() => {
     try {
       const getCategory = async () => {

@@ -6,7 +6,6 @@ import { BACKEND_URL } from "../utils";
 import { rankingState } from "../recoil/ranking";
 import Modal from "./Modal";
 import Footer from "./Footer";
-import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import SeriesSub from "./SeriesSub";
 import Layout from "./Layout";
@@ -83,7 +82,7 @@ const Series = () => {
             <option value="판타지">판타지</option>
           </select>
         </div>
-        <TestVideo openModal={openModal} allContents={ranking[4]} />
+        <TestVideo openModal={openModal} allContents={ranking[5]} />
         <SeriesSub openModal={openModal} kDramas={kDramas} check={check} />
         <Modal
           open={modalOpen}
