@@ -11,7 +11,6 @@ const AuthRoute = () => {
 
   useEffect(() => {
     console.log("토큰", sessionStorage.getItem("userToken"));
-    // if(sessionStorage.getItem("userToken"))
   }, []);
 
   return authenticated ? <Outlet /> : <Login />;
