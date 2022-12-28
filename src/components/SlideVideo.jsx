@@ -13,7 +13,7 @@ import { BACKEND_URL } from "../utils";
 import axios from "axios";
 import { AiOutlineCheck } from "react-icons/ai";
 
-const SlideVideo = ({ openModal, ranking, check }) => {
+const SlideVideo = ({ openModal, ranking, check, setCheck }) => {
   const [category, setCategory] = useState([]);
   const videoRef = useRef();
 
@@ -34,17 +34,30 @@ const SlideVideo = ({ openModal, ranking, check }) => {
   }, []);
 
   const like = async () => {
-    const data = await axios({
+    // 찜 추가/삭제
+    await axios({
       url: `${BACKEND_URL}/browse/my-list`,
       method: "POST",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
       params: {
         useremail: sessionStorage.getItem("email"),
         contentId: ranking?.id,
-        headers: {
-          Authorization: sessionStorage.getItem("userToken"),
-        },
       },
     });
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list/check`,
+      method: "GET",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
+      params: {
+        useremail: sessionStorage.getItem("email"),
+      },
+    });
+    setCheck(data.data);
+    console.log(data.data);
   };
   return (
     <div className="hover_container">

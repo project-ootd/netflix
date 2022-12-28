@@ -20,21 +20,35 @@ const SlideImg = ({
   index,
   check,
   ranking,
+  setCheck,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [category, setCategory] = useState([]);
 
   const like = async () => {
-    // 찜 추가/삭제
-    console.log("실행됨");
-    const data = await axios({
+    await axios({
       url: `${BACKEND_URL}/browse/my-list`,
       method: "POST",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
       params: {
         useremail: sessionStorage.getItem("email"),
-        contentId: ele.id,
+        contentId: ele?.id,
       },
     });
+    const data = await axios({
+      url: `${BACKEND_URL}/browse/my-list/check`,
+      method: "GET",
+      headers: {
+        Authorization: sessionStorage.getItem("userToken"),
+      },
+      params: {
+        useremail: sessionStorage.getItem("email"),
+      },
+    });
+    setCheck(data.data);
+    console.log(data.data);
   };
   // console.log("check data===== : ", check[ele.id - 1].likeStatus);
   // console.log("check eleId : ", ele.id);

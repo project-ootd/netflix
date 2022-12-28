@@ -17,7 +17,6 @@ const Movie = () => {
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
-  const [zindex, setZindex] = useState(false);
 
   const [viewToggle, setViewToggle] = useState(false);
 
@@ -66,51 +65,52 @@ const Movie = () => {
     });
     setKDramas(data.data);
 
-    setViewToggle(true);
+    if (e === "장르") {
+      setViewToggle(false);
+    } else {
+      setViewToggle(true);
+    }
   };
 
   return (
-    <div className="movie-head">
-      <div className="movie-head-con">
-        <div className="movie-page-text">영화</div>
-        <select
-          name="genre"
-          id="genre"
-          className="choice-genre"
-          onChange={(e) => {
-            getmovie(e.target.value);
-          }}
-        >
-          <option value="장르">장르</option>
-          <option value="K">한국</option>
-          <option value="미국">미국</option>
-          <option value="일본">일본</option>
-          <option value="코미디">코미디</option>
-          <option value="판타지">판타지</option>
-        </select>
-      </div>
-      {/* <TestVideo openModal={openModal} allContents={ranking[2]} /> */}
-      {viewToggle ? (
-        <FindMovie
-          kDramas={kDramas}
-          openModal={openModal}
-          setZindex={setZindex}
+    <Layout>
+      <div className="movie-head">
+        <div className="movie-head-con">
+          <div className="movie-page-text">영화</div>
+          <select
+            name="genre"
+            id="genre"
+            className="choice-genre"
+            onChange={(e) => {
+              getmovie(e.target.value);
+            }}
+          >
+            <option value="장르">장르</option>
+            <option value="한국">한국</option>
+            <option value="미국">미국</option>
+            <option value="일본">일본</option>
+            <option value="코미디">코미디</option>
+            <option value="판타지">판타지</option>
+          </select>
+        </div>
+        <TestVideo openModal={openModal} allContents={allContents[55]} />
+        {viewToggle ? (
+          <FindMovie kDramas={kDramas} openModal={openModal} check={check} />
+        ) : (
+          <MovieSub openModal={openModal} check={check} />
+        )}
+
+        <Modal
+          open={modalOpen}
+          close={closeModal}
+          ranking={ranking}
+          header="Modal heading"
+          currentContent={currentContent}
           check={check}
         />
-      ) : (
-        <MovieSub openModal={openModal} kDramas={kDramas} check={check} />
-      )}
-
-      <Modal
-        open={modalOpen}
-        close={closeModal}
-        ranking={ranking}
-        header="Modal heading"
-        currentContent={currentContent}
-        check={check}
-      />
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Layout>
 
     // <Layout>
     //   <div className="movie-head">
