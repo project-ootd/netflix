@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/SlideVideo.css";
 import SlideImg from "./SlideImg";
 
-const SlideItems = ({ openModal, kDramas, check, ranking }) => {
+const SlideItems = ({ openModal, kDramas, check, ranking, setCheck }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -115,6 +115,7 @@ const SlideItems = ({ openModal, kDramas, check, ranking }) => {
                 setZindex={setZindex}
                 check={check}
                 ranking={ranking}
+                setCheck={setCheck}
               />
             );
           })}
@@ -151,6 +152,7 @@ const SlideItems = ({ openModal, kDramas, check, ranking }) => {
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
                 check={check}
+                setCheck={setCheck}
               />
             );
           })}
@@ -187,6 +189,7 @@ const SlideItems = ({ openModal, kDramas, check, ranking }) => {
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
                 check={check}
+                setCheck={setCheck}
               />
             );
           })}
@@ -223,6 +226,7 @@ const SlideItems = ({ openModal, kDramas, check, ranking }) => {
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
                 check={check}
+                setCheck={setCheck}
               />
             );
           })}
@@ -262,6 +266,7 @@ const SlideItems = ({ openModal, kDramas, check, ranking }) => {
                 style={{ zIndex: "10" }}
                 setZindex={setZindex}
                 check={check}
+                setCheck={setCheck}
               />
             );
           })}

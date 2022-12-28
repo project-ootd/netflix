@@ -6,6 +6,7 @@ import SlideItems from "./SlideItems";
 import TestVideo from "./TestVideo";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { rankingState } from "../recoil/ranking";
 import Layout from "./Layout";
@@ -17,6 +18,24 @@ const AllContents = () => {
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
+
+  // const targetRef = useRef(null);
+
+  // const handleScroll = () => {
+  //   if (window.screenY > 0) {
+  //     targetRef.current.style.background = "red";
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     window.addEventListener("scroll", handleScroll);
+  //     return () => {
+  //       clearInterval(timer);
+  //       window.removeEventListener("scroll", handleScroll);
+  //     };
+  //   });
+  // }, []);
 
   const openModal = (content) => {
     setModalOpen(true);
@@ -31,11 +50,7 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/rank`,
         method: "GET",
-        headers: {
-          Authorization: sessionStorage.getItem("userToken"),
-        },
       });
-
       setRanking(data.data);
     };
     getRank();
@@ -44,13 +59,27 @@ const AllContents = () => {
       const data = await axios({
         url: `${BACKEND_URL}/allcontent`,
         method: "GET",
-        headers: {
-          Authorization: sessionStorage.getItem("userToken"),
-        },
       });
+      // console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();
+
+    const getKDrama = async () => {
+      const data = await axios(`${BACKEND_URL}/contents?kw=DRAMA`);
+      setKDramas(kDramas.data);
+    };
+    getKDrama();
+
+    // const getContent = async () => {
+    //   const data = await axios({
+    //     url: `${BACKEND_URL}/allcontent`,
+    //     method: "GET",
+    //   });
+    //   console.log("data : " + data.data);
+    //   setAllContents(data.data);
+    // };
+    // getContent();
   }, []);
 
   useEffect(() => {
@@ -60,9 +89,6 @@ const AllContents = () => {
         method: "GET",
         params: {
           useremail: sessionStorage.getItem("email"),
-        },
-        headers: {
-          Authorization: sessionStorage.getItem("userToken"),
         },
       });
       setCheck(data.data);
@@ -79,12 +105,14 @@ const AllContents = () => {
           ranking={ranking}
           allContents={allContents}
           check={check}
+          setCheck={setCheck}
         />
         <SlideItems
           openModal={openModal}
           kDramas={kDramas}
           check={check}
           ranking={ranking}
+          setCheck={setCheck}
         />
         <Modal
           open={modalOpen}
@@ -92,6 +120,7 @@ const AllContents = () => {
           header="Modal heading"
           currentContent={currentContent}
           check={check}
+          setCheck={setCheck}
         />
         <Footer />
       </div>
