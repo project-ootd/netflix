@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Login.css";
 import logo from "../img/logo.png";
 import axios from "axios";
@@ -6,7 +6,6 @@ import { BACKEND_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userState } from "../recoil";
-import { useEffect } from "react";
 import { Buffer } from "buffer";
 import { authenticationState } from "../recoil/store";
 
@@ -14,6 +13,7 @@ const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
+  const [hide, setHide] = useState();
   const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
 
   const navigate = useNavigate();
@@ -27,17 +27,30 @@ const Login = () => {
 
   const [user, setUser] = useRecoilState(userState);
 
+  // AuthenticationTrustResolver trustResolver = new AuthenticationTrustResolverImpl();
+  // if (trustResolver.isAnonymous(SecurityContextHolder.getContext().getAuthentication())) {
+  // // 익명
+  // }
+  // else {
+  // // 로그인한 사용자
+  // }
+
+  // useEffect(()=>{
+  //   if ( sessionStorage.getItem("userToken") ===  )
+  // })
+
   return (
     <div>
       <div className="bc_opacity"></div>
       <div className="bc_img"></div>
-      <a href="/" className="logo_box">
+      <a href="#" className="logo_box">
         <div className="img_box">
           <img src={logo} alt="LOGO" />
         </div>
       </a>
       <div className="login_box">
         <h1>로그인</h1>
+
         <div className="login_form">
           <form
             autoComplete="off"
@@ -140,7 +153,7 @@ const Login = () => {
               </div>
 
               <div className="help flex">
-                <a href="/" className="help_text">
+                <a href="#" className="help_text">
                   도움이 필요하신가요?
                 </a>
               </div>
@@ -149,12 +162,12 @@ const Login = () => {
 
           <div className="login_form_other">
             <div className="join">
-              Netflix 회원이 아닌가요? <a href="/">지금 가입하세요.</a>
+              Netflix 회원이 아닌가요? <a href="#">지금 가입하세요.</a>
             </div>
 
             <div className="google_btn">
               이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을
-              확인합니다. <a href="/">자세히 알아보기.</a>
+              확인합니다. <a href="#">자세히 알아보기.</a>
             </div>
           </div>
         </div>
@@ -166,22 +179,22 @@ const Login = () => {
             <h4>질문이 있으신가요? 문의 전화: 010-1234-1234</h4>
             <ul className="item_box flex">
               <li className="footer_item">
-                <a href="/">자주 묻는 질문</a>
+                <a href="#">자주 묻는 질문</a>
               </li>
               <li className="footer_item">
-                <a href="/">고객 센터</a>
+                <a href="#">고객 센터</a>
               </li>
               <li className="footer_item">
-                <a href="/">이용 약관</a>
+                <a href="#">이용 약관</a>
               </li>
               <li className="footer_item">
-                <a href="/">개인정보</a>
+                <a href="#">개인정보</a>
               </li>
               <li className="footer_item">
-                <a href="/">쿠키 설정</a>
+                <a href="#">쿠키 설정</a>
               </li>
               <li className="footer_item">
-                <a href="/">회사 정보</a>
+                <a href="#">회사 정보</a>
               </li>
             </ul>
           </div>

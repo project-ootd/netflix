@@ -9,49 +9,49 @@ const Footer = () => {
           <h4>질문이 있으신가요? 문의 전화: 010-1234-1234</h4>
           <ul className="item_box flex">
             <li className="footer_item">
-              <a href="/">자주 묻는 질문</a>
+              <a href="#">자주 묻는 질문</a>
             </li>
             <li className="footer_item">
-              <a href="/">고객 센터</a>
+              <a href="#">고객 센터</a>
             </li>
             <li className="footer_item">
-              <a href="/">계정</a>
+              <a href="#">계정</a>
             </li>
             <li className="footer_item">
-              <a href="/">미디어 센터</a>
+              <a href="#">미디어 센터</a>
             </li>
             <li className="footer_item">
-              <a href="/">투자 정보(IR)</a>
+              <a href="#">투자 정보(IR)</a>
             </li>
             <li className="footer_item">
-              <a href="/">입사 정보</a>
+              <a href="#">입사 정보</a>
             </li>
             <li className="footer_item">
-              <a href="/">넷플릭스 지원 디바이스</a>
+              <a href="#">넷플릭스 지원 디바이스</a>
             </li>
             <li className="footer_item">
-              <a href="/">이용 약관</a>
+              <a href="#">이용 약관</a>
             </li>
             <li className="footer_item">
-              <a href="/">개인정보</a>
+              <a href="#">개인정보</a>
             </li>
             <li className="footer_item">
-              <a href="/">쿠키 설정</a>
+              <a href="#">쿠키 설정</a>
             </li>
             <li className="footer_item">
-              <a href="/">회사 정보</a>
+              <a href="#">회사 정보</a>
             </li>
             <li className="footer_item">
-              <a href="/">문의하기</a>
+              <a href="#">문의하기</a>
             </li>
             <li className="footer_item">
-              <a href="/">속도 테스트</a>
+              <a href="#">속도 테스트</a>
             </li>
             <li className="footer_item">
-              <a href="/">법적 고지</a>
+              <a href="#">법적 고지</a>
             </li>
             <li className="footer_item">
-              <a href="/">오직 넷플릭스에서</a>
+              <a href="#">오직 넷플릭스에서</a>
             </li>
           </ul>
         </div>

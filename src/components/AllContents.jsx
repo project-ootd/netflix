@@ -9,7 +9,6 @@ import { BACKEND_URL } from "../utils";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { rankingState } from "../recoil/ranking";
-import Layout from "./Layout";
 
 const AllContents = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -106,34 +105,32 @@ const AllContents = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className="App">
-        <TestVideo openModal={openModal} allContents={ranking[0]} />
-        <RankingSlide
-          openModal={openModal}
-          ranking={ranking}
-          allContents={allContents}
-          check={check}
-          setCheck={setCheck}
-        />
-        <SlideItems
-          openModal={openModal}
-          kDramas={kDramas}
-          check={check}
-          ranking={ranking}
-          setCheck={setCheck}
-        />
-        <Modal
-          open={modalOpen}
-          close={closeModal}
-          header="Modal heading"
-          currentContent={currentContent}
-          check={check}
-          setCheck={setCheck}
-        />
-        <Footer />
-      </div>
-    </Layout>
+    <div className="App">
+      <TestVideo openModal={openModal} allContents={ranking[0]} />
+      <RankingSlide
+        openModal={openModal}
+        ranking={ranking}
+        allContents={allContents}
+        check={check}
+        setCheck={setCheck}
+      />
+      <SlideItems
+        openModal={openModal}
+        kDramas={kDramas}
+        check={check}
+        ranking={ranking}
+        setCheck={setCheck}
+      />
+      <Modal
+        open={modalOpen}
+        close={closeModal}
+        header="Modal heading"
+        currentContent={currentContent}
+        check={check}
+        setCheck={setCheck}
+      />
+      <Footer />
+    </div>
   );
 };
 

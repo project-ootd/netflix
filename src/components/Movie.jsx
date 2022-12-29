@@ -9,7 +9,6 @@ import Footer from "./Footer";
 import MovieSub from "./MovieSub";
 import "../styles/Movie.css";
 import FindMovie from "./FindMovie";
-import Layout from "./Layout";
 
 const Movie = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -74,46 +73,43 @@ const Movie = () => {
   };
 
   return (
-    <Layout>
-      <div className="movie-head">
-        <div className="movie-head-con">
-          <div className="movie-page-text">영화</div>
-          <select
-            name="genre"
-            id="genre"
-            className="choice-genre"
-            onChange={(e) => {
-              getmovie(e.target.value);
-            }}
-          >
-            <option value="장르">장르</option>
-            <option value="한국">한국</option>
-            <option value="미국">미국</option>
-            <option value="일본">일본</option>
-            <option value="코미디">코미디</option>
-            <option value="판타지">판타지</option>
-          </select>
-        </div>
-        <TestVideo openModal={openModal} allContents={allContents[55]} />
-        {viewToggle ? (
-          <FindMovie kDramas={kDramas} openModal={openModal} check={check} />
-        ) : (
-          <MovieSub openModal={openModal} check={check} />
-        )}
-
-        <Modal
-          open={modalOpen}
-          close={closeModal}
-          ranking={ranking}
-          header="Modal heading"
-          currentContent={currentContent}
-          check={check}
-        />
-        <Footer />
+    <div className="movie-head">
+      <div className="movie-head-con">
+        <div className="movie-page-text">영화</div>
+        <select
+          name="genre"
+          id="genre"
+          className="choice-genre"
+          onChange={(e) => {
+            getmovie(e.target.value);
+          }}
+        >
+          <option value="장르">장르</option>
+          <option value="한국">한국</option>
+          <option value="미국">미국</option>
+          <option value="일본">일본</option>
+          <option value="코미디">코미디</option>
+          <option value="판타지">판타지</option>
+        </select>
       </div>
-    </Layout>
+      <TestVideo openModal={openModal} allContents={allContents[55]} />
+      {viewToggle ? (
+        <FindMovie kDramas={kDramas} openModal={openModal} check={check} />
+      ) : (
+        <MovieSub openModal={openModal} check={check} />
+      )}
 
-    // <Layout>
+      <Modal
+        open={modalOpen}
+        close={closeModal}
+        ranking={ranking}
+        header="Modal heading"
+        currentContent={currentContent}
+        check={check}
+      />
+      <Footer />
+    </div>
+
     //   <div className="movie-head">
     //     <div className="movie-head-con">
     //       <div className="movie-page-text">영화</div>
@@ -139,7 +135,6 @@ const Movie = () => {
     //     />
     //     <Footer />
     //   </div>
-    // </Layout>
   );
 };
 

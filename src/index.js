@@ -33,8 +33,10 @@ root.render(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/regform" element={<RegForm />}></Route>
         <Route path="/payinfo" element={<KakaoInfo />}></Route>
+
         {/* ↓ 인증이 필요한 주소 ↓ */}
         <Route element={<AuthRoute />}>
+          <Route path="/header" element={<Header />}></Route>
           <Route path="/genre/series" element={<Series />}></Route>
           <Route path="/latest" element={<PopularContents />}></Route>
           <Route path="/original-audio" element={<OriginalAudio />}></Route>

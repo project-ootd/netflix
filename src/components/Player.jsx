@@ -2,11 +2,9 @@ import React from "react";
 import "../styles/Player.scss";
 import { RxArrowLeft } from "react-icons/rx";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const Player = () => {
   const location = useLocation();
-
   return (
     <div style={{ width: "100%", height: "920px" }}>
       <div className="back_icon">
@@ -29,7 +27,6 @@ const Player = () => {
         controls="0"
         allowFullScreen
       ></iframe>
-      {console.log(location)}
       {/* <ReactPlayer
         className="reactPlayer"
         url="https://www.youtube.com/watch?v=_stX5qaJl_4"
