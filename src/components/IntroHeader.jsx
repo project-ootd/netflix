@@ -5,7 +5,7 @@ const IntroHeader = () => {
   return (
     <div style={{ background: "#f3f3f3" }}>
       <div className="regForm_top_wrap flex flex_jc_sb">
-        <a href="/" className="logo img_box">
+        <a href="#" className="logo img_box">
           <img src={logo} alt="LOGO" />
         </a>
 

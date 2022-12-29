@@ -11,7 +11,7 @@ const First = () => {
     <div>
       <div className="first_wrap">
         <div className="top_wrap flex flex_jc_sb">
-          <a href="/" className="logo">
+          <a href="#" className="logo">
             <img src={logo} alt="LOGO" />
           </a>
 

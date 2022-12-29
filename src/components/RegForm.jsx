@@ -95,7 +95,7 @@ const RegForm = () => {
                 />
                 <label htmlFor="checkBox1"></label>
                 <div className="check_text1">
-                  예, 저는 <a href="/">개인정보 처리방침</a>에 따른 개인정보
+                  예, 저는 <a href="#">개인정보 처리방침</a>에 따른 개인정보
                   수집 및 활용에 동의합니다.
                 </div>
               </div>

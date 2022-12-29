@@ -9,22 +9,22 @@ const IntroFooter = () => {
             <h4>질문이 있으신가요? 문의 전화: 010-1234-1234</h4>
             <ul className="item_box flex">
               <li className="footer_item">
-                <a href="/">자주 묻는 질문</a>
+                <a href="#">자주 묻는 질문</a>
               </li>
               <li className="footer_item">
-                <a href="/">고객 센터</a>
+                <a href="#">고객 센터</a>
               </li>
               <li className="footer_item">
-                <a href="/">이용 약관</a>
+                <a href="#">이용 약관</a>
               </li>
               <li className="footer_item">
-                <a href="/">개인정보</a>
+                <a href="#">개인정보</a>
               </li>
               <li className="footer_item">
-                <a href="/">쿠키 설정</a>
+                <a href="#">쿠키 설정</a>
               </li>
               <li className="footer_item">
-                <a href="/">회사 정보</a>
+                <a href="#">회사 정보</a>
               </li>
             </ul>
           </div>
