@@ -1,4 +1,4 @@
-FROM node16-alpine3.16 
+FROM node
 WORKDIR usr/src/components/app
 COPY package.json ./
 RUN npm install
