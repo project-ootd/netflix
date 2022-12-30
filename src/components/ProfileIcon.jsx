@@ -19,22 +19,6 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
       setImgList(data.data);
     };
     getProfile();
-
-    // const ImgProfile = async () => {
-    //   const data = await axios({
-    //     url: `${BACKEND_URL}/api/v1/user/userSetProfileImg`,
-    //     method: "POST",
-    //     params: {
-    //       useremail: sessionStorage.getItem("email"),
-    //     },
-    //     data: {
-    //       id: profileUser.profileNameList[profileIndex].id,
-    //       img: imgNo,
-    //     },
-    //   });
-    //   console.log("img : ", data.data);
-    // };
-    // ImgProfile();
   }, []);
 
   return (

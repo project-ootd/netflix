@@ -71,8 +71,6 @@ const Header = () => {
   }, [scrollPosition]);
 
   const onSearch = (e) => {
-    console.log("value: ", e.target.value);
-    console.log("location : ", location);
     if (e.target.value === "") {
       navigate(`/browse`, { state: { fromUrl: location.pathname } });
     } else {

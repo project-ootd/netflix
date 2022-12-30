@@ -27,18 +27,6 @@ const Login = () => {
 
   const [user, setUser] = useRecoilState(userState);
 
-  // AuthenticationTrustResolver trustResolver = new AuthenticationTrustResolverImpl();
-  // if (trustResolver.isAnonymous(SecurityContextHolder.getContext().getAuthentication())) {
-  // // 익명
-  // }
-  // else {
-  // // 로그인한 사용자
-  // }
-
-  // useEffect(()=>{
-  //   if ( sessionStorage.getItem("userToken") ===  )
-  // })
-
   return (
     <div>
       <div className="bc_opacity"></div>
@@ -99,16 +87,12 @@ const Login = () => {
                     "userToken",
                     data.headers.authorization
                   );
-                  console.log("payChk: ", payChk);
 
-                  // console.log("payChk" + payChk.data.lastPaymentDate);
                   if (payChk.data.lastPaymentDate) {
                     choiceprofile();
                   } else {
                     payinfo();
                   }
-                  // onNav();
-                  // console.log("data : " + data.data);
                 } catch (e) {
                   alert("로그인 실패");
                 }
@@ -215,8 +199,6 @@ const Login = () => {
         </div>
       </div>
     </div>
-
-    // 안녕
   );
 };
 

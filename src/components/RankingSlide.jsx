@@ -43,8 +43,6 @@ const RankingSlide = ({ openModal, ranking, allcontent, check, setCheck }) => {
   };
   useEffect(() => {}, [ranking]);
 
-  // console.log(allcontent);
-
   return (
     <div
       className="slide-body"

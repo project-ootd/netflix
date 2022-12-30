@@ -71,10 +71,7 @@ const ChoiceProfile = () => {
       // paymentChk == ture => ! order();
       if (data.data.lastPaymentDate == null) {
         setOrder();
-        console.log("32841937419847128942104124");
       }
-
-      // console.log(data.data);
     };
 
     lastDate();
@@ -91,7 +88,6 @@ const ChoiceProfile = () => {
           Authorization: sessionStorage.getItem("userToken"),
         },
       });
-      console.log("setorder data : ", data);
     };
   }, []);
 

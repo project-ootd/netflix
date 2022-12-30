@@ -18,8 +18,6 @@ const ProfileSub = ({
   const [resetBtn, setResetBtn] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
 
-  // console.log(profileUser.profileNameList[0].nickname);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -84,7 +82,6 @@ const ProfileSub = ({
         );
       }
     }
-    // console.log(profileUser?.profileNameList[profileIndex].id);
   }, []);
 
   return (

@@ -16,22 +16,6 @@ const Profile = () => {
 
   const [profileIndex, setProfileIndex] = useState(-1);
 
-  // const userId = sessionStorage.getItem("email");
-
-  // const [profileUser, setProfileUser] = useState("");
-
-  // useEffect(() => {
-  //   const getProfile = async () => {
-  //     const data = await axios({
-  //       url: `${BACKEND_URL}/api/v1/user/getProfile?useremail=${userId}}`,
-  //       method: "GET",
-  //     });
-  //     console.log(data.data);
-  //     // setProfileUser(data.data);
-  //   };
-  //   getProfile();
-  // }, []);
-
   useEffect(() => {
     const getProfile = async () => {
       const data = await axios({
@@ -44,7 +28,6 @@ const Profile = () => {
           Authorization: sessionStorage.getItem("userToken"),
         },
       });
-      console.log(data.data);
       setProfileUser(data.data);
     };
     getProfile();

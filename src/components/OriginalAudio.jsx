@@ -18,7 +18,6 @@ const OriginalAudio = () => {
         },
       });
       setOriginalCon(data.data);
-      console.log("Origin data : ", originalcon);
     };
     getOrigin();
   }, []);

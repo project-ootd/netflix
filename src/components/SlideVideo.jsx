@@ -57,7 +57,6 @@ const SlideVideo = ({ openModal, ranking, check, setCheck }) => {
       },
     });
     setCheck(data.data);
-    console.log(data.data);
   };
   return (
     <div className="hover_container">
@@ -71,16 +70,10 @@ const SlideVideo = ({ openModal, ranking, check, setCheck }) => {
           ranking?.contentVideo
             ? videoRef.current.pause()
             : console.log("2222");
-          //   videoRef.current.currentTime = 0;
         }}
       >
-        {/* {ranking.map((rank, index) => {
-          return;
-        })} */}
-
         {ranking?.contentVideo ? (
           <Link to="/player" state={ranking}>
-            {/* {console.log("test : ", ranking?.id)} */}
             <video
               className="video"
               src={ranking?.contentVideo}

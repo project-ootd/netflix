@@ -54,7 +54,6 @@ const RegForm = () => {
                   });
                   setUseremail("");
                   setPassword("");
-                  console.log(data);
                   alert("회원가입 성공");
                   onNav();
                 } catch (e) {

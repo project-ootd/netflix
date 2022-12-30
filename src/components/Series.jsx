@@ -23,7 +23,6 @@ const Series = () => {
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
-    console.log(content);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -50,7 +49,6 @@ const Series = () => {
           Authorization: sessionStorage.getItem("userToken"),
         },
       });
-      // console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();

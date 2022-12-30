@@ -72,9 +72,7 @@ const SlideImg = ({
           ? { zIndex: "999", marginRight: "10px" }
           : { zIndex: "-1", marginRight: "10px" }
       }
-      onMouseEnter={() => {
-        // console.log("슬라이드 이미지 오픈 : ", ele.likeStatus);
-      }}
+      onMouseEnter={() => {}}
     >
       <div
         className="thumbnail-container"
@@ -82,7 +80,6 @@ const SlideImg = ({
           setIsActive(false);
           setZindex(false);
         }}
-        // style={index < index + 1 ? { zIndex: "999" } : { zIndex: "-1" }}
       >
         <div
           className="real-container"

@@ -65,7 +65,6 @@ const AllContents = () => {
           Authorization: sessionStorage.getItem("userToken"),
         },
       });
-      // console.log("data : " + data.data);
       setAllContents(data.data);
     };
     getContent();
@@ -75,16 +74,6 @@ const AllContents = () => {
       setKDramas(kDramas.data);
     };
     getKDrama();
-
-    // const getContent = async () => {
-    //   const data = await axios({
-    //     url: `${BACKEND_URL}/allcontent`,
-    //     method: "GET",
-    //   });
-    //   console.log("data : " + data.data);
-    //   setAllContents(data.data);
-    // };
-    // getContent();
   }, []);
 
   useEffect(() => {
