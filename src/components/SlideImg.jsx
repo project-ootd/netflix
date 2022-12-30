@@ -48,7 +48,6 @@ const SlideImg = ({
       },
     });
     setCheck(data.data);
-    console.log(data.data);
   };
   useEffect(() => {
     try {
@@ -95,11 +94,11 @@ const SlideImg = ({
           <Link to={isActive ? "/player" : null} state={ele}>
             <img
               className={
-                index == 0 || index == 6
+                index === 0 || index === 6
                   ? isActive
                     ? "thumbnail-img img_hover_transform_first"
                     : "thumbnail-img"
-                  : index == 5 || index == 11
+                  : index === 5 || index === 11
                   ? isActive
                     ? "thumbnail-img img_hover_transform_5n"
                     : "thumbnail-img"
@@ -115,11 +114,11 @@ const SlideImg = ({
         </div>
         <div
           className={
-            index == 0 || index == 6
+            index === 0 || index === 6
               ? isActive
                 ? "slide_video_box_transform_first text_hover"
                 : "slide_video_box"
-              : index == 5 || index == 11
+              : index === 5 || index === 11
               ? isActive
                 ? "slide_video_box_transform_5n text_hover"
                 : "slide_video_box"
@@ -216,8 +215,7 @@ const SlideImg = ({
               <a
                 className="detail"
                 onClick={() => {
-                  openModal(ele);
-                  console.log(ele);
+                  openModal(ele ? ele : null);
                 }}
               >
                 <BsChevronDown

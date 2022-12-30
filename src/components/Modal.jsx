@@ -273,7 +273,7 @@ const Modal = (props) => {
                 <h2>회차</h2>
                 <h2>{currentContent?.contentName}</h2>
               </div>
-              {currentContent.detailDtos.map((detail, index) => {
+              {currentContent.details?.map((detail, index) => {
                 return (
                   <div className="video_item flex" key={index}>
                     <h2 className="video_number flex flex_ai_c flex_jc_c">

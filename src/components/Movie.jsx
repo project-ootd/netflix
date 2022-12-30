@@ -17,13 +17,13 @@ const Movie = () => {
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
+  const [zIndex, setZindex] = useState(false);
 
   const [viewToggle, setViewToggle] = useState(false);
 
   const openModal = (content) => {
     setModalOpen(true);
     setCurrentContent(content);
-    console.log(content);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -94,9 +94,15 @@ const Movie = () => {
       </div>
       <TestVideo openModal={openModal} allContents={allContents[55]} />
       {viewToggle ? (
-        <FindMovie kDramas={kDramas} openModal={openModal} check={check} />
+        <FindMovie
+          kDramas={kDramas}
+          openModal={openModal}
+          setZindex={setZindex}
+          check={check}
+          setCheck={setCheck}
+        />
       ) : (
-        <MovieSub openModal={openModal} check={check} />
+        <MovieSub openModal={openModal} check={check} setCheck={setCheck} />
       )}
 
       <Modal
@@ -109,32 +115,6 @@ const Movie = () => {
       />
       <Footer />
     </div>
-
-    //   <div className="movie-head">
-    //     <div className="movie-head-con">
-    //       <div className="movie-page-text">영화</div>
-    //       <select name="genre" id="genre" className="choice-genre">
-    //         <option value="장르">장르</option>
-    //         <option value="한국">한국</option>
-    //         <option value="미국 영화">미국 영화</option>
-    //         <option value="일본 영화">일본 영화</option>
-    //         <option value="영국 영화">영국 영화</option>
-    //         <option value="코미디">코미디</option>
-    //         <option value="판타지">판타지</option>
-    //       </select>
-    //     </div>
-    //     <TestVideo openModal={openModal} allContents={ranking[2]} />
-    //     <MovieSub openModal={openModal} kDramas={kDramas} check={check} />
-    //     <Modal
-    //       open={modalOpen}
-    //       close={closeModal}
-    //       ranking={ranking}
-    //       header="Modal heading"
-    //       currentContent={currentContent}
-    //       check={check}
-    //     />
-    //     <Footer />
-    //   </div>
   );
 };
 
