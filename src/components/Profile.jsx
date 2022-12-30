@@ -32,6 +32,7 @@ const Profile = () => {
     };
     getProfile();
   }, [subclick]);
+
   return (
     <div
       className={

@@ -75,14 +75,20 @@ const ProfileSub = ({
     if (profileUser) {
       if (profileIndex || profileIndex == 0) {
         setUserName(profileUser?.profileNameList[profileIndex]?.nickname);
-        setImgUrl(profileUser?.profileNameList[profileIndex]?.img);
+        // setImgUrl(profileUser?.profileNameList[profileIndex]?.img);
+        // sessionStorage.setItem(
+        //   "profileImg",
+        //   profileUser?.profileNameList[profileIndex]?.img
+        // );
       } else if (profileIndex == null) {
-        setImgUrl(
+        sessionStorage.setItem(
+          "profileImg",
           "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
         );
       }
     }
   }, []);
+  console.log("profileIndex", profileIndex);
 
   return (
     <div className="profile_click">
