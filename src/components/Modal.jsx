@@ -65,7 +65,6 @@ const Modal = (props) => {
       },
     });
     setCheck(data.data);
-    console.log(data.data);
   };
 
   return (
