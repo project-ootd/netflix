@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { BsPencil } from "react-icons/bs";
 import { useState } from "react";
 
@@ -17,8 +17,26 @@ const ProfileSub = ({
   const [submitBtn, setSubmitBtn] = useState(false);
   const [resetBtn, setResetBtn] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
+  const [imgList, setImgList] = useState([]);
+  const imgCheck = useRef();
 
   // console.log(profileUser.profileNameList[0].nickname);
+  useEffect(() => {
+    const getProfile = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/api/v1/getprofileImg`,
+        method: "GET",
+      });
+
+      setImgList(data.data);
+    };
+    getProfile();
+  }, [imgUrl]);
+
+  useEffect(() => {}, [imgCheck?.current]);
+
+  console.log("imgCheck : ", imgCheck?.current);
+  console.log("imgUrl : ", imgUrl);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -101,7 +119,7 @@ const ProfileSub = ({
       >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
-            <img src={imgUrl} alt="" />
+            <img src={imgUrl} alt="" ref={imgCheck} />
             <div
               className="pofile_detail_img_btn"
               onClick={() => {
@@ -221,6 +239,7 @@ const ProfileSub = ({
         </div>
       </form>
       <br />
+      <script src={imgUrl}></script>;
     </div>
   );
 };
