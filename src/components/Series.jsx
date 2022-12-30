@@ -17,6 +17,7 @@ const Series = () => {
   const [allContents, setAllContents] = useState([]);
   const [kDramas, setKDramas] = useState([]);
   const [check, setCheck] = useState([]);
+  const [zIndex, setZindex] = useState(false);
 
   const [viewToggle, setViewToggle] = useState(false);
 
@@ -93,9 +94,15 @@ const Series = () => {
       </div>
       <TestVideo openModal={openModal} allContents={allContents[55]} />
       {viewToggle ? (
-        <FindMovie kDramas={kDramas} openModal={openModal} check={check} />
+        <FindMovie
+          kDramas={kDramas}
+          openModal={openModal}
+          setZindex={setZindex}
+          check={check}
+          setCheck={setCheck}
+        />
       ) : (
-        <MovieSub openModal={openModal} check={check} />
+        <MovieSub openModal={openModal} check={check} setCheck={setCheck} />
       )}
       <Modal
         open={modalOpen}
