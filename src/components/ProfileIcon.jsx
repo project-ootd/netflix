@@ -71,6 +71,8 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
                 key={index}
                 onClick={() => {
                   setImgNo(img.id);
+                  sessionStorage.setItem("profileImg", img.imageUrl);
+
                   const ImgProfile = async () => {
                     const data = await axios({
                       url: `${BACKEND_URL}/api/v1/userSetProfileImg`,

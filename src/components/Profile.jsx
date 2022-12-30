@@ -7,11 +7,11 @@ import ProfileSub from "./ProfileSub";
 import ProfileIcon from "./ProfileIcon";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
+import { useLocation } from "react-router-dom";
 
 const Profile = () => {
   const [click, setClick] = useState(false);
   const [subclick, setSubclick] = useState(false);
-
   const [profileUser, setProfileUser] = useState({});
 
   const [profileIndex, setProfileIndex] = useState(-1);
@@ -46,16 +46,9 @@ const Profile = () => {
       });
       console.log(data.data);
       setProfileUser(data.data);
-      // if (data.data.userName) {
-      //   setUserName(data.data.userName);
-      // }
-      // if (data.data.gameName) {
-      //   setGameName(data.data.gameName);
-      // }
     };
     getProfile();
   }, [subclick]);
-
   return (
     <div
       className={
