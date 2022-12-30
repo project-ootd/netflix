@@ -13,7 +13,6 @@ const Login = () => {
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
-  const [hide, setHide] = useState();
   const [authenticated, setAuthenticated] = useRecoilState(authenticationState);
 
   const navigate = useNavigate();
