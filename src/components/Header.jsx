@@ -300,36 +300,6 @@ const Header = () => {
                     <GoTriangleUp />
                   </div>
                   <ul className="sub-menu-list ">
-                    <li
-                      className="sub-menu-item"
-                      style={{ paddingTop: "10px" }}
-                    >
-                      <a
-                        href="/"
-                        style={{
-                          display: "flex",
-                          justifyContent: "start",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img
-                          src={
-                            // {profile.img}
-                            profileUser.profileNameList?.length > 0 &&
-                            profileIndex
-                              ? profileUser.profileNameList[profileIndex].img
-                              : profileUser.id
-                          }
-                          alt=""
-                          style={{ width: "32px" }}
-                        />
-                        <div style={{ marginLeft: "10px" }}>
-                          {userEmail}
-                          {/* anoter porfile */}
-                        </div>
-                      </a>
-                    </li>
-
                     {profileUser.profileNameList?.map((profile, index) => {
                       return (
                         <li

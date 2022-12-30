@@ -7,7 +7,7 @@ import { BACKEND_URL } from "../utils";
 import RankingSlide from "./RankingSlide";
 import SlideImg from "./SlideImg";
 
-const MovieSub = ({ openModal, check }) => {
+const MovieSub = ({ openModal, check, setCheck }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -112,10 +112,7 @@ const MovieSub = ({ openModal, check }) => {
       }}
     >
       <div className="slideItems-all-container">
-        <div
-          className="slide-container flex flex_jc_start"
-          style={{ marginTop: "50px" }}
-        >
+        <div className="slide-container flex flex_jc_start">
           <a href="#">
             <div
               className="slide-title-text text-test"
@@ -143,6 +140,7 @@ const MovieSub = ({ openModal, check }) => {
                 openModal={openModal}
                 setZindex={setZindex}
                 check={check}
+                setCheck={setCheck}
               />
             );
           })}

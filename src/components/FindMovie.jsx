@@ -1,21 +1,21 @@
 import React from "react";
 
 import SlideImg from "./SlideImg";
-const FindMovie = ({ kDramas, openModal, check }) => {
-  console.log(kDramas);
+const FindMovie = ({ kDramas, openModal, setZindex, check, setCheck }) => {
   return (
     <div className="movieWrap">
       <div className="movieBox">
         {kDramas &&
           kDramas?.map((ele, index) => {
-            // console.log("map : ", ele);
             return (
               <div className="movieItem" key={index}>
                 <SlideImg
-                  index={index}
                   ele={ele}
+                  index={index}
                   openModal={openModal}
+                  setZindex={setZindex}
                   check={check}
+                  setCheck={setCheck}
                 />
               </div>
             );
