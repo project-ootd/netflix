@@ -273,7 +273,7 @@ const Header = () => {
                   )}
                 </div>
                 <div className="kids-icon">
-                  <a href="#">키즈</a>
+                  <a href="/browse">키즈</a>
                 </div>
                 <div className="bell-box">
                   <BsBellFill />

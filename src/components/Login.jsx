@@ -30,7 +30,7 @@ const Login = () => {
     <div>
       <div className="bc_opacity"></div>
       <div className="bc_img"></div>
-      <a href="#" className="logo_box">
+      <a href="/" className="logo_box">
         <div className="img_box">
           <img src={logo} alt="LOGO" />
         </div>
