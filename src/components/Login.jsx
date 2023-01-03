@@ -30,7 +30,7 @@ const Login = () => {
     <div>
       <div className="bc_opacity"></div>
       <div className="bc_img"></div>
-      <a href="#" className="logo_box">
+      <a href="/" className="logo_box">
         <div className="img_box">
           <img src={logo} alt="LOGO" />
         </div>
@@ -145,7 +145,7 @@ const Login = () => {
 
           <div className="login_form_other">
             <div className="join">
-              Netflix 회원이 아닌가요? <a href="#">지금 가입하세요.</a>
+              Netflix 회원이 아닌가요? <a href="/regform">지금 가입하세요.</a>
             </div>
 
             <div className="google_btn">

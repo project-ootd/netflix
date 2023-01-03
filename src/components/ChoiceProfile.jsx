@@ -38,7 +38,7 @@ const ChoiceProfile = () => {
     const getOrder = async () => {
       try {
         const data = await axios({
-          url: "http://3.112.118.133:8084/getorder",
+          url: `${BACKEND_URL}/getorder`,
           method: "POST",
           data: {
             useremail: sessionStorage.getItem("email"),
@@ -78,7 +78,7 @@ const ChoiceProfile = () => {
 
     const setOrder = async () => {
       const data = await axios({
-        url: "http://localhost:8084/order",
+        url: `${BACKEND_URL}/order`,
         method: "POST",
         data: {
           useremail: sessionStorage.getItem("email"),
