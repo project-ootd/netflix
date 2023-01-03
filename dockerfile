@@ -1,10 +1,8 @@
-
-FROM nginx
-
-ADD ./build /user/share/nginx/html
-
-COPY ./nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 3000
+FROM node
+WORKDIR usr/src/app
+COPY package.json ./
+RUN npm install
+COPY ./ ./
+CMD ["npm", "run", "start"]
 
 
