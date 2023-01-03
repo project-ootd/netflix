@@ -145,7 +145,7 @@ const Login = () => {
 
           <div className="login_form_other">
             <div className="join">
-              Netflix 회원이 아닌가요? <a href="#">지금 가입하세요.</a>
+              Netflix 회원이 아닌가요? <a href="/regform">지금 가입하세요.</a>
             </div>
 
             <div className="google_btn">

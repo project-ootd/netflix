@@ -87,7 +87,7 @@ const KakaoInfo = () => {
           {/* 수정작업필요 */}
           <form
             className="kakaoForm"
-            action="http://35.77.248.33:8084/kakaoPay"
+            action="http://3.39.154.106:8084/kakaoPay"
             method="POST"
             // onSubmit={async (e) => {
             //   e.preventDefault();
