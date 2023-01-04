@@ -22,6 +22,7 @@ const Search = () => {
         },
       });
       setContents(keyword.data);
+      console.log(keyword.data);
     };
     getItem();
   }, [search]);
