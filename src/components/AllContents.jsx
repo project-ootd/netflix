@@ -118,6 +118,7 @@ const AllContents = () => {
         check={check}
         setCheck={setCheck}
       />
+      {console.log("currentContent : ", currentContent)}
       <Footer />
     </div>
   );
