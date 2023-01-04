@@ -1,0 +1,19 @@
+.list-con {
+  width: 100%;
+}
+
+.list-box {
+  width: 80%;
+  margin: 0 auto 100px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+
+.content-box {
+  width: 300px;
+  margin-bottom: 200px;
+}
+.content-box:last-child {
+  margin-bottom: 50vh;
+}

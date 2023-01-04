@@ -88,6 +88,7 @@ const KakaoInfo = () => {
           <form
             className="kakaoForm"
             action={`${BACKEND_URL}/kakaoPay`}
+
             method="POST"
             // onSubmit={async (e) => {
             //   e.preventDefault();
