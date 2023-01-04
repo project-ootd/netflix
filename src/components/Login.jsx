@@ -108,6 +108,7 @@ const Login = () => {
               onChange={(e) => {
                 setUseremail(e.target.value);
               }}
+              style={{ textTransform: "lowercase" }}
             />
             <input
               type="password"
@@ -119,6 +120,7 @@ const Login = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              style={{ textTransform: "lowercase" }}
             />
             <button className="login_btn">로그인</button>
           </form>

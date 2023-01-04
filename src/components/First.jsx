@@ -51,7 +51,7 @@ const First = () => {
           </p>
           <div className="tour_box flex flex_jc_c">
             <div className="email">
-              <input type="text" size="50" placeholder="이메일 주소" />
+              <input type="text" placeholder="이메일 주소" />
             </div>
             <a href="/regform" className="btn flex flex_jc-c flex_ai_c">
               시작하기 &gt;{" "}
@@ -60,7 +60,7 @@ const First = () => {
         </div>
       </div>
       <hr className="first_hr" />
-      <div className="con1_wrap flex flex_jc_sa flex_jc_c">
+      <div className="con1_wrap">
         <div className="text_box">
           <h1>TV로 즐기세요.</h1>
           <div className="text">
@@ -90,7 +90,7 @@ const First = () => {
 
       <hr className="first_hr" />
 
-      <div className="con2_wrap flex flex_jc_sa flex_jc_c">
+      <div className="con2_wrap ">
         <div className="video_box">
           <div className="img_box flex flex_jc_end">
             <img
@@ -124,7 +124,7 @@ const First = () => {
       </div>
 
       <hr className="first_hr" />
-      <div className="con3_wrap flex flex_jc_sa flex_jc_c">
+      <div className="con3_wrap ">
         <div className="text_box">
           <h1>다양한 디바이스에서 시청하세요.</h1>
           <div className="text">

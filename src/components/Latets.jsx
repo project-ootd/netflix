@@ -155,7 +155,7 @@ const Latets = ({ openModal, kDramas, check }) => {
           })}
         </Slider>
       </div>
-      <div className="ranking-con" style={{ marginTop: "12vh" }}>
+      <div className="ranking-con" style={{ marginTop: "14vh" }}>
         <RankingSlide
           openModal={openModal}
           ranking={ranking}
