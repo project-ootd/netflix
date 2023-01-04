@@ -55,9 +55,30 @@ const PopularContents = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
+  useEffect(() => {
+    const getData = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/browse/my-list/check`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
+      });
+      setCheck(data.data);
+    };
+    getData();
+  }, []);
   return (
     <div className="popular-Header">
-      <Latets openModal={openModal} kDramas={kDramas} check={check} />
+      <Latets
+        openModal={openModal}
+        kDramas={kDramas}
+        check={check}
+        setCheck={setCheck}
+      />
       <Modal
         open={modalOpen}
         close={closeModal}
@@ -65,6 +86,7 @@ const PopularContents = () => {
         header="Modal heading"
         currentContent={currentContent}
         check={check}
+        setCheck={setCheck}
       />
       <Footer />
     </div>

@@ -4,9 +4,28 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { BACKEND_URL } from "../utils";
 import "../styles/OriginalAudio.css";
+import OriginalAudioList from "./OriginalAudioList";
+import { useRecoilState } from "recoil";
+import { rankingState } from "../recoil/ranking";
 
 const OriginalAudio = () => {
   const [originalcon, setOriginalCon] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [contents, setContents] = useState([]);
+  const [currentContent, setCurrentContent] = useState({});
+  const [check, setCheck] = useState([]);
+  const [ranking, setRanking] = useRecoilState(rankingState);
+  const [zIndex, setZindex] = useState(false);
+  const onContents = (data) => {
+    setContents(data);
+  };
+  const openModal = (content) => {
+    setModalOpen(true);
+    setCurrentContent(content);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     const getOrigin = async () => {
@@ -65,24 +84,12 @@ const OriginalAudio = () => {
             </div>
           </div>
         </div>
-
-        {originalcon.map((originalcon, index) => {
-          return (
-            <div className="search-container" key={index}>
-              <div className="search-result">
-                <div className="search-thumbnail" key={originalcon.id}>
-                  <a href="#">
-                    <img
-                      className="search-thumbnail-img"
-                      src={originalcon?.contentImg}
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <OriginalAudioList
+          openModal={openModal}
+          setZindex={setZindex}
+          check={check}
+          setCheck={setCheck}
+        />
       </div>
     </div>
   );
