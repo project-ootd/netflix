@@ -53,6 +53,8 @@ const Header = () => {
         },
       });
       setProfileUser(data.data);
+      console.log(data.data);
+      // sessionStorage.setItem("profileImg", data.imageUrl);
     };
     if (userEmail) {
       getProfile();

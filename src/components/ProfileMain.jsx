@@ -21,6 +21,7 @@ const ProfileMain = ({ click, setClick, profileUser, setProfileIndex }) => {
                 onClick={() => {
                   setClick(!click);
                   setProfileIndex(index);
+                  sessionStorage.setItem("profileImg", profile.img);
                 }}
               >
                 <div className="profile_img_box">
