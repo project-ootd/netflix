@@ -195,7 +195,7 @@ const Header = () => {
                 </ul> */}
                 </div>
               </div>
-              <ul className="nav-box">
+              <ul className="nav-box-menu">
                 <li className="main-nav-text">
                   <a href="/browse">홈</a>
                 </li>
