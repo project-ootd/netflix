@@ -15,10 +15,12 @@
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
-  margin-top: 50px;
-  //   margin: -10px 0 10px 0;
-  // margin-bottom: 10px;
+  margin-top: 2%;
+  margin-left: -0.5%;
   z-index: 999;
+  position: absolute;
+  top: 4%;
+  padding: 0.8%;
 }
 
 .slide-detail-hover {
@@ -33,20 +35,15 @@
   margin-top: 10px;
   font-size: 0.8vw;
   opacity: 0;
-  vertical-align: bottom;
   white-space: nowrap;
-  max-width: 200px;
   transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
 }
 
 .slide-arrow-img {
   position: absolute;
   display: inline-block;
-  margin-top: 17px;
-  margin-left: -100%;
+  margin-top: 16px;
   opacity: 0;
-  vertical-align: bottom;
-  white-space: nowrap;
   color: #54b9c5;
 }
 
@@ -56,31 +53,23 @@
 
 /* 타이틀 호버 */
 
-.slide-title-text:hover .slide-detail-text {
+.slide-title-text:hover > .slide-detail-text {
   display: inline-block;
   opacity: 1;
   max-width: 200px;
   transform: translate(1vw);
+
   transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
 }
 
-.slide-title-text:hover .slide-arrow-img {
+.slide-title-text:hover > .slide-arrow-img {
   display: inline-block;
   opacity: 1;
   max-width: 200px;
-  margin: 15px 0 0 0;
+  // margin: 15px 0 0 0;
+  margin-top: 16px;
   transform: translate(4.5vw);
   transition: max-width 1s, opacity 0.5s, transform 0.5s;
-}
-
-.text-test {
-  // text-align: left;
-  // margin: 0px 0 -100px;
-  // font-size: 25px;
-  // font-weight: 100;
-  // z-index: 100;
-  position: absolute;
-  top: 4%;
 }
 
 /* 타이틀 커스터마이징 끝 */

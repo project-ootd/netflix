@@ -305,7 +305,6 @@
 
 .form_btn_box > .save:hover {
   background: red;
-  border: 1px solid red;
 }
 
 .form_btn_box > button:hover {
