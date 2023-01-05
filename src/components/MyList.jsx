@@ -84,6 +84,7 @@ const Mylist = () => {
         header="Modal heading"
         currentContent={currentContent}
         check={check}
+        setCheck={setCheck}
       />
       <Footer />
     </div>

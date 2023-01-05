@@ -42,6 +42,8 @@ const RegForm = () => {
               e.preventDefault();
               if (!useremail || !password) {
                 alert("입력값이 없습니다.");
+              } else if (password.length <= 6) {
+                alert("비밀번호는 6글자 이상이어야합니다.");
               } else {
                 try {
                   const data = await axios({
@@ -52,6 +54,7 @@ const RegForm = () => {
                       password,
                     },
                   });
+                  console.log("비밀번호 글자수 : ", password.length);
                   setUseremail("");
                   setPassword("");
                   alert("회원가입 성공");
@@ -72,6 +75,7 @@ const RegForm = () => {
               onChange={(e) => {
                 setUseremail(e.target.value);
               }}
+              style={{ textTransform: "lowercase" }}
             />
             <input
               type="password"
@@ -83,6 +87,7 @@ const RegForm = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              style={{ textTransform: "lowercase" }}
             />
             <div className="check_box_wrap">
               <div className="check_box1 flex flex_jc_c">
