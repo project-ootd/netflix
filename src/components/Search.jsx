@@ -7,10 +7,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Search.scss";
 import Footer from "./Footer";
+import SlideImg from "./SlideImg";
+import Modal from "./Modal";
+import FindMovie from "./FindMovie";
 
 const Search = () => {
   const search = useRecoilValue(serachState);
   const [contents, setContents] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentContent, setCurrentContent] = useState({});
+  const [zIndex, setZindex] = useState(false);
+
+  const [check, setCheck] = useState([]);
+
+  const openModal = (content) => {
+    setModalOpen(true);
+    setCurrentContent(content);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     const getItem = async () => {
@@ -52,23 +68,32 @@ const Search = () => {
         </div>
       </div>
 
-      {contents.map((ele, index) => {
-        return (
-          <div className="search-container" key={index}>
-            <div className="search-result">
-              <div className="search-thumbnail" key={index}>
-                <a href="#">
-                  <img
-                    className="search-thumbnail-img"
-                    src={ele?.contentImg}
-                    alt=""
-                  />
-                </a>
+      <div className="search_wrap">
+        <div className="search_box">
+          {contents?.map((ele, index) => {
+            return (
+              <div className="search-container1" key={index}>
+                <SlideImg
+                  ele={ele}
+                  index={index}
+                  openModal={openModal}
+                  setZindex={setZindex}
+                  check={check}
+                  setCheck={setCheck}
+                />
               </div>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })}
+        </div>
+      </div>
+
+      <Modal
+        open={modalOpen}
+        close={closeModal}
+        header="Modal heading"
+        currentContent={currentContent}
+        check={check}
+      />
 
       <Footer />
     </>

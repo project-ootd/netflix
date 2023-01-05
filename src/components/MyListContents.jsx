@@ -15,7 +15,6 @@ const MyListContents = ({
       <div className="list-box">
         {contents &&
           contents?.map((ele, index) => {
-            console.log(ele);
             return (
               <div className="content-box" key={index}>
                 <SlideImg
