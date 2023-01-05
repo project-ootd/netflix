@@ -1,9 +1,10 @@
 
-FROM nginx
+FROM nginx:1.23.3-alpine
 
-ADD ./build /user/share/nginx/html
 
-COPY ./nginx.conf /etc/nginx/nginx.conf
+ADD ./build /usr/share/nginx/html
 
-EXPOSE 3000
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
 
