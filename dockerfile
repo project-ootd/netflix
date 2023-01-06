@@ -1,6 +1,10 @@
-FROM node
-WORKDIR usr/src/app
-COPY package.json ./
-RUN npm install
-COPY ./ ./
-CMD ["npm", "run", "start"]
+
+FROM nginx:1.23.3-alpine
+
+
+ADD ./build /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
+

@@ -213,6 +213,7 @@ const SlideImg = ({
                 className="detail"
                 onClick={() => {
                   openModal(ele ? ele : null);
+                  console.log("모달 클릭 : ", ele);
                 }}
               >
                 <BsChevronDown

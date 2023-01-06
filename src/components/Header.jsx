@@ -53,6 +53,7 @@ const Header = () => {
         },
       });
       setProfileUser(data.data);
+      // sessionStorage.setItem("profileImg", data.imageUrl);
     };
     if (userEmail) {
       getProfile();
@@ -193,7 +194,7 @@ const Header = () => {
                 </ul> */}
                 </div>
               </div>
-              <ul className="nav-box">
+              <ul className="nav-box-menu">
                 <li className="main-nav-text">
                   <a href="/browse">홈</a>
                 </li>

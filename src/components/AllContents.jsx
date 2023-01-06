@@ -118,6 +118,7 @@ const AllContents = () => {
         check={check}
         setCheck={setCheck}
       />
+
       <Footer />
     </div>
   );

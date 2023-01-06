@@ -36,12 +36,11 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
           <h3>프로필 아이콘을 선택하세요.</h3>
         </div>
         <div className="profile_info flex flex_ai_c">
-          <div className="name">하늘</div>
+          <div className="name">
+            {profileUser?.profileNameList[profileIndex]?.nickname}
+          </div>
           <div className="img">
-            <img
-              src="http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-              alt=""
-            />
+            <img src={profileUser?.profileNameList[profileIndex]?.img} alt="" />
           </div>
         </div>
       </div>

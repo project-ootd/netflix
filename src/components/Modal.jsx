@@ -12,9 +12,9 @@ import { BACKEND_URL } from "../utils";
 import { AiOutlineCheck } from "react-icons/ai";
 import { rankingState } from "../recoil/ranking";
 
-const Modal = (props) => {
+const Modal = ({ open, close, currentContent, check, setCheck }) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, currentContent, check, setCheck } = props;
+  // const { open, close, currentContent, check, setCheck } = props;
   const [category, setCategory] = useState([]);
   const videoRef = useRef();
 
@@ -144,7 +144,7 @@ const Modal = (props) => {
                   </Link>
 
                   <button className="steam" onClick={like}>
-                    {props.check[currentContent?.id - 1]?.likeStatus ? (
+                    {check[currentContent?.id - 1]?.likeStatus ? (
                       <AiOutlineCheck
                         style={{
                           color: "white",

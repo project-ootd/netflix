@@ -14,7 +14,7 @@ import RankingSlide from "./RankingSlide";
 import { useRecoilState } from "recoil";
 import { rankingState } from "../recoil/ranking";
 
-const Latets = ({ openModal, kDramas, check }) => {
+const Latets = ({ openModal, kDramas, check, setCheck }) => {
   const [ranks, setRanks] = useState([]);
   const [dramas, setDramas] = useState([]);
   const [riseups, setRiseups] = useState([]);
@@ -108,6 +108,7 @@ const Latets = ({ openModal, kDramas, check }) => {
     };
     getContent();
   }, []);
+
   return (
     <div
       className="slide-body"
@@ -155,7 +156,7 @@ const Latets = ({ openModal, kDramas, check }) => {
           })}
         </Slider>
       </div>
-      <div className="ranking-con" style={{ marginTop: "12vh" }}>
+      <div className="ranking-con" style={{ marginTop: "14vh" }}>
         <RankingSlide
           openModal={openModal}
           ranking={ranking}

@@ -48,12 +48,25 @@
 
 // search 결과값 화면
 
-.search-container {
+.search_wrap {
+  width: 100%;
+  min-height: 30vh;
+  margin-bottom: 100px;
+}
+
+.search_box {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.search-container1 {
+  width: 20%;
+  flex-wrap: wrap;
   display: inline-block;
-  margin: 0 0 4vw;
+  margin: 0 auto 4vw;
   position: relative;
   box-sizing: border-box;
-
+  margin-bottom: 13%;
   // touch-action: pan-y;
 }
 

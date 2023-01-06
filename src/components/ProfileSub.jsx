@@ -18,6 +18,9 @@ const ProfileSub = ({
   const [resetBtn, setResetBtn] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
 
+  console.log(userName.length);
+  console.log(profileUser.useremail);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -44,7 +47,7 @@ const ProfileSub = ({
               useremail: sessionStorage.getItem("email"),
             },
             data: {
-              nickname: userName,
+              nickname: userName.length == 0 ? profileUser.useremail : userName,
             },
           });
           alert("등록 성공");
@@ -88,7 +91,6 @@ const ProfileSub = ({
       }
     }
   }, []);
-  console.log("profileIndex", profileIndex);
 
   return (
     <div className="profile_click">
