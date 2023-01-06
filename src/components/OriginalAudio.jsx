@@ -40,7 +40,22 @@ const OriginalAudio = () => {
     };
     getOrigin();
   }, []);
-
+  useEffect(() => {
+    const getData = async () => {
+      const data = await axios({
+        url: `${BACKEND_URL}/browse/my-list/check`,
+        method: "GET",
+        params: {
+          useremail: sessionStorage.getItem("email"),
+        },
+        headers: {
+          Authorization: sessionStorage.getItem("userToken"),
+        },
+      });
+      setCheck(data.data);
+    };
+    getData();
+  }, []);
   return (
     <div className="original-Header">
       <div className="original-box">
@@ -89,6 +104,7 @@ const OriginalAudio = () => {
           setZindex={setZindex}
           check={check}
           setCheck={setCheck}
+          originalcon={originalcon}
         />
       </div>
     </div>
