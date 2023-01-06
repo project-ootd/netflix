@@ -8,13 +8,13 @@ const OriginalAudioList = ({
   setZindex,
   check,
   setCheck,
-  contents,
+  originalcon,
 }) => {
   return (
     <div className="list-con">
       <div className="list-box">
-        {contents &&
-          contents?.map((ele, index) => {
+        {originalcon &&
+          originalcon?.map((ele, index) => {
             console.log(ele);
             return (
               <div className="content-box" key={index}>

@@ -19,6 +19,8 @@ import PopularContents from "./components/PopularContents";
 import Movie from "./components/Movie";
 import Series from "./components/Series";
 import AuthRoute from "./auth/AuthRoute";
+import SlideItems2 from "./components/SlideItems2";
+import SlideItems1 from "./components/SlideImg1";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -48,7 +50,8 @@ root.render(
           <Route path="/player" element={<Player />}></Route>
           <Route path="/search/:search" element={<Search />}></Route>
           <Route path="/search" element={<Search />}></Route>
-          <Route path="/slideitems" element={<SlideItems />}></Route>
+          <Route path="/slideitems" element={<SlideItems1 />}></Route>
+          <Route path="/slideitems2" element={<SlideItems2 />}></Route>
         </Route>
 
         {/* <Route path="/kakaopay" element={<Kakaopay />}></Route> */}

@@ -106,6 +106,7 @@ const OriginalAudio = () => {
           setZindex={setZindex}
           check={check}
           setCheck={setCheck}
+          originalcon={originalcon}
         />
       </div>
     </div>
