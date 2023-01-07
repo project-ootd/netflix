@@ -10,7 +10,7 @@ import {
 import { BACKEND_URL } from "../utils";
 import { AiOutlineCheck } from "react-icons/ai";
 import AllContents from "./AllContents";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SlideImg = ({
   ele,
@@ -24,6 +24,7 @@ const SlideImg = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [category, setCategory] = useState([]);
+  const navigate = useNavigate();
 
   const like = async () => {
     await axios({
@@ -65,6 +66,13 @@ const SlideImg = ({
     }
   }, []);
 
+  const playState = () => {
+    navigate("/player", {
+      state: ele,
+    });
+    // navigate("/player", { state: ele });
+  };
+
   return (
     <div
       style={
@@ -79,6 +87,14 @@ const SlideImg = ({
           ? "thumbnail-box2 hover_thumbnail-box2_5n"
           : "thumbnail-box2"
       }
+      onMouseLeave={() => {
+        setIsActive(false);
+        setZindex(false);
+      }}
+      onMouseEnter={() => {
+        setIsActive(true);
+        setZindex(true);
+      }}
     >
       <div className="thumbnail-img2">
         <Link to={isActive ? "/player" : null} state={ele}>
@@ -93,7 +109,11 @@ const SlideImg = ({
       <div className="thumbnail-content2">
         <div className="thumbnail-content__icon2">
           <div className="icon-left2">
-            <BsPlayFill style={{ cursor: "pointer" }} />
+            <BsPlayFill
+              onClick={isActive ? playState : null}
+              className="playBtn"
+            />
+
             {check[ele?.id - 1]?.likeStatus ? (
               <AiOutlineCheck onClick={like} style={{ cursor: "pointer" }} />
             ) : (
