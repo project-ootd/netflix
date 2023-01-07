@@ -99,7 +99,24 @@ const SlideImg = ({
             ) : (
               <BsPlusLg onClick={like} style={{ cursor: "pointer" }} />
             )}
-            <BsHandThumbsUp style={{ cursor: "pointer" }} />
+
+            <BsHandThumbsUp style={{ cursor: "pointer" }} className="good" />
+            <div className="hover_box flex">
+              <BsHandThumbsDown
+                style={{
+                  fontSize: "20px",
+                }}
+              />
+              <BsHandThumbsUp
+                style={{
+                  fontSize: "20px",
+                }}
+              />
+              <div className="good_overlapping">
+                <BsHandThumbsUp />
+                <BsHandThumbsUp />
+              </div>
+            </div>
 
             {/* <a className="evaluation" href="/">
               <BsHandThumbsUp
@@ -146,7 +163,13 @@ const SlideImg = ({
               </div>
             </a> */}
           </div>
-          <div className="icon-right2">
+          <div
+            className="icon-right2"
+            onClick={() => {
+              openModal(ele ? ele : null);
+              console.log("모달 클릭 : ", ele);
+            }}
+          >
             <BsChevronDown style={{ cursor: "pointer" }} />
           </div>
         </div>
