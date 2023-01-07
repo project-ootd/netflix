@@ -1,14 +1,20 @@
 import React from "react";
 import "../styles/Player.scss";
 import { RxArrowLeft } from "react-icons/rx";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Player = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   return (
     <div style={{ width: "100%", height: "920px" }}>
       <div className="back_icon">
-        <a href="javascript:history.back();">
+        <a
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
           <RxArrowLeft fontSize={"4rem"} />
         </a>
       </div>

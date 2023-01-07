@@ -159,13 +159,11 @@
 
 /* 섬네일 hover */
 
-.img_hover {
-  /* // transform: scale(1.5); */
+/* .img_hover {
   transform: scale(1.2) translate(0, -36%);
   border-radius: 5px 5px 0 0 !important;
   z-index: 999;
   position: relative;
-  /* box-shadow: 0px -1px 2px 2px black; */
 }
 
 .img_hover_transform_first {
@@ -182,7 +180,7 @@
   z-index: 999;
   position: relative;
   box-shadow: 0px -1px 2px 2px black;
-}
+} */
 
 .slide_video_box {
   position: absolute;
@@ -191,8 +189,6 @@
   opacity: 0;
   transform: translate(-8.5%, 140%);
   transition: all 0.1s linear;
-  /* // top: 55px; */
-  /* // left: 0px; */
   z-index: 999;
   width: 120%;
   height: 150px;
