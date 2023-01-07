@@ -6,7 +6,7 @@ import "../styles/SlideItems.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/SlideVideo.css";
-import SlideImg from "./SlideImg1";
+import SlideImg from "./SlideImg";
 
 const SlideItems = ({ openModal, kDramas, check, ranking, setCheck }) => {
   const [ranks, setRanks] = useState([]);
