@@ -25,6 +25,7 @@ const SlideImg = ({
   const [isActive, setIsActive] = useState(false);
   const [category, setCategory] = useState([]);
   const navigate = useNavigate();
+  const [mouseEnter, setMouseEnter] = useState(false);
 
   const like = async () => {
     await axios({
@@ -120,18 +121,28 @@ const SlideImg = ({
               <BsPlusLg onClick={like} style={{ cursor: "pointer" }} />
             )}
 
-            <BsHandThumbsUp style={{ cursor: "pointer" }} className="good" />
-            <div className="hover_box flex">
-              <BsHandThumbsDown
-                style={{
-                  fontSize: "20px",
-                }}
-              />
-              <BsHandThumbsUp
-                style={{
-                  fontSize: "20px",
-                }}
-              />
+            <BsHandThumbsUp
+              style={{ cursor: "pointer" }}
+              className="good"
+              onMouseEnter={() => {
+                setMouseEnter(true);
+              }}
+              onMouseLeave={() => {
+                setMouseEnter(false);
+              }}
+            />
+
+            <div
+              className={mouseEnter ? "hover_box_run" : "hover_box_none"}
+              onMouseEnter={() => {
+                setMouseEnter(true);
+              }}
+              onMouseLeave={() => {
+                setMouseEnter(false);
+              }}
+            >
+              <BsHandThumbsDown />
+              <BsHandThumbsUp />
               <div className="good_overlapping">
                 <BsHandThumbsUp />
                 <BsHandThumbsUp />
