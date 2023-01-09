@@ -322,13 +322,14 @@
 }
 
 .thumbnail-content2 {
-  background-color: #343434;
+  background-color: #141414;
   padding: 12px;
   color: #f6f6f6;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
   border-radius: 0 0 8px 8px;
+  box-shadow: 0px 5px 20px -5px black;
 }
 
 .thumbnail-box2:hover {
@@ -406,29 +407,59 @@
 //   border: 1px solid red;
 // }
 
-.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .hover_box {
+.thumbnail-content2
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_none {
   display: none;
 }
 
-// .thumbnail-content2
-//   > .thumbnail-content__icon2
-//   > .icon-left2
-//   > .good:hover
-//   ~ .hover_box {
-//   display: block;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   border: 1px solid blue;
-//   background: #343434;
-// }
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .hover_box_run {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -16%;
+  left: 30%;
+  background: #141414;
+  border-radius: 25px;
+  padding: 3px 10px 3px 7px;
+}
 
 .thumbnail-content2
   > .thumbnail-content__icon2
   > .icon-left2
-  > .hover_box
-  > .good_overlapping {
-  position: relative;
+  > .hover_box_run
+  > * {
+  // margin-right: 2px;
+  padding: 7px;
+}
+
+.thumbnail-content2
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  > *:hover {
+  border-radius: 50%;
+  background: #808080;
+}
+
+.thumbnail-content__icon2 > .icon-left2 > .hover_box_run .good_overlapping {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  // margin-right:? 2px;
+  padding: 7px 9px 7px 5px;
+}
+
+.thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  .good_overlapping
+  > svg:last-child {
+  position: absolute;
+  right: 14%;
+  top: 27%;
 }
 
 .thumbnail-content__txt2 > .video_mini_detail > * {

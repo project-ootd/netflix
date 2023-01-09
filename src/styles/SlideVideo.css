@@ -274,3 +274,108 @@
 } */
 
 /* 섬네일 hover 끝 */
+
+.thumbnail-box3:hover > .thumbnail-content3 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video_text > .thumbnail-content__icon2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.video_text > .thumbnail-content__icon2 > div > * {
+  border: 2px solid #777;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 3px;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > .playBtn {
+  border: 2px solid #fff;
+  background: white;
+  color: #343434;
+  padding: 2px;
+  font-size: 31px;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2,
+.video_text > .thumbnail-content__icon2 > .icon-right2 {
+  position: relative;
+  font-size: 25px;
+}
+
+.video_text > .thumbnail-content__icon2 > div > svg:hover {
+  border: 2px solid white;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > .playBtn:hover {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > * {
+  margin-right: 5px;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > a {
+  margin: 0;
+  width: 37.2px;
+  height: 37.2px;
+  margin-top: -20px;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > .hover_box_none {
+  display: none;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > .hover_box_run {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -16%;
+  left: 30%;
+  background: #141414;
+  border-radius: 25px;
+  padding: 3px 10px 3px 7px;
+}
+
+.video_text > .thumbnail-content__icon2 > .icon-left2 > .hover_box_run > * {
+  /* // margin-right: 2px; */
+  padding: 7px;
+}
+
+.video_text
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  > *:hover {
+  border-radius: 50%;
+  background: #808080;
+}
+
+.video_text
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  .good_overlapping {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  /* // margin-right:? 2px; */
+  padding: 7px 9px 7px 5px;
+}
+
+.video_text
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  .good_overlapping
+  > svg:last-child {
+  position: absolute;
+  right: 14%;
+  top: 27%;
+}
