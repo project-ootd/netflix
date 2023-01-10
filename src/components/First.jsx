@@ -1,26 +1,19 @@
 import React from "react";
 import logo from "../img/logo.png";
 import "../styles/First.css";
-// import { IoEarthOutline } from "react-icons/io";
-import { IoEarthOutline } from "react-icons/io5";
-import earth from "../img/earth.png";
 import Footer from "./Footer";
 import { useState } from "react";
 
 const First = () => {
-  const [regEmail, setRegEmail] = useState("");
   const [value, setValue] = useState("");
 
   const onChange = (e) => {
     setValue(e.target.value);
-    console.log("regEmail : ", e.target.value);
   };
-  console.log("value : ", value);
 
   const onClick = () => {
     sessionStorage.setItem("regEmail", value);
   };
-  console.log(sessionStorage.getItem("regEmail"));
 
   return (
     <div>
