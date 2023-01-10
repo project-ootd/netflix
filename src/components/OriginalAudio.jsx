@@ -40,6 +40,7 @@ const OriginalAudio = () => {
     };
     getOrigin();
   }, []);
+
   useEffect(() => {
     const getData = async () => {
       const data = await axios({
@@ -56,6 +57,7 @@ const OriginalAudio = () => {
     };
     getData();
   }, []);
+
   return (
     <div className="original-Header">
       <div className="original-box">

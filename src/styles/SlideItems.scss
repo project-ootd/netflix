@@ -15,7 +15,7 @@
   text-align: left;
   font-weight: bold;
   font-size: 1.4rem;
-  margin-top: 2%;
+  margin-top: 1%;
   margin-left: -0.5%;
   z-index: 999;
   position: absolute;
@@ -57,9 +57,9 @@
   display: inline-block;
   opacity: 1;
   max-width: 200px;
-  transform: translate(1vw);
+  // transform: translate(1vw);
 
-  transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
+  // transition: max-width 1.75s, opacity 1.75s, transform 1.25s;
 }
 
 .slide-title-text:hover > .slide-arrow-img {
@@ -87,10 +87,10 @@
 }
 
 .thumbnail-img {
-  border-radius: 5px;
   width: 100%;
   height: 100%;
   transition: all 0.1s linear;
+  border-radius: 8px;
 }
 
 .slide-body .slick-track {
@@ -301,4 +301,176 @@
 /* 모두보기 화살표(.icon-akiraCaretRight) */
 .icon-akiraCaretRight:before {
   content: "https://img.icons8.com/metro/10/54b9c5/forward.png";
+}
+
+.thumbnail-box2 {
+  width: 250px;
+  overflow: hidden;
+  transition: 0.3s;
+  margin-top: 80px;
+}
+
+.thumbnail-box2 > .thumbnail-img2 {
+  height: 140px;
+}
+
+.thumbnail-box2 > .thumbnail-img2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-content2 {
+  background-color: #141414;
+  padding: 12px;
+  color: #f6f6f6;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 5px 20px -5px black;
+}
+
+.thumbnail-box2:hover {
+  transform: scale(1.2) translateY(-10px);
+  // transform: scale(1.3);
+  margin-top: 50px;
+  box-shadow: 0px 5px 20px -5px black;
+}
+
+.thumbnail-box2:hover > .thumbnail-img2 img {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.hover_thumbnail-box2_06:hover {
+  transform: scale(1.2) translate(30px, -10px);
+}
+
+.hover_thumbnail-box2_5n:hover {
+  transform: scale(1.2) translate(-30px, -10px);
+}
+
+.thumbnail-box2:hover > .thumbnail-content2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > div > * {
+  border: 2px solid #777;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 3px;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .playBtn {
+  border: 2px solid #fff;
+  background: white;
+  color: #343434;
+  padding: 2px;
+  font-size: 23px;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2,
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-right2 {
+  position: relative;
+  font-size: 17px;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > div > svg:hover {
+  border: 2px solid white;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .playBtn:hover {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > * {
+  margin-right: 5px;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > a {
+  margin: 0;
+  width: 37.2px;
+  height: 37.2px;
+  margin-top: -20px;
+}
+
+// .thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .good {
+//   border: 1px solid red;
+// }
+
+.thumbnail-content2
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_none {
+  display: none;
+}
+
+.thumbnail-content2 > .thumbnail-content__icon2 > .icon-left2 > .hover_box_run {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -16%;
+  left: 30%;
+  background: #141414;
+  border-radius: 25px;
+  padding: 3px 10px 3px 7px;
+}
+
+.thumbnail-content2
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  > * {
+  // margin-right: 2px;
+  padding: 7px;
+}
+
+.thumbnail-content2
+  > .thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  > *:hover {
+  border-radius: 50%;
+  background: #808080;
+}
+
+.thumbnail-content__icon2 > .icon-left2 > .hover_box_run .good_overlapping {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  // margin-right:? 2px;
+  padding: 7px 9px 7px 5px;
+}
+
+.thumbnail-content__icon2
+  > .icon-left2
+  > .hover_box_run
+  .good_overlapping
+  > svg:last-child {
+  position: absolute;
+  right: 14%;
+  top: 27%;
+}
+
+.thumbnail-content__txt2 > .video_mini_detail > * {
+  margin: 0;
+}
+
+.thumbnail-content__txt2 .view_age {
+  margin: 0;
+}
+
+.thumbnail-content__txt2 > .video_mini_detail > *,
+.video_genre > * {
+  font-size: 12px;
 }
