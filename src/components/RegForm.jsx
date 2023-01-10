@@ -42,7 +42,7 @@ const RegForm = () => {
               e.preventDefault();
               if (!useremail || !password) {
                 alert("입력값이 없습니다.");
-              } else if (password.length <= 6) {
+              } else if (password.length < 6) {
                 alert("비밀번호는 6글자 이상이어야합니다.");
               } else {
                 try {
