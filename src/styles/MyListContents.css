@@ -12,8 +12,4 @@
 
 .content-box {
   width: 300px;
-  margin-bottom: 200px;
-}
-.content-box:last-child {
-  margin-bottom: 50vh;
 }
