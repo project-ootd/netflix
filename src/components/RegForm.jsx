@@ -10,7 +10,6 @@ import IntroFooter from "./IntroFooter";
 import { useEffect } from "react";
 
 const RegForm = () => {
-  // const { username, setUsername } = useState("");
   const [useremail, setUseremail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -18,10 +17,9 @@ const RegForm = () => {
     navigate(`/login`);
   };
 
-  // useEffect(() => {
-  //   sessionStorage.removeItem("email");
-  //   // sessionStorage.clear();
-  // }, []);
+  useEffect(() => {
+    setUseremail(sessionStorage.getItem("regEmail"));
+  }, []);
 
   return (
     <div style={{ background: "#f3f3f3" }}>
@@ -37,7 +35,6 @@ const RegForm = () => {
           </div>
           <form
             className="login_form"
-            // action="http://localhost:8084/login_form"
             onSubmit={async (e) => {
               e.preventDefault();
               if (!useremail || !password) {
@@ -54,13 +51,12 @@ const RegForm = () => {
                       password,
                     },
                   });
-                  console.log("비밀번호 글자수 : ", password.length);
                   setUseremail("");
                   setPassword("");
                   alert("회원가입 성공");
                   onNav();
                 } catch (e) {
-                  alert("회원가입 실패");
+                  alert("중복된 아이디 입니다.");
                 }
               }
             }}
@@ -77,6 +73,7 @@ const RegForm = () => {
               }}
               style={{ textTransform: "lowercase" }}
             />
+
             <input
               type="password"
               placeholder="비밀번호를 추가하세요"

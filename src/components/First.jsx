@@ -5,8 +5,23 @@ import "../styles/First.css";
 import { IoEarthOutline } from "react-icons/io5";
 import earth from "../img/earth.png";
 import Footer from "./Footer";
+import { useState } from "react";
 
 const First = () => {
+  const [regEmail, setRegEmail] = useState("");
+  const [value, setValue] = useState("");
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+    console.log("regEmail : ", e.target.value);
+  };
+  console.log("value : ", value);
+
+  const onClick = () => {
+    sessionStorage.setItem("regEmail", value);
+  };
+  console.log(sessionStorage.getItem("regEmail"));
+
   return (
     <div>
       <div className="first_wrap">
@@ -51,9 +66,18 @@ const First = () => {
           </p>
           <div className="tour_box flex flex_jc_c">
             <div className="email">
-              <input type="text" placeholder="이메일 주소" />
+              <input
+                type="text"
+                placeholder="이메일 주소"
+                value={value}
+                onChange={onChange}
+              />
             </div>
-            <a href="/regform" className="btn flex flex_jc-c flex_ai_c">
+            <a
+              href="/regform"
+              className="btn flex flex_jc-c flex_ai_c"
+              onClick={onClick}
+            >
               시작하기 &gt;{" "}
             </a>
           </div>
