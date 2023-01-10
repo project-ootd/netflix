@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import logo from "../img/logo.png";
 import "../styles/RegForm.css";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
-import AllContents from "./AllContents";
 import { useNavigate } from "react-router-dom";
 import IntroHeader from "./IntroHeader";
 import IntroFooter from "./IntroFooter";
@@ -20,6 +18,10 @@ const RegForm = () => {
   useEffect(() => {
     setUseremail(sessionStorage.getItem("regEmail"));
   }, []);
+
+  const onClick = () => {
+    sessionStorage.removeItem("regEmail");
+  };
 
   return (
     <div style={{ background: "#f3f3f3" }}>
@@ -113,7 +115,9 @@ const RegForm = () => {
                 </div>
               </div>
             </div>
-            <button className="submit_btn">동의하고 계속</button>
+            <button className="submit_btn" onClick={onClick}>
+              동의하고 계속
+            </button>
           </form>
         </div>
       </div>
