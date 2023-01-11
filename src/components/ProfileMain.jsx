@@ -8,6 +8,8 @@ const ProfileMain = ({ click, setClick, profileUser, setProfileIndex }) => {
   const onNav = () => {
     navigate(`/browse`);
   };
+
+  // console.log(profileUser?.profileNameList.length);
   return (
     <div className="profile_inner">
       <h1>프로필 관리</h1>
@@ -64,7 +66,9 @@ const ProfileMain = ({ click, setClick, profileUser, setProfileIndex }) => {
           <div
             className="finish_btn"
             onClick={() => {
-              onNav();
+              profileUser?.profileNameList.length == 0
+                ? alert("프로필이 존재하지 않습니다.")
+                : onNav();
             }}
           >
             완료
