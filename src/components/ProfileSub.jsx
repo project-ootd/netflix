@@ -13,19 +13,19 @@ const ProfileSub = ({
 }) => {
   const [userName, setUserName] = useState("");
   const [gameName, setGameName] = useState("");
-  const userId = sessionStorage.getItem("email");
+  // const userId = sessionStorage.getItem("email");
   const [submitBtn, setSubmitBtn] = useState(false);
   const [resetBtn, setResetBtn] = useState(false);
-  const [imgUrl, setImgUrl] = useState("");
+  // const [imgUrl, setImgUrl] = useState("");
 
-  console.log(userName.length);
-  console.log(profileUser.useremail);
+  // console.log(userName.length);
+  // console.log(profileUser.useremail);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (submitBtn) {
-        if (profileIndex || profileIndex == 0) {
+        if (profileIndex || profileIndex === 0) {
           const data = await axios({
             url: `${BACKEND_URL}/api/v1/updateprofile`,
             method: "PATCH",
@@ -35,9 +35,10 @@ const ProfileSub = ({
             data: {
               id: profileUser.profileNameList[profileIndex].id,
               nickname: userName,
+              img: sessionStorage.getItem("setProfileImgId"),
             },
           });
-          alert("변경 성공");
+          alert("변경 성공 !!!!");
           window.location.replace("/profile");
         } else {
           const data = await axios({
@@ -47,10 +48,12 @@ const ProfileSub = ({
               useremail: sessionStorage.getItem("email"),
             },
             data: {
-              nickname: userName.length == 0 ? profileUser.useremail : userName,
+              nickname:
+                userName.length === 0 ? profileUser.useremail : userName,
+              img: sessionStorage.getItem("setProfileImgId"),
             },
           });
-          alert("등록 성공");
+          alert("등록 성공 !!!");
           window.location.replace("/profile");
         }
       }
@@ -76,25 +79,28 @@ const ProfileSub = ({
 
   useEffect(() => {
     if (profileUser) {
-      if (profileIndex || profileIndex == 0) {
+      if (profileIndex || profileIndex === 0) {
         setUserName(profileUser?.profileNameList[profileIndex]?.nickname);
-        // setImgUrl(profileUser?.profileNameList[profileIndex]?.img);
-        // sessionStorage.setItem(
-        //   "profileImg",
-        //   profileUser?.profileNameList[profileIndex]?.img
-        // );
-      } else if (profileIndex == null) {
-        sessionStorage.setItem(
-          "profileImg",
-          "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
-        );
       }
+      // if (profileIndex == null) {
+      //   sessionStorage.setItem(
+      //     "profileImg",
+      //     "http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229"
+      //   );
+      // }
     }
   }, []);
 
+  // console.log("profileUser", profileUser);
+  console.log("profileImg", sessionStorage.getItem("profileImg"));
+
   return (
     <div className="profile_click">
-      <h1>프로필 변경</h1>
+      {profileIndex || profileIndex === 0 ? (
+        <h1>프로필 변경</h1>
+      ) : (
+        <h1>프로필 추가</h1>
+      )}
       <hr />
       <form
         action=""
@@ -106,7 +112,11 @@ const ProfileSub = ({
       >
         <div className="profile_click_inner flex">
           <div className="profile_avatar_box">
+            {/* {profileIndex == null ? (
+              <img src="http://occ-0-3076-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229" />
+            ) : ( */}
             <img src={sessionStorage.getItem("profileImg")} alt="" />
+            {/* // )} */}
             <div
               className="pofile_detail_img_btn"
               onClick={() => {

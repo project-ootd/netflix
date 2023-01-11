@@ -31,6 +31,9 @@ const Profile = () => {
       setProfileUser(data.data);
     };
     getProfile();
+
+    // sessionStorage.removeItem("setProfileImgId");
+    // sessionStorage.removeItem("profileImg");
   }, [subclick]);
 
   return (

@@ -21,6 +21,8 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
     getProfile();
   }, []);
 
+  console.log(imgList);
+
   return (
     <div className="profile_icon_wrap">
       <div className="profile_icon_header flex">
@@ -54,22 +56,25 @@ const ProfileIcon = ({ setSubclick, subclick, profileUser, profileIndex }) => {
                 key={index}
                 onClick={() => {
                   setImgNo(img.id);
+                  sessionStorage.setItem("setProfileImgId", img.id);
                   sessionStorage.setItem("profileImg", img.imageUrl);
+                  console.log(img.id);
+                  console.log(img.imageUrl);
 
-                  const ImgProfile = async () => {
-                    const data = await axios({
-                      url: `${BACKEND_URL}/api/v1/userSetProfileImg`,
-                      method: "POST",
-                      params: {
-                        useremail: sessionStorage.getItem("email"),
-                      },
-                      data: {
-                        id: profileUser.profileNameList[profileIndex].id,
-                        img: img.id,
-                      },
-                    });
-                  };
-                  ImgProfile();
+                  // const ImgProfile = async () => {
+                  //   const data = await axios({
+                  //     url: `${BACKEND_URL}/api/v1/userSetProfileImg`,
+                  //     method: "POST",
+                  //     params: {
+                  //       useremail: sessionStorage.getItem("email"),
+                  //     },
+                  //     data: {
+                  //       id: profileUser.profileNameList[profileIndex].id,
+                  //       img: img.id,
+                  //     },
+                  //   });
+                  // };
+                  // ImgProfile();
                   setSubclick(!subclick);
                 }}
               >
