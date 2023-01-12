@@ -215,7 +215,13 @@ const SlideImg = ({
         </div>
 
         <ul className="video_genre flex">
-          <li>범죄 시리즈, 한국 드라마, 무슨 카테고리</li>
+          {category.map((data, index) => {
+            return (
+              <li key={index} style={{ fontSize: "0.947em" }}>
+                {data?.categoryType}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
