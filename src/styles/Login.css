@@ -29,15 +29,15 @@
 }
 
 .login_box {
-  position: absolute;
-  top: calc(50% - 40vh);
-  left: calc(50% - 25vh);
-  width: 16vw;
-  height: 60vh;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  padding: 35px 60px;
-  z-index: 3;
+  padding: 35px 60px 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  z-index: 11;
 }
 
 .login_box > h1 {
