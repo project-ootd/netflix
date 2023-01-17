@@ -95,7 +95,7 @@ const AllContents = () => {
 
   return (
     <div className="App">
-      <TestVideo openModal={openModal} allContents={ranking[0]} />
+      <TestVideo openModal={openModal} allContents={allContents[55]} />
       <RankingSlide
         openModal={openModal}
         ranking={ranking}
