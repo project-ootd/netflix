@@ -59,11 +59,10 @@ li {
 .language-con {
   display: flex;
   justify-content: end;
-  /* border: solid blue 3px; */
+  /* margin-left: 2.2vw; */
   width: 100%;
   position: absolute;
-  top: 2.8vh;
-  /* margin-right: 10px; */
+  top: 1.6vh;
 }
 .language-con > * {
   margin-right: 10px;
@@ -73,6 +72,9 @@ li {
 }
 .original-box-text {
   display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .native-language {
   top: 1vh;
@@ -96,13 +98,13 @@ li {
   margin-right: 20px;
 }
 .native-language-box > .native-language > .choice-language {
-  width: 400px;
+  width: 200px;
 }
 .native-language-box > .native-language > .language-box > select > option {
   padding: 10px 0;
 }
 .native-language-box > .native-language > .choice-menual {
-  width: 400px;
+  width: 200px;
 }
 .sort-by,
 .preference-Language {

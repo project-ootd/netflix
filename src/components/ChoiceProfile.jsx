@@ -93,30 +93,21 @@ const ChoiceProfile = () => {
 
   return (
     <div className="choice-head">
-      <div className="pinning-head">
-        <div className="pinning-con"></div>
-      </div>
       <div className="profile-gate-con">
         <div className="list-profile">
-          <h1
-            style={{
-              color: "#fff",
-              fontSize: "3.5vw",
-              fontWeight: "unset",
-              width: "100%",
-              top: "-50px",
-            }}
-          >
-            넷플릭스를 시청할 프로필을 선택해주세요
-          </h1>
+          <div className="profile-text">
+            <span style={{ width: "100%" }}>
+              넷플릭스를 시청할 프로필을 선택해주세요
+            </span>
+          </div>
           <ul className="choice-profile">
             {ChoiceProfile.profileNameList?.map((profile, index) => {
               return (
                 <li className="profile" key={index}>
-                  <div>
+                  <div className="profile-list">
                     <a
                       href="/browse"
-                      className="profile-text"
+                      className="profile-name"
                       onClick={() => {
                         sessionStorage.setItem("profile", index);
                       }}
@@ -128,24 +119,16 @@ const ChoiceProfile = () => {
                           className="profile-icon"
                         />
                       </div>
-                      <span style={{ marginTop: "4vw" }}>
-                        {profile?.nickname}
-                      </span>
+                      <span>{profile?.nickname}</span>
                     </a>
-                    <div className="profile-children"></div>
+                    {/* <div className="profile-children"></div> */}
                   </div>
                 </li>
               );
             })}
           </ul>
           <span className="profile-button">
-            <a
-              href="/profile"
-              className="profile-button profile-text"
-              style={{ border: "1px solid grey", width: "10%" }}
-            >
-              프로필 관리
-            </a>
+            <a href="/profile">프로필 관리</a>
           </span>
         </div>
       </div>

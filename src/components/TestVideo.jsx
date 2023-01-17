@@ -44,7 +44,7 @@ const TestVideo = ({ openModal, allContents }) => {
               >
                 <img
                   src={allContents?.detailTextImg}
-                  alt="체인소 맨"
+                  alt=""
                   className="title-img"
                   style={{
                     width: "100%",
@@ -92,6 +92,7 @@ const TestVideo = ({ openModal, allContents }) => {
                   <button
                     className="info-box"
                     style={{
+                      cursor: "pointer",
                       width: "230px",
                       borderRadius: "10px",
                       display: "flex",
