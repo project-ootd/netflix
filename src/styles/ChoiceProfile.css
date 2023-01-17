@@ -1,40 +1,70 @@
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.choice-head {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .choice-profile {
-  max-width: 80%;
-  height: 10vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  height: 50%;
-  margin: 2em 0;
+  gap: 40px;
+  cursor: pointer;
+}
+
+.profile-text {
+  font-size: 4vw;
+  margin-bottom: 4vw;
+  width: 100%;
+}
+.profile-name {
+  text-align: center;
 }
 .profile-gate-con {
   background: #141414;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
   text-align: center;
-  top: 0;
-  z-index: 0;
-  transform: translateX(10%) translateY(20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  cursor: pointer;
 }
 .avatar-wrapper {
-  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
-.profile {
+.profile-list .avatar-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.profile-list .avatar-wrapper > img {
+  width: 100%;
+}
+/* .profile {
   max-width: 200px;
   min-width: 84px;
   width: 10vw;
-  /* margin-bottom: 2vw; */
+  margin-bottom: 2vw;
   margin: 0 1vw 2vw;
-}
+} */
 .pinning-head {
   width: 100%;
   height: 70px;
@@ -46,24 +76,18 @@
   left: 0;
   right: 0;
 }
-.list-profile {
-  max-width: 80%;
-}
+
 .profile-icon {
   width: 100%;
   border-radius: 10px;
 }
 
 .profile-button {
-  background-color: transparent;
-  color: grey;
-  cursor: pointer;
-  display: block;
-  font-size: 0.8vw;
-  letter-spacing: 2px;
-  margin: 2em 0 1em;
-  padding: 0.5em 1.5em;
-  transform: translateY(120%) translateX(37.3%);
+  font-weight: bold;
+  border: 1px solid gray;
+  display: inline-block;
+  padding: 8px 40px;
+  margin-top: 4vw;
 }
 .profile-text {
   color: #fff;

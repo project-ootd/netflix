@@ -61,7 +61,7 @@ const Mylist = () => {
       onContents(data.data);
     };
     getData();
-  }, []);
+  }, [contents]);
   // console.log(contents);
   return (
     <div>
