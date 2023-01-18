@@ -206,7 +206,7 @@ const SlideImg = ({
         </div>
 
         <div className="thumbnail-content__txt2">
-          <div className="video_mini_detail flex">
+          <div className="video_mini_detail2 flex">
             <div className="text1">99% 일치</div>
             <div className="view_age">15+</div>
             <div className="episode"> 에피소드 5개</div>
@@ -214,13 +214,9 @@ const SlideImg = ({
           </div>
         </div>
 
-        <ul className="video_genre flex">
+        <ul className="video_genre2 flex">
           {category.map((data, index) => {
-            return (
-              <li key={index} style={{ fontSize: "0.947em" }}>
-                {data?.categoryType}
-              </li>
-            );
+            return <li key={index}>{data?.categoryType}</li>;
           })}
         </ul>
       </div>

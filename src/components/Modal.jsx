@@ -38,7 +38,7 @@ const Modal = ({ open, close, currentContent, check, setCheck }) => {
   useEffect(() => {
     open
       ? (document.body.style = `overflow: hidden`)
-      : (document.body.style = `overflow: scroll`);
+      : (document.body.style = `overflow: auto`);
   }, [open]);
 
   const like = async () => {
