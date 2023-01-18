@@ -143,6 +143,7 @@ input[id="checkBox2"]:checked + label::after {
   background: #e50914;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .regForm_footer_wrap {

@@ -300,6 +300,9 @@
   padding: 2px;
   font-size: 31px;
 }
+.video_text > .thumbnail-content__icon2 > .icon-left2 > * {
+  cursor: pointer;
+}
 
 .video_text > .thumbnail-content__icon2 > .icon-left2,
 .video_text > .thumbnail-content__icon2 > .icon-right2 {
