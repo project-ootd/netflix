@@ -76,11 +76,7 @@ const SlideImg = ({
 
   return (
     <div
-      style={
-        isActive
-          ? { zIndex: "999", marginRight: "10px" }
-          : { zIndex: "-1", marginRight: "10px" }
-      }
+      style={isActive ? { zIndex: "999" } : { zIndex: "-1" }}
       className={
         index === 0 || index === 6
           ? "thumbnail-box2 hover_thumbnail-box2_06"

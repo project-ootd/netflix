@@ -151,7 +151,7 @@ const ProfileSub = ({
             </div>
             <div className="language_box">
               <h2>언어</h2>
-              <select name="language" id="language">
+              <select name="language" id="language" className="language">
                 <option value="한국어">한국어</option>
                 <option value="영어">English</option>
                 <option value="중국어">中文</option>

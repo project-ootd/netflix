@@ -97,6 +97,7 @@
   font-size: 16px;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .login_box > .login_form > .help_box {

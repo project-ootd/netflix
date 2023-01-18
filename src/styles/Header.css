@@ -107,6 +107,7 @@ a {
 .search-con {
   margin-right: 1vw;
   font-size: 1.2vw;
+  cursor: pointer;
 }
 .search-icon {
   font-size: 1.2vw;
@@ -114,10 +115,12 @@ a {
 .kids-icon,
 .view-more-controller {
   margin-right: 20px;
+  cursor: pointer;
 }
 .bell-box {
   margin-right: 20px;
   font-size: 30px;
+  cursor: pointer;
 }
 .user-icon {
   display: flex;
